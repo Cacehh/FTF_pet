@@ -22,7 +22,24 @@ class LandingPage_ctr extends CI_Controller {
 	{
         $this->load->view('+pages/z_header');
 		$this->load->view('index_view');
+//        $this->load->view('+pages/x_register');
+//		$this->load->view('+pages/x_login');
 		$this->load->view('+pages/z_footer');
 	}
+    
+    public function forgotpassword()
+    {
+        $this->load->view('+pages/z_header');
+        $this->load->view('+pages/x_forgotPass');
+		$this->load->view('+pages/z_footer');
+    }
+    
+    public function logreg()
+    {
+        $this->load->view('+pages/z_header');
+        $this->load->view('+pages/x_login');
+		$this->load->view('+pages/z_footer');
+    }
+    
     
 }

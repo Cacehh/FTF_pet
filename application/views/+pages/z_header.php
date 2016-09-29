@@ -27,6 +27,12 @@
     <nav class="page_header blue daken-1 z-depth-3">
         <div>
             <img class="responsive-img" src="<?php echo base_url("public/media/Badge.png"); ?>" alt="FTF Logo">
+            <ul class="right hide-on-med-and-down">
+                <li><a href="<?php echo base_url();?>">Home</a></li>
+                <li><?php echo anchor('landingPage_ctr/logreg', 'My account'); ?></li>
+                <li><?php echo anchor('landingPage_ctr/logreg', 'My cart'); ?></li>
+            </ul>
+            
         </div>
     </nav>
 
