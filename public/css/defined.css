@@ -1,14 +1,49 @@
+* {
+    margin: 0;
+}
+
+html, body {
+  height: 100%;
+}
+
 nav.page_header {
-    height: 170px;
+	position: relative;
+	top: 0px;
+	height: 170px;
+	margin: 0 auto; 
+	height: 125px !important;
+	line-height: 125px !important;
 }  
 
-body {
-/*
-    display: flex;
+div.formdiv_register {
+	position: relative;
+	height: 600px;
+	width: 60%;
+	top: 50px;
+	margin: 0 auto;
+}
+
+div.formdiv_login {
+	position: relative;
+	height: 350px;
+	width: 40%;
+	top: 50px;
+	margin: 0 auto;
+}
+
+nav.header_nav {
+
+}
+
+div.down_d {
+	position: relative;
+	top: 25%;
+}
+body{
+/*    display: flex;
     min-height: 100vh;
-    flex-direction: column;
-*/
-  }
+    flex-direction: column;*/
+}
 
   main {
 /*    flex: 1 0 auto;*/
