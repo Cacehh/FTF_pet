@@ -2,7 +2,7 @@
     Header including import statements
 -->
 
-<html>
+<html lang="eng" class="no-js">
     <head>
         <!--Import Google Icon Font-->
         <?php 
@@ -21,20 +21,20 @@
         <?php
             echo link_tag('public/css/defined.css');
         ?>
+        <?php
+//            echo link_tag('public/css/reset.css');
+        ?>
+        <script src="<?php echo base_url();?>public/js/modernizr.js"></script>
     </head>
-
 <body>
-    <nav class="page_header blue daken-1 z-depth-3">
-        <div>
-            <img class="responsive-img" src="<?php echo base_url("public/media/Badge.png"); ?>" alt="FTF Logo">
-            <ul class="right hide-on-med-and-down">
-                <li><a href="<?php echo base_url();?>">Home</a></li>
-                <li><?php echo anchor('landingPage_ctr/logreg', 'My account'); ?></li>
-                <li><?php echo anchor('landingPage_ctr/logreg', 'My cart'); ?></li>
-            </ul>
-            
-        </div>
-    </nav>
+    
+        <img class="responsive-img logo" src="<?php echo base_url("public/media/Badge.png"); ?>" alt="FTF Logo">
+                <ul class="right hide-on-med-and-down">
+                    <li><a href="<?php echo base_url();?>">Home</a></li>
+                    <li><?php echo anchor('landingPage_ctr/logreg', 'My account'); ?></li>
+                    <li><?php echo anchor('landingPage_ctr/logreg', 'My cart'); ?></li>
+                </ul>
+
 
     
     

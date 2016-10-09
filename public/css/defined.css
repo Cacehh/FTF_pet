@@ -1,50 +1,38 @@
-* {
-    margin: 0;
-}
-
-html, body {
-  height: 100%;
-}
-
-nav.page_header {
+.footCSS {
 	position: relative;
-	top: 0px;
-	height: 170px;
-	margin: 0 auto; 
-	height: 125px !important;
-	line-height: 125px !important;
-}  
-
-div.formdiv_register {
-	position: relative;
-	height: 600px;
-	width: 60%;
-	top: 50px;
-	margin: 0 auto;
+	bottom: -450px;
+	
+}
+bar {
+    position: absolute;
+    top: -20px;
+    width:100%;
+    z-index: -1;
+}
+s
+.formdiv_login {
+    position:relative;
+    right: -5%;
+    height: 350px;
+    width: 90%;
+/*    z-index: -100;*/
 }
 
-div.formdiv_login {
-	position: relative;
-	height: 350px;
-	width: 40%;
-	top: 50px;
-	margin: 0 auto;
+.navdown {
+    position: relative;
+    height: 150px;
+    width: 100%;
 }
 
-nav.header_nav {
-
+.verticalLine {
+    border-left: thin #455a64  solid ;
 }
 
-div.down_d {
-	position: relative;
-	top: 25%;
-}
-body{
-/*    display: flex;
-    min-height: 100vh;
-    flex-direction: column;*/
+img.list {
+    width: 250px;
+    height: 350px;
 }
 
-  main {
-/*    flex: 1 0 auto;*/
-  }
+nav.nav_front{
+	z-index: 100;
+}
