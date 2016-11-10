@@ -1,11 +1,10 @@
-	<br><br><br><br>
-	<br><br><br><br>
-	<div class="footCSS">
-		<footer class="page-footer teal lighten-3">
+
+	<div>
+		<footer class="page-footer orange lighten-2">
 			<div class="container">
 				<div class="row">
 					<div class="col l6 s12">
-						<h5 class="white-text">Fins, Tails N' Feathers</h5>
+						<h5>Fins, Tails N' Feathers</h5>
 						<p class="grey-text text-lighten-4">Located at: L4 Baguio Center Mall, Magsaysay Ave., Baguio City, Philippines 2600</p>
 					</div>
 					<div class="col l4 offset-l2 s12">

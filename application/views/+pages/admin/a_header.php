@@ -1,60 +1,123 @@
-<!--
-    Header including import statements
--->
-
-<html lang="eng" class="no-js">
-    <head>
-        <!--Import Google Icon Font-->
-        <?php 
-            echo link_tag('public/materialize/css/icon.css', 'stylesheet'); 
-        ?>
-        
-        <!--Import materialize.css-->
-        <?php 
-//            echo link_tag('public/materialize/css/materialize.css'); 
-        ?>
-        
-        <!--Let browser know website is optimized for mobile-->
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-        
-        <!--Import User stylesheets -->
-        <?php
-            echo link_tag('public/css/defined.css');
-        ?>
-        <?php
-            echo link_tag('public/css/reset.css');
-        ?>
-        <script src="<?php echo base_url();?>public/js/modernizr.js"></script>
-    </head>
-<body>
-    <header class="cd-main-header">
-		<a href="#0" class="cd-logo"><img src="img/cd-logo.svg" alt="Logo"></a>
+	<style>
+		header, main, footer {
+		  padding-left: 260px;
 		
-		<div class="cd-search is-hidden">
-			<form action="#0">
-				<input type="search" placeholder="Search...">
-			</form>
-		</div> <!-- cd-search -->
+		}
 
-		<a href="#0" class="cd-nav-trigger">Menu<span></span></a>
+		@media only screen and (max-width : 992px) {
+		  header, main, footer {
+			padding-left: 0;
+		  }
+		}
+		li.menu-item.current-menu-item {
+			background-color: black !important;
+		}
+	</style>
+	<script>
+		 $(document).ready(function(){
+			$('.collapsible').collapsible({
+			  accordion : false // A setting that changes the collapsible behavior to expandable instead of the default accordion style
+			});
+		  });
+	</script>
 
-		<nav class="cd-nav">
-			<ul class="cd-top-nav">
-				<li><a href="#0">Tour</a></li>
-				<li><a href="#0">Support</a></li>
-				<li class="has-children account">
-					<a href="#0">
-						<img src="img/cd-avatar.png" alt="avatar">
-						Account
-					</a>
-
-					<ul>
-
-						<li><a href="#0">My Account</a></li>
-						<li><a href="#0">Edit Account</a></li>
-						<li><a href="#0">Logout</a></li>
+	</head>
+<body>
+    <!-- Below are the naviagation options code if any    -->
+    
+<div class="navbar-fixed">
+	<nav>
+		<ul id="dropdown1" class="dropdown-content">
+			<li><a href="#!" class="black-text">My Account</a></li>
+			<li><a href="#!" class="black-text">Edit Account</a></li>
+			<li class="divider" class="black-text"></li>
+			<li class="red accent-2"><a href="<?php echo base_url()?>index.php/Admin_ctr" class="black-text">Log out</a></li>
+		</ul>
+			<ul id="dropdown2" class="dropdown-content">
+			<li><a href="#!">Book Cover Design</a></li>
+			<li><a href="#!">Icon Design</a></li>
+			<li><a href="#!">Poster Design</a></li>
+		</ul>
+		
+		<div class="nav-wrapper grey darken-2"> 
+			<a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+			<ul class="right hide-on-med-and-down">
+				<li><a href="<?php echo base_url()?>index.php/Admin_ctr/dashboard"><i class="material-icons left">home</i>Home</a></li>
+				<li class="active"><a class="dropdown-button" href="#!" data-activates="dropdown1">Account<i class="material-icons right">arrow_drop_down</i></a></li>
+			</ul>
+			
+			<ul id="mobile-demo" class="side-nav fixed grey darken-3">
+				<li class="no-padding">
+					<ul class="collapsible collapsible-accordion">
+						<li class="bold center deep-orange accent-2">
+							<a href="<?php echo base_url()?>index.php/Admin_ctr/dashboard" class="white-text collapsible-header waves-effect waves-blue">Fins, Tails N' Feathers | SA</a>	
+						</li>
+						<li class="bold"><a class="white-text collapsible-header  waves-effect waves-grey">Dashboard</a>
+							<div class="collapsible-body">
+								<ul>
+								<li><a href="<?php echo base_url()?>index.php/Admin_ctr/dashboard">Retail Dashboard</a></li>
+								</ul>
+							</div>
+						</li>
+						<li class="bold"><a class="white-text collapsible-header  waves-effect waves-grey">Sell</a>
+							<div class="collapsible-body">
+								<ul>
+								<li><a href="<?php echo base_url()?>index.php/Admin_ctr_POS">Sell</a></li>
+								<li><a href="<?php echo base_url()?>index.php/Admin_ctr_POS/history">Sales History</a></li>
+								<li><a href="#">More...</a></li>
+								</ul>
+							</div>
+						</li>
+						<li class="bold"><a class="white-text collapsible-header  waves-effect waves-grey">Inventory</a>
+							<div class="collapsible-body">
+								<ul>
+								<li><a href="<?php echo base_url()?>index.php/Admin_Product_ctr/index">Products</a></li>
+								<li><a href="<?php echo base_url()?>index.php/Admin_Product_ctr/pets">Pets</a></li>
+								<li><a href="<?php echo base_url()?>index.php/Admin_Product_ctr/type">Product Type</a></li>
+								<li><a href="<?php echo base_url()?>index.php/Admin_Product_ctr/supplier">Suppliers</a></li>
+								<li><a href="<?php echo base_url()?>index.php/Admin_Product_ctr/brands">Brands</a></li>
+								<li><a href="<?php echo base_url()?>index.php/Admin_Product_ctr/tags">Product Tags</a></li>
+								</ul>
+							</div>
+						</li>
+						<li class="bold"><a class="white-text collapsible-header  waves-effect waves-grey">Reports</a>
+							<div class="collapsible-body">
+								<ul>
+								<li><a href="<?php echo base_url()?>index.php/Admin_ctr/salesReport">Sales Reports</a></li>
+								<li><a href="<?php echo base_url()?>index.php/Admin_ctr/inventoryReport">Inventory Reports</a></li>
+								<li><a href="<?php echo base_url()?>index.php/Admin_ctr/paymentReport">Payment Reports</a></li>
+								</ul>
+							</div>
+						</li>
+	<!-- 					<li class="bold"><a class="white-text collapsible-header  waves-effect waves-grey">Calendar</a>
+							<div class="collapsible-body">
+								<ul>
+								<li><a href="<?php echo base_url()?>index.php/Admin_ctr/calendar">Calendar</a></li>
+								<li><a href="<?php echo base_url()?>index.php/Admin_ctr">Deliveries</a></li>
+								<li><a href="<?php echo base_url()?>index.php/Admin_ctr">more...</a></li>
+								</ul>
+							</div>
+						</li> -->	
+						<li class="bold"><a class="white-text collapsible-header  waves-effect waves-grey"> Management</a>
+							<div class="collapsible-body">
+								<ul>
+								<li><a href="<?php echo base_url()?>index.php/Admin_ctr/accounts">Accounts</a></li>
+								<li><a href="<?php echo base_url()?>index.php/Admin_ctr">more...</a></li>
+								</ul>
+							</div>
+						</li>
+						<li class="bold center deep-orange accent-2">
+							<a class="white-text collapsible-header">Quick Actions</a>
+						</li>
+						<li class=" bold"><a href="<?php echo base_url()?>index.php/Admin_Product_ctr/add" class="white-text waves-effect waves-orange btn deep-orange accent-2">
+							<i class="tiny material-icons left">library_add</i>PRODUCTS
+						</a></li>		
+						<li class=" bold"><a href="#" class="white-text waves-effect waves-orange btn deep-orange accent-2">
+							<i class="tiny material-icons left">library_add</i>PET
+						</a></li>
 					</ul>
 				</li>
 			</ul>
-		</nav>
-	</header> <!-- .cd-main-header -->
+		</div>
+	</nav>
+</div>

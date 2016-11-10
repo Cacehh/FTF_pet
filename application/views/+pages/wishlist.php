@@ -1,5 +1,5 @@
-    <div class="container row ">
-        <div class="col s8 center">
+    <div class="container row orange lighten-4">
+        <div class="col s7 center">
             <table class="responsive bordered">
                 <tbody>
                     <thead>
@@ -31,6 +31,14 @@
                 </tbody>
             </table>
         </div>
+		<div class="col s1 verticalLine">
+			<br> <br>
+			<br> <br>
+			<br> <br>
+			<br> <br>
+			<br> <br>
+			<br> <br>
+		</div>
         
         <div class="col s4">
             <table class="responsive bordered">
@@ -46,7 +54,7 @@
                 </tbody>
             </table>
             <br>
-            <a href="<?php echo base_url()?>index.php/CheckOut" class="waves-effect waves-light btn">Proceed to checkout</a>
+            <a href="<?php echo base_url()?>index.php/CheckOut" class="waves-effect waves-light btn">Call for Confirmation</a>
         </div>
     </div>
 

@@ -8,7 +8,7 @@
             <ul id="nav-mobile" class="right hide-on-med-and-down">
                 <li><a href="<?php echo base_url();?>">Home</a></li>
                 <li><?php echo anchor('landingPage_ctr/logreg', 'My account'); ?></li>
-                <li><?php echo anchor('LoggedIn_ctr/wishlist', 'Wishlist'); ?></li>
+                <li><?php echo anchor('Pages_ctr/wishlist', 'Wishlist'); ?></li>
             </ul>
         </div>
     </nav>

@@ -18,31 +18,74 @@ class LandingPage_ctr extends CI_Controller {
 	 * map to /index.php/welcome/<method_name>
 	 * @see https://codeigniter.com/user_guide/general/urls.html
 	 */
-	public function index()
-	{
-        // Heading Statements
-        $this->load->view('snips/a_start');
-        $this->load->view('snips/css_materialize_icon');
-        $this->load->view('snips/css_materialize');
-        $this->load->view('snips/css_defined');
-        //Extra defined statements
-        $this->load->view('snips/css_home');
-        $this->load->view('snips/js_modernizr');
-        
-        $this->load->view('snips/aa_nav');
-        
-        // Main Contents
-		$this->load->view('index_view');
 
-        // Footer Statements
-		$this->load->view('+pages/z_footer');
-		$this->load->view('snips/js_jquery211');
-		$this->load->view('snips/js_jquerymenuaim');
-		$this->load->view('snips/js_main');
-		$this->load->view('snips/js_materialize');
-		$this->load->view('snips/js_defined');
-		$this->load->view('snips/z_end');
-	}
+	
+	
+		public function index()
+		{
+			// Heading Statements
+			$this->load->view('snips/a_start');
+			$this->load->view('snips/css_materialize_icon');
+			$this->load->view('snips/css_materialize_admin');
+			$this->load->view('snips/css_defined');
+			//Extra defined statements
+			$this->load->view('snips/css_home');
+			$this->load->view('snips/css_reset');
+			$this->load->view('snips/js_modernizr');
+			$this->load->view('snips/js_jquery211');
+			$this->load->view('snips/js_materialize');
+			$this->load->view('snips/SIMPLE_navi_1');
+			//Main content goes here
+			$this->load->view('index_view');
+			$this->load->view('snips/a_spacer');
+			$this->load->view('snips/a_spacer');
+			$this->load->view('snips/SIMPLE_navi_2');
+			
+			// <BR>
+			$this->load->view('snips/a_spacer');
+			$this->load->view('snips/a_spacer');
+			$this->load->view('snips/a_spacer');
+			$this->load->view('snips/a_spacer');
+			$this->load->view('snips/a_spacer');
+			$this->load->view('snips/a_spacer');
+
+			// Footer Statements
+			$this->load->view('+pages/z_footer');
+			$this->load->view('snips/js_jquerymenuaim');
+			$this->load->view('snips/js_main');
+			$this->load->view('snips/z_end');
+		}	
+	
+	//ALT INDEX
+//	public function index()
+//	{
+//        // Heading Statements
+//        $this->load->view('snips/a_start');
+//        $this->load->view('snips/css_materialize_icon');
+//        $this->load->view('snips/css_materialize');
+//        $this->load->view('snips/css_defined');
+//        //Extra defined statements
+//        $this->load->view('snips/css_home');
+//        $this->load->view('snips/js_modernizr');
+//		$this->load->view('snips/js_jquery211');
+//		$this->load->view('snips/js_materialize');
+//        
+//        $this->load->view('snips/aa_nav');
+//        
+//        // Main Contents
+//		$this->load->view('index_view');
+//
+//		// <BR>
+//		$this->load->view('snips/a_spacer');
+//		$this->load->view('snips/a_spacer');
+//
+//        // Footer Statements
+//		$this->load->view('+pages/z_footer');
+//		$this->load->view('snips/js_jquerymenuaim');
+//		$this->load->view('snips/js_main');
+//		$this->load->view('snips/js_defined');
+//		$this->load->view('snips/z_end');
+//	}
     
     public function forgotpassword()
     {
