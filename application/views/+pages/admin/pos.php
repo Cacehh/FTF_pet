@@ -259,7 +259,7 @@
 										4
 									</div>
 									<div class="col s7 center">
-										Gold Fish
+										Goldfish
 									</div>
 									<div class="col s4 center">
 										&#x20B1; 100.00
@@ -355,4 +355,34 @@
 		</div>
 	</div>
 
+	<div class="divider"></div>
+	<br>
+	<div class="row">
+		<div class=" col s12">
+			<p class="center">
+				<input type="checkbox" id="test1" />
+				<label for="test1">Custom pet customer</label>
+			</p>
+
+		</div>
+		<div class="input-field col s6">
+			<i class="material-icons prefix">account_circle</i>
+			<input id="icon_prefix" type="text" class="validate">
+			<label for="icon_prefix">Find Previous customer</label>
+		</div>
+
+		<div class="input-field col s6">
+			<textarea id="textarea1" class="materialize-textarea"></textarea>
+			<label for="textarea1">Additional Information</label>
+		</div>
+		<div class="col s6">
+			<button type="button" class=" right waves-effect waves-orange btn deep-orange"><i class="mdi-content-add"></i>Find</button>
+		</div>
+	</div>
+	<div class="divider"></div>
+
+
+	<br>
+	<br>
+	<br>
 </main>

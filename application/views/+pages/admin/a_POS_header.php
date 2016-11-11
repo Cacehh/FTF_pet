@@ -62,14 +62,14 @@
 							</div>
 						</li>	
 
-						<li class="bold"><a class="white-text collapsible-header  waves-effect waves-grey">Call-in Orders</a>
+						<li class="bold"><a class="white-text collapsible-header  waves-effect waves-grey"> Orders</a>
 							<div class="collapsible-body">
 								<ul>
-								<li><a href="<?php echo base_url()?>index.php/POS_ctr/">Take Order</a></li>
+								<li><a href="<?php echo base_url()?>index.php/POS_ctr/getOrder">Take Order</a></li>
 								<li><a href="<?php echo base_url()?>index.php/POS_ctr/customerAdd">Add Customer</a></li>
 								<li><a href="<?php echo base_url()?>index.php/POS_ctr/customerEdit">Edit Customer</a></li>
 								<li><a href="<?php echo base_url()?>index.php/POS_ctr/customers">Customers</a></li>
-								<li><a href="<?php echo base_url()?>index.php/POS_ctr/orderHistory">Order History</a></li>
+								<li><a href="<?php echo base_url()?>index.php/POS_ctr/orders">Orders</a></li>
 								<li><a href="#">More...</a></li>
 								</ul>
 							</div>

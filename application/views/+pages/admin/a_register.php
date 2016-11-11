@@ -84,8 +84,8 @@
 
                 <div class="input-field col s4">
                     <i class="material-icons prefix">label</i>
-                    <input id="Mobile_Number" name="Mobile_Number" type="number" class="validate" maxlength="11" required>
-                    <label for="account_type" data-error="Not valid" data-success="Correct account type">Mobile Number</label>
+                    <input id="type" name="type" type="number" class="validate" maxlength="2" required>
+                    <label for="account_type" data-error="Not valid" data-success="Correct account type">Account Type</label>
                 </div>
             </div>
         </div>

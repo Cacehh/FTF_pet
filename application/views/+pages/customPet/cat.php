@@ -25,7 +25,7 @@
  
 					<ul class="models-list options-list cd-col-2">
 						<!-- models here -->
-						<li class="js-option js-radio" data-price="100" data-model="<?php echo base_url()?>public/data/-cat-00">
+						<li class="js-option js-radio" data-price="100" data-model="data/data-cat-00">
 							<span class="name">Slim Cat</span>
 							<img src="<?php echo base_url()?>public/media/CustomPets/cat0_0.png" alt="Slim Cat">
 							<div class="radio"></div>

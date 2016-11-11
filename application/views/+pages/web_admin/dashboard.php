@@ -49,6 +49,25 @@
 	</div>
 	<div class="divider">
 	</div>
+
+	<div class="container">
+		<div class="row">
+			<div class="input-field col s6">
+			<h4>Upload database file</h4>
+			<form action="#">
+				<div class="file-field input-field">
+				  <div class="btn">
+				    <span>File</span>
+				    <input type="file">
+				  </div>
+				  <div class="file-path-wrapper">
+				    <input class="file-path validate" type="text">
+				  </div>
+				</div>
+			</form>
+			</div>			
+		</div>
+	</div>
 	
 	<div class="row">
 		<div class="col s12">

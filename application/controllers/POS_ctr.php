@@ -84,18 +84,18 @@ class POS_ctr extends CI_Controller {
 		$this->load->view('snips/z_end');
 	}	
 	
-	public function addSupplier() {
-        $this->load->view('snips/a_start');
-        $this->load->view('snips/css_materialize');
-        $this->load->view('snips/css_materialize_icon');
-        $this->load->view('+pages/admin/a_POS_header');
-//        Change the page
-        $this->load->view('+pages/admin/product_suppliers');
+// 	public function addSupplier() {
+//         $this->load->view('snips/a_start');
+//         $this->load->view('snips/css_materialize');
+//         $this->load->view('snips/css_materialize_icon');
+//         $this->load->view('+pages/admin/a_POS_header');
+// //        Change the page
+//         $this->load->view('+pages/admin/product_suppliers');
 		
-		$this->load->view('snips/js_jquery300');
-        $this->load->view('snips/js_materialize');
-		$this->load->view('snips/z_end');
-	}	
+// 		$this->load->view('snips/js_jquery300');
+//         $this->load->view('snips/js_materialize');
+// 		$this->load->view('snips/z_end');
+// 	}	
 	
 	public function brands() {
         $this->load->view('snips/a_start');
@@ -110,18 +110,18 @@ class POS_ctr extends CI_Controller {
 		$this->load->view('snips/z_end');
 	}
 	
-	public function addBrands() {
-        $this->load->view('snips/a_start');
-        $this->load->view('snips/css_materialize');
-        $this->load->view('snips/css_materialize_icon');
-        $this->load->view('+pages/admin/a_POS_header');
-        //Change the page
-        $this->load->view('+pages/admin/product_brand');
+	// public function addBrands() {
+ //        $this->load->view('snips/a_start');
+ //        $this->load->view('snips/css_materialize');
+ //        $this->load->view('snips/css_materialize_icon');
+ //        $this->load->view('+pages/admin/a_POS_header');
+ //        //Change the page
+ //        $this->load->view('+pages/admin/product_brand');
 		
-		$this->load->view('snips/js_jquery300');
-        $this->load->view('snips/js_materialize');
-		$this->load->view('snips/z_end');
-	}	
+	// 	$this->load->view('snips/js_jquery300');
+ //        $this->load->view('snips/js_materialize');
+	// 	$this->load->view('snips/z_end');
+	// }	
 
     public function tags() {
         $this->load->view('snips/a_start');
@@ -142,7 +142,7 @@ class POS_ctr extends CI_Controller {
         $this->load->view('snips/css_materialize_icon');
         $this->load->view('+pages/admin/a_POS_header');
 
-        $this->load->view('+pages/admin/product_tags');
+        $this->load->view('+pages/admin/a_getOrders');
         
         $this->load->view('snips/js_jquery300');
         $this->load->view('snips/js_materialize');
@@ -188,13 +188,13 @@ class POS_ctr extends CI_Controller {
         $this->load->view('snips/z_end');
     }      
     
-    public function orderHistory() {
+    public function orders() {
         $this->load->view('snips/a_start');
         $this->load->view('snips/css_materialize');
         $this->load->view('snips/css_materialize_icon');
         $this->load->view('+pages/admin/a_POS_header');
 
-        $this->load->view('+pages/admin/a_orderHistory');
+        $this->load->view('+pages/admin/a_orders');
         
         $this->load->view('snips/js_jquery300');
         $this->load->view('snips/js_materialize');

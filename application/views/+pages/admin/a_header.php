@@ -89,6 +89,18 @@
 								</ul>
 							</div>
 						</li>
+						<li class="bold"><a class="white-text collapsible-header  waves-effect waves-grey">Orders</a>
+							<div class="collapsible-body">
+								<ul>
+								<li><a href="http://localhost/_ITProject/_FTF_v2/index.php/Admin_ctr/getOrder">Take Order</a></li>
+								<li><a href="http://localhost/_ITProject/_FTF_v2/index.php/Admin_ctr/customerAdd">Add Customer</a></li>
+								<li><a href="http://localhost/_ITProject/_FTF_v2/index.php/Admin_ctr/customerEdit">Edit Customer</a></li>
+								<li><a href="http://localhost/_ITProject/_FTF_v2/index.php/Admin_ctr/customers">Customers</a></li>
+								<li><a href="http://localhost/_ITProject/_FTF_v2/index.php/Admin_ctr/orders">Orders</a></li>
+								<li><a href="#">More...</a></li>
+								</ul>
+							</div>
+						</li>
 	<!-- 					<li class="bold"><a class="white-text collapsible-header  waves-effect waves-grey">Calendar</a>
 							<div class="collapsible-body">
 								<ul>
@@ -105,7 +117,7 @@
 								<li><a href="<?php echo base_url()?>index.php/Admin_ctr">more...</a></li>
 								</ul>
 							</div>
-						</li>
+						</li>		
 						<li class="bold center deep-orange accent-2">
 							<a class="white-text collapsible-header">Quick Actions</a>
 						</li>
