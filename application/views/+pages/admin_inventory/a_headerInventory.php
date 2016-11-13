@@ -1,0 +1,82 @@
+	<style>
+		header, main, footer {
+		  padding-left: 260px;
+		
+		}
+
+		@media only screen and (max-width : 992px) {
+		  header, main, footer {
+			padding-left: 0;
+		  }
+		}
+		li.menu-item.current-menu-item {
+			background-color: black !important;
+		}
+	</style>
+	<script>
+		 $(document).ready(function(){
+			$('.collapsible').collapsible({
+			  accordion : false // A setting that changes the collapsible behavior to expandable instead of the default accordion style
+			});
+		  });
+	</script>
+
+	</head>
+<body>
+    <!-- Below are the naviagation options code if any    -->
+    
+<div class="navbar-fixed">
+	<nav>
+		<ul id="dropdown1" class="dropdown-content">
+			<li><a href="#!" class="black-text">My Account</a></li>
+			<li><a href="#!" class="black-text">Edit Account</a></li>
+			<li class="divider" class="black-text"></li>
+			<li class="red accent-2"><a href="<?php echo base_url()?>index.php/Admin_Inventory_ctr" class="black-text">Log out</a></li>
+		</ul>
+			<ul id="dropdown2" class="dropdown-content">
+			<li><a href="#!">Book Cover Design</a></li>
+			<li><a href="#!">Icon Design</a></li>
+			<li><a href="#!">Poster Design</a></li>
+		</ul>
+		
+		<div class="nav-wrapper grey darken-2"> 
+			<a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+			<ul class="right hide-on-med-and-down">
+				<li><a href="<?php echo base_url()?>index.php/Admin_Inventory_ctr/index"><i class="material-icons left">home</i>Home</a></li>
+				<li class="active"><a class="dropdown-button" href="#!" data-activates="dropdown1">Account<i class="material-icons right">arrow_drop_down</i></a></li>
+			</ul>
+			
+			<ul id="mobile-demo" class="side-nav fixed grey darken-3">
+				<li class="no-padding">
+					<ul class="collapsible collapsible-accordion">
+						<li class="bold center deep-orange accent-2">
+							<a href="<?php echo base_url()?>index.php/Admin_Inventory_ctr/index" class="white-text collapsible-header waves-effect waves-blue">Fins, Tails N' Feathers | INVENTORY</a>	
+						</li>
+						<li class="bold"><a class="white-text collapsible-header  waves-effect waves-grey">Inventory</a>
+							<div class="collapsible-body">
+								<ul>
+								<li><a href="<?php echo base_url()?>index.php/Admin_Inventory_ctr/index">View</a></li>
+								<li><a href="<?php echo base_url()?>index.php/Admin_Inventory_ctr/invPet">Pet Inventory</a></li>
+								<li><a href="<?php echo base_url()?>index.php/Admin_Inventory_ctr/invProduct">Product Inventory</a></li>
+								<li><a href="<?php echo base_url()?>index.php/Admin_Inventory_ctr/addPet">Add Pet</a></li>
+								<li><a href="<?php echo base_url()?>index.php/Admin_Inventory_ctr/addProduct">Add Products</a></li>
+								<li><a href="<?php echo base_url()?>index.php/Admin_Inventory_ctr/invEditProd">Edit Products</a></li>
+								<li><a href="<?php echo base_url()?>index.php/Admin_Inventory_ctr/invEditPet">Edit Pets</a></li>
+								</ul>
+							</div>
+						</li>
+						<li class="bold center deep-orange accent-2">
+							<a class="white-text collapsible-header">Quick Actions</a>
+						</li>
+						<li class=" bold"><a href="<?php echo base_url()?>index.php/Admin_Inventory_ctr/addProduct" class="white-text waves-effect waves-orange btn deep-orange accent-2">
+							<i class="tiny material-icons left">library_add</i>PRODUCTS
+						</a></li>		
+						<li class=" bold"><a href="<?php echo base_url()?>index.php/Admin_Inventory_ctr/addPet" class="white-text waves-effect waves-orange btn deep-orange accent-2">
+							<i class="tiny material-icons left">library_add</i>PET
+						</a></li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+	</nav>
+</div>
