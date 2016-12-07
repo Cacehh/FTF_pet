@@ -68,6 +68,9 @@
 								</ul>
 							</div>
 						</li>
+                        <li class="bold">
+							<a class="white-text collapsible-header" href="<?php echo base_url()?>index.php/Admin_ctr/salesLedger">Sales Ledger</a>
+						</li>            
 						<li class="bold"><a class="white-text collapsible-header  waves-effect waves-grey">Inventory</a>
 							<div class="collapsible-body">
 								<ul>

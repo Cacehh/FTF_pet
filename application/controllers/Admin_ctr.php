@@ -173,6 +173,19 @@ class Admin_ctr extends CI_Controller {
         $this->load->view('snips/js_materialize');
         $this->load->view('snips/z_end');
     }  
+    
+    public function salesLedger() {
+        $this->load->view('snips/a_start');
+        $this->load->view('snips/css_materialize');
+        $this->load->view('snips/css_materialize_icon');
+        $this->load->view('+pages/admin/a_header');
+
+        $this->load->view('+pages/admin/sales_ledger');
+        
+        $this->load->view('snips/js_jquery300');
+        $this->load->view('snips/js_materialize');
+        $this->load->view('snips/z_end');
+    }  
 
  //    public function calendar() {
  //        $this->load->view('snips/a_start');
