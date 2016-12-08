@@ -5,7 +5,8 @@ class Admin_ctr extends CI_Controller {
     
     public function index()
     {
-        $this->load->view('snips/a_start');
+        $data['title'] = 'FTNF | Login';
+        $this->load->view('snips/a_start', $data);
         $this->load->view('snips/css_materialize');
         $this->load->view('snips/css_materialize_icon');
         
@@ -18,7 +19,8 @@ class Admin_ctr extends CI_Controller {
 	
 	public function register()
     {
-        $this->load->view('snips/a_start');
+        $data['title'] = 'FTNF | Register';
+        $this->load->view('snips/a_start', $data);
         $this->load->view('snips/css_materialize');
         $this->load->view('snips/css_materialize_icon');
         
@@ -30,7 +32,8 @@ class Admin_ctr extends CI_Controller {
     } 
 	public function forgotpassword()
     {
-        $this->load->view('snips/a_start');
+        $data['title'] = 'FTNF | Forgot Password';
+        $this->load->view('snips/a_start', $data);
         $this->load->view('snips/css_materialize');
         $this->load->view('snips/css_materialize_icon');
         
@@ -43,7 +46,8 @@ class Admin_ctr extends CI_Controller {
 	
     public function dashboard()
     {
-        $this->load->view('snips/a_start');
+        $data['title'] = 'FTNF | Dashboard';
+        $this->load->view('snips/a_start', $data);
         $this->load->view('snips/css_materialize');
         $this->load->view('snips/css_materialize_icon');
         $this->load->view('+pages/admin/a_header');
@@ -57,7 +61,8 @@ class Admin_ctr extends CI_Controller {
 
     public function accounts()
     {
-        $this->load->view('snips/a_start');
+        $data['title'] = 'FTNF | Account';
+        $this->load->view('snips/a_start', $data);
         $this->load->view('snips/css_materialize');
         $this->load->view('snips/css_materialize_icon');
         $this->load->view('+pages/admin/a_header');
@@ -70,8 +75,10 @@ class Admin_ctr extends CI_Controller {
 		$this->load->view('snips/z_end');
     }		
 	
-	public function salesReport() {
-        $this->load->view('snips/a_start');
+	public function salesReport() 
+    {
+        $data['title'] = 'FTNF | Sales Report';
+        $this->load->view('snips/a_start', $data);
         $this->load->view('snips/css_materialize');
         $this->load->view('snips/css_materialize_icon');
 		$this->load->view('+pages/admin/a_header');
@@ -83,8 +90,10 @@ class Admin_ctr extends CI_Controller {
 		$this->load->view('snips/z_end');
 	}
 	
-	public function inventoryReport() {
-        $this->load->view('snips/a_start');
+	public function inventoryReport() 
+    {
+        $data['title'] = 'FTNF | Inventory Report';
+        $this->load->view('snips/a_start', $data);
         $this->load->view('snips/css_materialize');
         $this->load->view('snips/css_materialize_icon');
 		$this->load->view('+pages/admin/a_header');
@@ -96,8 +105,10 @@ class Admin_ctr extends CI_Controller {
 		$this->load->view('snips/z_end');
 	}	
 	
-    public function paymentReport() {
-        $this->load->view('snips/a_start');
+    public function paymentReport() 
+    {
+        $data['title'] = 'FTNF | Payment Report';
+        $this->load->view('snips/a_start', $data);
         $this->load->view('snips/css_materialize');
         $this->load->view('snips/css_materialize_icon');
         $this->load->view('+pages/admin/a_header');
@@ -109,8 +120,10 @@ class Admin_ctr extends CI_Controller {
         $this->load->view('snips/z_end');
     }	
 
-    public function orders() {
-        $this->load->view('snips/a_start');
+    public function orders() 
+    {
+        $data['title'] = 'FTNF | Orders';
+        $this->load->view('snips/a_start', $data);
         $this->load->view('snips/css_materialize');
         $this->load->view('snips/css_materialize_icon');
         $this->load->view('+pages/admin/a_header');
@@ -122,8 +135,10 @@ class Admin_ctr extends CI_Controller {
         $this->load->view('snips/z_end');
     }   
 
-    public function getOrder() {
-        $this->load->view('snips/a_start');
+    public function getOrder() 
+    {
+        $data['title'] = 'FTNF | Add Order';
+        $this->load->view('snips/a_start', $data);
         $this->load->view('snips/css_materialize');
         $this->load->view('snips/css_materialize_icon');
         $this->load->view('+pages/admin/a_header');
@@ -135,8 +150,10 @@ class Admin_ctr extends CI_Controller {
         $this->load->view('snips/z_end');
     }  
 
-    public function customers() {
-        $this->load->view('snips/a_start');
+    public function customers() 
+    {
+        $data['title'] = 'FTNF | Customer List';
+        $this->load->view('snips/a_start', $data);
         $this->load->view('snips/css_materialize');
         $this->load->view('snips/css_materialize_icon');
         $this->load->view('+pages/admin/a_header');
@@ -148,8 +165,10 @@ class Admin_ctr extends CI_Controller {
         $this->load->view('snips/z_end');
     }   
 
-    public function customerEdit() {
-        $this->load->view('snips/a_start');
+    public function customerEdit() 
+    {
+        $data['title'] = 'FTNF | Edit Customer';
+        $this->load->view('snips/a_start', $data);
         $this->load->view('snips/css_materialize');
         $this->load->view('snips/css_materialize_icon');
         $this->load->view('+pages/admin/a_header');
@@ -161,8 +180,10 @@ class Admin_ctr extends CI_Controller {
         $this->load->view('snips/z_end');
     }
     
-    public function customerAdd() {
-        $this->load->view('snips/a_start');
+    public function customerAdd() 
+    {
+        $data['title'] = 'FTNF | Add Customer';
+        $this->load->view('snips/a_start', $data);
         $this->load->view('snips/css_materialize');
         $this->load->view('snips/css_materialize_icon');
         $this->load->view('+pages/admin/a_header');
@@ -174,8 +195,10 @@ class Admin_ctr extends CI_Controller {
         $this->load->view('snips/z_end');
     }  
     
-    public function salesLedger() {
-        $this->load->view('snips/a_start');
+    public function salesLedger() 
+    {
+        $data['title'] = 'FTNF | Sales Ledger';
+        $this->load->view('snips/a_start', $data);
         $this->load->view('snips/css_materialize');
         $this->load->view('snips/css_materialize_icon');
         $this->load->view('+pages/admin/a_header');
@@ -188,7 +211,8 @@ class Admin_ctr extends CI_Controller {
     }  
 
  //    public function calendar() {
- //        $this->load->view('snips/a_start');
+ //        $data['title'] = 'FTNF | Login';
+ //       $this->load->view('snips/a_start', $data);
  //        $this->load->view('snips/css_calendar');
  //        $this->load->view('snips/js_jquery300');
  //        $this->load->view('snips/js_moment');

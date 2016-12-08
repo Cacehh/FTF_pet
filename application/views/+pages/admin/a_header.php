@@ -125,10 +125,13 @@
 							<a class="white-text collapsible-header">Quick Actions</a>
 						</li>
 						<li class=" bold"><a href="<?php echo base_url()?>index.php/Admin_Product_ctr/add" class="white-text waves-effect waves-orange btn deep-orange accent-2">
-							<i class="tiny material-icons left">library_add</i>PRODUCTS
-						</a></li>		
+							<i class="tiny material-icons left">library_add</i>PRODUCT
+						</a></li>	
 						<li class=" bold"><a href="#" class="white-text waves-effect waves-orange btn deep-orange accent-2">
 							<i class="tiny material-icons left">library_add</i>PET
+						</a></li>	
+						<li class=" bold"><a href="#" class="white-text waves-effect waves-orange btn deep-orange accent-2">
+							<i class="tiny material-icons left">library_add</i>CUSTOMER
 						</a></li>
 					</ul>
 				</li>
