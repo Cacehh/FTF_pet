@@ -68,7 +68,6 @@ class Admin_ctr extends CI_Controller {
         $this->load->view('+pages/admin/a_header');
         
         $this->load->view('+pages/admin/accounts');
-        
 		
 		$this->load->view('snips/js_jquery300');
         $this->load->view('snips/js_materialize');

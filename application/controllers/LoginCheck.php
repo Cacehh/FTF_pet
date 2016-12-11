@@ -82,6 +82,7 @@ Class LoginCheck extends CI_Controller {
 		        $this->load->view('snips/css_materialize_icon');
 		        $this->load->view('+pages/admin/a_header');
 		        
+		        //Restrict for session handling
 		        $this->load->view('snips/a_restrict');
 		        $this->load->view('+pages/admin/dashboard');
 		        
