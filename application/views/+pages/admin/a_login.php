@@ -2,14 +2,42 @@
 <br>
 <br>
 <br>
+<?php
+    // if (isset($this->session->userdata['logged_in'])) {
+    //     header("location: http://localhost/login/index.php/user_authentication/user_login_process");
+    // }
+?>
+<?php
+if (isset($logout_message)) {
+    echo "<div class='message'>";
+    echo $logout_message;
+    echo "</div>";
+}
+?>
 <main>
-	<div class="valign-wrapper blue-grey lighten-5 z-depth-3">
+        <?php
+        if (isset($message_display)) {
+            echo "<div class='message center'>";
+            echo $message_display;
+            echo "</div>";
+        }
+        ?>
+    <div class="valign-wrapper blue-grey lighten-5 z-depth-3">
 		<div class="row">
             <div class="col s5">
 				<br>
 				<br>
                 <h5 class="">Login | Admin <b>Fins, Tails n Feathers</b></h5>
-                <form method="POST" action="<?php echo base_url();?>/index.php/Admin_ctr/dashboard">        
+                <!-- <form method="POST" action="<?php echo base_url();?>/index.php/Admin_ctr/dashboard">  -->
+                <?php echo form_open('LoginCheck/user_login_process'); ?>  
+                    <?php
+                        echo "<div class='error_msg'>";
+                        if (isset($error_message)) {
+                        echo $error_message;
+                        }
+                        echo validation_errors();
+                        echo "</div>";
+                    ?>     
                     <div class="row_1">
                         <div class="input-field col s12">
                             <i class="large material-icons prefix">account_circle</i>
@@ -24,7 +52,7 @@
                         </div>
                     </div>
 
-                    <button class="btn waves-effect waves-orange  orange darken-3 tooltipped indeterminate" data-position="bottom" data-delay="10" data-tooltip="Log In Now!" type="submit" name="action">
+                    <button class="btn waves-effect waves-orange  orange darken-3 tooltipped indeterminate" data-position="bottom" data-delay="10" data-tooltip="Log In" type="submit" name="action">
                         Log in
                     </button>
 
