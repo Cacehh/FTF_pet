@@ -9,12 +9,12 @@ class Admin_ctr extends CI_Controller {
         $this->load->view('snips/a_start', $data);
         $this->load->view('snips/css_materialize');
         $this->load->view('snips/css_materialize_icon');
-        
+
         $this->load->view('+pages/admin/a_login');
-		
-		$this->load->view('snips/js_jquery300');
+
+        $this->load->view('snips/js_jquery300');
         $this->load->view('snips/js_materialize');
-		$this->load->view('snips/z_end');
+        $this->load->view('snips/z_end');
     }   
 	
 	public function register()
@@ -188,7 +188,8 @@ class Admin_ctr extends CI_Controller {
         $this->load->view('snips/css_materialize_icon');
         $this->load->view('+pages/admin/a_header');
 
-        $this->load->view('+pages/admin/a_AddCustomer');
+        $this->load->view('+pages/admin/a_addCustomer');
+        $this->load->view('snips/a_start', $data);
         
         $this->load->view('snips/js_jquery300');
         $this->load->view('snips/js_materialize');

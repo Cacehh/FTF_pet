@@ -5,7 +5,7 @@ class Admin_ctr_POS extends CI_Controller {
 
 public function index() 
 {
-    $data['title'] = 'FTNF | Login';
+    $data['title'] = 'FTNF | POS';
     $this->load->view('snips/a_start', $data);
     $this->load->view('snips/css_materialize');
     $this->load->view('snips/css_materialize_icon');
@@ -20,7 +20,8 @@ public function index()
 	
 	public function history() 
     {
-        $this->load->view('snips/a_start');
+        $data['title'] = 'FTNF | History';
+        $this->load->view('snips/a_start', $data);
         $this->load->view('snips/css_materialize');
         $this->load->view('snips/css_materialize_icon');
         $this->load->view('+pages/admin/a_header');

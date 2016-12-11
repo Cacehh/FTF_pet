@@ -3,8 +3,25 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Admin_Product_ctr extends CI_Controller {
     
-    public function index() {
-        $this->load->view('snips/a_start');
+    public function index() 
+    {
+        $data['title'] = 'FTNF | Summary Page';
+        $this->load->view('snips/a_start', $data);
+        $this->load->view('snips/css_materialize');
+        $this->load->view('snips/css_materialize_icon');
+        $this->load->view('+pages/admin/a_header');
+        //Index Page for all existing pages
+        $this->load->view('+pages/admin/products');
+
+        $this->load->view('snips/js_jquery300');
+        $this->load->view('snips/js_materialize');
+        $this->load->view('snips/z_end');
+    }   
+
+    public function products() 
+    {
+        $data['title'] = 'FTNF | Products';
+        $this->load->view('snips/a_start', $data);
         $this->load->view('snips/css_materialize');
         $this->load->view('snips/css_materialize_icon');
         $this->load->view('+pages/admin/a_header');
@@ -16,8 +33,10 @@ class Admin_Product_ctr extends CI_Controller {
         $this->load->view('snips/z_end');
     }  
 	
-	public function pets() {
-        $this->load->view('snips/a_start');
+	public function pets() 
+    {
+        $data['title'] = 'FTNF | Pets';
+        $this->load->view('snips/a_start', $data);
         $this->load->view('snips/css_materialize');
         $this->load->view('snips/css_materialize_icon');
         $this->load->view('+pages/admin/a_header');
@@ -29,8 +48,10 @@ class Admin_Product_ctr extends CI_Controller {
 		$this->load->view('snips/z_end');
     }	
 	
-	public function add() {
-        $this->load->view('snips/a_start');
+	public function add() 
+    {
+        $data['title'] = 'FTNF | Add Products';
+        $this->load->view('snips/a_start', $data);
         $this->load->view('snips/css_materialize');
         $this->load->view('snips/css_materialize_icon');
         $this->load->view('+pages/admin/a_header');
@@ -42,8 +63,10 @@ class Admin_Product_ctr extends CI_Controller {
 		$this->load->view('snips/z_end');
 	}	
 	
-	public function type() {
-        $this->load->view('snips/a_start');
+	public function type() 
+    {
+        $data['title'] = 'FTNF | Product Type';
+        $this->load->view('snips/a_start', $data);
         $this->load->view('snips/css_materialize');
         $this->load->view('snips/css_materialize_icon');
         $this->load->view('+pages/admin/a_header');
@@ -55,8 +78,10 @@ class Admin_Product_ctr extends CI_Controller {
 		$this->load->view('snips/z_end');
 	}	
 	
-	public function supplier() {
-        $this->load->view('snips/a_start');
+	public function supplier() 
+    {
+        $data['title'] = 'FTNF | Suppliers';
+        $this->load->view('snips/a_start', $data);
         $this->load->view('snips/css_materialize');
         $this->load->view('snips/css_materialize_icon');
         $this->load->view('+pages/admin/a_header');
@@ -68,12 +93,14 @@ class Admin_Product_ctr extends CI_Controller {
 		$this->load->view('snips/z_end');
 	}	
 	
-	public function addSupplier() {
-        $this->load->view('snips/a_start');
+	public function addSupplier()
+    {
+        $data['title'] = 'FTNF | Add Suppliers';
+        $this->load->view('snips/a_start', $data);
         $this->load->view('snips/css_materialize');
         $this->load->view('snips/css_materialize_icon');
         $this->load->view('+pages/admin/a_header');
-//        Change the page
+        //Create and change the page
         $this->load->view('+pages/admin/product_suppliers');
 		
 		$this->load->view('snips/js_jquery300');
@@ -81,8 +108,10 @@ class Admin_Product_ctr extends CI_Controller {
 		$this->load->view('snips/z_end');
 	}	
 	
-	public function brands() {
-        $this->load->view('snips/a_start');
+	public function brands() 
+    {
+        $data['title'] = 'FTNF | Brands';
+        $this->load->view('snips/a_start', $data);
         $this->load->view('snips/css_materialize');
         $this->load->view('snips/css_materialize_icon');
         $this->load->view('+pages/admin/a_header');
@@ -94,12 +123,14 @@ class Admin_Product_ctr extends CI_Controller {
 		$this->load->view('snips/z_end');
 	}
 	
-	public function addBrands() {
-        $this->load->view('snips/a_start');
+	public function addBrands() 
+    {
+        $data['title'] = 'FTNF | Add Brands';
+        $this->load->view('snips/a_start', $data);
         $this->load->view('snips/css_materialize');
         $this->load->view('snips/css_materialize_icon');
         $this->load->view('+pages/admin/a_header');
-        //Change the page
+        //Create and change the page
         $this->load->view('+pages/admin/product_brand');
 		
 		$this->load->view('snips/js_jquery300');
@@ -107,12 +138,29 @@ class Admin_Product_ctr extends CI_Controller {
 		$this->load->view('snips/z_end');
 	}	
 
-	public function tags() {
-        $this->load->view('snips/a_start');
+    public function tags() 
+    {
+        $data['title'] = 'FTNF | Tags';
+        $this->load->view('snips/a_start', $data);
         $this->load->view('snips/css_materialize');
         $this->load->view('snips/css_materialize_icon');
         $this->load->view('+pages/admin/a_header');
 
+        $this->load->view('+pages/admin/product_tags');
+        
+        $this->load->view('snips/js_jquery300');
+        $this->load->view('snips/js_materialize');
+        $this->load->view('snips/z_end');
+    }	
+
+    public function addTags() 
+    {
+        $data['title'] = 'FTNF | Tags';
+        $this->load->view('snips/a_start', $data);
+        $this->load->view('snips/css_materialize');
+        $this->load->view('snips/css_materialize_icon');
+        $this->load->view('+pages/admin/a_header');
+        //Create and change page
 		$this->load->view('+pages/admin/product_tags');
 		
 		$this->load->view('snips/js_jquery300');
