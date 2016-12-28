@@ -1,7 +1,7 @@
 <?php
 
 
-Class LoginCheck extends CI_Controller {
+Class Login_ctr extends CI_Controller {
 
 	public function __construct() {
 		parent::__construct();
@@ -68,7 +68,7 @@ Class LoginCheck extends CI_Controller {
 	}
 
 	// Check for user login process
-	public function user_login_process() {
+	public function process() {
 
 		$this->form_validation->set_rules('username', 'Username', 'trim|required|xss_clean');
 		$this->form_validation->set_rules('password', 'Password', 'trim|required|xss_clean');
@@ -160,8 +160,10 @@ Class LoginCheck extends CI_Controller {
 		$sess_array = array(
 		'username' => ''
 		);
+		unset($_SESSION['username']);
 		$this->session->unset_userdata('logged_in', $sess_array);
-		$data['message_display'] = 'Successfully Logout';
+		$data['message_display'] = 'Successfully Logged out';
+
 		//Back to login page
         $data['title'] = 'FTNF | Login';
         $this->load->view('snips/a_start', $data);
