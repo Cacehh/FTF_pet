@@ -3,11 +3,6 @@
 <br>
 <br>
 <?php
-    // if (isset($this->session->userdata['logged_in'])) {
-    //     header("location: http://localhost/login/index.php/user_authentication/process");
-    // }
-?>
-<?php
 if (isset($logout_message)) {
     echo "<div class='message'>";
     echo $logout_message;
@@ -26,12 +21,12 @@ if (isset($logout_message)) {
         ?>
     <div class="blue-grey lighten-5 z-depth-3 ">
 		<div class="row ">
-            <div class="col 2 m2 s0"></div>
-            <div class="col 4 m4 s11">
+            <div class="col l2 m2 s0"></div>
+            <div class="col l4 m4 s11">
 				<br>
 				<br>
                 <h5 class="">Login | Admin <b>Fins, Tails n Feathers</b></h5>
-                <?php echo form_open('Login_ctr/process'); ?>  
+                <?php echo form_open('Access_ctr/process'); ?>  
                     <?php
                         echo "<div class='error_msg'>";
                         if (isset($error_message)) {
@@ -67,7 +62,7 @@ if (isset($logout_message)) {
                     </p>
                 </form>
             </div>
-            <div class="col 6 m6 s1"></div>
+            <div class="col l6 m6 s1"></div>
 		</div>
 	</div>
 </main> 
