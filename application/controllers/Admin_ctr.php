@@ -51,7 +51,8 @@ class Admin_ctr extends CI_Controller {
         $this->load->view('snips/css_materialize');
         $this->load->view('snips/css_materialize_icon');
         $this->load->view('+pages/admin/a_header');
-        
+
+        $this->load->view('snips/a_restrict');        
         $this->load->view('+pages/admin/dashboard');
         
         $this->load->view('snips/js_jquery300');
@@ -66,7 +67,8 @@ class Admin_ctr extends CI_Controller {
         $this->load->view('snips/css_materialize');
         $this->load->view('snips/css_materialize_icon');
         $this->load->view('+pages/admin/a_header');
-        
+
+        $this->load->view('snips/a_restrict');   
         $this->load->view('+pages/admin/accounts');
 		
 		$this->load->view('snips/js_jquery300');
@@ -81,7 +83,8 @@ class Admin_ctr extends CI_Controller {
         $this->load->view('snips/css_materialize');
         $this->load->view('snips/css_materialize_icon');
 		$this->load->view('+pages/admin/a_header');
-		
+
+        $this->load->view('snips/a_restrict');   
         $this->load->view('+pages/admin/report_sales');
 		
 		$this->load->view('snips/js_jquery300');
@@ -96,7 +99,8 @@ class Admin_ctr extends CI_Controller {
         $this->load->view('snips/css_materialize');
         $this->load->view('snips/css_materialize_icon');
 		$this->load->view('+pages/admin/a_header');
-		
+
+        $this->load->view('snips/a_restrict');   
         $this->load->view('+pages/admin/report_inventory');
 		
 		$this->load->view('snips/js_jquery300');
@@ -111,7 +115,8 @@ class Admin_ctr extends CI_Controller {
         $this->load->view('snips/css_materialize');
         $this->load->view('snips/css_materialize_icon');
         $this->load->view('+pages/admin/a_header');
-        
+
+        $this->load->view('snips/a_restrict');   
         $this->load->view('+pages/admin/report_payment');
         
         $this->load->view('snips/js_jquery300');
@@ -127,6 +132,7 @@ class Admin_ctr extends CI_Controller {
         $this->load->view('snips/css_materialize_icon');
         $this->load->view('+pages/admin/a_header');
 
+        $this->load->view('snips/a_restrict');   
         $this->load->view('+pages/admin/a_orders');
         
         $this->load->view('snips/js_jquery300');
@@ -142,6 +148,7 @@ class Admin_ctr extends CI_Controller {
         $this->load->view('snips/css_materialize_icon');
         $this->load->view('+pages/admin/a_header');
 
+        $this->load->view('snips/a_restrict');   
         $this->load->view('+pages/admin/a_getOrders');
         
         $this->load->view('snips/js_jquery300');
@@ -157,6 +164,7 @@ class Admin_ctr extends CI_Controller {
         $this->load->view('snips/css_materialize_icon');
         $this->load->view('+pages/admin/a_header');
 
+        $this->load->view('snips/a_restrict');   
         $this->load->view('+pages/admin/a_customer');
         
         $this->load->view('snips/js_jquery300');
@@ -172,6 +180,7 @@ class Admin_ctr extends CI_Controller {
         $this->load->view('snips/css_materialize_icon');
         $this->load->view('+pages/admin/a_header');
 
+        $this->load->view('snips/a_restrict');   
         $this->load->view('+pages/admin/a_customer_edit');
         
         $this->load->view('snips/js_jquery300');
@@ -202,7 +211,8 @@ class Admin_ctr extends CI_Controller {
         $this->load->view('snips/css_materialize');
         $this->load->view('snips/css_materialize_icon');
         $this->load->view('+pages/admin/a_header');
-
+        
+        $this->load->view('snips/a_restrict');   
         $this->load->view('+pages/admin/sales_ledger');
         
         $this->load->view('snips/js_jquery300');

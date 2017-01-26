@@ -1,7 +1,7 @@
 <?php
 
 
-Class LoginCheck extends CI_Controller {
+Class Access_ctr extends CI_Controller {
 
 	public function __construct() {
 		parent::__construct();
@@ -28,7 +28,7 @@ Class LoginCheck extends CI_Controller {
 	}
 
 	//Call register page
-	public function user_registration_show() {
+	public function user_registration() {
         $data['title'] = 'FTNF | Register';
         $this->load->view('snips/a_start', $data);
         $this->load->view('snips/css_materialize');
@@ -42,7 +42,7 @@ Class LoginCheck extends CI_Controller {
 	}
 
 	// Validate and store registration data in database
-	public function new_user_registration() {
+	public function user_registration_check() {
 
 		// Check validation for user input in SignUp form
 		$this->form_validation->set_rules('username', 'Username', 'trim|required|xss_clean');
@@ -68,7 +68,7 @@ Class LoginCheck extends CI_Controller {
 	}
 
 	// Check for user login process
-	public function user_login_process() {
+	public function process() {
 
 		$this->form_validation->set_rules('username', 'Username', 'trim|required|xss_clean');
 		$this->form_validation->set_rules('password', 'Password', 'trim|required|xss_clean');
@@ -155,13 +155,16 @@ Class LoginCheck extends CI_Controller {
 
 	// Logout from admin page
 	public function logout() {
-
+		$this->session->sess_destroy();
 		// Removing session data
 		$sess_array = array(
 		'username' => ''
 		);
+		unset($_SESSION['username']);
 		$this->session->unset_userdata('logged_in', $sess_array);
-		$data['message_display'] = 'Successfully Logout';
+		// $this->session->unset_userdata('logged_in');
+		$data['message_display'] = 'Successfully Logged out';
+
 		//Back to login page
         $data['title'] = 'FTNF | Login';
         $this->load->view('snips/a_start', $data);

@@ -31,7 +31,7 @@
 			<li><a href="#!" class="black-text">My Account</a></li>
 			<li><a href="#!" class="black-text">Edit Account</a></li>
 			<li class="divider" class="black-text"></li>
-			<li class="red accent-2"><a href="<?php echo base_url()?>index.php/LoginCheck/logout" class="black-text">Log out</a></li>
+			<li class="red accent-2"><a href="<?php echo base_url()?>index.php/Access_ctr/logout" class="black-text">Log out</a></li>
 		</ul>
 			<ul id="dropdown2" class="dropdown-content">
 			<li><a href="#!">Book Cover Design</a></li>
@@ -59,10 +59,11 @@
 								</ul>
 							</div>
 						</li>
-						<li class="bold"><a class="white-text collapsible-header  waves-effect waves-grey">Sell</a>
-							<div class="collapsible-body">
+						<li class="bold"><a class="white-text collapsible-header  waves-effect waves-grey">Web Register</a>
+						<!-- FIX HERE CODE111 -->
+							<div class="collapsible-body" >
 								<ul>
-								<li><a href="<?php echo base_url()?>index.php/Admin_ctr_POS">Sell</a></li>
+								<li><a href="<?php echo base_url()?>index.php/Admin_ctr_POS">Point Of Sales</a></li>
 								<li><a href="<?php echo base_url()?>index.php/Admin_ctr_POS/history">Sales History</a></li>
 								<li><a href="#">More...</a></li>
 								</ul>
