@@ -155,13 +155,14 @@ Class Access_ctr extends CI_Controller {
 
 	// Logout from admin page
 	public function logout() {
-
+		$this->session->sess_destroy();
 		// Removing session data
 		$sess_array = array(
 		'username' => ''
 		);
 		unset($_SESSION['username']);
 		$this->session->unset_userdata('logged_in', $sess_array);
+		// $this->session->unset_userdata('logged_in');
 		$data['message_display'] = 'Successfully Logged out';
 
 		//Back to login page

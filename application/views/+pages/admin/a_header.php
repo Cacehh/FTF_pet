@@ -59,10 +59,11 @@
 								</ul>
 							</div>
 						</li>
-						<li class="bold"><a class="white-text collapsible-header  waves-effect waves-grey">Sell</a>
-							<div class="collapsible-body">
+						<li class="bold"><a class="white-text collapsible-header  waves-effect waves-grey">Web Register</a>
+						<!-- FIX HERE CODE111 -->
+							<div class="collapsible-body" >
 								<ul>
-								<li><a href="<?php echo base_url()?>index.php/Admin_ctr_POS">Sell</a></li>
+								<li><a href="<?php echo base_url()?>index.php/Admin_ctr_POS">Point Of Sales</a></li>
 								<li><a href="<?php echo base_url()?>index.php/Admin_ctr_POS/history">Sales History</a></li>
 								<li><a href="#">More...</a></li>
 								</ul>
