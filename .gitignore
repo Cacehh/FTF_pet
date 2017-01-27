@@ -25,5 +25,6 @@ user_guide_src/cilexer/pycilexer.egg-info/*
 *.stTheme.cache
 *.sublime-workspace
 *.sublime-project
-public/CustomPet/*
+/public/CustomPet/*
 /public/media/CustomPets/*
+*.7z
