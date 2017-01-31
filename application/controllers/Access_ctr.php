@@ -73,8 +73,6 @@ Class Access_ctr extends CI_Controller {
 		$this->form_validation->set_rules('username', 'Username', 'trim|required|xss_clean');
 		$this->form_validation->set_rules('password', 'Password', 'trim|required|xss_clean');
 
-		print_r($this->session->all_userdata());
-
 		if ($this->form_validation->run() == FALSE) {
 			if(isset($this->session->userdata['logged_in'])){
 				//Load main Dashboard
@@ -179,8 +177,6 @@ Class Access_ctr extends CI_Controller {
         $this->load->view('snips/js_materialize');
         $this->load->view('snips/z_end');
 	}
-
-
 }
 
 ?>
