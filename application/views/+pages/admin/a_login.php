@@ -19,6 +19,9 @@ if (isset($logout_message)) {
             echo "</div>";
         }
         ?>
+    <?php if(isset($_SESSION)) {
+        echo $this->session->flashdata('flash_data');
+    } ?>
     <div class="blue-grey lighten-5 z-depth-3 ">
 		<div class="row ">
             <div class="col l2 m2 s0"></div>

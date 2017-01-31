@@ -2,7 +2,16 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Admin_ctr extends CI_Controller {
-    
+
+    function __construct() {
+        parent::__construct();
+
+        if(empty($this->session->userdata('id_user'))) {
+            $this->session->set_flashdata('flash_data', 'You don\'t have access!');
+            redirect('access_ctr_demo');
+        }
+    }
+
     public function index()
     {
         $data['title'] = 'FTNF | Login';
@@ -10,14 +19,22 @@ class Admin_ctr extends CI_Controller {
         $this->load->view('snips/css_materialize');
         $this->load->view('snips/css_materialize_icon');
 
-        $this->load->view('+pages/admin/a_login');
+        $this->load->view('+pages/admin/dashboard');
+        // $this->load->view('+pages/admin/a_login');
 
         $this->load->view('snips/js_jquery300');
         $this->load->view('snips/js_materialize');
         $this->load->view('snips/z_end');
+    }
+
+    public function logout() {
+        $data = ['id_user', 'username'];
+        $this->session->unset_userdata($data);
+
+        redirect('login');
     }   
-	
-	public function register()
+    
+    public function register()
     {
         $data['title'] = 'FTNF | Register';
         $this->load->view('snips/a_start', $data);
@@ -25,12 +42,12 @@ class Admin_ctr extends CI_Controller {
         $this->load->view('snips/css_materialize_icon');
         
         $this->load->view('+pages/admin/a_register');
-		
-		$this->load->view('snips/js_jquery300');
+        
+        $this->load->view('snips/js_jquery300');
         $this->load->view('snips/js_materialize');
-		$this->load->view('snips/z_end');
+        $this->load->view('snips/z_end');
     } 
-	public function forgotpassword()
+    public function forgotpassword()
     {
         $data['title'] = 'FTNF | Forgot Password';
         $this->load->view('snips/a_start', $data);
@@ -38,12 +55,12 @@ class Admin_ctr extends CI_Controller {
         $this->load->view('snips/css_materialize_icon');
         
         $this->load->view('+pages/admin/a_forgotpassword');
-		
-		$this->load->view('snips/js_jquery300');
+        
+        $this->load->view('snips/js_jquery300');
         $this->load->view('snips/js_materialize');
-		$this->load->view('snips/z_end');
+        $this->load->view('snips/z_end');
     }
-	
+    
     public function dashboard()
     {
         $data['title'] = 'FTNF | Dashboard';

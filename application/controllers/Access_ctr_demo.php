@@ -1,7 +1,7 @@
 <?php
+defined('BASEPATH') OR exit('No direct script access allowed');
 
-
-Class Access_ctr extends CI_Controller {
+Class Access_ctr_demo extends CI_Controller {
 
 	public function __construct() {
 		parent::__construct();
@@ -10,7 +10,9 @@ Class Access_ctr extends CI_Controller {
 		$this->load->library('form_validation');
 
 		// Load database
-		$this->load->model('login_database');
+        $this->load->model("login_model", "login");
+        if(!empty($_SESSION['id']))
+            redirect('Admin_ctr');
 	}
 
 	//Call login page
