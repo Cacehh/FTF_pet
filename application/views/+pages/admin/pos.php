@@ -6,6 +6,16 @@
 			<div class="row">
 				<div class="col s12">
 					<i class="material-icons prefix">search</i>
+
+					<script type="text/javascript">
+						$(document).ready(function() {
+							$('#username').autocomplete({
+								source: "<?php echo site_url('model_possearch/search/?'); ?>"
+							});
+						});
+
+					</script>
+
 					<input id="icon_prefix" type="text" class="validate">
 					<label for="icon_prefix">Search for Pets and Pruducts</label>
 				</div>

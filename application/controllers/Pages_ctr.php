@@ -169,4 +169,16 @@ class Pages_ctr extends CI_Controller {
 		$this->load->view('snips/js_defined');
 		$this->load->view('snips/z_end');
     }
+
+    public function search() {
+    	if(isset($_GET['term'])) {
+    		$result = $this->model_possearch->search(($_GET['term']);
+			if(count($result) > 0) {
+				foreach ($result as $searches)
+					$arr_result[] = $searches->user_name;
+				echo json_encode($arr_result);
+			}
+    	}
+		
+	}
 }
