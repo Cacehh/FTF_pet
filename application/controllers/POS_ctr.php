@@ -38,9 +38,9 @@ class POS_ctr extends CI_Controller {
         
         $this->load->view('+pages/admin/products');
 		
-		$this->load->view('snips/js_jquery300');
+	$this->load->view('snips/js_jquery300');
         $this->load->view('snips/js_materialize');
-		$this->load->view('snips/z_end');
+	$this->load->view('snips/z_end');
 	}	
     
     public function pets()
@@ -66,9 +66,9 @@ class POS_ctr extends CI_Controller {
         
         $this->load->view('+pages/admin/product_type');
 		
-		$this->load->view('snips/js_jquery300');
+	$this->load->view('snips/js_jquery300');
         $this->load->view('snips/js_materialize');
-		$this->load->view('snips/z_end');
+	$this->load->view('snips/z_end');
 	}	
 	
 	public function supplier() {
@@ -103,11 +103,11 @@ class POS_ctr extends CI_Controller {
         $this->load->view('snips/css_materialize_icon');
         $this->load->view('+pages/admin/a_POS_header');
 
-		$this->load->view('+pages/admin/product_brand');
+	$this->load->view('+pages/admin/product_brand');
 		
-		$this->load->view('snips/js_jquery300');
+	$this->load->view('snips/js_jquery300');
         $this->load->view('snips/js_materialize');
-		$this->load->view('snips/z_end');
+	$this->load->view('snips/z_end');
 	}
 	
 	// public function addBrands() {
@@ -168,11 +168,11 @@ class POS_ctr extends CI_Controller {
         $this->load->view('snips/css_materialize_icon');
         $this->load->view('+pages/admin/a_POS_header');
 
-		$this->load->view('+pages/admin/a_customer_edit');
+	$this->load->view('+pages/admin/a_customer_edit');
 		
-		$this->load->view('snips/js_jquery300');
+	$this->load->view('snips/js_jquery300');
         $this->load->view('snips/js_materialize');
-		$this->load->view('snips/z_end');
+	$this->load->view('snips/z_end');
 	}
     
     public function customerAdd() {
@@ -181,8 +181,8 @@ class POS_ctr extends CI_Controller {
         $this->load->view('snips/css_materialize_icon');
         $this->load->view('+pages/admin/a_POS_header');
 
-        $this->load->view('+pages/admin/a_addCustomer
-        $this->load->view('snips/a_start', $data);');
+        $this->load->view('+pages/admin/a_addCustomer');
+        $this->load->view('snips/a_start', $data);
         
         $this->load->view('snips/js_jquery300');
         $this->load->view('snips/js_materialize');
