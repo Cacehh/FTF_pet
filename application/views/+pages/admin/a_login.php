@@ -2,31 +2,31 @@
 <br>
 <br>
 <br>
-<?php
-if (isset($logout_message)) {
-    echo "<div class='message'>";
-    echo $logout_message;
-    echo "</div>";
-}
-?>
 <main>
         <?php
-        if (isset($message_display)) {
+        // if (isset($message_display)) {
+        //     echo "<div class='message center red-text'>";
+        //     echo "<h4>";
+        //     echo $message_display;
+        //     echo "</h4>";
+        //     echo "</div>";
+        // }
+        ?>
+        <?php if(isset($_SESSION)) {
             echo "<div class='message center red-text'>";
             echo "<h4>";
-            echo $message_display;
+            echo $this->session->flashdata('flash_data');
             echo "</h4>";
             echo "</div>";
-        }
-        ?>
+        } ?>   
     <div class="blue-grey lighten-5 z-depth-3 ">
 		<div class="row ">
             <div class="col l2 m2 s0"></div>
             <div class="col l4 m4 s11">
 				<br>
 				<br>
-                <h5 class="">Login | Admin <b>Fins, Tails n Feathers</b></h5>
-                <?php echo form_open('Access_ctr/process'); ?>  
+                <h5>Login | Admin <b class="blue-text">Fins, Tails n Feathers</b></h5>
+                <?php echo form_open('Access_ctr'); ?>  
                     <?php
                         echo "<div class='error_msg'>";
                         if (isset($error_message)) {
@@ -46,7 +46,7 @@ if (isset($logout_message)) {
                     <div class="row">
                         <div class="input-field">   
                             <i class=" material-icons prefix ">https</i>
-                            <input id="password" type="password" class="validate" maxlength="45" name="password">
+                            <input id="password" type="password" class="validate" maxlength="45" name="user_password">
                             <label for="password">Password</label>
                         </div>
                     </div>

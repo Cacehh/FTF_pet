@@ -3,8 +3,42 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Admin_ctr extends CI_Controller {
     
+    function __construct() {
+        parent::__construct();
+
+        if(empty($this->session->userdata('id'))) {
+            $this->session->set_flashdata('flash_data', 'Please login First');
+            redirect('Access_ctr');
+        }
+    }
+
     public function index()
     {
+        // $userdata = array(
+        //     'username' => 'HardCodeCayce'
+        //     );
+        // $this->session->set_userdata($userdata);
+        print_r($this->session->all_userdata());
+        $data['title'] = 'FTNF | Dashboard'; 
+        $this->load->view('snips/a_start', $data);
+        $this->load->view('snips/css_materialize');
+        $this->load->view('snips/css_materialize_icon');
+        $this->load->view('+pages/admin/a_header');
+
+        $this->load->view('+pages/admin/dashboard');
+
+        $this->load->view('snips/js_jquery300');
+        $this->load->view('snips/js_materialize');
+        $this->load->view('snips/z_end');
+    }   
+
+    public function logout() {
+        $data = ['id', 'username'];
+        $this->session->unset_userdata($data);
+        $data['message_display'] = 'Successfully Logged out';
+        $this->session->set_flashdata('flash_data','You have successfully logged out');
+        
+        //Back to login page
         $data['title'] = 'FTNF | Login';
         $this->load->view('snips/a_start', $data);
         $this->load->view('snips/css_materialize');
@@ -15,7 +49,7 @@ class Admin_ctr extends CI_Controller {
         $this->load->view('snips/js_jquery300');
         $this->load->view('snips/js_materialize');
         $this->load->view('snips/z_end');
-    }   
+    }    
 	
 	public function register()
     {
