@@ -24,9 +24,17 @@ class Login_model extends CI_Model
         // $this->db->where($user_array);
     }    
 
-    // public function detect_user($data) {
-    //     $this->db->select('acct_type',$data['acct_type']);
-    // }
+    public function detect_user() {
+        // $result = $this->db->select('acct_type',$data['acct_type']);
+        // return $acct_type;
+
+        // $this->db->select('*');
+        // $this->db->from('users');
+        // $this->db->where('username', $dataa);
+        // $this->db->where('acct_type', $dataa);
+        // $query = $this->db->get();
+        // return $query;
+    }
 
     function __destruct() {
         $this->db->close();

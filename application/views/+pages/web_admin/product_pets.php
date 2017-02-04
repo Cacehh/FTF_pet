@@ -13,7 +13,7 @@
 		</div>
 		<div class="row">
 			<div class="col S12 ">
-				<a href="<?php echo base_url()?>index.php/Web_Admin_ctr/addPets" class="waves-effect waves-light btn right">Add Pet</a>
+				<a href="<?php echo base_url()?>index.php/Web_Admin_ctr/addPets" class="waves-effect waves-light btn right">Update</a>
 			</div>
 		</div>
 		<div class="row">
@@ -45,8 +45,8 @@
 
 				<tbody>
 					<tr>
-					<td>Siberian Husky</td>
 					<td>Dog</td>
+					<td>Siberian Husky</td>
 					<td>Male</td>
 					<td>Siberian Husky with blue eyes</td>
 					<td>&#8369; 10,000</td>
