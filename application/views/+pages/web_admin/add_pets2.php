@@ -24,14 +24,14 @@
 			<div class="col s6">
 				<div class="input-field">
 				<label>File Name</label><br><br>
-					<form action="upload.php" method="post" enctype="multipart/form-data">
+					<form action="Pet_Upload/do_upload" method="post" enctype="multipart/form-data">
     					<input type="file" name="fileToUpload" id="fileToUpload">
+    					<input type="submit" class="waves-effect waves-light btn right" value="upload">
 					</form>		
 				</div>		
 			</div>
 			<div class="col s6">	
 			</div>
-			<a class="waves-effect waves-light btn right" type="submit" name="submit">Upload</a>
 		</div>
 	</div>
 </main>

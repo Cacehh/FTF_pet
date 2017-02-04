@@ -22,7 +22,7 @@
 			<div class="col s6">
 				<div class="input-field">
 				<label>File Name</label><br><br>
-					<form action="upload.php" method="post" enctype="multipart/form-data">
+					<form action="Product_Upload.php" method="post" enctype="multipart/form-data">
     					<input type="file" name="fileToUpload" id="fileToUpload">
 					</form>		
 				</div>		
