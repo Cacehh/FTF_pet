@@ -8,12 +8,12 @@
 		</div>
 		<div class="row grey lighten-1">
 			<div class="offset-s1 col s11">
-				<p class="flow-text">View pets that would be displayed in the website</p>
+				<p class="flow-text">View products that would be displayed in the website</p>
 			</div>
 		</div>
 		<div class="row">
 			<div class="col S12 ">
-				<a href="<?php echo base_url()?>index.php/Web_Admin_ctr/addPets" class="waves-effect waves-light btn right">Add Product</a>
+				<a href="<?php echo base_url()?>index.php/Web_Admin_ctr/addPets" class="waves-effect waves-light btn right">Update</a>
 			</div>
 		</div>
 		<div class="row">

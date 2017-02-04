@@ -8,7 +8,7 @@
 		</div>
 		<div class="row grey lighten-1">
 			<div class="offset-s1 col s11">
-				<p class="flow-text">Add new pets in the database</p>
+				<p class="flow-text">Update the Pets Database</p>
 			</div>
 		</div>
 		<br>

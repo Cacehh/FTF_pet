@@ -5,7 +5,8 @@ class Web_Admin_ctr extends CI_Controller {
     
     public function index()
     {
-        $this->load->view('snips/a_start');
+        $data['title'] = 'FTNF | Web Admin';
+        $this->load->view('snips/a_start' , $data);
         $this->load->view('snips/css_materialize');
         $this->load->view('snips/css_materialize_icon');
         
@@ -18,7 +19,8 @@ class Web_Admin_ctr extends CI_Controller {
 	
 	public function register()
     {
-        $this->load->view('snips/a_start');
+        $data['title'] = 'FTNF | Register';
+        $this->load->view('snips/a_start' , $data);
         $this->load->view('snips/css_materialize');
         $this->load->view('snips/css_materialize_icon');
         
@@ -30,7 +32,8 @@ class Web_Admin_ctr extends CI_Controller {
     } 
 	public function forgotpassword()
     {
-        $this->load->view('snips/a_start');
+        $data['title'] = 'FTNF | Web Admin';
+        $this->load->view('snips/a_start' , $data);
         $this->load->view('snips/css_materialize');
         $this->load->view('snips/css_materialize_icon');
         
@@ -43,7 +46,8 @@ class Web_Admin_ctr extends CI_Controller {
 	
 	public function dashboard()
     {
-        $this->load->view('snips/a_start');
+        $data['title'] = 'FTNF | Web Admin';
+        $this->load->view('snips/a_start' , $data);
         $this->load->view('snips/css_materialize');
         $this->load->view('snips/css_materialize_icon');
 		$this->load->view('+pages/web_admin/a_header');
@@ -57,7 +61,8 @@ class Web_Admin_ctr extends CI_Controller {
 
     public function products()
     {
-        $this->load->view('snips/a_start');
+        $data['title'] = 'FTNF | Products';
+        $this->load->view('snips/a_start' , $data);
         $this->load->view('snips/css_materialize');
         $this->load->view('snips/css_materialize_icon');
         $this->load->view('+pages/web_admin/a_header');
@@ -71,12 +76,13 @@ class Web_Admin_ctr extends CI_Controller {
 
     public function addProducts()
     {
-        $this->load->view('snips/a_start');
+        $data['title'] = 'FTNF | Products';
+        $this->load->view('snips/a_start' , $data);
         $this->load->view('snips/css_materialize');
         $this->load->view('snips/css_materialize_icon');
         $this->load->view('+pages/web_admin/a_header');
         
-        $this->load->view('+pages/web_admin/add_products');
+        $this->load->view('+pages/web_admin/add_products2');
         
         $this->load->view('snips/js_jquery300');
         $this->load->view('snips/js_materialize');
@@ -85,7 +91,8 @@ class Web_Admin_ctr extends CI_Controller {
     
     public function pets()
     {
-        $this->load->view('snips/a_start');
+        $data['title'] = 'FTNF | Pets';
+        $this->load->view('snips/a_start' , $data);
         $this->load->view('snips/css_materialize');
         $this->load->view('snips/css_materialize_icon');
         $this->load->view('+pages/web_admin/a_header');
@@ -98,12 +105,13 @@ class Web_Admin_ctr extends CI_Controller {
     }   
     
     public function addPets() {
-        $this->load->view('snips/a_start');
+        $data['title'] = 'FTNF | Pets';
+        $this->load->view('snips/a_start' , $data);
         $this->load->view('snips/css_materialize');
         $this->load->view('snips/css_materialize_icon');
         $this->load->view('+pages/web_admin/a_header');
         
-        $this->load->view('+pages/web_admin/add_pets');
+        $this->load->view('+pages/web_admin/add_pets2');
         
         $this->load->view('snips/js_jquery300');
         $this->load->view('snips/js_materialize');
