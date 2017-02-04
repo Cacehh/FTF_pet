@@ -5,7 +5,6 @@
 		<div class="input-field col s7">
 			<div class="row">
 				<div class="col s12">
-					<i class="material-icons prefix">search</i>
 
 					<script type="text/javascript">
 						$(document).ready(function() {
@@ -23,6 +22,7 @@
             
 	                <div class="form-group">
 	                    <div class="col-md-6">
+							<i class="material-icons prefix">search</i>
 	                        <input class="form-control" id="icon_prefix" name="prod_name" type="text" value="<?php echo set_value('prod_name'); ?>" />
 							<label for="icon_prefix">Search for Pets and Products</label>
 							<!-- <input id="icon_prefix" type="text" class="validate"> -->
@@ -42,7 +42,8 @@
 			</div>
 
 			<div class="row">
-				<table class="table table-striped table-hover">
+				<table class="bordered centered highlight">
+				<!-- <table class="bordered stripped centered responsive-table"> -->
 	                <thead>
 	                    <tr>
 	                    <th>#</th>

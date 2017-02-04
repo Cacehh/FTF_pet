@@ -27,9 +27,8 @@ class POS_ctr extends CI_Controller {
         // getting the product list
         $data['prodlist'] = $this->prod_model->get_product($config["per_page"], $data['page'], NULL);
 
-        $this->load->view('snips/a_start');
 
-        $data['title'] = 'FTNF | ';
+        $data['title'] = 'FTNF | Web Register';
         $this->load->view('snips/a_start', $data);
         $this->load->view('snips/css_materialize');
         $this->load->view('snips/css_materialize_icon');
@@ -61,7 +60,8 @@ class POS_ctr extends CI_Controller {
         $data['prodlist'] = $this->prod_model->get_product($config['per_page'], $data['page'], $search);
 
         // loading of the view
-        $this->load->view('snips/a_start');
+        $data['title'] = 'FTNF | Web Register'; 
+        $this->load->view('snips/a_start', $data);
         $this->load->view('snips/css_materialize');
         $this->load->view('snips/css_materialize_icon');
         $this->load->view('+pages/admin/a_POS_header');
