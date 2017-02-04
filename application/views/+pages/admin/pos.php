@@ -66,7 +66,7 @@
 	                        <td><?php echo $prodlist[$i]->Quantity; ?></td>
 	                        <td><?php echo $prodlist[$i]->Amount; ?></td>
 	                        <td><?php echo $prodlist[$i]->Timestamp; ?></td>
-	                        <td><button>Add Item</button></td>
+	                        <td><a class="waves-effect waves-light btn">Add Item</a></td>
 	                    </tr>
 	                    <?php } ?>
 	                </tbody>
