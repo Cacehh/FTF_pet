@@ -13,7 +13,7 @@ class POS_ctr extends CI_Controller {
     
     public function index()
     {
-<<<<<<< HEAD
+
         //autoload configuration
         $config['base_url'] = site_url('POS_ctr/index');
         $config['total_rows'] = $this->db->count_all('product');
@@ -28,10 +28,9 @@ class POS_ctr extends CI_Controller {
         $data['prodlist'] = $this->prod_model->get_product($config["per_page"], $data['page'], NULL);
 
         $this->load->view('snips/a_start');
-=======
+
         $data['title'] = 'FTNF | ';
         $this->load->view('snips/a_start', $data);
->>>>>>> 3134c638c831e944d96b42acf3e95fcae4d68a31
         $this->load->view('snips/css_materialize');
         $this->load->view('snips/css_materialize_icon');
         $this->load->view('+pages/admin/a_POS_header');
@@ -148,7 +147,7 @@ class POS_ctr extends CI_Controller {
 	
 // 	public function addSupplier() {
 //         $data['title'] = 'FTNF | ';
-        $this->load->view('snips/a_start', $data);
+        // $this->load->view('snips/a_start', $data);
 //         $this->load->view('snips/css_materialize');
 //         $this->load->view('snips/css_materialize_icon');
 //         $this->load->view('+pages/admin/a_POS_header');
@@ -176,7 +175,7 @@ class POS_ctr extends CI_Controller {
 	
 	// public function addBrands() {
  //        $data['title'] = 'FTNF | ';
-        $this->load->view('snips/a_start', $data);
+        // $this->load->view('snips/a_start', $data);
  //        $this->load->view('snips/css_materialize');
  //        $this->load->view('snips/css_materialize_icon');
  //        $this->load->view('+pages/admin/a_POS_header');
