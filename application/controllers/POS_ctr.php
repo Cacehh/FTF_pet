@@ -215,5 +215,10 @@ class POS_ctr extends CI_Controller {
         $this->load->view('snips/js_jquery300');
         $this->load->view('snips/js_materialize');
         $this->load->view('snips/z_end');
-    }    
+    } 
+
+    //function for discount operation for the POS.
+    public function discount(){
+
+    }   
 }

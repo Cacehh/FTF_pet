@@ -5,8 +5,13 @@ class Web_Admin_ctr extends CI_Controller {
     
     public function index()
     {
+<<<<<<< HEAD
         $data['title'] = 'FTNF | Login';
         $this->load->view('snips/a_start', $data);
+=======
+        $data['title'] = 'FTNF | Web Admin';
+        $this->load->view('snips/a_start' , $data);
+>>>>>>> c5b630fc878c93e5d7f0a5d350cba6d9fb2e93c1
         $this->load->view('snips/css_materialize');
         $this->load->view('snips/css_materialize_icon');
         
@@ -20,7 +25,11 @@ class Web_Admin_ctr extends CI_Controller {
 	public function register()
     {
         $data['title'] = 'FTNF | Register';
+<<<<<<< HEAD
         $this->load->view('snips/a_start', $data);
+=======
+        $this->load->view('snips/a_start' , $data);
+>>>>>>> c5b630fc878c93e5d7f0a5d350cba6d9fb2e93c1
         $this->load->view('snips/css_materialize');
         $this->load->view('snips/css_materialize_icon');
         
@@ -32,8 +41,13 @@ class Web_Admin_ctr extends CI_Controller {
     } 
 	public function forgotpassword()
     {
+<<<<<<< HEAD
         $data['title'] = 'FTNF | Password';
         $this->load->view('snips/a_start', $data);
+=======
+        $data['title'] = 'FTNF | Web Admin';
+        $this->load->view('snips/a_start' , $data);
+>>>>>>> c5b630fc878c93e5d7f0a5d350cba6d9fb2e93c1
         $this->load->view('snips/css_materialize');
         $this->load->view('snips/css_materialize_icon');
         
@@ -46,8 +60,13 @@ class Web_Admin_ctr extends CI_Controller {
 	
 	public function dashboard()
     {
+<<<<<<< HEAD
         $data['title'] = 'FTNF | Dashboard';
         $this->load->view('snips/a_start', $data);
+=======
+        $data['title'] = 'FTNF | Web Admin';
+        $this->load->view('snips/a_start' , $data);
+>>>>>>> c5b630fc878c93e5d7f0a5d350cba6d9fb2e93c1
         $this->load->view('snips/css_materialize');
         $this->load->view('snips/css_materialize_icon');
 		$this->load->view('+pages/web_admin/a_header');
@@ -62,7 +81,11 @@ class Web_Admin_ctr extends CI_Controller {
     public function products()
     {
         $data['title'] = 'FTNF | Products';
+<<<<<<< HEAD
         $this->load->view('snips/a_start', $data);
+=======
+        $this->load->view('snips/a_start' , $data);
+>>>>>>> c5b630fc878c93e5d7f0a5d350cba6d9fb2e93c1
         $this->load->view('snips/css_materialize');
         $this->load->view('snips/css_materialize_icon');
         $this->load->view('+pages/web_admin/a_header');
@@ -76,13 +99,18 @@ class Web_Admin_ctr extends CI_Controller {
 
     public function addProducts()
     {
+<<<<<<< HEAD
         $data['title'] = 'FTNF | Add Products';
         $this->load->view('snips/a_start', $data);
+=======
+        $data['title'] = 'FTNF | Products';
+        $this->load->view('snips/a_start' , $data);
+>>>>>>> c5b630fc878c93e5d7f0a5d350cba6d9fb2e93c1
         $this->load->view('snips/css_materialize');
         $this->load->view('snips/css_materialize_icon');
         $this->load->view('+pages/web_admin/a_header');
         
-        $this->load->view('+pages/web_admin/add_products');
+        $this->load->view('+pages/web_admin/add_products2');
         
         $this->load->view('snips/js_jquery300');
         $this->load->view('snips/js_materialize');
@@ -92,7 +120,11 @@ class Web_Admin_ctr extends CI_Controller {
     public function pets()
     {
         $data['title'] = 'FTNF | Pets';
+<<<<<<< HEAD
         $this->load->view('snips/a_start', $data);
+=======
+        $this->load->view('snips/a_start' , $data);
+>>>>>>> c5b630fc878c93e5d7f0a5d350cba6d9fb2e93c1
         $this->load->view('snips/css_materialize');
         $this->load->view('snips/css_materialize_icon');
         $this->load->view('+pages/web_admin/a_header');
@@ -105,13 +137,18 @@ class Web_Admin_ctr extends CI_Controller {
     }   
     
     public function addPets() {
+<<<<<<< HEAD
         $data['title'] = 'FTNF | Add Pets';
         $this->load->view('snips/a_start', $data);
+=======
+        $data['title'] = 'FTNF | Pets';
+        $this->load->view('snips/a_start' , $data);
+>>>>>>> c5b630fc878c93e5d7f0a5d350cba6d9fb2e93c1
         $this->load->view('snips/css_materialize');
         $this->load->view('snips/css_materialize_icon');
         $this->load->view('+pages/web_admin/a_header');
         
-        $this->load->view('+pages/web_admin/add_pets');
+        $this->load->view('+pages/web_admin/add_pets2');
         
         $this->load->view('snips/js_jquery300');
         $this->load->view('snips/js_materialize');
