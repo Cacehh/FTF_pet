@@ -37,7 +37,7 @@ class Admin_ctr extends CI_Controller {
         $this->session->unset_userdata($data);
         $data['message_display'] = 'Successfully Logged out';
         $this->session->set_flashdata('flash_data','You have successfully logged out');
-        
+
         //Back to login page
         $data['title'] = 'FTNF | Login';
         $this->load->view('snips/a_start', $data);

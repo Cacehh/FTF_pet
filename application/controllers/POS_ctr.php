@@ -5,7 +5,8 @@ class POS_ctr extends CI_Controller {
     
     public function index()
     {
-        $this->load->view('snips/a_start');
+        $data['title'] = 'FTNF | ';
+        $this->load->view('snips/a_start', $data);
         $this->load->view('snips/css_materialize');
         $this->load->view('snips/css_materialize_icon');
         $this->load->view('+pages/admin/a_POS_header');
@@ -18,7 +19,8 @@ class POS_ctr extends CI_Controller {
     }  
 
     public function history() {
-        $this->load->view('snips/a_start');
+        $data['title'] = 'FTNF | ';
+        $this->load->view('snips/a_start', $data);
         $this->load->view('snips/css_materialize');
         $this->load->view('snips/css_materialize_icon');
         $this->load->view('+pages/admin/a_POS_header');
@@ -31,7 +33,8 @@ class POS_ctr extends CI_Controller {
     }	
 
     public function products() {
-        $this->load->view('snips/a_start');
+        $data['title'] = 'FTNF | ';
+        $this->load->view('snips/a_start', $data);
         $this->load->view('snips/css_materialize');
         $this->load->view('snips/css_materialize_icon');
         $this->load->view('+pages/admin/a_POS_header');
@@ -45,7 +48,8 @@ class POS_ctr extends CI_Controller {
     
     public function pets()
     {
-        $this->load->view('snips/a_start');
+        $data['title'] = 'FTNF | ';
+        $this->load->view('snips/a_start', $data);
         $this->load->view('snips/css_materialize');
         $this->load->view('snips/css_materialize_icon');
         $this->load->view('+pages/admin/a_POS_header');
@@ -59,7 +63,8 @@ class POS_ctr extends CI_Controller {
     
 	
 	public function type() {
-        $this->load->view('snips/a_start');
+        $data['title'] = 'FTNF | ';
+        $this->load->view('snips/a_start', $data);
         $this->load->view('snips/css_materialize');
         $this->load->view('snips/css_materialize_icon');
         $this->load->view('+pages/admin/a_POS_header');
@@ -72,7 +77,8 @@ class POS_ctr extends CI_Controller {
 	}	
 	
 	public function supplier() {
-        $this->load->view('snips/a_start');
+        $data['title'] = 'FTNF | ';
+        $this->load->view('snips/a_start', $data);
         $this->load->view('snips/css_materialize');
         $this->load->view('snips/css_materialize_icon');
         $this->load->view('+pages/admin/a_POS_header');
@@ -85,7 +91,8 @@ class POS_ctr extends CI_Controller {
 	}	
 	
 // 	public function addSupplier() {
-//         $this->load->view('snips/a_start');
+//         $data['title'] = 'FTNF | ';
+        $this->load->view('snips/a_start', $data);
 //         $this->load->view('snips/css_materialize');
 //         $this->load->view('snips/css_materialize_icon');
 //         $this->load->view('+pages/admin/a_POS_header');
@@ -98,7 +105,8 @@ class POS_ctr extends CI_Controller {
 // 	}	
 	
 	public function brands() {
-        $this->load->view('snips/a_start');
+        $data['title'] = 'FTNF | ';
+        $this->load->view('snips/a_start', $data);
         $this->load->view('snips/css_materialize');
         $this->load->view('snips/css_materialize_icon');
         $this->load->view('+pages/admin/a_POS_header');
@@ -111,7 +119,8 @@ class POS_ctr extends CI_Controller {
 	}
 	
 	// public function addBrands() {
- //        $this->load->view('snips/a_start');
+ //        $data['title'] = 'FTNF | ';
+        $this->load->view('snips/a_start', $data);
  //        $this->load->view('snips/css_materialize');
  //        $this->load->view('snips/css_materialize_icon');
  //        $this->load->view('+pages/admin/a_POS_header');
@@ -124,7 +133,8 @@ class POS_ctr extends CI_Controller {
 	// }	
 
     public function tags() {
-        $this->load->view('snips/a_start');
+        $data['title'] = 'FTNF | ';
+        $this->load->view('snips/a_start', $data);
         $this->load->view('snips/css_materialize');
         $this->load->view('snips/css_materialize_icon');
         $this->load->view('+pages/admin/a_POS_header');
@@ -137,7 +147,8 @@ class POS_ctr extends CI_Controller {
     }	
 
     public function getOrder() {
-        $this->load->view('snips/a_start');
+        $data['title'] = 'FTNF | ';
+        $this->load->view('snips/a_start', $data);
         $this->load->view('snips/css_materialize');
         $this->load->view('snips/css_materialize_icon');
         $this->load->view('+pages/admin/a_POS_header');
@@ -150,7 +161,8 @@ class POS_ctr extends CI_Controller {
     }  
 
     public function customers() {
-        $this->load->view('snips/a_start');
+        $data['title'] = 'FTNF | ';
+        $this->load->view('snips/a_start', $data);
         $this->load->view('snips/css_materialize');
         $this->load->view('snips/css_materialize_icon');
         $this->load->view('+pages/admin/a_POS_header');
@@ -163,7 +175,8 @@ class POS_ctr extends CI_Controller {
     }   
 
     public function customerEdit() {
-        $this->load->view('snips/a_start');
+        $data['title'] = 'FTNF | ';
+        $this->load->view('snips/a_start', $data);
         $this->load->view('snips/css_materialize');
         $this->load->view('snips/css_materialize_icon');
         $this->load->view('+pages/admin/a_POS_header');
@@ -176,7 +189,8 @@ class POS_ctr extends CI_Controller {
 	}
     
     public function customerAdd() {
-        $this->load->view('snips/a_start');
+        $data['title'] = 'FTNF | ';
+        $this->load->view('snips/a_start', $data);
         $this->load->view('snips/css_materialize');
         $this->load->view('snips/css_materialize_icon');
         $this->load->view('+pages/admin/a_POS_header');
@@ -190,7 +204,8 @@ class POS_ctr extends CI_Controller {
     }      
     
     public function orders() {
-        $this->load->view('snips/a_start');
+        $data['title'] = 'FTNF | ';
+        $this->load->view('snips/a_start', $data);
         $this->load->view('snips/css_materialize');
         $this->load->view('snips/css_materialize_icon');
         $this->load->view('+pages/admin/a_POS_header');

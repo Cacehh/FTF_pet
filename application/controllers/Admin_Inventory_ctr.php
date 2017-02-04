@@ -4,7 +4,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class Admin_Inventory_ctr extends CI_Controller {
     
     public function index() {
-        $this->load->view('snips/a_start');
+        $data['title'] = 'FTNF | ';
+        $this->load->view('snips/a_start', $data);
         $this->load->view('snips/css_materialize');
         $this->load->view('snips/css_materialize_icon');
         $this->load->view('+pages/admin_inventory/a_headerInventory');
@@ -17,7 +18,8 @@ class Admin_Inventory_ctr extends CI_Controller {
     }  
 	
     public function invPet() {
-        $this->load->view('snips/a_start');
+        $data['title'] = 'FTNF | ';
+        $this->load->view('snips/a_start', $data);
         $this->load->view('snips/css_materialize');
         $this->load->view('snips/css_materialize_icon');
         $this->load->view('+pages/admin_inventory/a_headerInventory');
@@ -30,7 +32,8 @@ class Admin_Inventory_ctr extends CI_Controller {
     }	
 
     public function invProduct() {
-        $this->load->view('snips/a_start');
+        $data['title'] = 'FTNF | ';
+        $this->load->view('snips/a_start', $data);
         $this->load->view('snips/css_materialize');
         $this->load->view('snips/css_materialize_icon');
         $this->load->view('+pages/admin_inventory/a_headerInventory');
@@ -43,7 +46,8 @@ class Admin_Inventory_ctr extends CI_Controller {
     }	
 	
     public function addPet() {
-        $this->load->view('snips/a_start');
+        $data['title'] = 'FTNF | ';
+        $this->load->view('snips/a_start', $data);
         $this->load->view('snips/css_materialize');
         $this->load->view('snips/css_materialize_icon');
         $this->load->view('+pages/admin_inventory/a_headerInventory');
@@ -56,7 +60,8 @@ class Admin_Inventory_ctr extends CI_Controller {
     }	
 
     public function addProduct() {
-        $this->load->view('snips/a_start');
+        $data['title'] = 'FTNF | ';
+        $this->load->view('snips/a_start', $data);
         $this->load->view('snips/css_materialize');
         $this->load->view('snips/css_materialize_icon');
         $this->load->view('+pages/admin_inventory/a_headerInventory');
@@ -69,7 +74,8 @@ class Admin_Inventory_ctr extends CI_Controller {
     }   
 
     public function invEditPet() {
-        $this->load->view('snips/a_start');
+        $data['title'] = 'FTNF | ';
+        $this->load->view('snips/a_start', $data);
         $this->load->view('snips/css_materialize');
         $this->load->view('snips/css_materialize_icon');
         $this->load->view('+pages/admin_inventory/a_headerInventory');
@@ -82,7 +88,8 @@ class Admin_Inventory_ctr extends CI_Controller {
     }   
     
     public function invEditProd() {
-        $this->load->view('snips/a_start');
+        $data['title'] = 'FTNF | ';
+        $this->load->view('snips/a_start', $data);
         $this->load->view('snips/css_materialize');
         $this->load->view('snips/css_materialize_icon');
         $this->load->view('+pages/admin_inventory/a_headerInventory');

@@ -23,13 +23,24 @@ Class Access_ctr extends CI_Controller {
             if(!empty($result)) {
                 $data = [
                     'id' => $result->id,
-                    'username' => $result->username,
+                    'username' => $result->username
                     // 'acct_type' => $result->acct_type,
                     // 'user_email' => $result->user_email
                 ];
-
-                $this->session->set_userdata($data);
-                redirect('Admin_ctr');
+                // $acct_type =$this->hello->detect_user($_POST);
+                // if($acct_type == 3){
+                // } else {
+                //     redirect('Web_Admin_ctr');
+                // }
+                    $this->session->set_userdata($data);
+                    redirect('Admin_ctr',$result);
+                    // $result = $this->hello->detect_user();
+                    // if($result == '3')
+                    //     redirect('Admin_ctr',$result);
+                    // if($result == "1")
+                    // if($result == "0")
+                    // else
+                    //     redirect('Web_Admin_ctr');
             } else {
                 $this->session->set_flashdata('flash_data', 'Username or password does not exist');
                 redirect('Access_ctr');
@@ -47,7 +58,6 @@ Class Access_ctr extends CI_Controller {
         $this->load->view('snips/js_jquery300');
         $this->load->view('snips/js_materialize');
         $this->load->view('snips/z_end');
-        // redirect('Admin_ctr');
 	}
 
 }
