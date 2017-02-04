@@ -1,14 +1,14 @@
 <?php if ( !defined ('BASEPATH')) exit('No direct script access allowed');
 
-class prod_model extends CI_Model{
+class prodinv_model extends CI_Model {
 
     function __construct()
     {
         parent::__construct();
     }
 
-    //function for retrieving the products
-    function get_product($limit, $start, $st = NULL)
+    //function for retrieving the products for the POS inventory
+    function get_prodinv($limit, $start, $st = NULL)
     {
         if ($st == "NIL") $st = "";
         $sql = "select * from product where ProdName like '%$st%' limit " . $start . ", " . $limit;
@@ -16,11 +16,11 @@ class prod_model extends CI_Model{
         return $query->result();
     }
     
-    //function to get the product count
-    function get_product_count($st = NULL)
+    //function to get the inventory product count
+    function get_prodinv_count($st = NULL)
     {
         if ($st == "NIL") $st = "";
-        $sql = "select * from product where ProdName like '%$st%'";
+        $sql = "select * from product where Category = 'Product'";
         $query = $this->db->query($sql);
         return $query->num_rows();
     }
