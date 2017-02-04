@@ -16,244 +16,61 @@
 
 					</script>
 
-					<input id="icon_prefix" type="text" class="validate">
-					<label for="icon_prefix">Search for Pets and Pruducts</label>
-				</div>
-			</div>
-<!-- 			<div class="row">
-				<div class="col s3 blue center">
-					<h1>
-					<a class="white-text" href="#">Fish</a>
-					</h1>
-				</div>
-				<div class="col s3 red"></div>
-				<div class="col s3 green"></div>
-				<div class="col s3 yellow"></div>
-			</div> -->
-<!--			First Row-->
-			<div class="row">
-				<h4>Pets</h4>
-				<div class="col s3 ">
-					<span class="card-title activator grey-text text-darken-4">
-						<ul class="collapsible" data-collapsible="accordion">
-							<li>
-							<div class="collapsible-header"><i class="material-icons">shopping_basket</i>Fish</div>
-							<div class="collapsible-body">
-								<table class="centered">
-								<tbody>
-								<tr>
-								<td><a href="#">Guppy</a></td>
-								</tr>
-								<tr>
-								<td><a href="#">Gold</a></td>
-								</tr>
-								<tr>
-								<td><a href="#">Beta Fighting</a></td>
-								</tr>
-								<tr>
-								<td><a href="#">Common Carp</a></td>
-								</tr>
-								</tbody>
-								</table>
-							</div>
-							</li>
-						</ul>
-					</span>				
-				</div>
-				<div class="col s3">
-					<span class="card-title activator grey-text text-darken-4">
-						<ul class="collapsible" data-collapsible="accordion">
-							<li>
-							<div class="collapsible-header"><i class="material-icons">shopping_basket</i>Dogs</div>
-							<div class="collapsible-body">
-								<table class="centered">
-								<tbody>
-								<tr>
-								<td><a href="#">Guppy</a></td>
-								</tr>
-								<tr>
-								<td><a href="#">Gold</a></td>
-								</tr>
-								<tr>
-								<td><a href="#">Beta Fighting</a></td>
-								</tr>
-								<tr>
-								<td><a href="#">Common Carp</a></td>
-								</tr>
-								</tbody>
-								</table>
-							</div>
-							</li>
-						</ul>
-					</span>	
-				</div>
-				<div class="col s3">
-					<span class="card-title activator grey-text text-darken-4">
-						<ul class="collapsible" data-collapsible="accordion">
-							<li>
-							<div class="collapsible-header"><i class="material-icons">shopping_basket</i>Cats</div>
-							<div class="collapsible-body">
-								<table class="centered">
-								<tbody>
-								<tr>
-								<td><a href="#">Guppy</a></td>
-								</tr>
-								<tr>
-								<td><a href="#">Gold</a></td>
-								</tr>
-								<tr>
-								<td><a href="#">Beta Fighting</a></td>
-								</tr>
-								<tr>
-								<td><a href="#">Common Carp</a></td>
-								</tr>
-								</tbody>
-								</table>
-							</div>
-							</li>
-						</ul>
-					</span>
-				</div>			
-				<div class="col s3">
-					<span class="card-title activator grey-text text-darken-4">
-						<ul class="collapsible" data-collapsible="accordion">
-							<li>
-							<div class="collapsible-header"><i class="material-icons">shopping_basket</i>Furry</div>
-							<div class="collapsible-body">
-								<table class="centered">
-								<tbody>
-								<tr>
-								<td><a href="#">Guppy</a></td>
-								</tr>
-								<tr>
-								<td><a href="#">Gold</a></td>
-								</tr>
-								<tr>
-								<td><a href="#">Beta Fighting</a></td>
-								</tr>
-								<tr>
-								<td><a href="#">Common Carp</a></td>
-								</tr>
-								</tbody>
-								</table>
-							</div>
-							</li>
-						</ul>
-					</span>
+					<?php 
+	                    $attr = array("class" => "form-horizontal", "role" => "form", "id" => "form1", "name" => "form1");
+	                    echo form_open("POS_ctr/search", $attr);
+	                ?>
+            
+	                <div class="form-group">
+	                    <div class="col-md-6">
+	                        <input class="form-control" id="icon_prefix" name="prod_name" type="text" value="<?php echo set_value('prod_name'); ?>" />
+							<label for="icon_prefix">Search for Pets and Products</label>
+							<!-- <input id="icon_prefix" type="text" class="validate"> -->
+	                    </div>
+
+	                    <div class="col-md-6">
+	                        <input id="btn_search" name="btn_search" type="submit" class="btn btn-danger" value="Search" />
+	                        <a href="<?php echo base_url(). "index.php/POS_ctr/index"; ?>" class="btn btn-primary">Refresh Product List</a>
+	                    </div>
+	                </div>
+
+	                <?php 
+	                    echo form_close(); 
+	                ?>
+
 				</div>
 			</div>
 
-<!--			Second Row-->
 			<div class="row">
-				<h4>Products</h4>
-				<div class="col s3">
-					<span class="card-title activator grey-text text-darken-4">
-						<ul class="collapsible" data-collapsible="accordion">
-							<li>
-							<div class="collapsible-header"><i class="material-icons">shopping_basket</i>Fish</div>
-							<div class="collapsible-body">
-								<table class="centered">
-								<tbody>
-								<tr>
-								<td><a href="#">Guppy</a></td>
-								</tr>
-								<tr>
-								<td><a href="#">Gold</a></td>
-								</tr>
-								<tr>
-								<td><a href="#">Beta Fighting</a></td>
-								</tr>
-								<tr>
-								<td><a href="#">Common Carp</a></td>
-								</tr>
-								</tbody>
-								</table>
-							</div>					
-							</li>
-						</ul>
-					</span>				
-				</div>
-				<div class="col s3">
-					<span class="card-title activator grey-text text-darken-4">
-						<ul class="collapsible" data-collapsible="accordion">
-							<li>
-							<div class="collapsible-header"><i class="material-icons">shopping_basket</i>Dogs</div>
-							<div class="collapsible-body">
-								<table class="centered">
-								<tbody>
-								<tr>
-								<td><a href="#">Guppy</a></td>
-								</tr>
-								<tr>
-								<td><a href="#">Gold</a></td>
-								</tr>
-								<tr>
-								<td><a href="#">Beta Fighting</a></td>
-								</tr>
-								<tr>
-								<td><a href="#">Common Carp</a></td>
-								</tr>
-								</tbody>
-								</table>
-							</div>					
-							</li>
-						</ul>
-					</span>	
-				</div>
-				<div class="col s3">
-					<span class="card-title activator grey-text text-darken-4">
-						<ul class="collapsible" data-collapsible="accordion">
-							<li>
-							<div class="collapsible-header"><i class="material-icons">shopping_basket</i>Cats</div>
-							<div class="collapsible-body">
-								<table class="centered">
-								<tbody>
-								<tr>
-								<td><a href="#">Guppy</a></td>
-								</tr>
-								<tr>
-								<td><a href="#">Gold</a></td>
-								</tr>
-								<tr>
-								<td><a href="#">Beta Fighting</a></td>
-								</tr>
-								<tr>
-								<td><a href="#">Common Carp</a></td>
-								</tr>
-								</tbody>
-								</table>
-							</div>						
-							</li>
-						</ul>
-					</span>
-				</div>			
-				<div class="col s3">
-					<span class="card-title activator grey-text text-darken-4">
-						<ul class="collapsible" data-collapsible="accordion">
-							<li>
-							<div class="collapsible-header"><i class="material-icons">shopping_basket</i>Furry</div>
-							<div class="collapsible-body">
-								<table class="centered">
-								<tbody>
-								<tr>
-								<td><a href="#">Guppy</a></td>
-								</tr>
-								<tr>
-								<td><a href="#">Gold</a></td>
-								</tr>
-								<tr>
-								<td><a href="#">Beta Fighting</a></td>
-								</tr>
-								<tr>
-								<td><a href="#">Common Carp</a></td>
-								</tr>
-								</tbody>
-								</table>
-							</div>						
-							</li>
-						</ul>
-					</span>
-				</div>
+				<table class="table table-striped table-hover">
+	                <thead>
+	                    <tr>
+	                    <th>#</th>
+	                    <th>Product ID</th>
+	                    <th>Product Name</th>
+	                    <th>Category</th>
+	                    <th>Quantity</th>
+	                    <th>Amount</th>
+	                    <th>Timestamp</th>
+	                    <th>Add</th>
+	                    </tr>
+	                </thead>
+
+	                <tbody>
+	                    <?php for ($i = 0; $i < count($prodlist); ++$i) { ?>
+	                    <tr>
+	                        <td><?php echo ($page+$i+1); ?></td>
+	                        <td><?php echo $prodlist[$i]->ProdID; ?></td>
+	                        <td><?php echo $prodlist[$i]->ProdName; ?></td>
+	                        <td><?php echo $prodlist[$i]->Category; ?></td>
+	                        <td><?php echo $prodlist[$i]->Quantity; ?></td>
+	                        <td><?php echo $prodlist[$i]->Amount; ?></td>
+	                        <td><?php echo $prodlist[$i]->Timestamp; ?></td>
+	                        <td><button>Add Item</button></td>
+	                    </tr>
+	                    <?php } ?>
+	                </tbody>
+            	</table>
 			</div>
 		</div>
 		
