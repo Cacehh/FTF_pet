@@ -17,27 +17,44 @@ class Login_model extends CI_Model
         $this->db->where('username', $data['username']);
         $this->db->where('user_password', md5($data['user_password']));
         // $this->db->where('acct_type', $data['acct_type']);
-        // $this->db->where('user_email', $data['user_email']);
+
         return $this->db->get('users')->row();
 
-        // $user_array = array('username' => $username, 'user_password' => $user_password, 'acct_type' => $acct_type);
-        // $this->db->where($user_array);
+
     }    
 
     public function detect_user() {
-        // $result = $this->db->select('acct_type',$data['acct_type']);
-        // return $acct_type;
 
-        // $this->db->select('*');
+        // $sql = $this->db->query('SELECT id FROM users');
+        // return $sql->result();
+
+        // $data = array();
+        // $query = $this->db->get('users');
+        // $res   = $query->result();        
+        // return $res;
+        // $this->db->select("acct_type");
         // $this->db->from('users');
-        // $this->db->where('username', $dataa);
-        // $this->db->where('acct_type', $dataa);
-        // $query = $this->db->get();
-        // return $query;
+        // $res = $this->db->get();
+        // return $res->result();
 
-        $sql = $this->db->query('SELECT id FROM users');
-        return $sql->result();
+        // $this->db->select("acct_type");
+        // $this->db->from('users');
+        // $query = $this->db->get();
+        // return $query->result();
+        
+        $query = $this->db->get('users');
+        return $query->result();
+
+        // $this->db->select("post_id,post_title,post_content");
+        // $this->db->from('post_tbl');
+        // $query = $this->db->get();
+        // return $query->result();
     }
+
+    public function role() {
+        $query = $this->db->get('roles');
+        return $query->result();
+    } 
 
     function __destruct() {
         $this->db->close();

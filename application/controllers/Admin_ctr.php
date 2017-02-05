@@ -12,17 +12,19 @@ class Admin_ctr extends CI_Controller {
         }
              // if ($_SESSION['usertype']) == 1)
 
-             // {
+             // 
              // //do stuff here 
              // }
     }
 
     public function index()
     {
-           if($_SESSION['acct_type'] != 2)
-            {
-               redirect('POS_ctr');
-            }
+        if($_SESSION['id'] <= '100')
+        {
+            $data = $_SESSION;
+            echo $data;
+            redirect('POS_ctr');
+        }
         // $userdata = array(
         //     'username' => 'HardCodeCayce'
         //     );

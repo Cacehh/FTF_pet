@@ -9,7 +9,7 @@
         //     echo "<h4>";
         //     echo $message_display;
         //     echo "</h4>";
-        //     echo "</div>";
+            // echo "</div>";
         // }
         ?>
         <?php if(isset($_SESSION)) {
