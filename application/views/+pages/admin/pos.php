@@ -1,15 +1,25 @@
 <!-- initial test script for computation of total amount plus discount. -->
 <script type="text/javascript">
 function calculate() {
-   var price=0, discount=0, afterDiscount=0;
+   var quant=0;
+   var price=0; 
+   var discount=0; 
+   var afterDiscount=0;
+    
+    pack = Number(document.discountCalculator.pack.value);
     price = Number(document.discountCalculator.price.value);
     discount = Number(document.discountCalculator.discount.value);
 
 
- afterDiscount=price - ( price*discount/100 );
+    subtotal=(pack*price);
+    disctotal=([pack*price]*discount/100);
+ 	afterDiscount=(pack * [price - ( price*discount/100 )]);
 
+   document.discountCalculator.pack.value=pack.toFixed(0);
    document.discountCalculator.price.value=price.toFixed(2);
    document.discountCalculator.discount.value=discount.toFixed(2);
+   document.discountCalculator.subtotal.value=subtotal.toFixed(2);
+   document.discountCalculator.disctotal.value=disctotal.toFixed(2);
    document.discountCalculator.afterDiscount.value=afterDiscount.toFixed(2);
 
 }
