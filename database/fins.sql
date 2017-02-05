@@ -40,7 +40,7 @@ CREATE TABLE `breeder` (
 
 LOCK TABLES `breeder` WRITE;
 /*!40000 ALTER TABLE `breeder` DISABLE KEYS */;
-INSERT INTO `breeder` VALUES (1,'Axel Grey','SM Baguio',912345678),(2,'Antonina Seva','Centermall',978513462);
+INSERT INTO `breeder` VALUES (1,'Axel Grey','Zambales',1234567890),(2,'Percy Jackson','Baguio',1523478690);
 /*!40000 ALTER TABLE `breeder` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -165,8 +165,10 @@ CREATE TABLE `product` (
   `inStock` int(11) NOT NULL,
   `category` varchar(45) NOT NULL,
   `datePurchased` date NOT NULL,
+  `breederID` int(11) NOT NULL,
   PRIMARY KEY (`productID`),
-  KEY `bID_idx` (`prodName`)
+  KEY `bID_idx` (`breederID`),
+  CONSTRAINT `breeder_ID` FOREIGN KEY (`breederID`) REFERENCES `breeder` (`breederID`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -176,7 +178,7 @@ CREATE TABLE `product` (
 
 LOCK TABLES `product` WRITE;
 /*!40000 ALTER TABLE `product` DISABLE KEYS */;
-INSERT INTO `product` VALUES (1,'pedigree',100,2,'dog food','2016-12-31'),(2,'12X12X8',450,1,'aquarium','2017-01-12'),(3,'meow purr',100,5,'cat food','2017-03-12'),(4,'birdie',135,4,'bird feeds','2017-04-15'),(5,'jumpy rabbit',200,3,'rabbit foods','2017-03-17');
+INSERT INTO `product` VALUES (1,'pedigree',100,2,'dog food','2016-12-31',1),(2,'12X12X8',450,1,'aquarium','2017-01-12',2),(3,'meow purr',100,5,'cat food','2017-03-12',1),(4,'birdie',135,4,'bird feeds','2017-04-15',2),(5,'jumpy rabbit',200,3,'rabbit foods','2017-03-17',1);
 /*!40000 ALTER TABLE `product` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -193,8 +195,8 @@ CREATE TABLE `sales` (
   `salesQuantity` varchar(45) DEFAULT NULL,
   `receiptNumber` int(11) DEFAULT NULL,
   PRIMARY KEY (`salesID`),
-  CONSTRAINT `cID` FOREIGN KEY (`salesID`) REFERENCES `customers` (`customerID`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  CONSTRAINT `pID` FOREIGN KEY (`salesID`) REFERENCES `product` (`productID`) ON UPDATE CASCADE
+  CONSTRAINT `cID` FOREIGN KEY (`salesID`) REFERENCES `customers` (`customerID`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `pID` FOREIGN KEY (`salesID`) REFERENCES `product` (`productID`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -273,4 +275,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-02-05 14:10:43
+-- Dump completed on 2017-02-05 20:07:02
