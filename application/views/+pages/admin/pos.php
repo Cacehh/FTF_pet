@@ -74,7 +74,7 @@
             	</table>
 			</div>
 		</div>
-		
+
 		<div class="col s5">
 			<div class="card grey darken-1">
 				<div class="card-content white-text">

@@ -19,11 +19,10 @@ Class Access_ctr extends CI_Controller {
 	public function index() {
         if($_POST) {
             $result = $this->hello->validate_user($_POST);
-            // $user_type = $this->hello->detect_user($_POST);
             if(!empty($result)) {
                 $data = [
                     'id' => $result->id,
-                    'username' => $result->username
+                    'username' => $result->username,
                     // 'acct_type' => $result->acct_type,
                     // 'user_email' => $result->user_email
                 ];
@@ -32,27 +31,22 @@ Class Access_ctr extends CI_Controller {
                 // } else {
                 //     redirect('Web_Admin_ctr');
                 // }
-                    $this->session->set_userdata($data);
-                    redirect('Admin_ctr',$result);
-                    // $result = $this->hello->detect_user();
-                    // if($result == '3')
-                    //     redirect('Admin_ctr',$result);
-                    // if($result == "1")
-                    // if($result == "0")
-                    // else
-                    //     redirect('Web_Admin_ctr');
+                $this->session->set_userdata($data);
+                redirect('Admin_ctr',$result);
+
+                // $this->load->model->('Login_model');
+                // $user_type['type'] = $this->Login_model->detect_user();
             } else {
                 $this->session->set_flashdata('flash_data', 'Username or password does not exist');
                 redirect('Access_ctr');
             }
         }
 
-		print_r($this->session->all_userdata());
+		// print_r($this->session->all_userdata());
         $data['title'] = 'FTNF | Login';
         $this->load->view('snips/a_start', $data);
         $this->load->view('snips/css_materialize');
         $this->load->view('snips/css_materialize_icon');
-        echo 'hello';
         $this->load->view('+pages/admin/a_login');
 
         $this->load->view('snips/js_jquery300');

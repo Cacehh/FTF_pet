@@ -28,12 +28,12 @@
                 <h5>Login | Admin <b class="blue-text">Fins, Tails n Feathers</b></h5>
                 <?php echo form_open('Access_ctr'); ?>  
                     <?php
-                        echo "<div class='error_msg'>";
-                        if (isset($error_message)) {
-                        echo $error_message;
-                        }
-                        echo validation_errors();
-                        echo "</div>";
+                        // echo "<div class='error_msg'>";
+                        // if (isset($error_message)) {
+                        // echo $error_message;
+                        // }
+                        // echo validation_errors();
+                        // echo "</div>";
                     ?>     
                     <div class="row">
                         <div class="input-field">

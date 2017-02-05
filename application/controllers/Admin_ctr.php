@@ -10,10 +10,19 @@ class Admin_ctr extends CI_Controller {
             $this->session->set_flashdata('flash_data', 'Please login First');
             redirect('Access_ctr');
         }
+             // if ($_SESSION['usertype']) == 1)
+
+             // {
+             // //do stuff here 
+             // }
     }
 
     public function index()
     {
+       if($_SESSION['acct_type'] == 2)
+        {
+           redirect('POS_ctr');
+        }
         // $userdata = array(
         //     'username' => 'HardCodeCayce'
         //     );
@@ -35,7 +44,6 @@ class Admin_ctr extends CI_Controller {
     public function logout() {
         $data = ['id', 'username'];
         $this->session->unset_userdata($data);
-        $data['message_display'] = 'Successfully Logged out';
         $this->session->set_flashdata('flash_data','You have successfully logged out');
 
         //Back to login page

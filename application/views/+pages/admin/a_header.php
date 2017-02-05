@@ -20,6 +20,7 @@
 			});
 		  });
 	</script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/shopify-cartjs/0.4.1/rivets-cart.min.js"></script>
 
 	</head>
 <body>

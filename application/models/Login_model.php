@@ -34,6 +34,9 @@ class Login_model extends CI_Model
         // $this->db->where('acct_type', $dataa);
         // $query = $this->db->get();
         // return $query;
+
+        $sql = $this->db->query('SELECT id FROM users');
+        return $sql->result();
     }
 
     function __destruct() {
