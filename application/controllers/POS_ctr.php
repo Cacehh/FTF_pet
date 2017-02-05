@@ -141,7 +141,7 @@ class POS_ctr extends CI_Controller {
         $this->load->view('snips/css_materialize_icon');
         $this->load->view('+pages/admin/a_POS_header');
         
-        $this->load->view('+pages/admin/products');
+        $this->load->view('+pages/admin/products', $data);
         
         $this->load->view('snips/js_jquery300');
         $this->load->view('snips/js_materialize');

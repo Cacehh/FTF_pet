@@ -24,19 +24,19 @@
 
 						<?php 
 		                    $attr = array("class" => "form-horizontal", "role" => "form", "id" => "form1", "name" => "form1");
-		                    echo form_open("POS_ctr/invProdSearch", $attr);
+		                    echo form_open("Admin_Product_ctr/invProdSearch", $attr);
 		                ?>
 	            
 		                <div class="form-group">
 		                    <div class="col-md-6">
 		                        <input class="form-control" id="icon_prefix" name="prodinv_name" type="text" value="<?php echo set_value('prodinv_name'); ?>" />
-								<label for="icon_prefix">Search for Product Names</label>
+								<label for="icon_prefix">Search for Products</label>
 								<!-- <input id="icon_prefix" type="text" class="validate"> -->
 		                    </div>
 
 		                    <div class="col-md-6">
 		                        <input id="btn_search" name="btn_search" type="submit" class="btn btn-danger" value="Search" />
-		                        <a href="<?php echo base_url(). "index.php/POS_ctr/products"; ?>" class="btn btn-primary">Refresh Product List</a>
+		                        <a href="<?php echo base_url(). "index.php/Admin_Product_ctr_ctr/products"; ?>" class="btn btn-primary">Refresh Product List</a>
 		                    </div>
 		                </div>
 
