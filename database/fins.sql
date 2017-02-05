@@ -28,7 +28,9 @@ CREATE TABLE `breeder` (
   `breederID` int(11) NOT NULL,
   `breederName` varchar(45) NOT NULL,
   `breederAddress` varchar(45) NOT NULL,
-  `contactNumber` int(11) NOT NULL
+  `contactNumber` int(11) NOT NULL,
+  KEY `prodID_idx` (`breederID`),
+  CONSTRAINT `proddID` FOREIGN KEY (`breederID`) REFERENCES `product` (`productID`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -38,6 +40,7 @@ CREATE TABLE `breeder` (
 
 LOCK TABLES `breeder` WRITE;
 /*!40000 ALTER TABLE `breeder` DISABLE KEYS */;
+INSERT INTO `breeder` VALUES (1,'Axel Grey','SM Baguio',912345678),(2,'Antonina Seva','Centermall',978513462);
 /*!40000 ALTER TABLE `breeder` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -90,7 +93,7 @@ CREATE TABLE `order` (
 
 LOCK TABLES `order` WRITE;
 /*!40000 ALTER TABLE `order` DISABLE KEYS */;
-INSERT INTO `order` VALUES (1,'2016-12-11',2);
+INSERT INTO `order` VALUES (1,'2016-12-11',2),(2,'2017-02-05',3);
 /*!40000 ALTER TABLE `order` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -116,6 +119,7 @@ CREATE TABLE `ordpr` (
 
 LOCK TABLES `ordpr` WRITE;
 /*!40000 ALTER TABLE `ordpr` DISABLE KEYS */;
+INSERT INTO `ordpr` VALUES (1,1,'Available'),(2,2,'Pending');
 /*!40000 ALTER TABLE `ordpr` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -134,7 +138,7 @@ CREATE TABLE `payment` (
   `paymentType` varchar(45) NOT NULL,
   KEY `customerID` (`paymentID`,`paymentType`,`paymentAmount`,`paymentTime`,`paymentDate`),
   CONSTRAINT `customerID` FOREIGN KEY (`paymentID`) REFERENCES `customers` (`customerID`) ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -143,6 +147,7 @@ CREATE TABLE `payment` (
 
 LOCK TABLES `payment` WRITE;
 /*!40000 ALTER TABLE `payment` DISABLE KEYS */;
+INSERT INTO `payment` VALUES (1,'2017-02-05','2 07',100,'Cash'),(2,'2016-02-09','9 06',5000,'Cash');
 /*!40000 ALTER TABLE `payment` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -199,6 +204,7 @@ CREATE TABLE `sales` (
 
 LOCK TABLES `sales` WRITE;
 /*!40000 ALTER TABLE `sales` DISABLE KEYS */;
+INSERT INTO `sales` VALUES (1,'2017-02-05','2',1),(2,'2016-02-09','3',2);
 /*!40000 ALTER TABLE `sales` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -227,6 +233,7 @@ CREATE TABLE `sprod` (
 
 LOCK TABLES `sprod` WRITE;
 /*!40000 ALTER TABLE `sprod` DISABLE KEYS */;
+INSERT INTO `sprod` VALUES (1,1,'Pedigree','Dog Food'),(2,2,'Chain','Dog Accessories');
 /*!40000 ALTER TABLE `sprod` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -253,6 +260,7 @@ CREATE TABLE `supplier` (
 
 LOCK TABLES `supplier` WRITE;
 /*!40000 ALTER TABLE `supplier` DISABLE KEYS */;
+INSERT INTO `supplier` VALUES (1,'Percy Jackson','Royal Residence',1234567890);
 /*!40000 ALTER TABLE `supplier` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -265,4 +273,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-02-05 13:35:42
+-- Dump completed on 2017-02-05 14:10:43
