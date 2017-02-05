@@ -10,35 +10,33 @@
 			</div>
 		</div>
 		
-	<div class="row">
-		<div class="input-field col s7">
-			<div class="row">
+	<div class="row container center">
 					<div class="col s12">
 						<i class="material-icons prefix">search</i>
 
 						<script type="text/javascript">
-							$(document).ready(function() {
-								$('#username').autocomplete( {
-									source: "<?php echo site_url('prodinv_model/search/?'); ?>"
-								});
-							});
+							// $(document).ready(function() {
+							// 	$('#username').autocomplete( {
+							// 		source: "<?php echo site_url('prodinv_model/search/?'); ?>"
+							// 	});
+							// });
 						</script>
 
 						<?php 
 		                    $attr = array("class" => "form-horizontal", "role" => "form", "id" => "form1", "name" => "form1");
-		                    echo form_open("POS_ctr/search", $attr);
+		                    echo form_open("POS_ctr/invProdSearch", $attr);
 		                ?>
 	            
 		                <div class="form-group">
 		                    <div class="col-md-6">
-		                        <input class="form-control" id="icon_prefix" name="prod_name" type="text" value="<?php echo set_value('prod_name'); ?>" />
-								<label for="icon_prefix">Search for Pets and Products</label>
+		                        <input class="form-control" id="icon_prefix" name="prodinv_name" type="text" value="<?php echo set_value('prodinv_name'); ?>" />
+								<label for="icon_prefix">Search for Product Names</label>
 								<!-- <input id="icon_prefix" type="text" class="validate"> -->
 		                    </div>
 
 		                    <div class="col-md-6">
 		                        <input id="btn_search" name="btn_search" type="submit" class="btn btn-danger" value="Search" />
-		                        <a href="<?php echo base_url(). "index.php/POS_ctr/index"; ?>" class="btn btn-primary">Refresh Product List</a>
+		                        <a href="<?php echo base_url(). "index.php/POS_ctr/products"; ?>" class="btn btn-primary">Refresh Product List</a>
 		                    </div>
 		                </div>
 
@@ -47,54 +45,47 @@
 		                ?>
 					</div>
 				</div>
-			</div>
-		</div>
-		
+
 		<div class="divider"></div>
 		<br>
 		<div class="row">
 			<br>
 			<div class="col s12">
-				<table class="centered">
-					<thead>
-						<tr>
-							<th data-field="name">Name</th>
-							<th data-field="producttype">Type</th>
-							<th data-field="brand">Brand</th>
-							<th data-field="supplier">Supplier</th>
-							<th data-field="price">Price</th>
-							<th data-field="quantity">Quantity</th>
-						</tr>
-					</thead>
 
-					<tbody>
-						<tr>
-							<td>Denta Stix</td>
-							<td>Dog food</td>
-							<td>Pedigree</td>
-							<td>Bob Whole Sale</td>
-							<td>&#8369; 99.00</td>
-							<td>55</td>
-							<td>
+				<table class="bordered centered highlight">
+				<!-- <table class="bordered stripped centered responsive-table"> -->
+	                <thead>
+	                    <tr>
+	                    <th data-field ="#">#</th>
+	                    <th data-field ="productID">Product ID</th>
+	                    <th data-field ="">Product Name</th>
+	                    <th data-field ="">Category</th>
+	                    <th data-field ="">Amount</th>
+	                    <th data-field ="">Quantity</th>
+	                    <th data-field ="">Timestamp</th>
+	                    <th></th>
+	                    </tr>
+	                </thead>
+
+	                <tbody>
+	                    <?php for ($i = 0; $i < count($prodinvlist); ++$i) { ?>
+	                    <tr>
+	                        <td><?php echo ($page+$i+1); ?></td>
+	                        <td><?php echo $prodinvlist[$i]->ProdID; ?></td>
+	                        <td><?php echo $prodinvlist[$i]->ProdName; ?></td>
+	                        <td><?php echo $prodinvlist[$i]->Category; ?></td>
+	                        <td><?php echo $prodinvlist[$i]->Amount; ?></td>
+	                        <td><?php echo $prodinvlist[$i]->Quantity; ?></td>
+	                        <td><?php echo $prodinvlist[$i]->Timestamp; ?></td>
+	                        <td>
 								<a href=""><i class="material-icons">mode_edit</i></a>
 								<a href=""><i class="material-icons">delete</i></a>
 							</td>
-						</tr>
-			
-						<tr>
-							<td>Fine Grain mix</td>
-							<td>Dog food</td>
-							<td>Pedigree</td>
-							<td>Bob Whole Sale</td>
-							<td>&#8369; 150.00</td>
-							<td>20</td>
-							<td>
-								<a href=""><i class="material-icons">mode_edit</i></a>
-								<a href=""><i class="material-icons">delete</i></a>
-							</td>
-						</tr>
-					</tbody>
-				</table>
+	                    </tr>
+	                    <?php } ?>
+	                </tbody>
+            	</table>
+
 			</div>
 			<br>
 		</div>

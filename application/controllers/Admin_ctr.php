@@ -25,6 +25,10 @@ class Admin_ctr extends CI_Controller {
             echo $data;
             redirect('POS_ctr');
         }
+           // if($_SESSION['acct_type'] != 2)
+           //  {
+           //     redirect('POS_ctr');
+           //  }
         // $userdata = array(
         //     'username' => 'HardCodeCayce'
         //     );

@@ -171,14 +171,12 @@ class Pages_ctr extends CI_Controller {
     }
 
     public function search() {
-    	if(isset($_GET['term'])) {
-    		$result = $this->model_possearch->search(($_GET['term']);
-			if(count($result) > 0) {
-				foreach ($result as $searches)
-					$arr_result[] = $searches->user_name;
-				echo json_encode($arr_result);
+ //  	if(isset($_GET['term'])) {
+//		$result = $this->model_possearch->search(($_GET['term']);
+//	if(count($result) > 0) {
+//		foreach ($result as $searches)
+//			$arr_result[] = $searches->user_name;
+//				echo json_encode($arr_result);
 			}
     	}
-		
-	}
-}
+	

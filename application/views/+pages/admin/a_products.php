@@ -2,39 +2,41 @@
 <main>
 	<div class="row">
 		<div class="row">
-			<h4 class="offset-s1 col s11">Pets</h4>
+			<h4 class="offset-s1 col s11">Products</h4>
 		</div>
 		<div class="row grey lighten-1">
 			<div class="offset-s1 col s11">
-				<p class="flow-text">View, Edit and Delete Pets</p>
+				<p class="flow-text">View, Edit and Delete products</p>
 			</div>
 		</div>
 		
-		<div class="row container center">
-			<div class="col s12">
-				<i class="material-icons prefix">search</i>
-					<script type="text/javascript">
-						// $(document).ready(function() {
-						// 	$('#username').autocomplete( {
-						// 		source: "<?php echo site_url('petinv_model/search/?'); ?>"
-						// 	});
-						// });
-					</script>
+	<div class="row container center">
+					<div class="col s12">
+						<i class="material-icons prefix">search</i>
+
+						<script type="text/javascript">
+							// $(document).ready(function() {
+							// 	$('#username').autocomplete( {
+							// 		source: "<?php echo site_url('prodinv_model/search/?'); ?>"
+							// 	});
+							// });
+						</script>
 
 						<?php 
-		               	    $attr = array("class" => "form-horizontal", "role" => "form", "id" => "form1", "name" => "form1");
-		               	    echo form_open("POS_ctr/invPetSearch", $attr);
-		               	?>
+		                    $attr = array("class" => "form-horizontal", "role" => "form", "id" => "form1", "name" => "form1");
+		                    echo form_open("Admin_Product_ctr/invProdSearch", $attr);
+		                ?>
 	            
 		                <div class="form-group">
 		                    <div class="col-md-6">
-		                        <input class="form-control" id="icon_prefix" name="petinv_name" type="text" value="<?php echo set_value('petinv_name'); ?>" />
-								<label for="icon_prefix">Search for Pets</label>
+		                        <input class="form-control" id="icon_prefix" name="prodinv_name" type="text" value="<?php echo set_value('prodinv_name'); ?>" />
+								<label for="icon_prefix">Search for Products</label>
+								<!-- <input id="icon_prefix" type="text" class="validate"> -->
 		                    </div>
 
 		                    <div class="col-md-6">
 		                        <input id="btn_search" name="btn_search" type="submit" class="btn btn-danger" value="Search" />
-		                        <a href="<?php echo base_url(). "index.php/POS_ctr/pets"; ?>" class="btn btn-primary">Refresh Product List</a>
+		                        <a href="<?php echo base_url(). "index.php/Admin_Product_ctr/index"; ?>" class="btn btn-primary">Refresh Product List</a>
 		                    </div>
 		                </div>
 
@@ -42,8 +44,8 @@
 		                    echo form_close(); 
 		                ?>
 					</div>
-		</div>
-		
+				</div>
+
 		<div class="divider"></div>
 		<br>
 		<div class="row">
@@ -66,15 +68,15 @@
 	                </thead>
 
 	                <tbody>
-	                    <?php for ($i = 0; $i < count($petinvlist); ++$i) { ?>
+	                    <?php for ($i = 0; $i < count($prodinvlist); ++$i) { ?>
 	                    <tr>
 	                        <td><?php echo ($page+$i+1); ?></td>
-	                        <td><?php echo $petinvlist[$i]->ProdID; ?></td>
-	                        <td><?php echo $petinvlist[$i]->ProdName; ?></td>
-	                        <td><?php echo $petinvlist[$i]->Category; ?></td>
-	                        <td><?php echo $petinvlist[$i]->Amount; ?></td>
-	                        <td><?php echo $petinvlist[$i]->Quantity; ?></td>
-	                        <td><?php echo $petinvlist[$i]->Timestamp; ?></td>
+	                        <td><?php echo $prodinvlist[$i]->ProdID; ?></td>
+	                        <td><?php echo $prodinvlist[$i]->ProdName; ?></td>
+	                        <td><?php echo $prodinvlist[$i]->Category; ?></td>
+	                        <td><?php echo $prodinvlist[$i]->Amount; ?></td>
+	                        <td><?php echo $prodinvlist[$i]->Quantity; ?></td>
+	                        <td><?php echo $prodinvlist[$i]->Timestamp; ?></td>
 	                        <td>
 								<a href=""><i class="material-icons">mode_edit</i></a>
 								<a href=""><i class="material-icons">delete</i></a>
