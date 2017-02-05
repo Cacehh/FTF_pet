@@ -66,7 +66,6 @@ CREATE TABLE `customers` (
 
 LOCK TABLES `customers` WRITE;
 /*!40000 ALTER TABLE `customers` DISABLE KEYS */;
-INSERT INTO `customers` VALUES (1,'Hugh Jackman','New York City'),(2,'Magnetto','Sultan Kudarat'),(3,'Wolverine','Saint Louis University');
 /*!40000 ALTER TABLE `customers` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -82,7 +81,10 @@ CREATE TABLE `order` (
   `orderDate` date NOT NULL,
   `orderQuantity` int(11) NOT NULL,
   `customerID` int(11) NOT NULL,
-  PRIMARY KEY (`orderID`)
+  `prodID` int(11) NOT NULL,
+  PRIMARY KEY (`orderID`),
+  KEY `prodID_idx` (`customerID`),
+  KEY `customerID_idx` (`prodID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -92,7 +94,7 @@ CREATE TABLE `order` (
 
 LOCK TABLES `order` WRITE;
 /*!40000 ALTER TABLE `order` DISABLE KEYS */;
-INSERT INTO `order` VALUES (1,'2016-12-11',2,0);
+INSERT INTO `order` VALUES (2,'2017-02-02',1,0,0);
 /*!40000 ALTER TABLE `order` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -161,7 +163,9 @@ CREATE TABLE `product` (
   `inStock` int(11) NOT NULL,
   `category` varchar(45) NOT NULL,
   `datePurchased` date NOT NULL,
-  PRIMARY KEY (`prodID`)
+  `breederID` int(11) NOT NULL,
+  PRIMARY KEY (`prodID`),
+  KEY `breederID_idx` (`breederID`)
 ) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -171,7 +175,7 @@ CREATE TABLE `product` (
 
 LOCK TABLES `product` WRITE;
 /*!40000 ALTER TABLE `product` DISABLE KEYS */;
-INSERT INTO `product` VALUES (1,'pedigree',100,2,'dog food','2016-12-31'),(2,'12X12X8',450,1,'aquarium','2017-01-12'),(3,'meow purr',100,5,'cat food','2017-03-12'),(4,'birdie',135,4,'bird feeds','2017-04-15'),(5,'jumpy rabbit',200,3,'rabbit','2017-03-17');
+INSERT INTO `product` VALUES (1,'pedigree',100,2,'dog food','2016-12-31',0),(2,'12X12X8',450,1,'aquarium','2017-01-12',0),(3,'meow purr',100,5,'cat food','2017-03-12',0),(4,'birdie',135,4,'bird feeds','2017-04-15',0),(5,'jumpy rabbit',200,3,'rabbit','2017-03-17',0);
 /*!40000 ALTER TABLE `product` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -188,7 +192,8 @@ CREATE TABLE `sales` (
   `salesQuantity` varchar(45) NOT NULL,
   `receiptNumber` int(11) NOT NULL,
   `prodID` int(11) NOT NULL,
-  PRIMARY KEY (`salesID`)
+  PRIMARY KEY (`salesID`),
+  KEY `prodID_idx` (`prodID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -239,8 +244,10 @@ CREATE TABLE `supplier` (
   `supplierName` varchar(45) NOT NULL,
   `supplierAddress` varchar(45) NOT NULL,
   `contactNumber` int(11) NOT NULL,
+  `productID` int(11) NOT NULL,
   `prodID` int(11) NOT NULL,
-  PRIMARY KEY (`supplierID`)
+  PRIMARY KEY (`supplierID`),
+  CONSTRAINT `productID` FOREIGN KEY (`supplierID`) REFERENCES `product` (`breederID`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -262,4 +269,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-02-04 16:42:45
+-- Dump completed on 2017-02-05 11:18:25
