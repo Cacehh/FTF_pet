@@ -1,10 +1,6 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-/**
- * @name: Login model
- * @author: Imron Rosdiana
- */
 class Login_model extends CI_Model
 {
 
@@ -24,31 +20,8 @@ class Login_model extends CI_Model
     }    
 
     public function detect_user() {
-
-        // $sql = $this->db->query('SELECT id FROM users');
-        // return $sql->result();
-
-        // $data = array();
-        // $query = $this->db->get('users');
-        // $res   = $query->result();        
-        // return $res;
-        // $this->db->select("acct_type");
-        // $this->db->from('users');
-        // $res = $this->db->get();
-        // return $res->result();
-
-        // $this->db->select("acct_type");
-        // $this->db->from('users');
-        // $query = $this->db->get();
-        // return $query->result();
-        
         $query = $this->db->get('users');
         return $query->result();
-
-        // $this->db->select("post_id,post_title,post_content");
-        // $this->db->from('post_tbl');
-        // $query = $this->db->get();
-        // return $query->result();
     }
 
     public function role() {

@@ -11,8 +11,6 @@ Class Access_ctr extends CI_Controller {
 
 		// Load database
         $this->load->model("Login_model", "hello");
-        // if(!empty($_SESSION['id']))
-        //     redirect('Admin_ctr');
 	}
 
     //Call login page
@@ -24,15 +22,19 @@ Class Access_ctr extends CI_Controller {
                     'id' => $result->id,
                     'username' => $result->username
                 ];
-                    // if($_SESSION['id'] <= '100')
-                    // {
-                    //     $data = $_SESSION;
-                    //     echo $data;
-                    //     redirect('POS_ctr');
-                    // }
-                    $this->session->set_userdata($data);
-                    redirect('Admin_ctr',$str);
 
+                    $this->session->set_userdata($data);
+                    
+                    if($_SESSION['id'] <= '100')
+                    {
+                        if($_SESSION['id'] >= '50')
+                        {
+                            redirect('Admin_Inventory_ctr');
+                        } else {
+                            redirect('POS_ctr');
+                        }
+                    }
+                    redirect('Admin_ctr',$str);
                     // if($_SESSION['id'] == '100') {
                     //     redirect('Admin_ctr',$str);
                     // } elseif($_SESSION['id'] == '51') {
@@ -87,7 +89,7 @@ Class Access_ctr extends CI_Controller {
         $this->load->view('snips/js_materialize');
         $this->load->view('snips/z_end');
 	}
-    
+
     public function logout()
     {
         $data = ['id', 'username'];

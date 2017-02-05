@@ -9,6 +9,19 @@ class POS_ctr extends CI_Controller {
         $this->load->database();
         $this->load->library('pagination');
         $this->load->model(array('prod_model','prodinv_model', 'petinv_model'));
+
+        if(empty($this->session->userdata('id'))) {
+            $this->session->set_flashdata('flash_data', 'Please login First');
+            redirect('Access_ctr');
+        }
+        
+        if($_SESSION['id'] <= '100')
+        {
+            if($_SESSION['id'] >= '50')
+            {
+                redirect('Admin_Inventory_ctr');
+            }
+        }
     }
     
     public function index()
