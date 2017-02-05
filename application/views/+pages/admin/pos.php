@@ -1,6 +1,4 @@
-<<<<<<< HEAD
 <br>
-=======
 <!-- initial test script for computation of total amount plus discount. -->
 <script type="text/javascript">
 function calculate() {
@@ -17,8 +15,6 @@ function calculate() {
 
 }
 </script>
-
->>>>>>> 713ff8648906f901bfca4d5d47aca379de987c50
 <main>
 <br>
 	<div class="row">
