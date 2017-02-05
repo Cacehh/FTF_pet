@@ -11,8 +11,8 @@ Class Access_ctr extends CI_Controller {
 
 		// Load database
         $this->load->model("Login_model", "hello");
-        if(!empty($_SESSION['id']))
-            redirect('Admin_ctr');
+        // if(!empty($_SESSION['id']))
+        //     redirect('Admin_ctr');
 	}
 
     //Call login page
@@ -32,6 +32,14 @@ Class Access_ctr extends CI_Controller {
                     // }
                     $this->session->set_userdata($data);
                     redirect('Admin_ctr',$str);
+
+                    // if($_SESSION['id'] == '100') {
+                    //     redirect('Admin_ctr',$str);
+                    // } elseif($_SESSION['id'] == '51') {
+                    //     redirect('Admin_Inventory_ctr');
+                    // } elseif($_SESSION['id'] == '1') {
+                    //     redirect('POS_ctr');
+                    // }
                 // if($id > '50'){
                 // }
                 
@@ -79,6 +87,25 @@ Class Access_ctr extends CI_Controller {
         $this->load->view('snips/js_materialize');
         $this->load->view('snips/z_end');
 	}
+    
+    public function logout()
+    {
+        $data = ['id', 'username'];
+        $this->session->unset_userdata($data);
+        $this->session->set_flashdata('flash_data','You have successfully logged out');
+
+        //Back to login page
+        $data['title'] = 'FTNF | Login';
+        $this->load->view('snips/a_start', $data);
+        $this->load->view('snips/css_materialize');
+        $this->load->view('snips/css_materialize_icon');
+
+        $this->load->view('+pages/admin/a_login');
+
+        $this->load->view('snips/js_jquery300');
+        $this->load->view('snips/js_materialize');
+        $this->load->view('snips/z_end');
+    } 
 
 }
 

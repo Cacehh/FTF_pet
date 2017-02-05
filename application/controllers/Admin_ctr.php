@@ -10,29 +10,21 @@ class Admin_ctr extends CI_Controller {
             $this->session->set_flashdata('flash_data', 'Please login First');
             redirect('Access_ctr');
         }
-             // if ($_SESSION['usertype']) == 1)
-
-             // 
-             // //do stuff here 
-             // }
+        
+        if($_SESSION['id'] <= '100')
+        {
+            if($_SESSION['id'] >= '50')
+            {
+                redirect('Admin_Inventory_ctr');
+            } else {
+                redirect('POS_ctr');
+            }
+        }
     }
 
     public function index()
     {
-        if($_SESSION['id'] <= '100')
-        {
-            $data = $_SESSION;
-            echo $data;
-            redirect('POS_ctr');
-        }
-           // if($_SESSION['acct_type'] != 2)
-           //  {
-           //     redirect('POS_ctr');
-           //  }
-        // $userdata = array(
-        //     'username' => 'HardCodeCayce'
-        //     );
-        // $this->session->set_userdata($userdata);
+
         print_r($this->session->all_userdata());
         $data['title'] = 'FTNF | Dashboard'; 
         $this->load->view('snips/a_start', $data);
@@ -47,23 +39,24 @@ class Admin_ctr extends CI_Controller {
         $this->load->view('snips/z_end');
     }   
 
-    public function logout() {
-        $data = ['id', 'username'];
-        $this->session->unset_userdata($data);
-        $this->session->set_flashdata('flash_data','You have successfully logged out');
+    // public function logout()
+    // {
+    //     $data = ['id', 'username'];
+    //     $this->session->unset_userdata($data);
+    //     $this->session->set_flashdata('flash_data','You have successfully logged out');
 
-        //Back to login page
-        $data['title'] = 'FTNF | Login';
-        $this->load->view('snips/a_start', $data);
-        $this->load->view('snips/css_materialize');
-        $this->load->view('snips/css_materialize_icon');
+    //     //Back to login page
+    //     $data['title'] = 'FTNF | Login';
+    //     $this->load->view('snips/a_start', $data);
+    //     $this->load->view('snips/css_materialize');
+    //     $this->load->view('snips/css_materialize_icon');
 
-        $this->load->view('+pages/admin/a_login');
+    //     $this->load->view('+pages/admin/a_login');
 
-        $this->load->view('snips/js_jquery300');
-        $this->load->view('snips/js_materialize');
-        $this->load->view('snips/z_end');
-    }    
+    //     $this->load->view('snips/js_jquery300');
+    //     $this->load->view('snips/js_materialize');
+    //     $this->load->view('snips/z_end');
+    // }    
 	
 	public function register()
     {
