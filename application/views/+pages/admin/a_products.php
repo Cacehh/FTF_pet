@@ -36,7 +36,7 @@
 
 		                    <div class="col-md-6">
 		                        <input id="btn_search" name="btn_search" type="submit" class="btn btn-danger" value="Search" />
-		                        <a href="<?php echo base_url(). "index.php/Admin_Product_ctr_ctr/products"; ?>" class="btn btn-primary">Refresh Product List</a>
+		                        <a href="<?php echo base_url(). "index.php/Admin_Product_ctr/index"; ?>" class="btn btn-primary">Refresh Product List</a>
 		                    </div>
 		                </div>
 
