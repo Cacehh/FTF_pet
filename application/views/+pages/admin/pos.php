@@ -1,4 +1,4 @@
-
+<br>
 <main>
 <br>
 	<div class="row">
@@ -7,12 +7,12 @@
 				<div class="col s12">
 
 					<script type="text/javascript">
-						$(document).ready(function() {
-							$('#username').autocomplete({
-								source: "<?php echo site_url('model_possearch/search/?'); ?>"
-							});
-						});
-
+					//POST DELETE NOT WORKING
+						// $(document).ready(function() {
+						// 	$('#username').autocomplete({
+						// 		source: "<?php echo site_url('prod_model/search/?'); ?>"
+						// 	});
+						// });
 					</script>
 
 					<?php 
