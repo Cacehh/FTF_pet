@@ -1,3 +1,4 @@
+<br>
 <!-- initial test script for computation of total amount plus discount. -->
 <script type="text/javascript">
 function calculate() {
@@ -24,7 +25,6 @@ function calculate() {
 
 }
 </script>
-
 <main>
 <br>
 	<div class="row">
@@ -33,12 +33,12 @@ function calculate() {
 				<div class="col s12">
 
 					<script type="text/javascript">
-						$(document).ready(function() {
-							$('#username').autocomplete({
-								source: "<?php echo site_url('model_possearch/search/?'); ?>"
-							});
-						});
-
+					//POST DELETE NOT WORKING
+						// $(document).ready(function() {
+						// 	$('#username').autocomplete({
+						// 		source: "<?php echo site_url('prod_model/search/?'); ?>"
+						// 	});
+						// });
 					</script>
 
 					<?php 

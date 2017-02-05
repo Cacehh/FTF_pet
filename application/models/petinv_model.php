@@ -1,6 +1,6 @@
 <?php if ( !defined ('BASEPATH')) exit('No direct script access allowed');
 
-class prodinv_model extends CI_Model {
+class petinv_model extends CI_Model {
 
     function __construct()
     {
@@ -8,7 +8,7 @@ class prodinv_model extends CI_Model {
     }
 
     //function for retrieving the products for the POS inventory
-    function get_prodinv($limit, $start, $st = NULL)
+    function get_petinv($limit, $start, $st = NULL)
     {
         if ($st == "NIL") $st = "";
         $sql = "select * from product where ProdName like '%$st%' limit " . $start . ", " . $limit;
@@ -17,7 +17,7 @@ class prodinv_model extends CI_Model {
     }
     
     //function to get the inventory product count
-    function get_prodinv_count($st = NULL)
+    function get_petinv_count($st = NULL)
     {
         if ($st == "NIL") $st = "";
         $sql = "select * from product where ProdName like '%$st%'";

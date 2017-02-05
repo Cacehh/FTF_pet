@@ -11,44 +11,37 @@
 		</div>
 		
 		<div class="row container center">
-			<div class=" col s6">
-				<h5>Pet Classification</h5>
-				<select>
-				<option value="" disabled selected>Choose your option</option>
-				<option value="1">dog</option>
-				<option value="2">cat</option>
-				<option value="3">Small and furry</option>
-				<option value="4">birds</option>
-				</select>
-			</div>
-			<div class="col s6">
-				<h5>Supplier</h5>
-				<select>
-				<option value="" disabled selected>Choose your option</option>
-				<option value="1">Option 1</option>
-				<option value="2">Option 2</option>
-				<option value="3">Option 3</option>
-				</select>
-			</div>
-			<div class="col s4">
-				<h5>Tags</h5>
-				<input id="Tags" type="text" class="validate">
-			</div>
-			<div class="col s3 ">
-					<div class="chip">
-						Fluffy
-						<i class="close material-icons">close</i>
-					</div>	
-					<div class="chip">
-						Dark Brown
-						<i class="close material-icons">close</i>
+			<div class="col s12">
+				<i class="material-icons prefix">search</i>
+					<script type="text/javascript">
+						// $(document).ready(function() {
+						// 	$('#username').autocomplete( {
+						// 		source: "<?php echo site_url('petinv_model/search/?'); ?>"
+						// 	});
+						// });
+					</script>
+
+						<?php 
+		               	    $attr = array("class" => "form-horizontal", "role" => "form", "id" => "form1", "name" => "form1");
+		               	    echo form_open("POS_ctr/invPetSearch", $attr);
+		               	?>
+	            
+		                <div class="form-group">
+		                    <div class="col-md-6">
+		                        <input class="form-control" id="icon_prefix" name="petinv_name" type="text" value="<?php echo set_value('petinv_name'); ?>" />
+								<label for="icon_prefix">Search for Pets</label>
+		                    </div>
+
+		                    <div class="col-md-6">
+		                        <input id="btn_search" name="btn_search" type="submit" class="btn btn-danger" value="Search" />
+		                        <a href="<?php echo base_url(). "index.php/POS_ctr/pets"; ?>" class="btn btn-primary">Refresh Product List</a>
+		                    </div>
+		                </div>
+
+		                <?php 
+		                    echo form_close(); 
+		                ?>
 					</div>
-			</div>
-			<div class="col s5">
-				<br>
-				<a href="#">clear filters</a>
-				<a class="waves-effect waves-light btn">Apply Filter</a>
-			</div>
 		</div>
 		
 		<div class="divider"></div>
@@ -56,46 +49,41 @@
 		<div class="row">
 			<br>
 			<div class="col s12">
-				<table class="centered">
-					<thead>
-						<tr>
-						<th data-field="name"> Name</th>
-						<th data-field="producttype">Type</th>
-						<th data-field="tags">Tags</th>
-						<th data-field="supplier">Supplier</th>
-						<th data-field="price">Price</th>
-						<th data-field="instock">In-stock</th>
-						</tr>
-					</thead>
 
-					<tbody>
-						<tr>
-						<td>Poodle</td>
-						<td>Dog</td>
-						<td><u>brown</u> , <u>furry</u></td>
-						<td>Breddingan Center</td>
-						<td>&#8369; 10,005.00</td>
-						<td>N/A</td>
-						<td>
-							<a href=""><i class="material-icons">mode_edit</i></a>
-							<a href=""><i class="material-icons">delete</i></a>
-						</td>
-						</tr>
-			
-						<tr>
-						<td>Azkal</td>
-						<td>Dog</td>
-						<td><u>brown</u> , <u>furry</u></td>
-						<td>Breedingan Center</td>
-						<td>&#8369; 2,000.00</td>
-						<td>20</td>
-						<td>
-							<a href=""><i class="material-icons">mode_edit</i></a>
-							<a href=""><i class="material-icons">delete</i></a>
-						</td>
-						</tr>
-					</tbody>
-				</table>
+				<table class="bordered centered highlight">
+				<!-- <table class="bordered stripped centered responsive-table"> -->
+	                <thead>
+	                    <tr>
+	                    <th data-field ="#">#</th>
+	                    <th data-field ="productID">Product ID</th>
+	                    <th data-field ="">Product Name</th>
+	                    <th data-field ="">Category</th>
+	                    <th data-field ="">Amount</th>
+	                    <th data-field ="">Quantity</th>
+	                    <th data-field ="">Timestamp</th>
+	                    <th></th>
+	                    </tr>
+	                </thead>
+
+	                <tbody>
+	                    <?php for ($i = 0; $i < count($petinvlist); ++$i) { ?>
+	                    <tr>
+	                        <td><?php echo ($page+$i+1); ?></td>
+	                        <td><?php echo $petinvlist[$i]->ProdID; ?></td>
+	                        <td><?php echo $petinvlist[$i]->ProdName; ?></td>
+	                        <td><?php echo $petinvlist[$i]->Category; ?></td>
+	                        <td><?php echo $petinvlist[$i]->Amount; ?></td>
+	                        <td><?php echo $petinvlist[$i]->Quantity; ?></td>
+	                        <td><?php echo $petinvlist[$i]->Timestamp; ?></td>
+	                        <td>
+								<a href=""><i class="material-icons">mode_edit</i></a>
+								<a href=""><i class="material-icons">delete</i></a>
+							</td>
+	                    </tr>
+	                    <?php } ?>
+	                </tbody>
+            	</table>
+
 			</div>
 			<br>
 		</div>
