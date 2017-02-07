@@ -62,7 +62,15 @@
                     </p>
                 </form>
             </div>
-            <div class="col l6 m6 s1"></div>
+            <div class="col l6 m6 s1">
+                <br>
+                <br>
+                <br>
+                <br>
+                <b>Super Admin: </b>email: sa password: sa <br>
+                <b>Inventroy Admin:</b>email: ia password: ia <br>
+                <b>POS Admin: </b>email: pa password: pa <br>
+            </div>
 		</div>
 	</div>
 </main> 
