@@ -10,15 +10,10 @@ class Admin_ctr extends CI_Controller {
             $this->session->set_flashdata('flash_data', 'Please login First');
             redirect('Access_ctr');
         }
-        
-        if($_SESSION['id'] <= '100')
-        {
-            if($_SESSION['id'] >= '50')
-            {
-                redirect('Admin_Inventory_ctr');
-            } else {
-                redirect('POS_ctr');
-            }
+
+        if($this->session->userdata('acct_type') != '3'){
+            $this->session->set_flashdata('flash_data', '<b>This is a restricted page.</b>');
+            redirect('Access_ctr');
         }
     }
 

@@ -15,13 +15,13 @@ class POS_ctr extends CI_Controller {
             redirect('Access_ctr');
         }
         
-        if($_SESSION['id'] <= '100')
-        {
-            if($_SESSION['id'] >= '50')
-            {
-                redirect('Admin_Inventory_ctr');
-            }
-        }
+        // if($_SESSION['id'] <= '100')
+        // {
+        //     if($_SESSION['id'] >= '50')
+        //     {
+        //         redirect('Admin_Inventory_ctr');
+        //     }
+        // }
     }
     
     public function index()

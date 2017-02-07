@@ -12,11 +12,7 @@ class Login_model extends CI_Model
     public function validate_user($data) {
         $this->db->where('username', $data['username']);
         $this->db->where('user_password', md5($data['user_password']));
-        // $this->db->where('acct_type', $data['acct_type']);
-
         return $this->db->get('users')->row();
-
-
     }    
 
     public function detect_user() {

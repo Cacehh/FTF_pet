@@ -9,9 +9,9 @@ Class Access_ctr extends CI_Controller {
 		// Load form validation library
 		$this->load->library('form_validation');
 
-		// Load database
+        // Load database
         $this->load->model("Login_model", "hello");
-	}
+    }
 
     //Call login page
     public function index() {
@@ -20,56 +20,19 @@ Class Access_ctr extends CI_Controller {
             if(!empty($result)) {
                 $data = [
                     'id' => $result->id,
-                    'username' => $result->username
+                    'username' => $result->username,
+                    'acct_type' => $result->acct_type
                 ];
-
                     $this->session->set_userdata($data);
-                    
-                    if($_SESSION['id'] <= '100')
-                    {
-                        if($_SESSION['id'] >= '50')
-                        {
-                            redirect('Admin_Inventory_ctr');
-                        } else {
-                            redirect('POS_ctr');
-                        }
+                    if($this->session->userdata('acct_type') == '3'){
+                        redirect('Admin_ctr');
+                    } else if ($this->session->userdata('acct_type') == '2') {
+                        redirect('Admin_Inventory_ctr');
+                    } elseif ($this->session->userdata('acct_type') == '1') {
+                        redirect('POS_ctr');
+                    } else {
+                        // redirect('Admin_ctr/logout');
                     }
-                    redirect('Admin_ctr',$str);
-                    // if($_SESSION['id'] == '100') {
-                    //     redirect('Admin_ctr',$str);
-                    // } elseif($_SESSION['id'] == '51') {
-                    //     redirect('Admin_Inventory_ctr');
-                    // } elseif($_SESSION['id'] == '1') {
-                    //     redirect('POS_ctr');
-                    // }
-                // if($id > '50'){
-                // }
-                
-                // if(!empty($str)) {
-                    // if($str == "POS") {
-                    //     // redirect('','refresh')
-                    //     redirect('POS_ctr', $str);
-                    // } elseif ($str == "Inventory") {
-                    //     redirect('Admin_ctr',$result);
-                    // } elseif ($str == "POS") {
-                    //     redirect('POS_ctr',$result);
-                    // }
-                // }
-                // $this->load->model->('Login_model');
-                // $res = $this->Login_model->detect_user();
-                // if($res == 3){
-                //     $data['result'] = $res;
-                //     $this->session->set_userdata($data);
-                //     redirect('Admin_ctr',$result);
-                // } else if ($res == 2) {
-                //     # code...
-                // } elseif ($res == 1) {
-                //     # code...
-                //     redirect('Admin_ctr',$result);
-                // } else {
-                //     redirect('Admin_ctr/logout');
-                // }
-                // $user_type['type'] = $this->Login_model->detect_user();
             } else {
                 $this->session->set_flashdata('flash_data', 'Username or password does not exist');
                 redirect('Access_ctr');
@@ -77,7 +40,6 @@ Class Access_ctr extends CI_Controller {
         }
 
         print_r($this->session->all_userdata());
-        // echo "this is the page for no post";
         $data['title'] = 'FTNF | Login';
         $this->load->view('snips/a_start', $data);
         $this->load->view('snips/css_materialize');
