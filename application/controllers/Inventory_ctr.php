@@ -1,10 +1,28 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Admin_Inventory_ctr extends CI_Controller {
+class Inventory_ctr extends CI_Controller {
+    
+    public function __construct()
+    {
+        parent::__construct();
+        $this->load->database();
+        $this->load->library('pagination');
+        $this->load->model(array('prod_model','prodinv_model', 'petinv_model'));
+
+        if(empty($this->session->userdata('id'))) {
+            $this->session->set_flashdata('flash_data', 'Please login First');
+            redirect('Access_ctr');
+        }
+        $type = $this->session->userdata('acct_type'); 
+        if ($type == '1') {
+            $this->session->set_flashdata('flash_data', '<b>This is a restricted page. Please login again</b>');
+            redirect('Access_ctr');
+        }
+    }
     
     public function index() {
-        $data['title'] = 'FTNF | ';
+        $data['title'] = 'FTNF | Inventory';
         $this->load->view('snips/a_start', $data);
         $this->load->view('snips/css_materialize');
         $this->load->view('snips/css_materialize_icon');
