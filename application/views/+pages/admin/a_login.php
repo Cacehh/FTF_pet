@@ -3,15 +3,6 @@
 <br>
 <br>
 <main>
-        <?php
-        // if (isset($message_display)) {
-        //     echo "<div class='message center red-text'>";
-        //     echo "<h4>";
-        //     echo $message_display;
-        //     echo "</h4>";
-            // echo "</div>";
-        // }
-        ?>
         <?php if(isset($_SESSION)) {
             echo "<div class='message center red-text'>";
             echo "<h4>";

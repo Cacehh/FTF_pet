@@ -31,7 +31,8 @@ Class Access_ctr extends CI_Controller {
                     } elseif ($this->session->userdata('acct_type') == '1') {
                         redirect('POS_ctr');
                     } else {
-                        // redirect('Admin_ctr/logout');
+                        $this->session->set_flashdata('flash_data', 'Please Contact Administrator');
+                        redirect('Access_ctr');
                     }
             } else {
                 $this->session->set_flashdata('flash_data', 'Username or password does not exist');

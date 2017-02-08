@@ -12,7 +12,7 @@ class Admin_ctr extends CI_Controller {
         }
 
         if($this->session->userdata('acct_type') != '3'){
-            $this->session->set_flashdata('flash_data', '<b>This is a restricted page.</b>');
+            $this->session->set_flashdata('flash_data', '<b>This is a restricted page. Please login again</b>');
             redirect('Access_ctr');
         }
     }

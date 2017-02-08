@@ -56,7 +56,20 @@ function calculate() {
 
 	                    <div class="col-md-6">
 	                        <input id="btn_search" name="btn_search" type="submit" class="btn btn-danger" value="Search" />
-	                        <a href="<?php echo base_url(). "index.php/POS_ctr/index"; ?>" class="btn btn-primary">Refresh Product List</a>
+	                        <?php
+	                        	if ($acct_type == '1') {
+	                        	/*
+	                        		<a href="
+	                        		<?php 
+	                        			echo base_url(). "index.php/POS_ctr/index"; 
+	                        		?>
+	                        		" class="btn btn-primary">Refresh Product List</a>
+	                        	*/
+	                        		echo anchor('POS_ctr/index', 'Refresh Product List', 'class=btn btn-primary');
+	                        	} else {
+	                        		echo anchor('POS_ctr/indexA', 'Refresh Product List', 'class=btn btn-primary');
+	                        	}
+	                         ?>
 	                    </div>
 	                </div>
 
@@ -93,7 +106,15 @@ function calculate() {
 	                        <td><?php echo $prodlist[$i]->Quantity; ?></td>
 	                        <td><?php echo $prodlist[$i]->Amount; ?></td>
 	                        <td><?php echo $prodlist[$i]->Timestamp; ?></td>
-	                        <td><a class="waves-effect waves-light btn">Add Item</a></td>
+	                        <td>
+	                        <?php
+	                        	if ($acct_type == '1') {
+	                        		echo anchor('POS_ctr/index', '<i class="material-icons left">import_export</i>', 'waves-effect waves-light btn');
+	                        	} else {
+	                        		echo anchor('POS_ctr/indexA', '<i class="material-icons left">import_export</i>', 'waves-effect waves-light btn');
+	                        	}
+	                         ?>
+	                        </td>
 	                    </tr>
 	                    <?php } ?>
 	                </tbody>
