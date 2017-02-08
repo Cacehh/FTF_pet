@@ -43,6 +43,13 @@
 		<div class="nav-wrapper grey darken-2"> 
 			<a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
 			<ul class="right hide-on-med-and-down">
+				<li>
+					<?php 
+						echo "Welcome, ";
+						echo $this->session->userdata('fname');
+						echo $this->session->userdata('lname');
+					?>
+				</li>
 				<li><a href="<?php echo base_url()?>index.php/Admin_ctr/dashboard"><i class="material-icons left">home</i>Home</a></li>
 				<li class="active"><a class="dropdown-button" href="#!" data-activates="dropdown1">Account<i class="material-icons right">arrow_drop_down</i></a></li>
 			</ul>
@@ -64,8 +71,8 @@
 						<!-- FIX HERE CODE111 -->
 							<div class="collapsible-body" >
 								<ul>
-								<li><a href="<?php echo base_url()?>index.php/Admin_ctr_POS">Point Of Sales</a></li>
-								<li><a href="<?php echo base_url()?>index.php/Admin_ctr_POS/history">Sales History</a></li>
+								<li><a href="<?php echo base_url()?>index.php/POS_ctr/indexA">Point Of Sales</a></li>
+								<li><a href="<?php echo base_url()?>index.php/POS_ctr/history">Sales History</a></li>
 								<li><a href="#">More...</a></li>
 								</ul>
 							</div>

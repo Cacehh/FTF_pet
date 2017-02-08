@@ -21,13 +21,15 @@ Class Access_ctr extends CI_Controller {
                 $data = [
                     'id' => $result->id,
                     'username' => $result->username,
-                    'acct_type' => $result->acct_type
+                    'acct_type' => $result->acct_type,
+                    'fname' => $result->FirstName,
+                    'lname' => $result->LastName
                 ];
                     $this->session->set_userdata($data);
                     if($this->session->userdata('acct_type') == '3'){
                         redirect('Admin_ctr');
                     } else if ($this->session->userdata('acct_type') == '2') {
-                        redirect('Admin_Inventory_ctr');
+                        redirect('Inventory_ctr');
                     } elseif ($this->session->userdata('acct_type') == '1') {
                         redirect('POS_ctr');
                     } else {

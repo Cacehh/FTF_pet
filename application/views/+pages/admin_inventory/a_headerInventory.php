@@ -31,7 +31,7 @@
 			<li><a href="#!" class="black-text">My Account</a></li>
 			<li><a href="#!" class="black-text">Edit Account</a></li>
 			<li class="divider" class="black-text"></li>
-			<li class="red accent-2"><a href="<?php echo base_url()?>index.php/Admin_Inventory_ctr" class="black-text">Log out</a></li>
+			<li class="red accent-2"><a href="<?php echo base_url()?>index.php/Access_ctr/logout" class="black-text">Log out</a></li>
 		</ul>
 			<ul id="dropdown2" class="dropdown-content">
 			<li><a href="#!">Book Cover Design</a></li>
@@ -42,7 +42,14 @@
 		<div class="nav-wrapper grey darken-2"> 
 			<a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
 			<ul class="right hide-on-med-and-down">
-				<li><a href="<?php echo base_url()?>index.php/Admin_Inventory_ctr/index"><i class="material-icons left">home</i>Home</a></li>
+				<li>
+					<?php 
+						echo "Welcome, ";
+						echo $this->session->userdata('fname');
+						echo $this->session->userdata('lname');
+					?>
+				</li>
+				<li><a href="<?php echo base_url()?>index.php/Inventory_ctr/index"><i class="material-icons left">home</i>Home</a></li>
 				<li class="active"><a class="dropdown-button" href="#!" data-activates="dropdown1">Account<i class="material-icons right">arrow_drop_down</i></a></li>
 			</ul>
 			
@@ -50,28 +57,28 @@
 				<li class="no-padding">
 					<ul class="collapsible collapsible-accordion">
 						<li class="bold center deep-orange accent-2">
-							<a href="<?php echo base_url()?>index.php/Admin_Inventory_ctr/index" class="white-text collapsible-header waves-effect waves-blue">Fins, Tails N' Feathers | INVENTORY</a>	
+							<a href="<?php echo base_url()?>index.php/Inventory_ctr/index" class="white-text collapsible-header waves-effect waves-blue">Fins, Tails N' Feathers | INVENTORY</a>	
 						</li>
 						<li class="bold"><a class="white-text collapsible-header  waves-effect waves-grey">Inventory</a>
 							<div class="collapsible-body">
 								<ul>
-								<li><a href="<?php echo base_url()?>index.php/Admin_Inventory_ctr/index">View</a></li>
-								<li><a href="<?php echo base_url()?>index.php/Admin_Inventory_ctr/invPet">Pet Inventory</a></li>
-								<li><a href="<?php echo base_url()?>index.php/Admin_Inventory_ctr/invProduct">Product Inventory</a></li>
-								<li><a href="<?php echo base_url()?>index.php/Admin_Inventory_ctr/addPet">Add Pet</a></li>
-								<li><a href="<?php echo base_url()?>index.php/Admin_Inventory_ctr/addProduct">Add Products</a></li>
-								<li><a href="<?php echo base_url()?>index.php/Admin_Inventory_ctr/invEditProd">Edit Products</a></li>
-								<li><a href="<?php echo base_url()?>index.php/Admin_Inventory_ctr/invEditPet">Edit Pets</a></li>
+								<li><a href="<?php echo base_url()?>index.php/Inventory_ctr/index">View</a></li>
+								<li><a href="<?php echo base_url()?>index.php/Inventory_ctr/invPet">Pet Inventory</a></li>
+								<li><a href="<?php echo base_url()?>index.php/Inventory_ctr/invProduct">Product Inventory</a></li>
+								<li><a href="<?php echo base_url()?>index.php/Inventory_ctr/addPet">Add Pet</a></li>
+								<li><a href="<?php echo base_url()?>index.php/Inventory_ctr/addProduct">Add Products</a></li>
+								<li><a href="<?php echo base_url()?>index.php/Inventory_ctr/invEditProd">Edit Products</a></li>
+								<li><a href="<?php echo base_url()?>index.php/Inventory_ctr/invEditPet">Edit Pets</a></li>
 								</ul>
 							</div>
 						</li>
 						<li class="bold center deep-orange accent-2">
 							<a class="white-text collapsible-header">Quick Actions</a>
 						</li>
-						<li class=" bold"><a href="<?php echo base_url()?>index.php/Admin_Inventory_ctr/addProduct" class="white-text waves-effect waves-orange btn deep-orange accent-2">
+						<li class=" bold"><a href="<?php echo base_url()?>index.php/Inventory_ctr/addProduct" class="white-text waves-effect waves-orange btn deep-orange accent-2">
 							<i class="tiny material-icons left">library_add</i>PRODUCTS
 						</a></li>		
-						<li class=" bold"><a href="<?php echo base_url()?>index.php/Admin_Inventory_ctr/addPet" class="white-text waves-effect waves-orange btn deep-orange accent-2">
+						<li class=" bold"><a href="<?php echo base_url()?>index.php/Inventory_ctr/addPet" class="white-text waves-effect waves-orange btn deep-orange accent-2">
 							<i class="tiny material-icons left">library_add</i>PET
 						</a></li>
 					</ul>
