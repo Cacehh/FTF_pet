@@ -46,6 +46,7 @@
 					<?php 
 						echo "Welcome, ";
 						echo $this->session->userdata('fname');
+						echo " ";
 						echo $this->session->userdata('lname');
 					?>
 				</li>

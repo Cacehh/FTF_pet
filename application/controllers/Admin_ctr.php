@@ -20,7 +20,7 @@ class Admin_ctr extends CI_Controller {
     public function index() 
     {
 
-        print_r($this->session->all_userdata());
+        // print_r($this->session->all_userdata());
         $data['title'] = 'FTNF | Dashboard'; 
         $this->load->view('snips/a_start', $data);
         $this->load->view('snips/css_materialize');
