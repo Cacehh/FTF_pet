@@ -12,7 +12,7 @@
 				if (isset($message)) { 
 			?>
 
-			<CENTER><h3 style="color:green;">Data inserted successfully</h3></CENTER><br>
+			<CENTER><h5 style="color:green;">Data inserted successfully</h5></CENTER><br>
 			<?php } ?>
 
 		 <div class="row">
@@ -74,11 +74,9 @@
 									echo form_input(array('id' => 'dname', 'name' => 'dname')); 
 								?><br />
 						</div>
-					</div>
-				</div>
-
+					
 								<!-- Email -->
-
+						 <div class="input-field col s5">
 								<?php 
 									echo form_label('Email :'); 
 								?> 
@@ -88,8 +86,10 @@
 								<?php 
 									echo form_input(array('id' => 'demail', 'name' => 'demail')); 
 								?><br />
+						</div>
 
 								<!-- Account Type -->
+						<div class="input-field col s2">
 
 								<?php 
 									echo form_label('Account Type :'); 
@@ -100,9 +100,16 @@
 								<?php 
 									echo form_input(array('id' => 'dacct', 'name' => 'dacct')); 
 								?><br />
+						</div>
+					</div>
+				</div>
+
+
+				<div class="row">
+		            <div class="input-field col s10">
+		                <div class="input-field col s5">
 
 								<!-- Mobile No. -->
-
 								<?php 
 									echo form_label('Mobile No. :'); 
 								?> 
@@ -110,11 +117,12 @@
 									echo form_error('dmobile'); 
 								?><br />
 								<?php 
-									echo form_input(array('id' => 'dmobile', 'name' => 'dmobile', 'placeholder' => '11 Digit Mobile No.')); 
+									echo form_input(array('id' => 'dmobile', 'name' => 'dmobile')); 
 								?><br />
+						</div>
 
+						<div class="input-field col s5">
 								<!-- Password -->
-
 								<?php 
 									echo form_label('Password :'); 
 								?> 
@@ -124,6 +132,9 @@
 								<?php 
 									echo form_input(array('id' => 'dpassword', 'name' => 'dpassword')); 
 								?><br />
+						</div>
+					</div>
+				</div>
 
 								<!-- Submit -->
 
