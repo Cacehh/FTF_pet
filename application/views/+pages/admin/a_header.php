@@ -72,7 +72,7 @@
 						<!-- FIX HERE CODE111 -->
 							<div class="collapsible-body" >
 								<ul>
-								<li><a href="<?php echo base_url()?>index.php/POS_ctr/indexA">Point Of Sales</a></li>
+								<li><a href="<?php echo base_url()?>index.php/POS_ctr/index">Point Of Sales</a></li>
 								<li><a href="<?php echo base_url()?>index.php/POS_ctr/history">Sales History</a></li>
 								<li><a href="#">More...</a></li>
 								</ul>

@@ -23,7 +23,7 @@
 
 						<?php 
 		               	    $attr = array("class" => "form-horizontal", "role" => "form", "id" => "form1", "name" => "form1");
-		               	    echo form_open("POS_ctr/invPetSearch", $attr);
+		               	    echo form_open("Inventory_ctr/invPetSearch", $attr);
 		               	?>
 	            
 		                <div class="form-group">
@@ -34,7 +34,7 @@
 
 		                    <div class="col-md-6">
 		                        <input id="btn_search" name="btn_search" type="submit" class="btn btn-danger" value="Search" />
-		                        <a href="<?php echo base_url(). "index.php/POS_ctr/pets"; ?>" class="btn btn-primary">Refresh Product List</a>
+		                        <a href="<?php echo base_url(). "index.php/Inventory_ctr/pets"; ?>" class="btn btn-primary">Refresh Product List</a>
 		                    </div>
 		                </div>
 

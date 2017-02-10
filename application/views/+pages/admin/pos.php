@@ -25,7 +25,8 @@ function calculate() {
 
 }
 </script>
-<main>
+<body OnLoad="document.form1.prod_name.focus();">
+<main >
 <br>
 	<div class="row">
 		<div class="input-field col s7">
@@ -109,9 +110,9 @@ function calculate() {
 	                        <td>
 	                        <?php
 	                        	if ($acct_type == '1') {
-	                        		echo anchor('POS_ctr/index', '<i class="material-icons left">import_export</i>', 'waves-effect waves-light btn');
+	                        		echo anchor('POS_ctr/index', '<i class="material-icons left">add_shopping_cart</i>', 'waves-effect waves-light btn');
 	                        	} else {
-	                        		echo anchor('POS_ctr/indexA', '<i class="material-icons left">import_export</i>', 'waves-effect waves-light btn');
+	                        		echo anchor('POS_ctr/indexA', '<i class="material-icons left">add_shopping_cart</i>', 'waves-effect waves-light btn');
 	                        	}
 	                         ?>
 	                        </td>
