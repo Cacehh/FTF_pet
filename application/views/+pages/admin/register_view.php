@@ -137,6 +137,7 @@
 				</div>
 
 								<!-- Submit -->
+								<!-- <a class="waves-effect waves-light btn">button</a> -->
 
 								<?php 
 									echo form_submit(array('id' => 'submit', 'value' => 'Submit')); 
