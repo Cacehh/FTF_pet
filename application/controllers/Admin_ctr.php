@@ -15,6 +15,8 @@ class Admin_ctr extends CI_Controller {
             $this->session->set_flashdata('flash_data', '<b>This is a restricted page. Please login again</b>');
             redirect('Access_ctr');
         }
+
+        $this->load->model('register_model');
     }
 
     public function index() 
@@ -55,17 +57,58 @@ class Admin_ctr extends CI_Controller {
 	
 	public function register()
     {
+
+        //Including validation library
+            $this->load->library('form_validation');
+
+            $this->form_validation->set_error_delimiters('<div class="error">', '</div>');
+
+            //Validating Name Field
+            $this->form_validation->set_rules('fname', 'lname', 'mname', 'username', 'required|min_length[8]|max_length[20]');
+
+            //Validating Email Field
+            $this->form_validation->set_rules('demail, Email', 'required|valid_email');
+
+            //Validating Mobile no. Field
+            $this->form_validation->set_rules('dmobile', 'Mobile No.', 'required|regex_match[/^[0-9]{11}$/]');
+
+            //Validating Address Field
+            $this->form_validation->set_rules('dpassword', 'Password', 'required|valid_password', 'required|min_length[10]|max_length[50]');
+
+            if ($this->form_validation->run() == FALSE) {
+                $this->load->view('+pages/admin/a_register');
+        } else {
+
+        //Setting values for tabel columns
+        $data = array(
+            'FirstName' => $this->input->post('fname'),
+            'LastName' => $this->input->post('lname'),
+            'Middle_Name' => $this->input->post('mname'),
+            'username' => $this->input->post('username'),
+            'user_email' => $this->input->post('demail'),
+            'user_email' => $this->input->post('demail'),
+            'user_password' => $this->input->post('dpassword')
+        );
+
+            //Transfering data to Model
+            $this->register_model->form_insert($data);
+            $data['message'] = 'Data Inserted Successfully';
+
+            //Loading View
+            $this->load->view('a_register', $data);
+        }
+
+
         $data['title'] = 'FTNF | Register';
         $this->load->view('snips/a_start', $data);
         $this->load->view('snips/css_materialize');
         $this->load->view('snips/css_materialize_icon');
-        
-        $this->load->view('+pages/admin/a_register');
-		
+        		
 		$this->load->view('snips/js_jquery300');
         $this->load->view('snips/js_materialize');
 		$this->load->view('snips/z_end');
     } 
+
 	public function forgotpassword()
     {
         $data['title'] = 'FTNF | Forgot Password';

@@ -72,7 +72,9 @@
 	                        <td><?php echo $petinvlist[$i]->ProdID; ?></td>
 	                        <td><?php echo $petinvlist[$i]->ProdName; ?></td>
 	                        <td><?php echo $petinvlist[$i]->Category; ?></td>
-	                        <td><?php echo $petinvlist[$i]->Amount; ?></td>
+	                        <td><?php 
+	                        	echo "&#8369;";
+	                        	echo $petinvlist[$i]->Amount; ?></td>
 	                        <td><?php echo $petinvlist[$i]->Quantity; ?></td>
 	                        <td><?php echo $petinvlist[$i]->Timestamp; ?></td>
 	                        <td>

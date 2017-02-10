@@ -92,7 +92,6 @@ function calculate() {
 	                    <th>Category</th>
 	                    <th>Quantity</th>
 	                    <th>Amount</th>
-	                    <th>Timestamp</th>
 	                    <th>Add</th>
 	                    </tr>
 	                </thead>
@@ -105,8 +104,9 @@ function calculate() {
 	                        <td><?php echo $prodlist[$i]->ProdName; ?></td>
 	                        <td><?php echo $prodlist[$i]->Category; ?></td>
 	                        <td><?php echo $prodlist[$i]->Quantity; ?></td>
-	                        <td><?php echo $prodlist[$i]->Amount; ?></td>
-	                        <td><?php echo $prodlist[$i]->Timestamp; ?></td>
+	                        <td><?php 
+		                        echo "&#8369;";
+		                        echo $prodlist[$i]->Amount; ?></td>
 	                        <td>
 	                        <?php
 	                        	if ($acct_type == '1') {
