@@ -15,12 +15,12 @@
                 <div class="input-field col s6">
                     <i class="material-icons prefix">perm_identity</i>
                     <?php
-                        $First_name_data = array(
-                            'id'        => 'first_name','name'      => 'first_name','maxlength' => '20',
-                            'pattern'   => '.{2,20}','length'    => '20','class'     => 'validate',
+                        $User_name_data = array(
+                            'id'        => 'first_name','name'      => 'first_name','maxlength' => '30',
+                            'pattern'   => '.{2,20}','length'    => '30','class'     => 'validate',
                         );
 
-                        echo form_input($First_name_data);
+                        echo form_input($_name_data);
                     ?>  
                     <label for="first_name" data-error="First Name must be atlease 2 characters" >First Name</label>
                     <?php echo form_error('first_name'); ?>
@@ -53,6 +53,7 @@
                 </div>
             </div>
         </div>
+
         <div class="row">
             <div class="input-field col s12">
                 <div class="input-field col s5">
@@ -74,6 +75,7 @@
                 </div>
             </div>
         </div>
+
         <div class="row">
             <div class="input-field col s12">
                 <div class="input-field col s8">
@@ -84,8 +86,20 @@
 
                 <div class="input-field col s4">
                     <i class="material-icons prefix">label</i>
-                    <input id="type" name="type" type="number" class="validate" maxlength="2" required>
-                    <label for="account_type" data-error="Not valid" data-success="Correct account type">Account Type</label>
+
+                    <!-- <input id="type" name="type" type="number" class="validate" pattern=".{1}" length="1" maxlength="1" required> -->
+
+                    <?php
+                        $account_type = array(
+                            'id' => 'account_type','name' => 'account_type','maxlength' => '1', 'type'=>'number',
+                            'pattern' => '.{1}','length' => '1','class' => 'validate',
+                        );
+
+                        echo form_input($account_type);
+
+                    ?> 
+                      <label for="account_type">Account Type</label>
+                     <?php echo form_error('account_type'); ?>
                 </div>
             </div>
         </div>
