@@ -37,11 +37,21 @@ class Register_ctr extends CI_Controller {
 			$this->form_validation->set_rules('dpassword', 'Password', 'required|min_length[3]|max_length[30]');
 
 			if ($this->form_validation->run() == FALSE) {
+				$data['title'] = 'FTNF | Register User';
+
+		        $this->load->view('snips/a_start', $data);
+		        $this->load->view('snips/css_materialize');
+		        $this->load->view('snips/css_materialize_icon');
+		        
 				$this->load->view('+pages/admin/register_view');
+
+				$this->load->view('snips/js_jquery300');
+		        $this->load->view('snips/js_materialize');
+				$this->load->view('snips/z_end');
 
 		} else {
 
-		//Setting values for tabel columns
+		//Setting values for table columns
 		$data = array(
 			'FirstName' => $this->input->post('fname'),
 			'LastName' => $this->input->post('lname'),
@@ -56,6 +66,11 @@ class Register_ctr extends CI_Controller {
 			//Transfering data to Model
 			$this->Register_model->form_insert($data);
 			$data['message'] = 'Data Inserted Successfully';
+			$data['title'] = 'FTNF | Register User';
+
+	        $this->load->view('snips/a_start', $data);
+	        $this->load->view('snips/css_materialize');
+	        $this->load->view('snips/css_materialize_icon');
 			$data['title'] = 'FTNF | Register User';
 
 	        $this->load->view('snips/a_start', $data);
