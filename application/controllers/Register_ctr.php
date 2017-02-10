@@ -56,9 +56,19 @@ class Register_ctr extends CI_Controller {
 			//Transfering data to Model
 			$this->Register_model->form_insert($data);
 			$data['message'] = 'Data Inserted Successfully';
+			$data['title'] = 'FTNF | Register User';
 
-			//Loading View
+	        $this->load->view('snips/a_start', $data);
+	        $this->load->view('snips/css_materialize');
+	        $this->load->view('snips/css_materialize_icon');
+
+	        //Loading View
 			$this->load->view('+pages/admin/register_view', $data);
+	        		
+			$this->load->view('snips/js_jquery300');
+	        $this->load->view('snips/js_materialize');
+			$this->load->view('snips/z_end');
+
 		}
 	}	
 }
