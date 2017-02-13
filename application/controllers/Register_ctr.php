@@ -14,7 +14,7 @@ class Register_ctr extends CI_Controller {
 			$this->form_validation->set_error_delimiters('<div class="error">', '</div>');
 
 			//Validating First Name Field
-			$this->form_validation->set_rules('fname', 'FirstName', 'required|min_length[1]|max_length[40]');
+			$this->form_validation->set_rules('fname', 'FirstName', 'required|min_length[2]|max_length[40]');
 
 			//Validating Last Name Name Field
 			$this->form_validation->set_rules('lname', 'LastName', 'required|min_length[1]|max_length[40]');
@@ -37,13 +37,14 @@ class Register_ctr extends CI_Controller {
 			$this->form_validation->set_rules('dpassword', 'Password', 'required|min_length[3]|max_length[30]');
 
 			if ($this->form_validation->run() == FALSE) {
-				$data['title'] = 'FTNF | Register User';
 
+				$data['title'] = 'FTNF | Registration';
 		        $this->load->view('snips/a_start', $data);
 		        $this->load->view('snips/css_materialize');
 		        $this->load->view('snips/css_materialize_icon');
+                $this->load->view('+pages/admin/a_header', $data);
 		        
-				$this->load->view('+pages/admin/register_view');
+				$this->load->view('+pages/admin/register');
 
 				$this->load->view('snips/js_jquery300');
 		        $this->load->view('snips/js_materialize');
@@ -66,14 +67,16 @@ class Register_ctr extends CI_Controller {
 			//Transfering data to Model
 			$this->Register_model->form_insert($data);
 			$data['message'] = 'Data Inserted Successfully';
-			$data['title'] = 'FTNF | Register User';
+			$data['title'] = 'FTNF | Registration';
+            $this->load->view('+pages/admin/a_header', $data);
 			
 	        $this->load->view('snips/a_start', $data);
 	        $this->load->view('snips/css_materialize');
 	        $this->load->view('snips/css_materialize_icon');
 
+
 	        //Loading View
-			$this->load->view('+pages/admin/register_view', $data);
+			$this->load->view('+pages/admin/register', $data);
 	        		
 			$this->load->view('snips/js_jquery300');
 	        $this->load->view('snips/js_materialize');
