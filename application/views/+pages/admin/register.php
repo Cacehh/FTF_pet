@@ -114,7 +114,7 @@
                         );
                         echo form_input($demail);
                     ?>  
-                    <label for="demail" data-error="Must be a valid number" >Email</label>
+                    <label for="demail" data-error="Must be an email address" >Email</label>
                     <?php echo form_error('demail'); ?>
 				</div>
 
@@ -124,11 +124,11 @@
     				<?php
                         $dpassword = array(
                             'id'        => 'dpassword','name' => 'dpassword','maxlength' => '30',
-                            'pattern'   => '.{3,30}','length' => '30','class' => 'validate',
+                            'pattern'   => '.{3,30}','length' => '30','class' => 'validate', 'type' => 'password'
                         );
                         echo form_input($dpassword);
                     ?>  
-                    <label for="dpassword" data-error="Must be a valid number" >Password</label>
+                    <label for="dpassword" data-error="Must contain more than 3 characters" >Password</label>
                     <?php echo form_error('dpassword'); ?>
 				</div>
 			</div>
