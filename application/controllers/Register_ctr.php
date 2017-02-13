@@ -2,53 +2,63 @@
 
 class Register_ctr extends CI_Controller {
 
-		function __construct() {
-			parent::__construct();
-			$this->load->model('Register_model');
-		}
+	function __construct() {
+		parent::__construct();
 
-		function index() {
-			//Including validation library
-			$this->load->library('form_validation');
+        if(empty($this->session->userdata('id'))) {
+            $this->session->set_flashdata('flash_data', 'Please login First');
+            redirect('Access_ctr');
+        }
 
-			$this->form_validation->set_error_delimiters('<div class="error">', '</div>');
+        if($this->session->userdata('acct_type') != '3'){
+            $this->session->set_flashdata('flash_data', '<b>This is a restricted page. Please login again</b>');
+            redirect('Access_ctr');
+        }
+		$this->load->model('Register_model');
+	}
 
-			//Validating First Name Field
-			$this->form_validation->set_rules('fname', 'FirstName', 'required|min_length[2]|max_length[20]');
+	function index() {
+		//Including validation library
+		$this->load->library('form_validation');
 
-			//Validating Last Name Name Field
-			$this->form_validation->set_rules('lname', 'LastName', 'required|min_length[2]|max_length[20]');
+		$this->form_validation->set_error_delimiters('<div class="error">', '</div>');
 
-			//Validating Middle Name Field
-			$this->form_validation->set_rules('minitial', 'MiddleInitial', 'required|min_length[1]|max_length[1]');
+		//Validating First Name Field
+		$this->form_validation->set_rules('fname', 'FirstName', 'required|min_length[2]|max_length[20]');
 
-			//Validating Username Field
-			$this->form_validation->set_rules('dname', 'Username', 'required|min_length[3]|max_length[15]');
+		//Validating Last Name Name Field
+		$this->form_validation->set_rules('lname', 'LastName', 'required|min_length[2]|max_length[20]');
 
-			//Validating Email Field
-			$this->form_validation->set_rules('demail', 'Email', 'required|valid_email');
+		//Validating Middle Name Field
+		$this->form_validation->set_rules('minitial', 'MiddleInitial', 'required|min_length[1]|max_length[1]');
 
-			// $this->form_validation->set_rules('dacct', 'AccountType', 'required|min_length[1]|max_length[1]');
+		//Validating Username Field
+		$this->form_validation->set_rules('dname', 'Username', 'required|min_length[3]|max_length[15]');
 
-			//Validating Mobile no. Field
-			$this->form_validation->set_rules('dmobile', 'Mobile No.', 'required|regex_match[/^[0-9]{11}$/]');
+		//Validating Email Field
+		$this->form_validation->set_rules('demail', 'Email', 'required|valid_email');
 
-			//Validating Password Field
-			$this->form_validation->set_rules('dpassword', 'Password', 'required|min_length[3]|max_length[30]');
+		// $this->form_validation->set_rules('dacct', 'AccountType', 'required|min_length[1]|max_length[1]');
 
-			if ($this->form_validation->run() == FALSE) {
+		//Validating Mobile no. Field
+		$this->form_validation->set_rules('dmobile', 'Mobile No.', 'required|regex_match[/^[0-9]{11}$/]');
 
-				$data['title'] = 'FTNF | Registration';
-		        $this->load->view('snips/a_start', $data);
-		        $this->load->view('snips/css_materialize');
-		        $this->load->view('snips/css_materialize_icon');
-                $this->load->view('+pages/admin/a_header', $data);
-		        
-				$this->load->view('+pages/admin/register');
+		//Validating Password Field
+		$this->form_validation->set_rules('dpassword', 'Password', 'required|min_length[3]|max_length[30]');
 
-				$this->load->view('snips/js_jquery300');
-		        $this->load->view('snips/js_materialize');
-				$this->load->view('snips/z_end');
+		if ($this->form_validation->run() == FALSE) {
+
+			$data['title'] = 'FTNF | Registration';
+	        $this->load->view('snips/a_start', $data);
+	        $this->load->view('snips/css_materialize');
+	        $this->load->view('snips/css_materialize_icon');
+            $this->load->view('+pages/admin/a_header', $data);
+	        
+			$this->load->view('+pages/admin/register');
+
+			$this->load->view('snips/js_jquery300');
+	        $this->load->view('snips/js_materialize');
+			$this->load->view('snips/z_end');
 
 		} else {
 
