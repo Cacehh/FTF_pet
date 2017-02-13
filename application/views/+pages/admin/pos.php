@@ -68,7 +68,7 @@ function calculate() {
 	                        	*/
 	                        		echo anchor('POS_ctr/index', 'Refresh Product List', 'class=btn btn-primary');
 	                        	} else {
-	                        		echo anchor('POS_ctr/indexA', 'Refresh Product List', 'class=btn btn-primary');
+	                        		echo anchor('POS_ctr/index', 'Refresh Product List', 'class=btn btn-primary');
 	                        	}
 	                         ?>
 	                    </div>
