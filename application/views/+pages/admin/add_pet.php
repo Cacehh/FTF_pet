@@ -4,18 +4,18 @@
 <!--Add products tab-->
 	<div class="row">
 		<div class="row">
-			<h4 class="offset-s1 col s11">Products</h4>
+			<h4 class="offset-s1 col s11">Pets</h4>
 		</div>
 		<div class="row grey lighten-1">
 			<div class="offset-s1 col s12">
-				<p class="flow-text">Add new products</p>
+				<p class="flow-text">Add new pets</p>
 			</div>
 		</div>
 					<br>
 					<div class="row">
 						<div class="input-field col s12">
 						    <div class="input-field col s6">
-						    	<h5>Product Name</h5>
+						    	<h5>Pet Name</h5>
 									<input placeholder="Productname" id="productname" type="text" class="validate">	
 						  	</div>
 
@@ -45,7 +45,7 @@
 						</div>
 
 						<div class="input-field col s12">
-							<div class="input-field col s4">
+							<div class="input-field col s6">
 								<h5>Quantity</h5>
 								<input placeholder="Qty" id="Quantity" type="number" class="validate">
 <!--							<b>=</b>-->
@@ -58,29 +58,17 @@
 							 $('select').material_select('destroy');
 							</script>
 
-							<div class="input-field col s4">
-								<h5>Product Type</h5>
+							<div class="input-field col s6">
+								<h5>Pet Type</h5>
 								<div class="input-field">
 									<select>
-										<option value="Sample disabled" disabled selected>Product Type</option>
-										<option value="1">Groom</option>
-										<option value="2">Health</option>
-										<option value="3">Accessory</option>
+										<option value="Sample disabled" disabled selected>Pet Type</option>
+										<option value="1">Dog</option>
+										<option value="2">Cat</option>
+										<option value="3">Fish</option>
 									</select>
 									<!-- <label>Product Type</label>		 -->
 								</div>	
-							</div>
-
-							<div class="input-field col s4">
-								<h5>Generic Brand</h5>
-								<div class="input-field">
-									<select>
-										<option value="1" selected>Generic Brand</option>
-										<option value="2">Pedigree</option>
-										<option value="3">Champion</option>
-									</select>
-									<!-- <label>Product Brand</label> -->
-								</div>
 							</div>
 						</div>
 

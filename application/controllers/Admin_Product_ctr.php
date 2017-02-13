@@ -135,7 +135,7 @@ class Admin_Product_ctr extends CI_Controller {
         $this->load->view('snips/z_end');
     }
 	
-	public function add() 
+	public function addProducts() 
     {
         $data['title'] = 'FTNF | Add Products';
         $this->load->view('snips/a_start', $data);
@@ -150,6 +150,21 @@ class Admin_Product_ctr extends CI_Controller {
 		$this->load->view('snips/z_end');
 	}	
 	
+    public function addPets() 
+    {
+        $data['title'] = 'FTNF | Add Pets';
+        $this->load->view('snips/a_start', $data);
+        $this->load->view('snips/css_materialize');
+        $this->load->view('snips/css_materialize_icon');
+        $this->load->view('+pages/admin/a_header');
+        
+        $this->load->view('+pages/admin/add_pet');
+        
+        $this->load->view('snips/js_jquery300');
+        $this->load->view('snips/js_materialize');
+        $this->load->view('snips/z_end');
+    }   
+
 	public function type() 
     {
         $data['title'] = 'FTNF | Product Type';

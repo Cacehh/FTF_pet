@@ -99,7 +99,7 @@
 							</div>
 
 							<div class="col s12">
-								<a class="waves-effect waves-light btn right">Add Pet</a>
+								<a class="waves-effect waves-light btn right">Add Product</a>
 							</div>
 						</div>
 
