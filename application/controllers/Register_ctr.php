@@ -14,21 +14,21 @@ class Register_ctr extends CI_Controller {
 			$this->form_validation->set_error_delimiters('<div class="error">', '</div>');
 
 			//Validating First Name Field
-			$this->form_validation->set_rules('fname', 'FirstName', 'required|min_length[2]|max_length[40]');
+			$this->form_validation->set_rules('fname', 'FirstName', 'required|min_length[2]|max_length[20]');
 
 			//Validating Last Name Name Field
-			$this->form_validation->set_rules('lname', 'LastName', 'required|min_length[1]|max_length[40]');
+			$this->form_validation->set_rules('lname', 'LastName', 'required|min_length[2]|max_length[20]');
 
 			//Validating Middle Name Field
 			$this->form_validation->set_rules('minitial', 'MiddleInitial', 'required|min_length[1]|max_length[1]');
 
 			//Validating Username Field
-			$this->form_validation->set_rules('dname', 'Username', 'required|min_length[5]|max_length[15]');
+			$this->form_validation->set_rules('dname', 'Username', 'required|min_length[3]|max_length[15]');
 
 			//Validating Email Field
 			$this->form_validation->set_rules('demail', 'Email', 'required|valid_email');
 
-			$this->form_validation->set_rules('dacct', 'AccountType', 'required|min_length[1]|max_length[1]');
+			// $this->form_validation->set_rules('dacct', 'AccountType', 'required|min_length[1]|max_length[1]');
 
 			//Validating Mobile no. Field
 			$this->form_validation->set_rules('dmobile', 'Mobile No.', 'required|regex_match[/^[0-9]{11}$/]');
@@ -66,7 +66,7 @@ class Register_ctr extends CI_Controller {
 
 			//Transfering data to Model
 			$this->Register_model->form_insert($data);
-			$data['message'] = 'Data Inserted Successfully';
+			$data['message'] = 'User is added successfully!';
 			$data['title'] = 'FTNF | Registration';
             $this->load->view('+pages/admin/a_header', $data);
 			
