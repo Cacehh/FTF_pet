@@ -187,8 +187,8 @@
 
                                   <?php 
                                   echo form_label('Province'); 
-                                  echo form_error('province'); 
-                                  echo form_input(array('id' => 'province', 'name' => 'province')); 
+                                  echo form_error('prov'); 
+                                  echo form_input(array('id' => 'prov', 'name' => 'prov')); 
                                   ?><br />
 
                                  <!--  <input id="province" type="text" class="validate">

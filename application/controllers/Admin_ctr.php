@@ -328,7 +328,7 @@ class Admin_ctr extends CI_Controller {
             'Customer_Email' => $this->input->post('demail'),
             'Customer_Street' => $this->input->post('street'),
             'Customer_City' => $this->input->post('city'),
-            'Customer_Brgy' => $this->input->post('brngy'),
+            'Customer_Brgy' => $this->input->post('barsub'),
             'Customer_Prov' => $this->input->post('prov')
         );
 
