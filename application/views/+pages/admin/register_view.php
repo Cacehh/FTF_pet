@@ -1,5 +1,4 @@
   <br><br>
-  <br><br>
 	<div class="container blue-grey lighten-5 z-depth-3">
   <br><br>
 
@@ -17,42 +16,30 @@
 
 		 <div class="row">
             <div class="input-field col s12">
-                <div class="input-field col s6">
-	                    <i class="material-icons prefix">perm_identity</i>
+                <div class="input-field col s5">
+	                    <i class="material-icons prefix">account_circle</i>
 					<!-- First Name -->
 					<?php 
 						echo form_label('First Name :'); 
-					?> 
-					<?php 
 						echo form_error('fname'); 
-					?><br />
-					<?php 
 						echo form_input(array('id' => 'fname', 'name' => 'fname')); 
 					?><br />
 				</div>
 
 				<!-- Last Name -->
-				 <div class="input-field col s4">
+				 <div class="input-field col s5">
 					<?php 
 						echo form_label('Last Name :'); 
-					?> 
-					<?php 
 						echo form_error('lname'); 
-					?><br />
-					<?php 
 						echo form_input(array('id' => 'lname', 'name' => 'lname')); 
-					?><br />
+					?>
 				</div>
 
 				<!-- Middle Initial -->
 				<div class="input-field col s2">
 					<?php 
 						echo form_label('M.I :'); 
-					?> 
-					<?php 
 						echo form_error('minitial'); 
-					?><br />
-					<?php 
 						echo form_input(array('id' => 'minitial', 'name' => 'minitial')); 
 					?><br />
 				</div>
@@ -63,41 +50,31 @@
 				<div class="row">
 		            <div class="input-field col s12">
 		                <div class="input-field col s5">
-                    		<i class="material-icons prefix">assignment_ind</i>
-								<?php 
-									echo form_label('User Name :'); 
-								?> 
+                    		<i class="material-icons prefix">account_box</i>
 								<?php 
 									echo form_error('dname'); 
-								?><br />
-								<?php 
+									echo form_label('User Name :'); 
 									echo form_input(array('id' => 'dname', 'name' => 'dname')); 
 								?><br />
 						</div>
-					
-								<!-- Email -->
-						 <div class="input-field col s5">
+
+						<div class="input-field col s5">
+		                	<i class="material-icons prefix">local_phone</i>
+
+								<!-- Mobile No. -->
 								<?php 
-									echo form_label('Email :'); 
-								?> 
-								<?php 
-									echo form_error('demail'); 
-								?><br />
-								<?php 
-									echo form_input(array('id' => 'demail', 'name' => 'demail')); 
+									echo form_error('dmobile'); 
+									echo form_label('Mobile No. :'); 
+									echo form_input(array('id' => 'dmobile', 'name' => 'dmobile')); 
 								?><br />
 						</div>
-
+					
 								<!-- Account Type -->
 						<div class="input-field col s2">
-
-								<?php 
-									echo form_label('Account Type :'); 
-								?> 
+							<i class="material-icons prefix">assignment_ind</i>
 								<?php 
 									echo form_error('dacct'); 
-								?><br />
-								<?php 
+									echo form_label('Type :'); 
 									echo form_input(array('id' => 'dacct', 'name' => 'dacct')); 
 								?><br />
 						</div>
@@ -106,43 +83,32 @@
 
 
 				<div class="row">
-		            <div class="input-field col s10">
-		                <div class="input-field col s5">
-
-								<!-- Mobile No. -->
+		            <div class="input-field col s12">
+		                <!-- Email -->
+						 <div class="input-field col s6">
+						 	 <i class="material-icons prefix">email</i>
 								<?php 
-									echo form_label('Mobile No. :'); 
-								?> 
-								<?php 
-									echo form_error('dmobile'); 
-								?><br />
-								<?php 
-									echo form_input(array('id' => 'dmobile', 'name' => 'dmobile')); 
+									echo form_error('demail'); 
+									echo form_label('Email :'); 
+									echo form_input(array('id' => 'demail', 'name' => 'demail')); 
 								?><br />
 						</div>
 
-						<div class="input-field col s5">
+						<!-- Password -->
+						<div class="input-field col s6">
+							<i class="material-icons prefix">https</i>
 								<!-- Password -->
 								<?php 
-									echo form_label('Password :'); 
-								?> 
-								<?php 
 									echo form_error('dpassword'); 
-								?><br />
-								<?php 
+									echo form_label('Password :'); 
 									echo form_input(array('id' => 'dpassword', 'name' => 'dpassword')); 
 								?><br />
 						</div>
 					</div>
 				</div>
 
-								<!-- Submit -->
-								<!-- <a class="waves-effect waves-light btn">button</a> -->
-
 								<?php 
-									echo form_submit(array('id' => 'submit', 'value' => 'Submit')); 
-								?>
-								<?php 
+									echo form_submit(array('id' => 'submit', 'value' => 'Submit', 'class'=>'waves-effect waves-light btn')); 
 									echo form_close(); 
 								?><br/>
 

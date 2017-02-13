@@ -41,7 +41,7 @@ class Inventory_ctr extends CI_Controller {
         //autoload configuration
         $config['base_url'] = site_url('Inventory_ctr/products');
         $config['total_rows'] = $this->db->count_all('product');
-        $config['per_page'] = "20";
+        $config['per_page'] = "10";
         
         $this->pagination->initialize($config);
 
@@ -103,7 +103,7 @@ class Inventory_ctr extends CI_Controller {
          //autoload configuration
         $config['base_url'] = site_url('Inventory_ctr/pets');
         $config['total_rows'] = $this->db->count_all('product');
-        $config['per_page'] = "20";
+        $config['per_page'] = "10";
         
         $this->pagination->initialize($config);
 
