@@ -61,9 +61,8 @@ class Register_ctr extends CI_Controller {
 			'user_email' => $this->input->post('demail'),
 			'acct_type' => $this->input->post('dacct'),
 			'user_mobile' => $this->input->post('dmobile'),
-			'user_password' => $this->input->post('dpassword')
+			'user_password' => md5($this->input->post('dpassword'))
 		);
-
 			//Transfering data to Model
 			$this->Register_model->form_insert($data);
 			$data['message'] = 'User is added successfully!';
@@ -74,14 +73,12 @@ class Register_ctr extends CI_Controller {
 	        $this->load->view('snips/css_materialize');
 	        $this->load->view('snips/css_materialize_icon');
 
-
 	        //Loading View
 			$this->load->view('+pages/admin/register', $data);
 	        		
 			$this->load->view('snips/js_jquery300');
 	        $this->load->view('snips/js_materialize');
 			$this->load->view('snips/z_end');
-
 		}
 	}	
 }

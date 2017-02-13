@@ -109,20 +109,6 @@ class Admin_ctr extends CI_Controller {
 		$this->load->view('snips/z_end');
     } 
 
-	public function forgotpassword()
-    {
-        $data['title'] = 'FTNF | Forgot Password';
-        $this->load->view('snips/a_start', $data);
-        $this->load->view('snips/css_materialize');
-        $this->load->view('snips/css_materialize_icon');
-        
-        $this->load->view('+pages/admin/a_forgotpassword');
-		
-		$this->load->view('snips/js_jquery300');
-        $this->load->view('snips/js_materialize');
-		$this->load->view('snips/z_end');
-    }
-	
     public function dashboard()
     {
         $data['title'] = 'FTNF | Dashboard';
@@ -141,13 +127,12 @@ class Admin_ctr extends CI_Controller {
 
     public function accounts()
     {
-        $data['title'] = 'FTNF | Account';
+        $data['title'] = 'FTNF | Accounts';
         $this->load->view('snips/a_start', $data);
         $this->load->view('snips/css_materialize');
         $this->load->view('snips/css_materialize_icon');
         $this->load->view('+pages/admin/a_header');
 
-        $this->load->view('snips/a_restrict');   
         $this->load->view('+pages/admin/accounts');
 		
 		$this->load->view('snips/js_jquery300');
@@ -364,7 +349,7 @@ class Admin_ctr extends CI_Controller {
         $this->load->view('snips/js_jquery300');
         $this->load->view('snips/js_materialize');
         $this->load->view('snips/z_end');
-    }  
+    }     
 
  //    public function calendar() {
  //        $data['title'] = 'FTNF | Login';

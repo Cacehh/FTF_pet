@@ -5,15 +5,14 @@
 <br>
 <br>
 <main>
-        <?php if(isset($_SESSION)) {
-            echo "<div class='message center red-text'>";
-            echo "<h4>";
-            echo $this->session->flashdata('flash_data');
-            echo "</h4>";
-            echo "</div>";
-        } ?>   
     <div class="blue-grey lighten-5 z-depth-3 ">
-		<div class="row ">
+        <div class="row ">
+            <?php if(isset($_SESSION)) {
+                echo "</br>";
+                echo "<h4 class='message center red-text'>";
+                echo $this->session->flashdata('flash_data');
+                echo "</h4>";
+            } ?>   
             <div class="col l2 m2 s0"></div>
             <div class="col l4 m4 s11" >
 				<br>
@@ -51,12 +50,9 @@
                     <button class="btn waves-effect waves-orange  orange darken-3 tooltipped indeterminate" data-position="bottom" data-delay="10" data-tooltip="Log In" type="submit" name="action">
                         Log in
                     </button>
-
-                    <p>
                         <?php 
                            echo anchor('Admin_ctr/forgotpassword','Forgot Password?');
                         ?>
-                    </p>
                 </form>
             </div>
             <div class="col l6 m6 s1">
