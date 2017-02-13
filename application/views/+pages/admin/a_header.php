@@ -127,6 +127,7 @@
 							<div class="collapsible-body">
 								<ul>
 								<li><a href="<?php echo base_url()?>index.php/Admin_ctr/accounts">Accounts</a></li>
+								<li><a href="<?php echo base_url()?>index.php/Register_ctr/">Add Users</a></li>
 								<li><a href="<?php echo base_url()?>index.php/Admin_ctr">more...</a></li>
 								</ul>
 							</div>

@@ -23,6 +23,26 @@ class POS_ctr extends CI_Controller {
     
     public function index()
     {
+      print_r($this->session->all_userdata());
+
+        $data = array(
+                'id'      => 'sku_123ABC',
+                'qty'     => 1,
+                'price'   => 39.95,
+                'name'    => 'T-Shirt',
+                'coupon'         => 'XMAS-50OFF'
+        );
+
+        $this->cart->insert($data);
+
+
+        $data = array(
+            'rowid' => '1164a59fe023937d41e11ddf6871b50c',
+            'qty'   => 0
+        );
+
+        $this->cart->update($data);
+        
         //autoload configuration
         $config['base_url'] = site_url('POS_ctr/index');
         $config['total_rows'] = $this->db->count_all('product');
@@ -54,6 +74,8 @@ class POS_ctr extends CI_Controller {
         $this->load->view('snips/js_jquery300');
         $this->load->view('snips/js_materialize');
         $this->load->view('snips/z_end');
+
+
     }  
 
     function search()
