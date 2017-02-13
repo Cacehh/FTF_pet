@@ -302,14 +302,13 @@ class Admin_ctr extends CI_Controller {
         //Validating Province Field
         $this->form_validation->set_rules('prov', 'Province', 'required|min_length[1]|max_length[40]');
 
-
         if ($this->form_validation->run() == FALSE) {
 
             $data['title'] = 'FTNF | Add Customer';
             $this->load->view('snips/a_start', $data);
             $this->load->view('snips/css_materialize');
             $this->load->view('snips/css_materialize_icon');
-            $this->load->view('+pages/admin/a_header');
+            $this->load->view('+pages/admin/a_header', $data);
 
             $this->load->view('+pages/admin/addCustomer');
             $this->load->view('snips/a_start', $data);
