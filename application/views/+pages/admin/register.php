@@ -18,7 +18,7 @@
 		<div class="row">
 			<div class="input-field col s12">
 			    <div class="input-field col s5">
-		            <!-- <i class="material-icons prefix">account_circle</i> -->
+		            <i class="material-icons prefix">account_circle</i>
 					<!-- First Name -->
 <!--                     <div class="input-field">
                         <i class="large material-icons prefix">account_circle</i>
@@ -67,7 +67,7 @@
 						?><br />
 				</div>
 
-				<div class="input-field col s5">
+				<div class="input-field col s4">
                 	<i class="material-icons prefix">local_phone</i>
 
 						<!-- Mobile No. -->
@@ -79,7 +79,7 @@
 				</div>
 			
 						<!-- Account Type -->
-				<div class="input-field col s2">
+				<div class="input-field col s3">
 					<i class="material-icons prefix">assignment_ind</i>
 						<?php 
 							echo form_error('dacct'); 
