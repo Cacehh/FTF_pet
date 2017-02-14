@@ -9,7 +9,7 @@
 				<p class="flow-text">View, Edit and Delete products</p>
 			</div>
 		</div>
-		
+
 	<div class="row container center">
 					<div class="col s12">
 
@@ -21,16 +21,16 @@
 							// });
 						</script>
 
-						<?php 
+						<?php
 		                    $attr = array("class" => "form-horizontal", "role" => "form", "id" => "form1", "name" => "form1");
 		                    echo form_open("Inventory_ctr/invProdSearch", $attr);
 		                ?>
-	            
+
 		                <div class="form-group">
 		                    <div class="col-md-6">
 
 							<i class="material-icons prefix">search</i>
-							<input class="form-control " id="icon_prefix" name="prodinv_name" type="text" 
+							<input class="form-control " id="icon_prefix" name="prodinv_name" type="text"
 								value="<?php echo set_value('prodinv_name'); ?>" />
 							<label for="icon_prefix">Search for Product Names</label>
 							<!-- <input id="icon_prefix" type="text" class="validate"> -->
@@ -42,8 +42,8 @@
 		                    </div>
 		                </div>
 
-		                <?php 
-		                    echo form_close(); 
+		                <?php
+		                    echo form_close();
 		                ?>
 					</div>
 				</div>
@@ -77,12 +77,12 @@
 	                        <td><?php echo $prodinvlist[$i]->ProdName; ?></td>
 	                        <td><?php echo $prodinvlist[$i]->Category; ?></td>
 	                        <td><?php
-	                        	echo "&#8369;"; 
+	                        	echo "&#8369;";
 	                        	echo $prodinvlist[$i]->Amount; ?></td>
 	                        <td><?php echo $prodinvlist[$i]->Quantity; ?></td>
 	                        <td><?php echo $prodinvlist[$i]->Timestamp; ?></td>
 	                        <td>
-								<a href=""><i class="material-icons">mode_edit</i></a>
+								<a href="<?php echo base_url()?>index.php/Inventory_ctr/invEditProd/<?php echo $prodinvlist[$i]->ProdID ?>"><i class="material-icons">mode_edit</i></a>
 								<a href=""><i class="material-icons">delete</i></a>
 							</td>
 	                    </tr>

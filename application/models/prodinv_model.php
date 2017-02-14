@@ -11,11 +11,11 @@ class prodinv_model extends CI_Model {
     function get_prodinv($limit, $start, $st = NULL)
     {
         if ($st == "NIL") $st = "";
-        $sql = "select * from product where ProdName like '%$st%' limit " . $start . ", " . $limit;
+        $sql = "select * from product limit " . $start . ", " . $limit;
         $query = $this->db->query($sql);
         return $query->result();
     }
-    
+
     //function to get the inventory product count
     function get_prodinv_count($st = NULL)
     {
@@ -23,6 +23,22 @@ class prodinv_model extends CI_Model {
         $sql = "select * from product where ProdName like '%$st%'";
         $query = $this->db->query($sql);
         return $query->num_rows();
+    }
+
+    //function to edit the chosen product
+    function edit_prodInv($data)
+    {
+      $sql = "select * from product where ProdID = " . $data . " limit 1";
+      $query = $this->db->query($sql);
+      return $query->result();
+    }
+
+    function save_editProdInv($prodID, $prodName, $category, $quantity, $amount)
+    {
+      $amount = substr($amount, 3); // remove the peso sign from amount
+      $sql = "update product set ProdName='".$prodName."', Category='".$category."', Quantity=".$quantity.", Amount=".$amount." where ProdID=" . $prodID;
+      $query = $this->db->query($sql);
+      //return $query->result();
     }
 }
 ?>

@@ -2,7 +2,7 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Inventory_ctr extends CI_Controller {
-    
+
     public function __construct()
     {
         parent::__construct();
@@ -14,13 +14,13 @@ class Inventory_ctr extends CI_Controller {
             $this->session->set_flashdata('flash_data', 'Please login First');
             redirect('Access_ctr');
         }
-        $type = $this->session->userdata('acct_type'); 
+        $type = $this->session->userdata('acct_type');
         if ($type == '1') {
             $this->session->set_flashdata('flash_data', '<b>This is a restricted page. Please login again</b>');
             redirect('Access_ctr');
         }
     }
-    
+
     public function index() {
         $data['title'] = 'FTNF | Inventory';
         $this->load->view('snips/a_start', $data);
@@ -33,7 +33,7 @@ class Inventory_ctr extends CI_Controller {
         $this->load->view('snips/js_jquery300');
         $this->load->view('snips/js_materialize');
         $this->load->view('snips/z_end');
-    }  
+    }
 
 
     public function products() {
@@ -42,12 +42,12 @@ class Inventory_ctr extends CI_Controller {
         $config['base_url'] = site_url('Inventory_ctr/products');
         $config['total_rows'] = $this->db->count_all('product');
         $config['per_page'] = "10";
-        
+
         $this->pagination->initialize($config);
 
         // getting the product list
         $data['page'] = ($this->uri->segment(3)) ? $this->uri->segment(3) : 0;
-        
+
         // getting the product list
         $data['prodinvlist'] = $this->prodinv_model->get_prodinv($config["per_page"], $data['page'], NULL);
 
@@ -57,13 +57,13 @@ class Inventory_ctr extends CI_Controller {
         $this->load->view('snips/css_materialize');
         $this->load->view('snips/css_materialize_icon');
         $this->load->view('+pages/admin/a_Inventory_header');
-        
+
         $this->load->view('+pages/admin/products', $data);
-        
+
         $this->load->view('snips/js_jquery300');
         $this->load->view('snips/js_materialize');
         $this->load->view('snips/z_end');
-    }   
+    }
 
 
     public function invProdSearch() {
@@ -90,26 +90,26 @@ class Inventory_ctr extends CI_Controller {
         $this->load->view('snips/css_materialize');
         $this->load->view('snips/css_materialize_icon');
         $this->load->view('+pages/admin/a_Inventory_header');
-        
+
         $this->load->view('+pages/admin/products', $data);
-        
+
         $this->load->view('snips/js_jquery300');
         $this->load->view('snips/js_materialize');
         $this->load->view('snips/z_end');
     }
-    
+
     public function pets()
     {
          //autoload configuration
         $config['base_url'] = site_url('Inventory_ctr/pets');
         $config['total_rows'] = $this->db->count_all('product');
         $config['per_page'] = "10";
-        
+
         $this->pagination->initialize($config);
 
         // getting the product list
         $data['page'] = ($this->uri->segment(3)) ? $this->uri->segment(3) : 0;
-        
+
         // getting the product list
         $data['petinvlist'] = $this->petinv_model->get_petinv($config["per_page"], $data['page'], NULL);
 
@@ -119,15 +119,15 @@ class Inventory_ctr extends CI_Controller {
         $this->load->view('snips/css_materialize');
         $this->load->view('snips/css_materialize_icon');
         $this->load->view('+pages/admin/a_Inventory_header');
-        
+
         $this->load->view('+pages/admin/product_pets', $data);
-        
+
         $this->load->view('snips/js_jquery300');
         $this->load->view('snips/js_materialize');
         $this->load->view('snips/z_end');
-    }   
+    }
 
-     public function invPetSearch() 
+     public function invPetSearch()
      {
 
         // getting the search string
@@ -152,9 +152,9 @@ class Inventory_ctr extends CI_Controller {
         $this->load->view('snips/css_materialize');
         $this->load->view('snips/css_materialize_icon');
         $this->load->view('+pages/admin/a_Inventory_header');
-        
+
         $this->load->view('+pages/admin/product_pets');
-        
+
         $this->load->view('snips/js_jquery300');
         $this->load->view('snips/js_materialize');
         $this->load->view('snips/z_end');
@@ -164,20 +164,20 @@ class Inventory_ctr extends CI_Controller {
 
 
 
-	
+
     public function invPet() {
         $data['title'] = 'FTNF | ';
         $this->load->view('snips/a_start', $data);
         $this->load->view('snips/css_materialize');
         $this->load->view('snips/css_materialize_icon');
         $this->load->view('+pages/admin/a_Inventory_header');
-        
+
         $this->load->view('+pages/admin/invPet');
-        
+
         $this->load->view('snips/js_jquery300');
         $this->load->view('snips/js_materialize');
         $this->load->view('snips/z_end');
-    }	
+    }
 
     public function invProduct() {
         $data['title'] = 'FTNF | ';
@@ -185,27 +185,27 @@ class Inventory_ctr extends CI_Controller {
         $this->load->view('snips/css_materialize');
         $this->load->view('snips/css_materialize_icon');
         $this->load->view('+pages/admin/a_Inventory_header');
-        
+
         $this->load->view('+pages/admin/invProduct');
-		
+
 		$this->load->view('snips/js_jquery300');
         $this->load->view('snips/js_materialize');
 		$this->load->view('snips/z_end');
-    }	
-	
+    }
+
     public function addPet() {
         $data['title'] = 'FTNF | ';
         $this->load->view('snips/a_start', $data);
         $this->load->view('snips/css_materialize');
         $this->load->view('snips/css_materialize_icon');
         $this->load->view('+pages/admin/a_Inventory_header');
-        
+
         $this->load->view('+pages/admin/invAddPet');
-        
+
         $this->load->view('snips/js_jquery300');
         $this->load->view('snips/js_materialize');
         $this->load->view('snips/z_end');
-    }	
+    }
 
     public function addProduct() {
         $data['title'] = 'FTNF | ';
@@ -213,13 +213,13 @@ class Inventory_ctr extends CI_Controller {
         $this->load->view('snips/css_materialize');
         $this->load->view('snips/css_materialize_icon');
         $this->load->view('+pages/admin/a_Inventory_header');
-        
+
         $this->load->view('+pages/admin/invAddProd');
-        
+
         $this->load->view('snips/js_jquery300');
         $this->load->view('snips/js_materialize');
         $this->load->view('snips/z_end');
-    }   
+    }
 
     public function invEditPet() {
         $data['title'] = 'FTNF | ';
@@ -227,25 +227,60 @@ class Inventory_ctr extends CI_Controller {
         $this->load->view('snips/css_materialize');
         $this->load->view('snips/css_materialize_icon');
         $this->load->view('+pages/admin/a_Inventory_header');
-        
+
         $this->load->view('+pages/admin/invEditPet');
-        
+
         $this->load->view('snips/js_jquery300');
         $this->load->view('snips/js_materialize');
         $this->load->view('snips/z_end');
-    }   
-    
-    public function invEditProd() {
+    }
+
+    public function invEditProd($editData) {
         $data['title'] = 'FTNF | ';
         $this->load->view('snips/a_start', $data);
         $this->load->view('snips/css_materialize');
         $this->load->view('snips/css_materialize_icon');
         $this->load->view('+pages/admin/a_Inventory_header');
-        
-        $this->load->view('+pages/admin/invEditProd');
-        
+
+        $data2['prodinvlist'] = $this->prodinv_model->edit_prodInv($editData);
+        $this->load->view('+pages/admin/invEditProd', $data2);
+
         $this->load->view('snips/js_jquery300');
         $this->load->view('snips/js_materialize');
         $this->load->view('snips/z_end');
-    }    
+    }
+
+    public function invSaveEditProd()
+    {
+      //autoload configuration
+      $config['base_url'] = site_url('Inventory_ctr/products');
+      $config['total_rows'] = $this->db->count_all('product');
+      $config['per_page'] = "10";
+
+      $this->pagination->initialize($config);
+
+      // getting the product list
+      $data['page'] = ($this->uri->segment(3)) ? $this->uri->segment(3) : 0;
+      $data['prodinvlist'] = $this->prodinv_model->get_prodinv($config["per_page"], $data['page'], NULL);
+
+      $data['title'] = 'FTNF | ';
+      $this->load->view('snips/a_start', $data);
+      $this->load->view('snips/css_materialize');
+      $this->load->view('snips/css_materialize_icon');
+      $this->load->view('+pages/admin/a_Inventory_header');
+
+      $prodID = $_POST['ProdID'];
+      $prodName = $_POST['ProdName'];
+      $category = $_POST['Category'];
+      $amount = $_POST['Amount'];
+      $quantity = $_POST['Quantity'];
+
+      $this->prodinv_model->save_editProdInv($prodID, $prodName, $category, $quantity, $amount);
+
+      $this->load->view('snips/js_jquery300');
+      $this->load->view('snips/js_materialize');
+      $this->load->view('snips/z_end');
+
+      $this->products();
+    }
 }
