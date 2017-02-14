@@ -269,4 +269,53 @@ class Admin_Product_ctr extends CI_Controller {
         $this->load->view('snips/js_materialize');
 		$this->load->view('snips/z_end');
 	}
+
+    public function invEditProd($editData) {
+        $data['title'] = 'FTNF | ';
+        $this->load->view('snips/a_start', $data);
+        $this->load->view('snips/css_materialize');
+        $this->load->view('snips/css_materialize_icon');
+        $this->load->view('+pages/admin/a_Inventory_header');
+
+        $data2['prodinvlist'] = $this->prodinv_model->edit_prodInv($editData);
+        $this->load->view('+pages/admin/invEditProd', $data2);
+
+        $this->load->view('snips/js_jquery300');
+        $this->load->view('snips/js_materialize');
+        $this->load->view('snips/z_end');
+    }
+
+    public function invSaveEditProd()
+    {
+      //autoload configuration
+      $config['base_url'] = site_url('Inventory_ctr/products');
+      $config['total_rows'] = $this->db->count_all('product');
+      $config['per_page'] = "10";
+
+      $this->pagination->initialize($config);
+
+      // getting the product list
+      $data['page'] = ($this->uri->segment(3)) ? $this->uri->segment(3) : 0;
+      $data['prodinvlist'] = $this->prodinv_model->get_prodinv($config["per_page"], $data['page'], NULL);
+
+      $data['title'] = 'FTNF | ';
+      $this->load->view('snips/a_start', $data);
+      $this->load->view('snips/css_materialize');
+      $this->load->view('snips/css_materialize_icon');
+      $this->load->view('+pages/admin/a_Inventory_header');
+
+      $prodID = $_POST['ProdID'];
+      $prodName = $_POST['ProdName'];
+      $category = $_POST['Category'];
+      $amount = $_POST['Amount'];
+      $quantity = $_POST['Quantity'];
+
+      $this->prodinv_model->save_editProdInv($prodID, $prodName, $category, $quantity, $amount);
+
+      $this->load->view('snips/js_jquery300');
+      $this->load->view('snips/js_materialize');
+      $this->load->view('snips/z_end');
+
+      $this->products();
+    }
 }
