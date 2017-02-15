@@ -17,6 +17,7 @@ class Admin_ctr extends CI_Controller {
         }
 
         $this->load->model('register_model', 'AddCustomer_model');
+        $this->load->model('Accounts_model');
     }
 
     public function index() 
@@ -127,19 +128,65 @@ class Admin_ctr extends CI_Controller {
 
     public function accounts()
     {
+
+       ///autoload configuration
+        $config['base_url'] = site_url('Admin_ctr/accounts');
+        $config['total_rows'] = $this->db->count_all('users');
+        $config['per_page'] = "20";
+
+        $this->pagination->initialize($config);
+
+        // getting the product list
+        $data['page'] = ($this->uri->segment(3)) ? $this->uri->segment(3) : 0;
+
+        // getting the product list
+        $data['accountlist'] = $this->Accounts_model->get_account($config["per_page"], $data['page'], NULL);
+
         $data['title'] = 'FTNF | Accounts';
         $this->load->view('snips/a_start', $data);
         $this->load->view('snips/css_materialize');
         $this->load->view('snips/css_materialize_icon');
         $this->load->view('+pages/admin/a_header');
 
-        $this->load->view('+pages/admin/accounts');
+        $this->load->view('+pages/admin/accounts', $data);
 		
 		$this->load->view('snips/js_jquery300');
         $this->load->view('snips/js_materialize');
 		$this->load->view('snips/z_end');
     }		
 	
+    public function searchAccounts() 
+    {
+
+        // getting the search string
+        $searchAccounts = ($this->input->post("account_name"))? $this->input->post("account_name") : "NIL";
+
+        // limitation of the products being shown
+        $config = array();
+        $config['base_url'] = site_url("Admin_ctr/searchAccounts/$searchAccounts");
+        $config['total_rows'] = $this->Accounts_model->get_account_count($searchAccounts);
+        $config['per_page'] = "10";
+
+        $this->pagination->initialize($config);
+
+        $data['page'] = ($this->uri->segment(4)) ? $this->uri->segment(4) : 0;
+
+        // retrieval of the product list
+        $data['accountlist'] = $this->Accounts_model->get_account($config['per_page'], $data['page'], $searchAccounts);
+
+        $data['title'] = 'FTNF | Accounts';
+        $this->load->view('snips/a_start', $data);
+        $this->load->view('snips/css_materialize');
+        $this->load->view('snips/css_materialize_icon');
+        $this->load->view('+pages/admin/a_header');
+
+        $this->load->view('+pages/admin/accounts', $data);
+        
+        $this->load->view('snips/js_jquery300');
+        $this->load->view('snips/js_materialize');
+        $this->load->view('snips/z_end');
+    }
+
 	public function salesReport() 
     {
         $data['title'] = 'FTNF | Sales Report';
@@ -260,11 +307,7 @@ class Admin_ctr extends CI_Controller {
 
         $this->form_validation->set_error_delimiters('<div class="error">', '</div>');
 
-        //Validating First Name Field
-        $this->form_validation->set_rules('fname', 'FirstName', 'required|min_length[2]|max_length[40]');
-
-        //Validating Last Name Name Field
-        $this->form_validation->set_rules('lname', 'LastName', 'required|min_length[1]|max_length[40]');
+        $this->form_validation->set_rules('fname', 'lname', 'required|min_length[2]|max_length[30]');
 
          //Validating Phone no. Field
         $this->form_validation->set_rules('dphone', 'Phone No.', 'required|regex_match[/^[0-9]{11}$/]');

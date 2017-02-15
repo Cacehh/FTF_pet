@@ -16,6 +16,7 @@
 
 		<div class="row">
 			<div class="input-field col s12">
+
 			    <!-- First Name -->
 			    <div class="input-field col s5">
             	<i class="material-icons prefix">account_circle</i>
@@ -73,6 +74,7 @@
                     <label for="dname" data-error="Must be atleast 3 characters" >Username</label>
                     <?php echo form_error('dname'); ?>	
 				</div>
+                
 				<!-- Mobile number -->
 				<div class="input-field col s4">
 					<!-- Mobile No. -->
