@@ -12,7 +12,7 @@
 	<div class="container">
           <?php
           $formattributes = array('class' => 'container col s12 flow-text');
-            echo form_open('Register_ctr', $formattributes);
+            echo form_open('Admin_ctr', $formattributes);
             ?>
           <?php 
             if (isset($message)) { 
@@ -33,30 +33,46 @@
                             </div>
                             
                             <div class="row">
+
                                 <div class="input-field col s6 ">
                                   <i class="material-icons prefix">account_circle</i>
 
+                                	<?php
+				                        $fname = array(
+				                            'id'        => 'fname','name' => 'fname','maxlength' => '20',
+				                            'pattern'   => '.{2,20}','length' => '20','class' => 'validate',
+				                        );
+				                        echo form_input($fname);
+			                       	?>  
+			                    <label for="fname" data-error="Must be atleast 2 characters" >First Name</label>
+			                    <?php echo form_error('fname'); ?>
+
                                   <?php 
-                                  echo form_label('First Name'); 
-                                  echo form_error('fname'); 
-                                  echo form_input(array('id' => 'fname', 'name' => 'fname')); 
+                                  // echo form_label('First Name'); 
+                                  // echo form_error('fname'); 
+                                  // echo form_input(array('id' => 'fname', 'name' => 'fname')); 
                                   ?><br />
 
-                                  <!-- <input id="first_name" type="text" class="validate">
-                                  <label for="first_name">First Name</label> -->
                                 </div>
 
                                 <div class="input-field col s6">
                                   <i class="material-icons prefix">account_circle</i>
 
-                                  <?php 
-                                  echo form_label('Last Name'); 
-                                  echo form_error('lname'); 
-                                  echo form_input(array('id' => 'lname', 'name' => 'lname')); 
-                                  ?>
+                                <?php
+			                        $lname = array(
+			                            'id'        => 'lname','name' => 'lname','maxlength' => '20',
+			                            'pattern'   => '.{2,20}','length' => '20','class' => 'validate',
+			                        );
+			                        echo form_input($lname);
+			                    ?>  
+			                    <label for="lname" data-error="Must be atleast 2 characters" >Last Name</label>
+			                    <?php echo form_error('lname'); ?>
 
-                                  <!-- <input id="last_name" type="text" class="validate">
-                                  <label for="last_name">Last Name</label> -->
+                                  <?php 
+                                  // echo form_label('Last Name'); 
+                                  // echo form_error('lname'); 
+                                  // echo form_input(array('id' => 'lname', 'name' => 'lname')); 
+                                  ?>
                                 </div>
                             </div>
                         
@@ -88,10 +104,20 @@
                                 <div class="input-field col s6 ">
                                   <i class="material-icons prefix">phone</i>
 
+                                  <?php
+			                        $dmobile = array(
+			                            'id'        => 'dphone','name' => 'dphone','maxlength' => '11',
+			                            'pattern'   => '.{11,11}','length' => '11','class' => 'validate',
+			                        );
+			                        echo form_input($dmobile);
+			                      ?>  
+			                    <label for="dphone" data-error="Must be a valid number" >Number</label>
+			                    <?php echo form_error('dphone'); ?>
+
                                     <?php 
-                                    echo form_error('dphone'); 
-                                    echo form_label('Phone Number'); 
-                                    echo form_input(array('id' => 'dphone', 'name' => 'dphone')); 
+                                    // echo form_error('dphone'); 
+                                    // echo form_label('Phone Number'); 
+                                    // echo form_input(array('id' => 'dphone', 'name' => 'dphone')); 
                                     ?><br />
 
                                   <!-- input id="phone_num" type="text" class="validate">
@@ -101,10 +127,20 @@
                                 <div class="input-field col s6">
                                   <i class="material-icons prefix">phonelink_ring</i>
 
+                                  <?php
+			                        $dmobile = array(
+			                            'id'        => 'dmobile','name' => 'dmobile','maxlength' => '11',
+			                            'pattern'   => '.{11,11}','length' => '11','class' => 'validate',
+			                        );
+			                        echo form_input($dmobile);
+			                      ?>  
+			                    <label for="dmobile" data-error="Must be a valid number" >Number</label>
+			                    <?php echo form_error('dmobile'); ?>
+
                                   <?php 
-                                  echo form_error('dmobile'); 
-                                  echo form_label('Mobile Number'); 
-                                  echo form_input(array('id' => 'dmobile', 'name' => 'dmobile')); 
+                                  // echo form_error('dmobile'); 
+                                  // echo form_label('Mobile Number'); 
+                                  // echo form_input(array('id' => 'dmobile', 'name' => 'dmobile')); 
                                   ?><br />
 
                                   <!-- <input id="mobile_num" type="text" class="validate">
@@ -116,10 +152,20 @@
                                 <div class="input-field col s12">
                                   <i class="material-icons prefix">email</i>
 
+                                  <?php
+			                        $demail = array(
+			                            'id'        => 'demail','name' => 'demail','maxlength' => '30',
+			                            'pattern'   => '.{5,30}','length' => '30','class' => 'validate',
+			                        );
+			                        echo form_input($demail);
+			                    ?>  
+			                    <label for="demail" data-error="Must be an email address" >Email</label>
+			                    <?php echo form_error('demail'); ?>
+
                                   <?php 
-                                  echo form_error('demail'); 
-                                  echo form_label('Email'); 
-                                  echo form_input(array('id' => 'demail', 'name' => 'demail')); 
+                                  // echo form_error('demail'); 
+                                  // echo form_label('Email'); 
+                                  // echo form_input(array('id' => 'demail', 'name' => 'demail')); 
                                   ?><br />
 
                                   <!-- <input id="email" type="text" class="validate">
@@ -144,10 +190,20 @@
                                 <div class="input-field col s6">
                                   <i class="material-icons prefix">streetview</i>
 
+                                  <?php
+				                        $street = array(
+				                            'id'        => 'street','name' => 'street','maxlength' => '30',
+				                            'pattern'   => '.{2,30}','length' => '30','class' => 'validate',
+				                        );
+				                        echo form_input($street);
+			                       	?>  
+			                    <label for="street" data-error="Must be atleast 2 characters" >Street</label>
+			                    <?php echo form_error('street'); ?>
+
                                   <?php 
-                                  echo form_label('Street'); 
-                                  echo form_error('street'); 
-                                  echo form_input(array('id' => 'street', 'name' => 'street')); 
+                                  // echo form_label('Street'); 
+                                  // echo form_error('street'); 
+                                  // echo form_input(array('id' => 'street', 'name' => 'street')); 
                                   ?><br />
 
                                   <!-- <input id="street" type="text" class="validate">
@@ -157,10 +213,20 @@
                                 <div class="input-field col s6">
                                   <i class="material-icons prefix">location_on</i>
 
+                                  <?php
+				                        $city = array(
+				                            'id'        => 'city','name' => 'city','maxlength' => '20',
+				                            'pattern'   => '.{2,20}','length' => '20','class' => 'validate',
+				                        );
+				                        echo form_input($city);
+			                       	?>  
+			                    <label for="city" data-error="Must be atleast 2 characters" >City</label>
+			                    <?php echo form_error('city'); ?>
+
                                   <?php 
-                                  echo form_label('City'); 
-                                  echo form_error('city'); 
-                                  echo form_input(array('id' => 'city', 'name' => 'city')); 
+                                  // echo form_label('City'); 
+                                  // echo form_error('city'); 
+                                  // echo form_input(array('id' => 'city', 'name' => 'city')); 
                                   ?><br />
 
                                  <!--  <input id="city" type="text" class="validate">
@@ -172,10 +238,20 @@
                                 <div class="input-field col s12">
                                   <i class="material-icons prefix">home</i>
 
+                                  <?php
+				                        $barsub = array(
+				                            'id'        => 'barsub','name' => 'barsub','maxlength' => '30',
+				                            'pattern'   => '.{2,30}','length' => '30','class' => 'validate',
+				                        );
+				                        echo form_input($barsub);
+			                       	?>  
+			                    <label for="barsub" data-error="Must be atleast 2 characters" >Barangay/Subdivision</label>
+			                    <?php echo form_error('barsub'); ?>
+
                                   <?php 
-                                  echo form_label('Barangay/Subdivision'); 
-                                  echo form_error('barsub'); 
-                                  echo form_input(array('id' => 'barsub', 'name' => 'barsub')); 
+                                  // echo form_label('Barangay/Subdivision'); 
+                                  // echo form_error('barsub'); 
+                                  // echo form_input(array('id' => 'barsub', 'name' => 'barsub')); 
                                   ?><br />
 
                                  <!--  <input id="brngysub" type="text" class="validate">
@@ -185,10 +261,20 @@
                                 <div class="input-field col s12">
                                   <i class="material-icons prefix">my_location</i>
 
+                                  <?php
+				                        $prov = array(
+				                            'id'        => 'prov','name' => 'prov','maxlength' => '30',
+				                            'pattern'   => '.{2,30}','length' => '30','class' => 'validate',
+				                        );
+				                        echo form_input($prov);
+			                       	?>  
+			                    <label for="first_name" data-error="Must be atleast 2 characters" >Province</label>
+			                    <?php echo form_error('prov'); ?>
+
                                   <?php 
-                                  echo form_label('Province'); 
-                                  echo form_error('prov'); 
-                                  echo form_input(array('id' => 'prov', 'name' => 'prov')); 
+                                  // echo form_label('Province'); 
+                                  // echo form_error('prov'); 
+                                  // echo form_input(array('id' => 'prov', 'name' => 'prov')); 
                                   ?><br />
 
                                  <!--  <input id="province" type="text" class="validate">
@@ -203,19 +289,27 @@
           </ul>
         
         <div class = "row right">
-            <a class="waves-effect waves-light btn deep-orange darken-1">Cancel</a>
+
+        	<!-- <?php 
+				echo form_submit(array('id' => 'cancel', 'value' => 'Cancel', 'class'=>'waves-effect waves-light btn')); 
+				echo form_close(); 
+			?><br/> -->
+
+			<?php 
+				echo form_submit(array('id' => 'submit', 'value' => 'Save', 'class'=>'waves-effect waves-light btn')); 
+				echo form_close(); 
+			?><br/>
+
+            <!-- <a class="waves-effect waves-light btn deep-orange darken-1">Cancel</a> -->
 
             <?php 
-            echo form_submit(array('id' => 'submit', 'value' => 'Save', 'class'=>'waves-effect waves-light btn deep-orange darken-1')); 
-            echo form_close(); 
+            // echo form_submit(array('id' => 'submit', 'value' => 'Save', 'class'=>'waves-effect waves-light btn deep-orange darken-1')); 
+            // echo form_close(); 
             ?><br/>
 
             <div id="fugo">
 
             </div>
-
-            <!-- <a class="waves-effect waves-light btn deep-orange darken-1">Save</a> -->
-
         </div>
    </div>
 </main>

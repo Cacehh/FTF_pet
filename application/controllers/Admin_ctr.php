@@ -307,11 +307,7 @@ class Admin_ctr extends CI_Controller {
 
         $this->form_validation->set_error_delimiters('<div class="error">', '</div>');
 
-        //Validating First Name Field
-        $this->form_validation->set_rules('fname', 'FirstName', 'required|min_length[2]|max_length[40]');
-
-        //Validating Last Name Name Field
-        $this->form_validation->set_rules('lname', 'LastName', 'required|min_length[1]|max_length[40]');
+        $this->form_validation->set_rules('fname', 'lname', 'required|min_length[2]|max_length[30]');
 
          //Validating Phone no. Field
         $this->form_validation->set_rules('dphone', 'Phone No.', 'required|regex_match[/^[0-9]{11}$/]');
