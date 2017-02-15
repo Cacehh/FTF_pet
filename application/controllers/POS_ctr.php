@@ -64,7 +64,7 @@ class POS_ctr extends CI_Controller {
         $this->load->view('snips/css_materialize_icon');
         $type = $this->session->userdata('acct_type');
         if ($type == '1') {
-            $this->load->view('+pages/admin/a_Inventory_header');
+            $this->load->view('+pages/admin/a_POS_header');
         } else {
             $this->load->view('+pages/admin/a_header');
         }
@@ -104,7 +104,7 @@ class POS_ctr extends CI_Controller {
         $this->load->view('snips/css_materialize_icon');
         $type = $this->session->userdata('acct_type');
         if ($type == '1') {
-            $this->load->view('+pages/admin/a_Inventory_header');
+            $this->load->view('+pages/admin/a_POS_header');
         } else {
             $this->load->view('+pages/admin/a_header');
         }
@@ -123,7 +123,7 @@ class POS_ctr extends CI_Controller {
         $this->load->view('snips/css_materialize_icon');
         $type = $this->session->userdata('acct_type');
         if ($type == '1') {
-            $this->load->view('+pages/admin/a_Inventory_header');
+            $this->load->view('+pages/admin/a_POS_header');
         } else {
             $this->load->view('+pages/admin/a_header');
         }
@@ -155,7 +155,7 @@ class POS_ctr extends CI_Controller {
  //        $this->load->view('snips/a_start', $data);
  //        $this->load->view('snips/css_materialize');
  //        $this->load->view('snips/css_materialize_icon');
- //        $this->load->view('+pages/admin/a_Inventory_header');
+ //        $this->load->view('+pages/admin/a_POS_header');
         
  //        $this->load->view('+pages/admin/products', $data);
         
@@ -187,7 +187,7 @@ class POS_ctr extends CI_Controller {
  //        $this->load->view('snips/a_start', $data);
  //        $this->load->view('snips/css_materialize');
  //        $this->load->view('snips/css_materialize_icon');
- //        $this->load->view('+pages/admin/a_Inventory_header');
+ //        $this->load->view('+pages/admin/a_POS_header');
         
  //        $this->load->view('+pages/admin/products', $data);
         
@@ -216,7 +216,7 @@ class POS_ctr extends CI_Controller {
  //        $this->load->view('snips/a_start', $data);
  //        $this->load->view('snips/css_materialize');
  //        $this->load->view('snips/css_materialize_icon');
- //        $this->load->view('+pages/admin/a_Inventory_header');
+ //        $this->load->view('+pages/admin/a_POS_header');
         
  //        $this->load->view('+pages/admin/product_pets', $data);
         
@@ -249,7 +249,7 @@ class POS_ctr extends CI_Controller {
  //        $this->load->view('snips/a_start', $data);
  //        $this->load->view('snips/css_materialize');
  //        $this->load->view('snips/css_materialize_icon');
- //        $this->load->view('+pages/admin/a_Inventory_header');
+ //        $this->load->view('+pages/admin/a_POS_header');
         
  //        $this->load->view('+pages/admin/product_pets');
         
@@ -264,7 +264,7 @@ class POS_ctr extends CI_Controller {
         $this->load->view('snips/a_start', $data);
         $this->load->view('snips/css_materialize');
         $this->load->view('snips/css_materialize_icon');
-        $this->load->view('+pages/admin/a_Inventory_header');
+        $this->load->view('+pages/admin/a_POS_header');
 
         $this->load->view('+pages/admin/product_type');
 
@@ -278,7 +278,7 @@ class POS_ctr extends CI_Controller {
         $this->load->view('snips/a_start', $data);
         $this->load->view('snips/css_materialize');
         $this->load->view('snips/css_materialize_icon');
-        $this->load->view('+pages/admin/a_Inventory_header');
+        $this->load->view('+pages/admin/a_POS_header');
         
         $this->load->view('+pages/admin/product_suppliers');
 		
@@ -292,7 +292,7 @@ class POS_ctr extends CI_Controller {
         // $this->load->view('snips/a_start', $data);
 //         $this->load->view('snips/css_materialize');
 //         $this->load->view('snips/css_materialize_icon');
-//         $this->load->view('+pages/admin/a_Inventory_header');
+//         $this->load->view('+pages/admin/a_POS_header');
 // //        Change the page
 //         $this->load->view('+pages/admin/product_suppliers');
 		
@@ -306,7 +306,7 @@ class POS_ctr extends CI_Controller {
         $this->load->view('snips/a_start', $data);
         $this->load->view('snips/css_materialize');
         $this->load->view('snips/css_materialize_icon');
-        $this->load->view('+pages/admin/a_Inventory_header');
+        $this->load->view('+pages/admin/a_POS_header');
 
 	$this->load->view('+pages/admin/product_brand');
 		
@@ -320,7 +320,7 @@ class POS_ctr extends CI_Controller {
         // $this->load->view('snips/a_start', $data);
  //        $this->load->view('snips/css_materialize');
  //        $this->load->view('snips/css_materialize_icon');
- //        $this->load->view('+pages/admin/a_Inventory_header');
+ //        $this->load->view('+pages/admin/a_POS_header');
  //        //Change the page
  //        $this->load->view('+pages/admin/product_brand');
 		
@@ -334,7 +334,7 @@ class POS_ctr extends CI_Controller {
         $this->load->view('snips/a_start', $data);
         $this->load->view('snips/css_materialize');
         $this->load->view('snips/css_materialize_icon');
-        $this->load->view('+pages/admin/a_Inventory_header');
+        $this->load->view('+pages/admin/a_POS_header');
 
         $this->load->view('+pages/admin/product_tags');
         
@@ -348,7 +348,7 @@ class POS_ctr extends CI_Controller {
         $this->load->view('snips/a_start', $data);
         $this->load->view('snips/css_materialize');
         $this->load->view('snips/css_materialize_icon');
-        $this->load->view('+pages/admin/a_Inventory_header');
+        $this->load->view('+pages/admin/a_POS_header');
 
         $this->load->view('+pages/admin/a_getOrders');
         
@@ -362,7 +362,7 @@ class POS_ctr extends CI_Controller {
         $this->load->view('snips/a_start', $data);
         $this->load->view('snips/css_materialize');
         $this->load->view('snips/css_materialize_icon');
-        $this->load->view('+pages/admin/a_Inventory_header');
+        $this->load->view('+pages/admin/a_POS_header');
 
         $this->load->view('+pages/admin/a_customer');
         
@@ -376,7 +376,7 @@ class POS_ctr extends CI_Controller {
         $this->load->view('snips/a_start', $data);
         $this->load->view('snips/css_materialize');
         $this->load->view('snips/css_materialize_icon');
-        $this->load->view('+pages/admin/a_Inventory_header');
+        $this->load->view('+pages/admin/a_POS_header');
 
 	$this->load->view('+pages/admin/a_customer_edit');
 		
@@ -390,7 +390,7 @@ class POS_ctr extends CI_Controller {
         $this->load->view('snips/a_start', $data);
         $this->load->view('snips/css_materialize');
         $this->load->view('snips/css_materialize_icon');
-        $this->load->view('+pages/admin/a_Inventory_header');
+        $this->load->view('+pages/admin/a_POS_header');
 
         $this->load->view('+pages/admin/a_addCustomer');
         $this->load->view('snips/a_start', $data);
@@ -405,7 +405,7 @@ class POS_ctr extends CI_Controller {
         $this->load->view('snips/a_start', $data);
         $this->load->view('snips/css_materialize');
         $this->load->view('snips/css_materialize_icon');
-        $this->load->view('+pages/admin/a_Inventory_header');
+        $this->load->view('+pages/admin/a_POS_header');
 
         $this->load->view('+pages/admin/a_orders');
         
