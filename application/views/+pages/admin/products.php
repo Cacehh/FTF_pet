@@ -83,7 +83,7 @@
 	                        <td><?php echo $prodinvlist[$i]->Timestamp; ?></td>
 	                        <td>
 								<a href="<?php echo base_url()?>index.php/Inventory_ctr/invEditProd/<?php echo $prodinvlist[$i]->ProdID ?>"><i class="material-icons">mode_edit</i></a>
-								<a href=""><i class="material-icons">delete</i></a>
+								<a href="<?php echo base_url()?>index.php/Inventory_ctr/invDeleteProd/<?php echo $prodinvlist[$i]->ProdID ?>"><i class="material-icons">delete</i></a>
 							</td>
 	                    </tr>
 	                    <?php } ?>

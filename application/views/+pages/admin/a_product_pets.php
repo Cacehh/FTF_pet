@@ -9,7 +9,7 @@
 				<p class="flow-text">View, Edit and Delete Pets</p>
 			</div>
 		</div>
-		
+
 		<div class="row container center">
 			<div class="col s12">
 				<i class="material-icons prefix">search</i>
@@ -21,11 +21,11 @@
 						// });
 					</script>
 
-						<?php 
+						<?php
 		               	    $attr = array("class" => "form-horizontal", "role" => "form", "id" => "form1", "name" => "form1");
 		               	    echo form_open("Inventory_ctr/invPetSearch", $attr);
 		               	?>
-	            
+
 		                <div class="form-group">
 		                    <div class="col-md-6">
 		                        <input class="form-control" id="icon_prefix" name="petinv_name" type="text" value="<?php echo set_value('petinv_name'); ?>" />
@@ -38,12 +38,12 @@
 		                    </div>
 		                </div>
 
-		                <?php 
-		                    echo form_close(); 
+		                <?php
+		                    echo form_close();
 		                ?>
 					</div>
 		</div>
-		
+
 		<div class="divider"></div>
 		<br>
 		<div class="row">
@@ -72,14 +72,14 @@
 	                        <td><?php echo $petinvlist[$i]->ProdID; ?></td>
 	                        <td><?php echo $petinvlist[$i]->ProdName; ?></td>
 	                        <td><?php echo $petinvlist[$i]->Category; ?></td>
-	                        <td><?php 
+	                        <td><?php
 	                        	echo "&#8369;";
 	                        	echo $petinvlist[$i]->Amount; ?></td>
 	                        <td><?php echo $petinvlist[$i]->Quantity; ?></td>
 	                        <td><?php echo $petinvlist[$i]->Timestamp; ?></td>
 	                        <td>
-								<a href="<?php echo base_url()?>index.php/Inventory_ctr/invEditPet/<?php echo $petinvlist[$i]->ProdID ?>"><i class="material-icons">mode_edit</i></a>
-								<a href="<?php echo base_url()?>index.php/Inventory_ctr/invDeletePet/<?php echo $petinvlist[$i]->ProdID ?>"><i class="material-icons">delete</i></a>
+                            <a href="<?php echo base_url()?>index.php/Admin_Product_ctr/invEditPet/<?php echo $petinvlist[$i]->ProdID ?>"><i class="material-icons">mode_edit</i></a>
+            								<a href="<?php echo base_url()?>index.php/Admin_Product_ctr/invDeletePet/<?php echo $petinvlist[$i]->ProdID ?>"><i class="material-icons">delete</i></a>
 							</td>
 	                    </tr>
 	                    <?php } ?>

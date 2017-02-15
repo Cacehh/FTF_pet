@@ -8,7 +8,7 @@
     <div class="divider"></div>
 
     <div class="row">
-      <form action="<?php echo base_url()?>index.php/Admin_Product_ctr/invSaveEditProd/" method="post" name="invSaveEditProd">
+      <form action="<?php echo base_url()?>index.php/Admin_Product_ctr/invSaveEditPet/" method="post" name="invSaveEditPet">
         <div class="row">
     			<div class="col s12">
     				<table class="bordered centered highlight">
@@ -25,7 +25,7 @@
     	                </thead>
 
     	                <tbody>
-    	                    <?php foreach($prodinvlist as $value) { ?>
+    	                    <?php foreach($petinvlist as $value) { ?>
     	                    <tr>
     	                        <td><input name="ProdID" type='text' readonly value='<?php echo $value->ProdID; ?>'></input></td>
     	                        <td><input name="ProdName" type='text'value='<?php echo $value->ProdName; ?>'></input></td>

@@ -40,5 +40,12 @@ class prodinv_model extends CI_Model {
       $query = $this->db->query($sql);
       //return $query->result();
     }
+
+    // function to delete a product
+    function delete_prodInv($prodID)
+    {
+      $sql = "delete from product where ProdID=" . $prodID;
+      $query = $this->db->query($sql);
+    }
 }
 ?>

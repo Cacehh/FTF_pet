@@ -9,7 +9,7 @@
 				<p class="flow-text">View, Edit and Delete products</p>
 			</div>
 		</div>
-		
+
 	<div class="row container center">
 					<div class="col s12">
 						<i class="material-icons prefix">search</i>
@@ -22,11 +22,11 @@
 							// });
 						</script>
 
-						<?php 
+						<?php
 		                    $attr = array("class" => "form-horizontal", "role" => "form", "id" => "form1", "name" => "form1");
 		                    echo form_open("Admin_Product_ctr/invProdSearch", $attr);
 		                ?>
-	            
+
 		                <div class="form-group">
 		                    <div class="col-md-6">
 		                        <input class="form-control" id="icon_prefix" name="prodinv_name" type="text" value="<?php echo set_value('prodinv_name'); ?>" />
@@ -40,8 +40,8 @@
 		                    </div>
 		                </div>
 
-		                <?php 
-		                    echo form_close(); 
+		                <?php
+		                    echo form_close();
 		                ?>
 					</div>
 				</div>
@@ -78,8 +78,8 @@
 	                        <td><?php echo $prodinvlist[$i]->Quantity; ?></td>
 	                        <td><?php echo $prodinvlist[$i]->Timestamp; ?></td>
 	                        <td>
-								<a href="<?php echo base_url()?>index.php/Inventory_ctr/invEditProd/<?php echo $prodinvlist[$i]->ProdID ?>"><i class="material-icons">mode_edit</i></a>
-								<a href=""><i class="material-icons">delete</i></a>
+								<a href="<?php echo base_url()?>index.php/Admin_Product_ctr/invEditProd/<?php echo $prodinvlist[$i]->ProdID ?>"><i class="material-icons">mode_edit</i></a>
+								<a href="<?php echo base_url()?>index.php/Admin_Product_ctr/invDeleteProd/<?php echo $prodinvlist[$i]->ProdID ?>"><i class="material-icons">delete</i></a>
 							</td>
 	                    </tr>
 	                    <?php } ?>
