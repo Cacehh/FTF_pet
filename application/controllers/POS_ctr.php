@@ -441,7 +441,7 @@ class POS_ctr extends CI_Controller {
 			redirect(base_url(''));
 		}		
 	}
-    }
+	
 
     //function for the shopping cart feature for the POS.
     public function shopcart(){
