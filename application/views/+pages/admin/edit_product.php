@@ -8,7 +8,7 @@
     <div class="divider"></div>
 
     <div class="row">
-      <form action="<?php echo base_url()?>index.php/Admin_Product_ctr/invSaveEditProd/" method="post" name="invSaveEditProd">
+      <form action="<?php echo base_url()?>index.php/Inventory_ctr/saveProd/" method="post" name="invSaveEditProd">
         <div class="row">
     			<div class="col s12">
     				<table class="bordered centered highlight">

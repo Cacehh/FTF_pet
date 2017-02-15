@@ -14,7 +14,7 @@ class Admin_Product_ctr extends CI_Controller {
             redirect('Access_ctr');
         }
 
-        if($this->session->userdata('acct_type') == '2'){
+        if($this->session->userdata('acct_type') == '1'){
             $this->session->set_flashdata('flash_data', '<b>This is a restricted page. Please login again</b>');
             redirect('Access_ctr');
         }
@@ -42,7 +42,12 @@ class Admin_Product_ctr extends CI_Controller {
         $this->load->view('snips/a_start', $data);
         $this->load->view('snips/css_materialize');
         $this->load->view('snips/css_materialize_icon');
-        $this->load->view('+pages/admin/a_header');
+        $type = $this->session->userdata('acct_type');
+        if ($type == '2') {
+            $this->load->view('+pages/admin/a_Inventory_header');
+        } else {
+            $this->load->view('+pages/admin/a_header');
+        }
 
         //Index Page for all existing pages
         $this->load->view('+pages/admin/a_products', $data);
@@ -112,7 +117,7 @@ class Admin_Product_ctr extends CI_Controller {
        $this->load->view('snips/z_end');
     }
 
-	public function pets()
+	   public function pets()
     {
          //autoload configuration
         $config['base_url'] = site_url('Admin_Product_ctr/pets');
@@ -132,7 +137,7 @@ class Admin_Product_ctr extends CI_Controller {
         $this->load->view('snips/a_start', $data);
         $this->load->view('snips/css_materialize');
         $this->load->view('snips/css_materialize_icon');
-        $this->load->view('+pages/admin/a_POS_header');
+        $this->load->view('+pages/admin/a_Inventory_header');
 
         $this->load->view('+pages/admin/a_product_pets', $data);
 
@@ -309,22 +314,27 @@ class Admin_Product_ctr extends CI_Controller {
         $this->load->view('snips/z_end');
 	   }
 
-    public function invEditProd($editData) {
+    public function edit_product($editData) {
       $data['title'] = 'FTNF | ';
       $this->load->view('snips/a_start', $data);
       $this->load->view('snips/css_materialize');
       $this->load->view('snips/css_materialize_icon');
-      $this->load->view('+pages/admin/a_header');
+      $type = $this->session->userdata('acct_type');
+      if ($type == '2') {
+          $this->load->view('+pages/admin/a_Inventory_header');
+      } else {
+          $this->load->view('+pages/admin/a_header');
+      }
 
       $data2['prodinvlist'] = $this->prodinv_model->edit_prodInv($editData);
-      $this->load->view('+pages/admin/invEditProd', $data2);
+      $this->load->view('+pages/admin/edit_product', $data2);
 
       $this->load->view('snips/js_jquery300');
       $this->load->view('snips/js_materialize');
       $this->load->view('snips/z_end');
     }
 
-    public function invEditPet($prodID) {
+    public function editPet($prodID) {
         $data['title'] = 'FTNF | ';
         $this->load->view('snips/a_start', $data);
         $this->load->view('snips/css_materialize');
@@ -332,7 +342,7 @@ class Admin_Product_ctr extends CI_Controller {
         $this->load->view('+pages/admin/a_header');
 
         $data2['petinvlist'] = $this->prodinv_model->edit_prodInv($prodID);
-        $this->load->view('+pages/admin/invEditPet', $data2);
+        $this->load->view('+pages/admin/editPet', $data2);
 
         $this->load->view('snips/js_jquery300');
         $this->load->view('snips/js_materialize');
@@ -340,39 +350,39 @@ class Admin_Product_ctr extends CI_Controller {
     }
 
     // function to save edited product information
-    public function invSaveEditProd()
-    {
-      //autoload configuration
-      $config['base_url'] = site_url('Inventory_ctr/products');
-      $config['total_rows'] = $this->db->count_all('product');
-      $config['per_page'] = "10";
+    // public function invSaveEditProd()
+    // {
+    //   //autoload configuration
+    //   $config['base_url'] = site_url('Inventory_ctr/products');
+    //   $config['total_rows'] = $this->db->count_all('product');
+    //   $config['per_page'] = "10";
 
-      $this->pagination->initialize($config);
+    //   $this->pagination->initialize($config);
 
-      // getting the product list
-      $data['page'] = ($this->uri->segment(3)) ? $this->uri->segment(3) : 0;
-      $data['prodinvlist'] = $this->prodinv_model->get_prodinv($config["per_page"], $data['page'], NULL);
+    //   // getting the product list
+    //   $data['page'] = ($this->uri->segment(3)) ? $this->uri->segment(3) : 0;
+    //   $data['prodinvlist'] = $this->prodinv_model->get_prodinv($config["per_page"], $data['page'], NULL);
 
-      $data['title'] = 'FTNF | ';
-      $this->load->view('snips/a_start', $data);
-      $this->load->view('snips/css_materialize');
-      $this->load->view('snips/css_materialize_icon');
-      $this->load->view('+pages/admin/a_Inventory_header');
+    //   $data['title'] = 'FTNF | ';
+    //   $this->load->view('snips/a_start', $data);
+    //   $this->load->view('snips/css_materialize');
+    //   $this->load->view('snips/css_materialize_icon');
+    //   $this->load->view('+pages/admin/a_Inventory_header');
 
-      $prodID = $_POST['ProdID'];
-      $prodName = $_POST['ProdName'];
-      $category = $_POST['Category'];
-      $amount = $_POST['Amount'];
-      $quantity = $_POST['Quantity'];
+    //   $prodID = $_POST['ProdID'];
+    //   $prodName = $_POST['ProdName'];
+    //   $category = $_POST['Category'];
+    //   $amount = $_POST['Amount'];
+    //   $quantity = $_POST['Quantity'];
 
-      $this->prodinv_model->save_editProdInv($prodID, $prodName, $category, $quantity, $amount);
+    //   $this->prodinv_model->save_editProdInv($prodID, $prodName, $category, $quantity, $amount);
 
-      $this->load->view('snips/js_jquery300');
-      $this->load->view('snips/js_materialize');
-      $this->load->view('snips/z_end');
+    //   $this->load->view('snips/js_jquery300');
+    //   $this->load->view('snips/js_materialize');
+    //   $this->load->view('snips/z_end');
 
-      redirect('/Admin_Product_ctr/index');
-    }
+    //   redirect('/Admin_Product_ctr/index');
+    // }
 
     // function to save edited pet information
     public function invSaveEditPet()

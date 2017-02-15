@@ -78,7 +78,7 @@
 	                        <td><?php echo $petinvlist[$i]->Quantity; ?></td>
 	                        <td><?php echo $petinvlist[$i]->Timestamp; ?></td>
 	                        <td>
-								<a href="<?php echo base_url()?>index.php/Inventory_ctr/invEditPet/<?php echo $petinvlist[$i]->ProdID ?>"><i class="material-icons">mode_edit</i></a>
+								<a href="<?php echo base_url()?>index.php/Inventory_ctr/editPet/<?php echo $petinvlist[$i]->ProdID ?>"><i class="material-icons">mode_edit</i></a>
 								<a href="<?php echo base_url()?>index.php/Inventory_ctr/invDeletePet/<?php echo $petinvlist[$i]->ProdID ?>"><i class="material-icons">delete</i></a>
 							</td>
 	                    </tr>

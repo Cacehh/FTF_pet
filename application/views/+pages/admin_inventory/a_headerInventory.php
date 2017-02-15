@@ -63,13 +63,13 @@
 						<li class="bold"><a class="white-text collapsible-header  waves-effect waves-grey">Inventory</a>
 							<div class="collapsible-body">
 								<ul>
-								<li><a href="<?php echo base_url()?>index.php/Inventory_ctr/index">View</a></li>
-								<li><a href="<?php echo base_url()?>index.php/Inventory_ctr/invPet">Pet Inventory</a></li>
-								<li><a href="<?php echo base_url()?>index.php/Inventory_ctr/invProduct">Product Inventory</a></li>
+								<!-- <li><a href="<?php echo base_url()?>index.php/Inventory_ctr/index">View</a></li> -->
+								<li><a href="<?php echo base_url()?>index.php/Inventory_ctr/invProduct">Products</a></li>
+								<li><a href="<?php echo base_url()?>index.php/Inventory_ctr/invPet">Pets</a></li>
 								<li><a href="<?php echo base_url()?>index.php/Inventory_ctr/addPet">Add Pet</a></li>
 								<li><a href="<?php echo base_url()?>index.php/Inventory_ctr/addProduct">Add Products</a></li>
-								<li><a href="<?php echo base_url()?>index.php/Inventory_ctr/invEditProd">Edit Products</a></li>
-								<li><a href="<?php echo base_url()?>index.php/Inventory_ctr/invEditPet">Edit Pets</a></li>
+								<li><a href="<?php echo base_url()?>index.php/Inventory_ctr/edit_product">Edit Products</a></li>
+								<li><a href="<?php echo base_url()?>index.php/Inventory_ctr/editPet">Edit Pets</a></li>
 								</ul>
 							</div>
 						</li>

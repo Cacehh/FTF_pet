@@ -84,8 +84,8 @@
 						<li class="bold"><a class="white-text collapsible-header  waves-effect waves-grey">Inventory</a>
 							<div class="collapsible-body">
 								<ul>
-								<li><a href="<?php echo base_url()?>index.php/Admin_Product_ctr/index">Products</a></li>
-								<li><a href="<?php echo base_url()?>index.php/Admin_Product_ctr/pets">Pets</a></li>
+								<li><a href="<?php echo base_url()?>index.php/Inventory_ctr/products">Products</a></li>
+								<li><a href="<?php echo base_url()?>index.php/Inventory_ctr/pets">Pets</a></li>
 								<li><a href="<?php echo base_url()?>index.php/Admin_Product_ctr/type">Product Type</a></li>
 								<li><a href="<?php echo base_url()?>index.php/Admin_Product_ctr/supplier">Suppliers</a></li>
 								<li><a href="<?php echo base_url()?>index.php/Admin_Product_ctr/brands">Brands</a></li>
