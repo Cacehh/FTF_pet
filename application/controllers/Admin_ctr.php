@@ -76,7 +76,7 @@ class Admin_ctr extends CI_Controller {
             $this->form_validation->set_rules('dpassword', 'Password', 'required|valid_password', 'required|min_length[10]|max_length[50]');
 
             if ($this->form_validation->run() == FALSE) {
-                $this->load->view('+pages/admin/a_register');
+                $this->load->view('+pages/admin/register');
         } else {
 
         //Setting values for tabel columns
@@ -95,7 +95,7 @@ class Admin_ctr extends CI_Controller {
             $data['message'] = 'Data Inserted Successfully';
 
             //Loading View
-            $this->load->view('a_register', $data);
+            $this->load->view('register', $data);
         }
 
 
