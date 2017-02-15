@@ -54,7 +54,7 @@ class Admin_Product_ctr extends CI_Controller {
 
     public function invprodSearch() {
 
-         // getting the search string
+        // getting the search string
         $invProdSearch = ($this->input->post("prodinv_name"))? $this->input->post("prodinv_name") : "NIL";
 
         // limitation of the products being shown
