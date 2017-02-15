@@ -8,11 +8,7 @@
     <div class="divider"></div>
 
     <div class="row">
-<<<<<<< HEAD:application/views/+pages/admin/edit_pet.php
       <form action="<?php echo base_url()?>index.php/Inventory_ctr/savePet/" method="post" name="invSaveEditPet">
-=======
-      <form action="<?php echo base_url()?>index.php/Inventory_ctr/invSaveEditPet/" method="post" name="invSaveEditPet">
->>>>>>> d76545d0bfae4cb26bd3ebeaf956abea627d9833:application/views/+pages/admin/invEditPet.php
         <div class="row">
     			<div class="col s12">
     				<table class="bordered centered highlight">
