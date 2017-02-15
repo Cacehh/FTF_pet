@@ -2,13 +2,13 @@
 <main>
   <div>
     <div class="row">
-			<h4 class="offset-s1 col s11">Edit Product</h4>
+			<h4 class="offset-s1 col s11">Edit Pet</h4>
 		</div>
 
     <div class="divider"></div>
 
     <div class="row">
-      <form action="<?php echo base_url()?>index.php/Admin_Product_ctr/invSaveEditPet/" method="post" name="invSaveEditPet">
+      <form action="<?php echo base_url()?>index.php/Inventory_ctr/invSaveEditPet/" method="post" name="invSaveEditPet">
         <div class="row">
     			<div class="col s12">
     				<table class="bordered centered highlight">
