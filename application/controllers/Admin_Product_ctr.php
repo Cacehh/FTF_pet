@@ -400,7 +400,7 @@ class Admin_Product_ctr extends CI_Controller {
       $amount = $_POST['Amount'];
       $quantity = $_POST['Quantity'];
 
-      $this->prodinv_model->save_editPetInv($prodID, $prodName, $category, $quantity, $amount);
+      $this->petinv_model->save_editPetInv($prodID, $prodName, $category, $quantity, $amount);
 
       $this->load->view('snips/js_jquery300');
       $this->load->view('snips/js_materialize');
