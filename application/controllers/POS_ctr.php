@@ -416,7 +416,31 @@ class POS_ctr extends CI_Controller {
 
     //function for discount operation for the POS.
     public function discount(){
+    			if($this->session->userdata('logged_in'))
+		{	
+				$cart_info = $_POST['cart'] ;
+				foreach( $cart_info as $id => $cart)
+				{
+				$prodid = $cart['prodid'];
+				$amount = $cart['amount'];
+				$subamount = $amount * $cart['qty'];
 
+				$qty = $cart['qty'];
+		
+				$data = array(
+				'prodid' => $prodid,
+				'price' => $price,
+				'amount' => $amount,
+				'qty' => $qty
+				);
+		
+				$this->cart->update($data);
+				}
+				redirect('POS_ctr');
+		}else{
+			redirect(base_url(''));
+		}		
+	}
     }
 
     //function for the shopping cart feature for the POS.
