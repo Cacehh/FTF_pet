@@ -331,7 +331,7 @@ class Admin_ctr extends CI_Controller {
 
         if ($this->form_validation->run() == FALSE) {
 
-            $data['title'] = 'FTNF | Add so ito ka';
+            $data['title'] = 'FTNF | Add Customer';
             $this->load->view('snips/a_start', $data);
             $this->load->view('snips/css_materialize');
             $this->load->view('snips/css_materialize_icon');
@@ -363,7 +363,7 @@ class Admin_ctr extends CI_Controller {
             $this->AddCustomer_model->form_insert($data);
             $data['message'] = 'Data Inserted Successfully';
 
-            $data['title'] = 'FTNF | SHIT here';
+            $data['title'] = 'FTNF | Add Customer';
 
             $this->load->view('snips/a_start', $data);
             $this->load->view('snips/css_materialize');
