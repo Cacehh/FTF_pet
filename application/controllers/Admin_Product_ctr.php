@@ -211,7 +211,6 @@ class Admin_Product_ctr extends CI_Controller {
             $this->load->view('snips/css_materialize');
             $this->load->view('snips/css_materialize_icon');
             $this->load->view('+pages/admin/a_header', $data);
-            $this->load->view('snips/a_start', $data);
             $this->load->view('+pages/admin/add_products');
             
             $this->load->view('snips/js_jquery300');
@@ -244,7 +243,6 @@ class Admin_Product_ctr extends CI_Controller {
             $this->load->view('snips/css_materialize');
             $this->load->view('snips/css_materialize_icon');
             $this->load->view('+pages/admin/a_header', $data);
-            $this->load->view('snips/a_start', $data);
             $this->load->view('+pages/admin/add_products');
             
             $this->load->view('snips/js_jquery300');

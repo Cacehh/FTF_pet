@@ -18,7 +18,6 @@
 	                echo $message;
 	            }
 	        ?>
-	</div>
 
 	<!--Add products tab-->
 	<div class="row">
@@ -164,4 +163,5 @@
 					?>
 
 			      </div>
+	</div>
 </main>
