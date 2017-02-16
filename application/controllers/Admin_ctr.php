@@ -16,8 +16,9 @@ class Admin_ctr extends CI_Controller {
             redirect('Access_ctr');
         }
 
-        $this->load->model('register_model', 'AddCustomer_model');
+        $this->load->model('register_model');
         $this->load->model('Accounts_model');
+        $this->load->model('AddCustomer_model');
     }
 
     public function index() 
@@ -307,39 +308,23 @@ class Admin_ctr extends CI_Controller {
 
         $this->form_validation->set_error_delimiters('<div class="error">', '</div>');
 
-        $this->form_validation->set_rules('fname', 'lname', 'required|min_length[2]|max_length[30]');
+        //Validating First Name Field
+        $this->form_validation->set_rules('fname', 'FirstName', 'required|min_length[2]|max_length[20]');
 
-         //Validating Phone no. Field
-        $this->form_validation->set_rules('dphone', 'Phone No.', 'required|regex_match[/^[0-9]{11}$/]');
+        //Validating Last Name Name Field
+        $this->form_validation->set_rules('lname', 'LastName', 'required|min_length[2]|max_length[20]');
 
-        //Validating Mobile no. Field
-        $this->form_validation->set_rules('dmobile', 'Mobile No.', 'required|regex_match[/^[0-9]{11}$/]');
-
-        //Validating Email Field
-            $this->form_validation->set_rules('demail', 'Email', 'required|valid_email');
-
-        //Validating Street Field
-        $this->form_validation->set_rules('street', 'Street', 'required|min_length[1]|max_length[30]');
-
-        //Validating City Field
-        $this->form_validation->set_rules('city', 'City', 'required|min_length[1]|max_length[30]');
-
-        //Validating Barangay/Subdivision Field
-        $this->form_validation->set_rules('barsub', 'Barsub', 'required|min_length[1]|max_length[40]');
-
-        //Validating Province Field
-        $this->form_validation->set_rules('prov', 'Province', 'required|min_length[1]|max_length[40]');
 
         if ($this->form_validation->run() == FALSE) {
 
-            $data['title'] = 'FTNF | Add Customer';
+            $data['title'] = 'FTNF | Add so ito ka';
             $this->load->view('snips/a_start', $data);
             $this->load->view('snips/css_materialize');
             $this->load->view('snips/css_materialize_icon');
             $this->load->view('+pages/admin/a_header', $data);
 
-            $this->load->view('+pages/admin/addCustomer');
             $this->load->view('snips/a_start', $data);
+            $this->load->view('+pages/admin/addCustomer');
             
             $this->load->view('snips/js_jquery300');
             $this->load->view('snips/js_materialize');
@@ -349,32 +334,26 @@ class Admin_ctr extends CI_Controller {
 
         //Setting values for table columns
         $data = array(
-            'First_Name' => $this->input->post('fname'),
-            'Last_Name' => $this->input->post('lname'),
-            'Customer_Phone' => $this->input->post('dphone'),
-            'Customer_Mobile' => $this->input->post('dmobile'),
-            'Customer_Email' => $this->input->post('demail'),
-            'Customer_Street' => $this->input->post('street'),
-            'Customer_City' => $this->input->post('city'),
-            'Customer_Brgy' => $this->input->post('barsub'),
-            'Customer_Prov' => $this->input->post('prov')
+            'FirstName' => $this->input->post('fname'),
+            'LastName' => $this->input->post('lname')
         );
 
-        //Transfering data to Model
-        $this->AddCustomer_model->form_insert($data);
-        $data['message'] = 'Data Inserted Successfully';
-        $data['title'] = 'FTNF | Add Customer';
-        $this->load->view('+pages/admin/addCustomer');
+            //Transfering data to Model
+            $this->AddCustomer_model->form_insert($data);
+            $data['message'] = 'Data Inserted Successfully';
 
-        $this->load->view('snips/a_start', $data);
-        $this->load->view('snips/css_materialize');
-        $this->load->view('snips/css_materialize_icon');
-        $this->load->view('+pages/admin/a_header', $data);
-        $this->load->view('snips/a_start', $data);
-        
-        $this->load->view('snips/js_jquery300');
-        $this->load->view('snips/js_materialize');
-        $this->load->view('snips/z_end');
+            $data['title'] = 'FTNF | SHIT here';
+
+            $this->load->view('snips/a_start', $data);
+            $this->load->view('snips/css_materialize');
+            $this->load->view('snips/css_materialize_icon');
+            $this->load->view('+pages/admin/a_header', $data);
+            $this->load->view('snips/a_start', $data);
+            $this->load->view('+pages/admin/addCustomer');
+            
+            $this->load->view('snips/js_jquery300');
+            $this->load->view('snips/js_materialize');
+            $this->load->view('snips/z_end');
         }
     }  
     
