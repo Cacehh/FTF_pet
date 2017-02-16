@@ -11,7 +11,7 @@
 	    <br><br>
 	        <?php
 	            $formattributes = array('class' => 'container col s12 flow-text');
-	            echo form_open('Admin_Product_ctr', $formattributes);
+	            echo form_open('Admin_Product_ctr/addProducts', $formattributes);
 	        ?>
 	        <?php  
 	            if (isset($message)) {
