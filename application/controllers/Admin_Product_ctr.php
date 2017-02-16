@@ -8,20 +8,12 @@ class Admin_Product_ctr extends CI_Controller {
         parent::__construct();
         $this->load->database();
         $this->load->library('pagination');
-<<<<<<< HEAD
-
-        if(empty($this->session->userdata('id'))) {
-            $this->session->set_flashdata('flash_data', 'Please login First');
-            redirect('Access_ctr');
-        }
 
         if($this->session->userdata('acct_type') == '1'){
             $this->session->set_flashdata('flash_data', '<b>This is a restricted page. Please login again</b>');
             redirect('Access_ctr');
         }
 
-=======
->>>>>>> d76545d0bfae4cb26bd3ebeaf956abea627d9833
         $this->load->model(array('prodinv_model', 'petinv_model'));
     }
 
@@ -46,11 +38,7 @@ class Admin_Product_ctr extends CI_Controller {
         $this->load->view('snips/css_materialize');
         $this->load->view('snips/css_materialize_icon');
         $type = $this->session->userdata('acct_type');
-        if ($type == '2') {
-            $this->load->view('+pages/admin/a_Inventory_header');
-        } else {
-            $this->load->view('+pages/admin/a_header');
-        }
+        $this->load->view('+pages/admin/a_Inventory_header');
 
         //Index Page for all existing pages
         $this->load->view('+pages/admin/a_products', $data);
@@ -330,11 +318,7 @@ class Admin_Product_ctr extends CI_Controller {
       }
 
       $data2['prodinvlist'] = $this->prodinv_model->edit_prodInv($editData);
-<<<<<<< HEAD
-      $this->load->view('+pages/admin/edit_product', $data2);
-=======
       $this->load->view('+pages/admin/a_invEditProd', $data2);
->>>>>>> d76545d0bfae4cb26bd3ebeaf956abea627d9833
 
       $this->load->view('snips/js_jquery300');
       $this->load->view('snips/js_materialize');
@@ -349,11 +333,7 @@ class Admin_Product_ctr extends CI_Controller {
         $this->load->view('+pages/admin/a_header');
 
         $data2['petinvlist'] = $this->prodinv_model->edit_prodInv($prodID);
-<<<<<<< HEAD
-        $this->load->view('+pages/admin/editPet', $data2);
-=======
         $this->load->view('+pages/admin/a_invEditPet', $data2);
->>>>>>> d76545d0bfae4cb26bd3ebeaf956abea627d9833
 
         $this->load->view('snips/js_jquery300');
         $this->load->view('snips/js_materialize');

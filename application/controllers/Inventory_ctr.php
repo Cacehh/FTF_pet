@@ -100,7 +100,7 @@ class Inventory_ctr extends CI_Controller {
 				$this->load->view('snips/js_materialize');
 				$this->load->view('snips/z_end');
 		}
-		
+
 
 		// public function pets() {
 		// 	//autoload configuration
@@ -249,7 +249,12 @@ class Inventory_ctr extends CI_Controller {
 			$this->load->view('snips/a_start', $data);
 			$this->load->view('snips/css_materialize');
 			$this->load->view('snips/css_materialize_icon');
-			$this->load->view('+pages/admin/a_Inventory_header');
+			$type = $this->session->userdata('acct_type');
+			if ($type == '2') {
+				 $this->load->view('+pages/admin/a_Inventory_header');
+			} else {
+				 $this->load->view('+pages/admin/a_header');
+			}
 
 			$data2['prodinvlist'] = $this->prodinv_model->edit_prodInv($editData);
 			$this->load->view('+pages/admin/edit_product', $data2);
@@ -273,12 +278,6 @@ class Inventory_ctr extends CI_Controller {
 	      $data['page'] = ($this->uri->segment(3)) ? $this->uri->segment(3) : 0;
 	      $data['prodinvlist'] = $this->prodinv_model->get_prodinv($config["per_page"], $data['page'], NULL);
 
-	      $data['title'] = 'FTNF | ';
-	      $this->load->view('snips/a_start', $data);
-	      $this->load->view('snips/css_materialize');
-	      $this->load->view('snips/css_materialize_icon');
-	      $this->load->view('+pages/admin/a_Inventory_header');
-
 	      $prodID = $_POST['ProdID'];
 	      $prodName = $_POST['ProdName'];
 	      $category = $_POST['Category'];
@@ -286,10 +285,6 @@ class Inventory_ctr extends CI_Controller {
 	      $quantity = $_POST['Quantity'];
 
 	      $this->prodinv_model->save_editProdInv($prodID, $prodName, $category, $quantity, $amount);
-
-	      $this->load->view('snips/js_jquery300');
-	      $this->load->view('snips/js_materialize');
-	      $this->load->view('snips/z_end');
 
 			redirect('/Inventory_ctr/products');
 	      //FIXX add confirmation that the change was made
@@ -415,7 +410,12 @@ class Inventory_ctr extends CI_Controller {
         $this->load->view('snips/a_start', $data);
         $this->load->view('snips/css_materialize');
         $this->load->view('snips/css_materialize_icon');
-        $this->load->view('+pages/admin/a_Inventory_header');
+				$type = $this->session->userdata('acct_type');
+				if ($type == '2') {
+				   $this->load->view('+pages/admin/a_Inventory_header');
+				} else {
+				   $this->load->view('+pages/admin/a_header');
+				}
 
         $this->load->view('+pages/admin/product_pets', $data);
 

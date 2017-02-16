@@ -6,7 +6,7 @@
 		</div>
 		<div class="row grey lighten-1">
 			<div class="offset-s1 col s11">
-				<p class="flow-text">View, Edit and Delete products</p>
+				<p class="flow-text">View, Edit and Delete Products</p>
 			</div>
 		</div>
 
