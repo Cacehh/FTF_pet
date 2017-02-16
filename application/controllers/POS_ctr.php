@@ -421,22 +421,22 @@ class POS_ctr extends CI_Controller {
 				$cart_info = $_POST['cart'] ;
 				foreach( $cart_info as $id => $cart)
 				{
-				$prodid = $cart['prodid'];
-				$amount = $cart['amount'];
-				$subamount = $amount * $cart['qty'];
+				$ProdID = $cart['ProdID'];
+				$Amount = $cart['amount'];
+				$SubAmount = $Amount * $cart['qty'];
 
 				$qty = $cart['qty'];
 		
 				$data = array(
-				'prodid' => $prodid,
-				'price' => $price,
-				'amount' => $amount,
+				'ProdID' => $ProdID,
+				'Price' => $Price,
+				'Amount' => $Amount,
 				'qty' => $qty
 				);
 		
 				$this->cart->update($data);
 				}
-				redirect('POS_ctr');
+				redirect('pos.php');
 		}else{
 			redirect(base_url(''));
 		}		
@@ -447,17 +447,38 @@ class POS_ctr extends CI_Controller {
     public function shopcart(){
     	if($this->session->userdata('logged_in')){
     		$insert_data = array( 
-    		'prodid'=>$this->input->post('prodid'),
-    		'prodname'=>$this->input->post('prodid'),
-    		'category'=>$this->input->post('category'),
-			'amount'=>$this->input->post('amount'),
-			'category'=>$this->input->post('category'),
+    		'ProdID'=>$this->input->post('ProdID'),
+    		'ProdName'=>$this->input->post('ProdName'),
+    		'Category'=>$this->input->post('Category'),
+			'Amount'=>$this->input->post('Amount'),
 );
     		//add item into cart
     		$this->cart->insert($insert_data);
     		//function to show the inserted data in the cart.
-    		redirect('POS_ctr');
+    		redirect('pos.php');
     	}
 
-    }   
+    } 
+
+    //function for removing an item in the shopcart in the POS.
+    public function remove_from_cart($rowid){
+    						// Check rowid value.
+					if ($rowid==="all"){
+					// Destroy data which store in session.
+					$this->cart->destroy();
+					}else{
+					// Destroy selected rowid in session.
+					$data = array(
+					'rowid' => $rowid,
+					'qty' => 0
+					);
+					// Update cart data, after cancel.
+					$this->cart->update($data);
+					}
+		
+					// This will show cancel data in cart.
+					redirect('pos.php');
+    }
+
+      
 }
