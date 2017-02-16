@@ -16,9 +16,11 @@ class Admin_ctr extends CI_Controller {
             redirect('Access_ctr');
         }
 
-        $this->load->model('register_model');
-        $this->load->model('Accounts_model');
-        $this->load->model('AddCustomer_model');
+        // $this->load->model('register_model');
+        // $this->load->model('Accounts_model');
+        // $this->load->model('AddCustomer_model');
+        $this->load->model(array('register_model', 'Accounts_model', 'AddCustomer_model'));
+
     }
 
     public function index() 
@@ -129,11 +131,10 @@ class Admin_ctr extends CI_Controller {
 
     public function accounts()
     {
-
-       ///autoload configuration
+       //Autoload configuration
         $config['base_url'] = site_url('Admin_ctr/accounts');
         $config['total_rows'] = $this->db->count_all('users');
-        $config['per_page'] = "20";
+        $config['per_page'] = "10";
 
         $this->pagination->initialize($config);
 
@@ -158,7 +159,6 @@ class Admin_ctr extends CI_Controller {
 	
     public function searchAccounts() 
     {
-
         // getting the search string
         $searchAccounts = ($this->input->post("account_name"))? $this->input->post("account_name") : "NIL";
 
