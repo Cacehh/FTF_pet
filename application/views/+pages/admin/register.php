@@ -1,7 +1,4 @@
   <br>
-  <script type="text/javascript">
-      Materialize.toast('I am a toast!', 4000);
-  </script>
   <main>
     <div class="row">
         <a href="<?php echo base_url()?>index.php/Admin_ctr/accounts">

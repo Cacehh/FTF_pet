@@ -83,16 +83,16 @@ class Admin_ctr extends CI_Controller {
                 $this->load->view('+pages/admin/register');
         } else {
 
-        //Setting values for tabel columns
-        $data = array(
-            'FirstName' => $this->input->post('fname'),
-            'LastName' => $this->input->post('lname'),
-            'Middle_Name' => $this->input->post('mname'),
-            'username' => $this->input->post('username'),
-            'user_email' => $this->input->post('demail'),
-            'user_email' => $this->input->post('demail'),
-            'user_password' => $this->input->post('dpassword')
-        );
+            //Setting values for tabel columns
+            $data = array(
+                'FirstName' => $this->input->post('fname'),
+                'LastName' => $this->input->post('lname'),
+                'Middle_Name' => $this->input->post('mname'),
+                'username' => $this->input->post('username'),
+                'user_email' => $this->input->post('demail'),
+                'user_email' => $this->input->post('demail'),
+                'user_password' => $this->input->post('dpassword')
+            );
 
             //Transfering data to Model
             $this->register_model->form_insert($data);
@@ -101,7 +101,6 @@ class Admin_ctr extends CI_Controller {
             //Loading View
             $this->load->view('register', $data);
         }
-
 
         $data['title'] = 'FTNF | Register';
         $this->load->view('snips/a_start', $data);
