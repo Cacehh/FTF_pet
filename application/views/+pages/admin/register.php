@@ -1,9 +1,17 @@
+  <br>
   <main>
-  <br><br>
-	<div class="container blue-grey lighten-5 z-depth-3">
-  <br><br>
-
-	<div id="container">
+    <div class="row">
+        <a href="<?php echo base_url()?>index.php/Admin_ctr/accounts">
+            <h4 class="offset-s1 col s11 black-text">Register users</h4>
+        </a>
+    </div>
+    <div class="row grey lighten-1">
+        <div class="offset-s1 col s8">
+            <p class="flow-text">Register new users to use the applicaion</p>
+        </div>
+    </div>
+    <div class="container blue-grey lighten-5 z-depth-3">
+    <br><br>
 		<?php
 			$formattributes = array('class' => 'container col s12 flow-text');
 	    	echo form_open('Register_ctr', $formattributes);
@@ -144,5 +152,4 @@
 		<div id="fugo">
 
 		</div>
-	</div>
 </main>

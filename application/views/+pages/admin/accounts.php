@@ -2,55 +2,47 @@
 <main>
 	<div class="row">
 			<div class="row">
-				<h4 class="offset-s1 col s11">Accounts</h4>
+				<a href="<?php echo base_url()?>index.php/Admin_ctr/accounts">
+					<h4 class="offset-s1 col s11 black-text">Accounts</h4>
+				</a>
 			</div>
 
 			<div class="row grey lighten-1">
-				<div class="offset-s1 col s11">
+				<div class="offset-s1 col s8">
 					<p class="flow-text">View, Edit and Add Accounts</p>
+				</div>
+				<div class="col s3">
+					<p class="flow-text">
+					<a href="<?php echo base_url()?>index.php/Register_ctr" class="waves-effect waves-light btn"><i class="material-icons left">library_add</i>Add User</a>
+					</p>
 				</div>
 			</div>
 
+            <div class="row">
+				<div class="col s12">
 					<?php 
 				       $attr = array("class" => "form-horizontal", "role" => "form", "id" => "form1", "name" => "form1");
 				       echo form_open("Admin_ctr/searchAccounts", $attr);
 				    ?>
+	                <div class="input-field">
+	                    <div class="offset-s2 col s6">
+							<i class="material-icons prefix">search</i>
+	                        <input class="form-control" id="icon_prefix" name="account_name" type="text" value="<?php echo set_value('account_name'); ?>" />
+							<label for="icon_prefix">Search for Users</label>
+	                    </div>
 
-			            <div class="row">
-							<div class="col s12">
-				                <div class="form-group">
-
-				                    <div class="col-md-6">
-										<i class="material-icons prefix">search</i>
-				                        <input class="form-control" id="icon_prefix" name="account_name" type="text" value="<?php echo set_value('account_name'); ?>" />
-										<label for="icon_prefix">Search for Users</label>
-				                    </div>
-
-				                    <div class="col-md-3">
-				                        <input id="btn_search" name="btn_search" type="submit" class="btn btn-danger" value="Search" />
-				                    </div>
-
-				                    <div class="col-md-3">
-				                    	<?php			                        	
-				                        	echo anchor('Admin_ctr/accounts', 'Refresh User List', 'class=btn btn-primary');
-				                         ?>
-				                    </div>
-				                </div>
-
-			                <?php 
-			                    echo form_close(); 
-			                ?>
-					</div>
-				</div>
-
-			<div class="row">
-				<div class="col S12">
-					<a class="waves-effect waves-light btn right">Add User</a>
+	                    <div class="col s2">
+	                        <input id="btn_search" name="btn_search" type="submit" class="btn btn-danger" value="Search" />
+	                    </div>
+	                </div>
+	                <?php 
+	                    echo form_close(); 
+	                ?>
 				</div>
 			</div>
-			
-			<div class="bordered highlight centered responisve-table container">
-				<table>
+
+			<div class="container">
+				<table class="bordered highlight responisve-table highlight">
 					<thead>
 						<tr>
 						<th>#</th>
