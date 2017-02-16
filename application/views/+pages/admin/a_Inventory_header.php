@@ -42,7 +42,16 @@
 		<div class="nav-wrapper grey darken-2"> 
 			<a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
 			<ul class="right hide-on-med-and-down">
-				<li><a href="<?php echo base_url()?>index.php/Admin_ctr/dashboard"><i class="material-icons left">home</i>Home</a></li>
+				<li>
+					<?php 
+						echo "<b class='cyan-text'>Welcome, ";
+						echo $this->session->userdata('fname');
+						echo " ";
+						echo $this->session->userdata('lname');
+						echo "</b>";
+					?>
+				</li>
+				<li><a href="<?php echo base_url()?>index.php/Inventory_ctr"><i class="material-icons left">home</i>Home</a></li>
 				<li class="active"><a class="dropdown-button" href="#!" data-activates="dropdown1">Account<i class="material-icons right">arrow_drop_down</i></a></li>
 			</ul>
 			
@@ -50,7 +59,7 @@
 				<li class="no-padding">
 					<ul class="collapsible collapsible-accordion">
 						<li class="bold center deep-orange accent-2">
-							<a href="<?php echo base_url()?>index.php/Inventory_ctr/dashboard" class="white-text collapsible-header waves-effect waves-blue">Fins, Tails N' Feathers | INVENTORY</a>	
+							<a href="<?php echo base_url()?>index.php/Inventory_ctr/" class="white-text collapsible-header waves-effect waves-blue">Fins, Tails N' Feathers | INVENTORY</a>	
 						</li>
 						<li class="bold"><a class="white-text collapsible-header  waves-effect waves-grey">Inventory</a>
 							<div class="collapsible-body">

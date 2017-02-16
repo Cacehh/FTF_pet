@@ -20,7 +20,6 @@
 			});
 		  });
 	</script>
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/shopify-cartjs/0.4.1/rivets-cart.min.js"></script>
 	</head>
 <body>
     <!-- Below are the naviagation options code if any    -->
@@ -33,7 +32,7 @@
 			<li class="divider" class="black-text"></li>
 			<li class="red accent-2"><a href="<?php echo base_url()?>index.php/Access_ctr/logout" class="black-text">Log out</a></li>
 		</ul>
-			<ul id="dropdown2" class="dropdown-content">
+		<ul id="dropdown2" class="dropdown-content">
 			<li><a href="#!">Book Cover Design</a></li>
 			<li><a href="#!">Icon Design</a></li>
 			<li><a href="#!">Poster Design</a></li>
@@ -44,10 +43,11 @@
 			<ul class="right hide-on-med-and-down">
 				<li>
 					<?php 
-						echo "Welcome, ";
-						echo $this->session->userdata('fname ');
+						echo "<b class='cyan-text'>Welcome, ";
+						echo $this->session->userdata('fname');
 						echo " ";
 						echo $this->session->userdata('lname');
+						echo "</b>";
 					?>
 				</li>
 				<li><a href="<?php echo base_url()?>index.php/POS_ctr"><i class="material-icons left">home</i>Home</a></li>
