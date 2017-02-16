@@ -21,7 +21,9 @@ class Register_ctr extends CI_Controller {
 		//Including validation library
 		$this->load->library('form_validation');
 
-		$this->form_validation->set_error_delimiters('<div class="error">', '</div>');
+		// $this->form_validation->set_error_delimiters('<div class="center">', '</div>');
+		$this->form_validation->set_error_delimiters('<script> alert("', '")</script>');
+		// Materialize.toast('I am a toast', 4000)
 
 		//Validating First Name Field
 		$this->form_validation->set_rules('fname', 'FirstName', 'required|min_length[2]|max_length[20]');
@@ -38,7 +40,7 @@ class Register_ctr extends CI_Controller {
 		//Validating Email Field
 		$this->form_validation->set_rules('demail', 'Email', 'required|valid_email');
 
-		// $this->form_validation->set_rules('dacct', 'AccountType', 'required|min_length[1]|max_length[1]');
+		$this->form_validation->set_rules('dacct', 'AccountType', 'required|min_length[1]|max_length[1]');
 
 		//Validating Mobile no. Field
 		$this->form_validation->set_rules('dmobile', 'Mobile No.', 'required|regex_match[/^[0-9]{11}$/]');
