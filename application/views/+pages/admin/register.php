@@ -11,7 +11,7 @@
         </div>
     </div>
     <div class="container blue-grey lighten-5 z-depth-3">
-    <br><br>
+        <br>
         <?php
             $formattributes = array('class' => 'container col s12 flow-text');
             echo form_open('Register_ctr', $formattributes);
@@ -21,7 +21,6 @@
                 echo $message;
             }
         ?>
-
 
         <div class="row">
             <div class="input-field col s12">

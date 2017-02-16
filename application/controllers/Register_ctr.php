@@ -23,7 +23,6 @@ class Register_ctr extends CI_Controller {
 
 		// $this->form_validation->set_error_delimiters('<div class="center">', '</div>');
 		$this->form_validation->set_error_delimiters('<script> alert("', '")</script>');
-		// Materialize.toast('I am a toast', 4000)
 
 		//Validating First Name Field
 		$this->form_validation->set_rules('fname', 'FirstName', 'required|min_length[2]|max_length[20]');

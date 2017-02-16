@@ -6,7 +6,7 @@
 	}
 
 	function form_insert($data){
-		// Inserting in Table(register) of Database(ftnf)
+		// Inserting in Table(product) of Database(ftnf)
 		$this->db->insert('product', $data);
 	}
 }
