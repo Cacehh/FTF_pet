@@ -11,106 +11,140 @@
 				<p class="flow-text">Add new products</p>
 			</div>
 		</div>
-					<br>
-					<div class="row">
+
+					<div class="input-field col s12">
+
 						<div class="input-field col s12">
 						    <div class="input-field col s6">
-						    	<h5>Product Name</h5>
-									<input placeholder="Productname" id="productname" type="text" class="validate">	
+					                   <?php
+					                        $prodname = array(
+					                            'id'        => 'prodname','name' => 'prodname','maxlength' => '25',
+					                            'pattern'   => '.{2,25}','length' => '25','class' => 'validate',
+					                        );
+					                        echo form_input($prodname);
+					                    ?>  
+					                    <label for="prodname" data-error="Must be atleast 2 characters" >Product Name</label>
+					                    <?php echo form_error('prodname'); ?>
+
 						  	</div>
 
 						  	<div class="input-field col s6">
-						  		<h5>Description</h5>
-								<input placeholder="Description" id="Description" type="text" class="validate">	
-						  	</div>
+						  			<?php
+				                        $proddesc = array(
+				                            'id'        => 'proddesc','name' => 'proddesc','maxlength' => '25',
+				                            'pattern'   => '.{2,25}','length' => '25','class' => 'validate',
+				                        );
+				                        echo form_input($proddesc);
+				                    ?>  
+			                   		 <label for="proddesc" data-error="Must be atleast 2 characters" >Product Description</label>
+			                    	<?php echo form_error('proddesc'); ?>
+			                </div>
+
 						</div>
+					</div>
 
 						<div class="input-field col s12">
-							<div class="input-field col s4">
-								<h5>Supply Price</h4>
-								<input placeholder="SP" id="supplyprice" type="number" class="validate">
-<!--							<b>+</b>-->
-							</div>
+							 
+							 <div class="input-field col s12">
 
-							<div class="input-field col s4">
-								<h5>Mark Up</h5>
-								<input placeholder="MU" id="markup" type="number" class="validate">
-<!--							<b>=</b>-->
-							</div>
+							 	  <div class="input-field col s4">
+						              <select id="category" name="category">
+						                <option value="Choose" disabled selected>Choose</option>
+						                <option value="Male">Pet</option>
+						                <option value="Male">Product</option>
+						                <option value="Male">Grooming</option>
+						                <option value="Male">Habitat</option>
+						              </select>
+						              <label>Category</label>
+						          </div>
 
-							<div class="input-field col s4">
-								<h5>Retail Price</h5>
-								<input placeholder="RP" id="retailprice" type="number" class="validate">
-							</div>
-						</div>
+							 	  <div class="input-field col s4">
+										<?php
+						                    $generic = array(
+						                            'id'        => 'generic','name' => 'generic','maxlength' => '25',
+						                            'pattern'   => '.{2,25}','length' => '25','class' => 'validate',
+						                        );
+						                        echo form_input($generic);
+						                    ?>  
+					                   		 <label for="generic" data-error="Must be atleast 2 characters" >Generic Brand</label>
+					                    	<?php echo form_error('generic'); ?>
+							 	  </div>
 
-						<div class="input-field col s12">
-							<div class="input-field col s4">
-								<h5>Quantity</h5>
-								<input placeholder="Qty" id="Quantity" type="number" class="validate">
-<!--							<b>=</b>-->
-							</div>
+						           <div class="input-field col s4">
+						           		 <?php
+						                    $qty = array(
+						                      'id'        => 'qty','name' => 'qty','maxlength' => '4',
+						                      'pattern'   => '.{4,4}','length' => '4','class' => 'validate',
+						                      );
+						                    echo form_input($qty);
+						                  ?>  
+						                  <label for="qty" data-error="Must be a valid number" >Quantity</label>
+						                  <?php echo form_error('qty'); ?>
+						           </div>
+							 </div>
 
-							<script>
-							  $(document).ready(function() {
-								$('select').material_select();
-							  });
-							 $('select').material_select('destroy');
-							</script>
+							 <div class="input-field col s12">
 
-							<div class="input-field col s4">
-								<h5>Product Type</h5>
-								<div class="input-field">
-									<select>
-										<option value="Sample disabled" disabled selected>Product Type</option>
-										<option value="1">Groom</option>
-										<option value="2">Health</option>
-										<option value="3">Accessory</option>
-									</select>
-									<!-- <label>Product Type</label>		 -->
-								</div>	
-							</div>
+							 		 <div class="input-field col s12">
+							 		 	 <div class="input-field col s4">
+							           		 <?php
+							                    $supply = array(
+							                      'id'        => 'supply','name' => 'supply','maxlength' => '11',
+							                      'pattern'   => '.{11,11}','length' => '11','class' => 'validate',
+							                      );
+							                    echo form_input($supply);
+							                  ?>  
+							                  <label for="qty" data-error="Must be a valid number" >Supply Price</label>
+							                  <?php echo form_error('supply'); ?>
+						           		</div>
 
-							<div class="input-field col s4">
-								<h5>Generic Brand</h5>
-								<div class="input-field">
-									<select>
-										<option value="1" selected>Generic Brand</option>
-										<option value="2">Pedigree</option>
-										<option value="3">Champion</option>
-									</select>
-									<!-- <label>Product Brand</label> -->
-								</div>
-							</div>
-						</div>
+							 			 <div class="input-field col s4">
+							 			 		<?php
+								                    $markup = array(
+								                      'id'        => 'markup','name' => 'markup','maxlength' => '6',
+								                      'pattern'   => '.{6,6}','length' => '6','class' => 'validate',
+								                      );
+								                    echo form_input($markup);
+								                  ?>  
+								                  <label for="markup" data-error="Must be a valid number" >Markup Price</label>
+								                  <?php echo form_error('markup'); ?>
+							 			 </div>
 
-						<div class="input-field col s12">
-							<div class="input-field col s8">
-								<h5>Add Image</h5>
-								<div class="file-field input-field">
-									<div class="btn">
-										<span>File</span>
-										<input type="file">
+							 			 <div class="input-field col s4">
+							 			 		<?php
+								                    $amount = array(
+								                      'id'        => 'amount','name' => 'amount','maxlength' => '6',
+								                      'pattern'   => '.{6,6}','length' => '6','class' => 'validate',
+								                      );
+								                    echo form_input($amount);
+								                  ?>  
+								                  <label for="markup" data-error="Must be a valid number" >Amount</label>
+								                  <?php echo form_error('amount'); ?>
+							 			 </div>
+							 		 </div>
+
+							 		 <div class="input-field col s12">
+											<!-- <div class="input-field col s8">
+												<h5>Add Image</h5>
+												<div class="file-field input-field">
+													<div class="btn">
+														<span>File</span>
+														<input type="file">
+													</div>
+													<div class="file-path-wrapper">
+														<input class="file-path validate" type="text">
+													</div>
+												</div>
+											</div> -->
+
+										<div class="col s12">
+											<a class="waves-effect waves-light btn right">Add Product</a>
+										</div>
 									</div>
-									<div class="file-path-wrapper">
-										<input class="file-path validate" type="text">
-									</div>
-								</div>
-							</div>
 
-							<div class="col s12">
-								<a class="waves-effect waves-light btn right">Add Product</a>
-							</div>
+							 </div>
 						</div>
-
-					<!-- <div class="row container">
-							<div class="row">
-									<input placeholder="Product Tags" id="producttags" type="text" class="validate">
-									<a class="waves-effect waves-light btn">Add</a>
-							</div>
-						</div>
-					</div> -->
-					<!-- <div class="divider"></div> -->
+			      </div>
 
 	</div>
 </main>

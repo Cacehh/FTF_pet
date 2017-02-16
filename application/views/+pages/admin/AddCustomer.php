@@ -56,7 +56,7 @@
                         );
                         echo form_input($mname);
                     ?>  
-                    <label for="lname" data-error="Must be atleast 2 characters" >M.I</label>
+                    <label for="mname" data-error="Must be atleast 2 characters" >M.I</label>
                     <?php echo form_error('mname'); ?>
         </div>
 

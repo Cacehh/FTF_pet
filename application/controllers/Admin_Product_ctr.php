@@ -209,8 +209,9 @@ class Admin_Product_ctr extends CI_Controller {
           $this->load->view('snips/a_start', $data);
           $this->load->view('snips/css_materialize');
           $this->load->view('snips/css_materialize_icon');
-          $this->load->view('+pages/admin/a_header');
+          $this->load->view('+pages/admin/a_header', $data);
 
+          $this->load->view('snips/a_start', $data);
           $this->load->view('+pages/admin/add_products');
 
   		    $this->load->view('snips/js_jquery300');
@@ -224,11 +225,11 @@ class Admin_Product_ctr extends CI_Controller {
             'ProdName' => $this->input->post('prodname'),
             'ProdDesc' => $this->input->post('proddesc'),
             'GenericBrand' => $this->input->post('generic'),
-            'Category' => $this->input->post('prodtype'),
+            'Category' => $this->input->post('category'),
             'Quantity' => $this->input->post('qty'),
             'SupplyPrice' => $this->input->post('supply'),
             'MarkPrice' => $this->input->post('markup'),
-            'Amount' => $this->input->post('retail')
+            'Amount' => $this->input->post('amount')
             // 'Timestamp' => $this->input->post('retail')
             // 'Image' => $this->input->post('barsub')
         );
@@ -236,20 +237,18 @@ class Admin_Product_ctr extends CI_Controller {
             //Transfering data to Model
             $this->AddProduct_model->form_insert($data);
             $data['message'] = 'Data Inserted Successfully';
+            $data['title'] = 'FTNF | Add Product';
 
-            $data['title'] = 'FTNF | Add Products';
             $this->load->view('snips/a_start', $data);
             $this->load->view('snips/css_materialize');
             $this->load->view('snips/css_materialize_icon');
             $this->load->view('+pages/admin/a_header', $data);
-
             $this->load->view('snips/a_start', $data);
             $this->load->view('+pages/admin/add_products');
-
+            
             $this->load->view('snips/js_jquery300');
             $this->load->view('snips/js_materialize');
             $this->load->view('snips/z_end');
-
         }
 	}
 
