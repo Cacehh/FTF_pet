@@ -1,11 +1,27 @@
 <br>
-<main>
-		
-<!--Add products tab-->
+  <main>
+
+  	<div class="row">
+        <a href="<?php echo base_url()?>index.php/Admin_Product_ctr/addProducts">
+            <h4 class="offset-s1 col s11 black-text">Add Products</h4>
+        </a>
+    </div>
+
+    <div class="container">
+	    <br><br>
+	        <?php
+	            $formattributes = array('class' => 'container col s12 flow-text');
+	            echo form_open('Admin_Product_ctr', $formattributes);
+	        ?>
+	        <?php  
+	            if (isset($message)) {
+	                echo $message;
+	            }
+	        ?>
+	</div>
+
+	<!--Add products tab-->
 	<div class="row">
-		<div class="row">
-			<h4 class="offset-s1 col s11">Products</h4>
-		</div>
 		<div class="row grey lighten-1">
 			<div class="offset-s1 col s12">
 				<p class="flow-text">Add new products</p>
@@ -137,14 +153,15 @@
 												</div>
 											</div> -->
 
-										<div class="col s12">
-											<a class="waves-effect waves-light btn right">Add Product</a>
-										</div>
 									</div>
 
 							 </div>
 						</div>
-			      </div>
 
-	</div>
+					<?php 
+						echo form_submit(array('id' => 'submit', 'value' => 'Submit', 'class'=>'waves-effect waves-light btn')); 
+						echo form_close(); 
+					?>
+
+			      </div>
 </main>

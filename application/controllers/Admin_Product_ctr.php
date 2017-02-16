@@ -172,7 +172,7 @@ class Admin_Product_ctr extends CI_Controller {
     }
 
 	public function addProducts()
-    {
+  {
 
         //Including validation library
         $this->load->library('form_validation');
@@ -205,38 +205,39 @@ class Admin_Product_ctr extends CI_Controller {
 
         if ($this->form_validation->run() == FALSE) {
 
-          $data['title'] = 'FTNF | Add Products';
-          $this->load->view('snips/a_start', $data);
-          $this->load->view('snips/css_materialize');
-          $this->load->view('snips/css_materialize_icon');
-          $this->load->view('+pages/admin/a_header', $data);
+            $data['title'] = 'FTNF | Add Product';
 
-          $this->load->view('snips/a_start', $data);
-          $this->load->view('+pages/admin/add_products');
-
-  		    $this->load->view('snips/js_jquery300');
-          $this->load->view('snips/js_materialize');
-  		    $this->load->view('snips/z_end');
+            $this->load->view('snips/a_start', $data);
+            $this->load->view('snips/css_materialize');
+            $this->load->view('snips/css_materialize_icon');
+            $this->load->view('+pages/admin/a_header', $data);
+            $this->load->view('snips/a_start', $data);
+            $this->load->view('+pages/admin/add_products');
+            
+            $this->load->view('snips/js_jquery300');
+            $this->load->view('snips/js_materialize');
+            $this->load->view('snips/z_end');
 
         } else {
 
-            //Setting values for table columns
-             $data = array(
-            'ProdName' => $this->input->post('prodname'),
-            'ProdDesc' => $this->input->post('proddesc'),
-            'GenericBrand' => $this->input->post('generic'),
-            'Category' => $this->input->post('category'),
-            'Quantity' => $this->input->post('qty'),
-            'SupplyPrice' => $this->input->post('supply'),
-            'MarkPrice' => $this->input->post('markup'),
-            'Amount' => $this->input->post('amount')
-            // 'Timestamp' => $this->input->post('retail')
-            // 'Image' => $this->input->post('barsub')
+           //Setting values for table columns
+           $data = array(
+          'ProdName' => $this->input->post('prodname'),
+          'ProdDesc' => $this->input->post('proddesc'),
+          'GenericBrand' => $this->input->post('generic'),
+          'Category' => $this->input->post('category'),
+          'Quantity' => $this->input->post('qty'),
+          'SupplyPrice' => $this->input->post('supply'),
+          'MarkPrice' => $this->input->post('markup'),
+          'Amount' => $this->input->post('amount')
+          // 'Timestamp' => $this->input->post('retail')
+          // 'Image' => $this->input->post('barsub')
         );
 
             //Transfering data to Model
             $this->AddProduct_model->form_insert($data);
             $data['message'] = 'Data Inserted Successfully';
+
             $data['title'] = 'FTNF | Add Product';
 
             $this->load->view('snips/a_start', $data);
