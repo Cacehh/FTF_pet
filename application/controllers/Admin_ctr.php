@@ -309,11 +309,25 @@ class Admin_ctr extends CI_Controller {
         $this->form_validation->set_error_delimiters('<div class="error">', '</div>');
 
         //Validating First Name Field
-        $this->form_validation->set_rules('fname', 'FirstName', 'required|min_length[2]|max_length[20]');
+        $this->form_validation->set_rules('fname', 'FirstName', 'required|min_length[2]|max_length[25]');
 
         //Validating Last Name Name Field
-        $this->form_validation->set_rules('lname', 'LastName', 'required|min_length[2]|max_length[20]');
+        $this->form_validation->set_rules('lname', 'LastName', 'required|min_length[2]|max_length[25]');
 
+        //Validating Middle Name Name Field
+        $this->form_validation->set_rules('mname', 'MiddleName', 'required|min_length[1]|max_length[2]');
+
+        //Validating Email Field
+        $this->form_validation->set_rules('demail', 'Email', 'required|valid_email');
+
+        //Validating Mobile no. Field
+        $this->form_validation->set_rules('dmobile', 'Mobile No.', 'required|regex_match[/^[0-9]{11}$/]');
+
+        //Validating First Name Field
+        $this->form_validation->set_rules('street', 'Street', 'required|min_length[2]|max_length[25]');
+
+        //Validating First Name Field
+        $this->form_validation->set_rules('city', 'City', 'required|min_length[2]|max_length[25]');
 
         if ($this->form_validation->run() == FALSE) {
 
@@ -335,7 +349,14 @@ class Admin_ctr extends CI_Controller {
         //Setting values for table columns
         $data = array(
             'FirstName' => $this->input->post('fname'),
-            'LastName' => $this->input->post('lname')
+            'LastName' => $this->input->post('lname'),
+            'MiddleName' => $this->input->post('mname'),
+            'Customer_Gender' => $this->input->post('gender'),
+            'Customer_Email' => $this->input->post('demail'),
+            'Customer_Mobile' => $this->input->post('dmobile'),
+            'Customer_Street' => $this->input->post('street'),
+            'Customer_City' => $this->input->post('city'),
+            'Customer_Barsub' => $this->input->post('barsub')
         );
 
             //Transfering data to Model

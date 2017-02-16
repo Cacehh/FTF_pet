@@ -70,6 +70,7 @@
 		<div class="row">
             <div class="input-field col s12">
                 <div class="input-field col s4">
+                
 					<!-- User Name -->
             		<i class="material-icons prefix">account_box</i>
 					<?php
