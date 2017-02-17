@@ -80,7 +80,10 @@
 	                        	echo "&#8369;";
 	                        	echo $prodinvlist[$i]->Amount; ?></td>
 	                        <td><?php echo $prodinvlist[$i]->Quantity; ?></td>
-	                        <td><?php echo $prodinvlist[$i]->Timestamp; ?></td>
+	                        <td>
+	                        	<?php 
+	                        		// echo $prodinvlist[$i]->Timestamp; 
+	                        	?></td>
 	                        <td>
 								<a href="<?php echo base_url()?>index.php/Inventory_ctr/edit_product/<?php echo $prodinvlist[$i]->ProdID ?>"><i class="material-icons">mode_edit</i></a>
 								<a href="<?php echo base_url()?>index.php/Inventory_ctr/invDeleteProd/<?php echo $prodinvlist[$i]->ProdID ?>"><i class="material-icons">delete</i></a>
