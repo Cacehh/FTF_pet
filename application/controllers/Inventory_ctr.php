@@ -8,7 +8,7 @@ class Inventory_ctr extends CI_Controller {
 				parent::__construct();
 				$this->load->database();
 				$this->load->library('pagination');
-				$this->load->model(array('prod_model','prodinv_model', 'petinv_model'));
+				$this->load->model(array('prod_model','prodinv_model', 'petinv_model', 'Inventory_model'));
 
 				if(empty($this->session->userdata('id'))) {
 						$this->session->set_flashdata('flash_data', 'Please login First');
@@ -34,7 +34,6 @@ class Inventory_ctr extends CI_Controller {
 				$this->load->view('snips/js_materialize');
 				$this->load->view('snips/z_end');
 		}
-
 
 		public function products() {
 
@@ -92,7 +91,13 @@ class Inventory_ctr extends CI_Controller {
 				$this->load->view('snips/a_start', $data);
 				$this->load->view('snips/css_materialize');
 				$this->load->view('snips/css_materialize_icon');
-				$this->load->view('+pages/admin/a_Inventory_header');
+
+				$type = $this->session->userdata('acct_type');
+				if ($type == '2') {
+				   $this->load->view('+pages/admin/a_Inventory_header');
+				} else {
+				   $this->load->view('+pages/admin/a_header');
+				}
 
 				$this->load->view('+pages/admin/products', $data);
 
@@ -101,127 +106,235 @@ class Inventory_ctr extends CI_Controller {
 				$this->load->view('snips/z_end');
 		}
 
+		public function pets()
+   		{
 
-		// public function pets() {
-		// 	//autoload configuration
-		// 	$config['base_url'] = site_url('Inventory_ctr/pets');
-		// 	$config['total_rows'] = $this->db->count_all('product');
-		// 	$config['per_page'] = "10";
+        //autoload configuration
+        $config['base_url'] = site_url('Inventory_ctr/pets');
+        $config['total_rows'] = $this->db->count_all('product');
+        $config['per_page'] = "10";
 
-		// 	$this->pagination->initialize($config);
+        $this->pagination->initialize($config);
 
-		// 	// getting the product list
-		// 	$data['page'] = ($this->uri->segment(3)) ? $this->uri->segment(3) : 0;
+        // getting the product list
+        $data['page'] = ($this->uri->segment(3)) ? $this->uri->segment(3) : 0;
 
-		// 	// getting the product list
-		// 	$data['petinvlist'] = $this->petinv_model->get_petinv($config["per_page"], $data['page'], NULL);
+        // getting the product list
+        $data['petinvlist'] = $this->petinv_model->get_petinv($config["per_page"], $data['page'], NULL);
 
 
-		// 	$data['title'] = 'FTNF | Pets Inventory';
-		// 	$this->load->view('snips/a_start', $data);
-		// 	$this->load->view('snips/css_materialize');
-		// 	$this->load->view('snips/css_materialize_icon');
-		// 	$type = $this->session->userdata('acct_type');
-		// 	if ($type == '2') {
-		// 	   $this->load->view('+pages/admin/a_Inventory_header');
-		// 	} else {
-		// 	   $this->load->view('+pages/admin/a_header');
-		// 	}
+        $data['title'] = 'FTNF | Pets Inventory';
+        $this->load->view('snips/a_start', $data);
+        $this->load->view('snips/css_materialize');
+        $this->load->view('snips/css_materialize_icon');
+				$type = $this->session->userdata('acct_type');
+				if ($type == '2') {
+				   $this->load->view('+pages/admin/a_Inventory_header');
+				} else {
+				   $this->load->view('+pages/admin/a_header');
+				}
 
-		// 	$this->load->view('+pages/admin/product_pets', $data);
+        $this->load->view('+pages/admin/product_pets', $data);
 
-		// 	$this->load->view('snips/js_jquery300');
-		// 	$this->load->view('snips/js_materialize');
-		// 	$this->load->view('snips/z_end');
-		// }
+        $this->load->view('snips/js_jquery300');
+        $this->load->view('snips/js_materialize');
+        $this->load->view('snips/z_end');
+    }
 
-		//  public function invPetSearch()
-		//  {
-		// 	// getting the search string
-		// 	$invPetSearch = ($this->input->post("petinv_name"))? $this->input->post("petinv_name") : "NIL";
+    public function invPetSearch()
+    {
 
-		// 	// limitation of the products being shown
-		// 	$config = array();
-		// 	$config['base_url'] = site_url("Inventory_ctr/invPetSearch/$invPetSearch");
-		// 	$config['total_rows'] = $this->petinv_model->get_petinv_count($invPetSearch);
-		// 	$config['per_page'] = "10";
+        // getting the search string
+        $invPetSearch = ($this->input->post("petinv_name"))? $this->input->post("petinv_name") : "NIL";
 
-		// 	$this->pagination->initialize($config);
+        // limitation of the products being shown
+        $config = array();
+        $config['base_url'] = site_url("Inventory_ctr/invPetSearch/$invPetSearch");
+        $config['total_rows'] = $this->petinv_model->get_petinv_count($invPetSearch);
+        $config['per_page'] = "10";
 
-		// 	$data['page'] = ($this->uri->segment(4)) ? $this->uri->segment(4) : 0;
+        $this->pagination->initialize($config);
 
-		// 	// retrieval of the product list
-		// 	$data['petinvlist'] = $this->petinv_model->get_petinv($config['per_page'], $data['page'], $invPetSearch);
+        $data['page'] = ($this->uri->segment(4)) ? $this->uri->segment(4) : 0;
 
-		// 	// loading of the view
-		// 	 $data['title'] = 'FTNF | Pets Inventory';
-		// 	$this->load->view('snips/a_start', $data);
-		// 	$this->load->view('snips/css_materialize');
-		// 	$this->load->view('snips/css_materialize_icon');
-		// 	$this->load->view('+pages/admin/a_Inventory_header');
+        // retrieval of the product list
+        $data['petinvlist'] = $this->petinv_model->get_petinv($config['per_page'], $data['page'], $invPetSearch);
 
-		// 	$this->load->view('+pages/admin/product_pets');
+        // loading of the view
+         $data['title'] = 'FTNF | Pets Inventory';
+        $this->load->view('snips/a_start', $data);
+        $this->load->view('snips/css_materialize');
+        $this->load->view('snips/css_materialize_icon');
+        
+        $type = $this->session->userdata('acct_type');
+			if ($type == '2') {
+				 $this->load->view('+pages/admin/a_Inventory_header');
+			} else {
+				 $this->load->view('+pages/admin/a_header');
+			}
 
-		// 	$this->load->view('snips/js_jquery300');
-		// 	$this->load->view('snips/js_materialize');
-		// 	$this->load->view('snips/z_end');
-		// }
+        $this->load->view('+pages/admin/product_pets');
 
-		public function invPet() {
-			$data['title'] = 'FTNF | ';
-			$this->load->view('snips/a_start', $data);
-			$this->load->view('snips/css_materialize');
-			$this->load->view('snips/css_materialize_icon');
-			$this->load->view('+pages/admin/a_Inventory_header');
+        $this->load->view('snips/js_jquery300');
+        $this->load->view('snips/js_materialize');
+        $this->load->view('snips/z_end');
+    }
 
-			$this->load->view('+pages/admin/invPet');
+		public function addProducts()
+  		{
 
-			$this->load->view('snips/js_jquery300');
-			$this->load->view('snips/js_materialize');
-			$this->load->view('snips/z_end');
-		}
+        //Including validation library
+        $this->load->library('form_validation');
 
-		public function invProduct() {
-			$data['title'] = 'FTNF | ';
-			$this->load->view('snips/a_start', $data);
-			$this->load->view('snips/css_materialize');
-			$this->load->view('snips/css_materialize_icon');
-			$this->load->view('+pages/admin/a_Inventory_header');
+        $this->form_validation->set_error_delimiters('<script> alert("', '")</script>');
 
-			$this->load->view('+pages/admin/invProduct');
+        //Validating Product Name Field
+        $this->form_validation->set_rules('prodname', 'ProdName', 'required|min_length[2]|max_length[25]');
 
-			$this->load->view('snips/js_jquery300');
-			$this->load->view('snips/js_materialize');
-			$this->load->view('snips/z_end');
-		}
+        //FIXX HERE
+        //Validating Mobile no. Field
+        $this->form_validation->set_rules('qty', 'Quantity', 'required|min_length[2]|max_length[10]');
 
-		public function addPet() {
-				$data['title'] = 'FTNF | ';
-				$this->load->view('snips/a_start', $data);
-				$this->load->view('snips/css_materialize');
-				$this->load->view('snips/css_materialize_icon');
-				$this->load->view('+pages/admin/a_Inventory_header');
+        //Validating Product Description Name Field
+        $this->form_validation->set_rules('proddesc', 'ProdDesc', 'required|min_length[2]|max_length[30]');
 
-				$this->load->view('+pages/admin/invAddPet');
+        // //Validating Supply Price Name Field
+        $this->form_validation->set_rules('supply', 'SupplyPrice', 'required|min_length[2]|max_length[10]');
 
-				$this->load->view('snips/js_jquery300');
-				$this->load->view('snips/js_materialize');
-				$this->load->view('snips/z_end');
-		}
+        //Validating Markup Price Field
+        $this->form_validation->set_rules('markup', 'MarkupPrice', 'required|min_length[2]|max_length[10]');
 
-		public function addProduct() {
-				$data['title'] = 'FTNF | ';
-				$this->load->view('snips/a_start', $data);
-				$this->load->view('snips/css_materialize');
-				$this->load->view('snips/css_materialize_icon');
-				$this->load->view('+pages/admin/a_Inventory_header');
+        //Validating Product Type Field
+        // $this->form_validation->set_rules('prodtype', 'ProductType', 'required|min_length[2]|max_length[20]');
 
-				$this->load->view('+pages/admin/invAddProd');
+        //Validating First Name Field
+        $this->form_validation->set_rules('generic', 'GenericBrand', 'required|min_length[2]|max_length[25]');
 
-				$this->load->view('snips/js_jquery300');
-				$this->load->view('snips/js_materialize');
-				$this->load->view('snips/z_end');
-		}
+        if ($this->form_validation->run() == FALSE) {
+
+            $data['title'] = 'FTNF | Add Product';
+            $this->load->view('snips/a_start', $data);
+            $this->load->view('snips/css_materialize');
+            $this->load->view('snips/css_materialize_icon');
+            $this->load->view('+pages/admin/a_header', $data);
+           
+            $this->load->view('+pages/admin/add_products');
+            
+            $this->load->view('snips/js_jquery300');
+            $this->load->view('snips/js_materialize');
+            $this->load->view('snips/z_end');
+
+        } else {
+
+            //Setting values for table columns
+            $data = array(
+                'ProdName' => $this->input->post('prodname'),
+                'ProdDesc' => $this->input->post('proddesc'),
+                'GenericBrand' => $this->input->post('generic'),
+                'Category' => $this->input->post('category'),
+                'Quantity' => $this->input->post('qty'),
+                'SupplyPrice' => $this->input->post('supply'),
+                'MarkPrice' => $this->input->post('markup'),
+                'Amount' => $this->input->post('amount')
+                // 'Timestamp' => $this->input->post('retail')
+                // 'Image' => $this->input->post('barsub')
+            );
+
+            //Transfering data to Model
+            $this->Inventory_model->form_insert($data);
+            $data['message'] = 'Data Inserted Successfully';
+
+            $data['title'] = 'FTNF | Add Products';
+
+            $this->load->view('snips/a_start', $data);
+            $this->load->view('snips/css_materialize');
+            $this->load->view('snips/css_materialize_icon');
+            $this->load->view('+pages/admin/a_header', $data);
+            $this->load->view('+pages/admin/add_products');
+            
+            $this->load->view('snips/js_jquery300');
+            $this->load->view('snips/js_materialize');
+            $this->load->view('snips/z_end');
+        }
+	}
+
+		 public function addPets()
+    	 {
+       
+        //Including validation library
+        $this->load->library('form_validation');
+
+        $this->form_validation->set_error_delimiters('<script> alert("', '")</script>');
+
+        //Validating Product Name Field
+        $this->form_validation->set_rules('prodname', 'ProdName', 'required|min_length[2]|max_length[25]');
+
+        //FIXX HERE
+        //Validating Mobile no. Field
+        $this->form_validation->set_rules('qty', 'Quantity', 'required|min_length[2]|max_length[10]');
+
+        //Validating Product Description Name Field
+        $this->form_validation->set_rules('proddesc', 'ProdDesc', 'required|min_length[2]|max_length[30]');
+
+        // //Validating Supply Price Name Field
+        $this->form_validation->set_rules('supply', 'SupplyPrice', 'required|min_length[2]|max_length[10]');
+
+        //Validating Markup Price Field
+        $this->form_validation->set_rules('markup', 'MarkupPrice', 'required|min_length[2]|max_length[10]');
+
+        //Validating Product Type Field
+        // $this->form_validation->set_rules('prodtype', 'ProductType', 'required|min_length[2]|max_length[20]');
+
+        //Validating First Name Field
+        $this->form_validation->set_rules('generic', 'GenericBrand', 'required|min_length[2]|max_length[25]');
+
+        if ($this->form_validation->run() == FALSE) {
+
+            $data['title'] = 'FTNF | Add Pet';
+            $this->load->view('snips/a_start', $data);
+            $this->load->view('snips/css_materialize');
+            $this->load->view('snips/css_materialize_icon');
+            $this->load->view('+pages/admin/a_header', $data);
+           
+            $this->load->view('+pages/admin/add_pet');
+            
+            $this->load->view('snips/js_jquery300');
+            $this->load->view('snips/js_materialize');
+            $this->load->view('snips/z_end');
+
+        } else {
+
+            //Setting values for table columns
+            $data = array(
+                'ProdName' => $this->input->post('prodname'),
+                'ProdDesc' => $this->input->post('proddesc'),
+                'GenericBrand' => $this->input->post('generic'),
+                'Category' => $this->input->post('category'),
+                'Quantity' => $this->input->post('qty'),
+                'SupplyPrice' => $this->input->post('supply'),
+                'MarkPrice' => $this->input->post('markup'),
+                'Amount' => $this->input->post('amount')
+                // 'Timestamp' => $this->input->post('retail')
+                // 'Image' => $this->input->post('barsub')
+            );
+
+            //Transfering data to Model
+            $this->Inventory_model->form_insert($data);
+            $data['message'] = 'Data Inserted Successfully';
+
+            $data['title'] = 'FTNF | Add Pets';
+            $this->load->view('snips/a_start', $data);
+            $this->load->view('snips/css_materialize');
+            $this->load->view('snips/css_materialize_icon');
+            $this->load->view('+pages/admin/a_header');
+
+            $this->load->view('+pages/admin/add_pet');
+
+            $this->load->view('snips/js_jquery300');
+            $this->load->view('snips/js_materialize');
+            $this->load->view('snips/z_end');
+        }
+    }
 
 		public function editPet($prodID) {
 			$data['title'] = 'FTNF | ';
@@ -390,72 +503,7 @@ class Inventory_ctr extends CI_Controller {
 		}
 
 
-    public function pets()
-    {
-         //autoload configuration
-        $config['base_url'] = site_url('Inventory_ctr/pets');
-        $config['total_rows'] = $this->db->count_all('product');
-        $config['per_page'] = "10";
-
-        $this->pagination->initialize($config);
-
-        // getting the product list
-        $data['page'] = ($this->uri->segment(3)) ? $this->uri->segment(3) : 0;
-
-        // getting the product list
-        $data['petinvlist'] = $this->petinv_model->get_petinv($config["per_page"], $data['page'], NULL);
-
-
-        $data['title'] = 'FTNF | Pets Inventory';
-        $this->load->view('snips/a_start', $data);
-        $this->load->view('snips/css_materialize');
-        $this->load->view('snips/css_materialize_icon');
-				$type = $this->session->userdata('acct_type');
-				if ($type == '2') {
-				   $this->load->view('+pages/admin/a_Inventory_header');
-				} else {
-				   $this->load->view('+pages/admin/a_header');
-				}
-
-        $this->load->view('+pages/admin/product_pets', $data);
-
-        $this->load->view('snips/js_jquery300');
-        $this->load->view('snips/js_materialize');
-        $this->load->view('snips/z_end');
-    }
-
-     public function invPetSearch()
-     {
-
-        // getting the search string
-        $invPetSearch = ($this->input->post("petinv_name"))? $this->input->post("petinv_name") : "NIL";
-
-        // limitation of the products being shown
-        $config = array();
-        $config['base_url'] = site_url("Inventory_ctr/invPetSearch/$invPetSearch");
-        $config['total_rows'] = $this->petinv_model->get_petinv_count($invPetSearch);
-        $config['per_page'] = "10";
-
-        $this->pagination->initialize($config);
-
-        $data['page'] = ($this->uri->segment(4)) ? $this->uri->segment(4) : 0;
-
-        // retrieval of the product list
-        $data['petinvlist'] = $this->petinv_model->get_petinv($config['per_page'], $data['page'], $invPetSearch);
-
-        // loading of the view
-         $data['title'] = 'FTNF | Pets Inventory';
-        $this->load->view('snips/a_start', $data);
-        $this->load->view('snips/css_materialize');
-        $this->load->view('snips/css_materialize_icon');
-        $this->load->view('+pages/admin/a_Inventory_header');
-
-        $this->load->view('+pages/admin/product_pets');
-
-        $this->load->view('snips/js_jquery300');
-        $this->load->view('snips/js_materialize');
-        $this->load->view('snips/z_end');
-    }
+    
 
     // public function invPet() {
     //     $data['title'] = 'FTNF | ';
