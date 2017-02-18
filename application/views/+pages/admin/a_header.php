@@ -139,10 +139,10 @@
 						<li class=" bold"><a href="<?php echo base_url()?>index.php/Inventory_ctr/addProducts" class="white-text waves-effect waves-orange btn deep-orange accent-2">
 							<i class="tiny material-icons left">library_add</i>PRODUCT
 						</a></li>	
-						<li class=" bold"><a href="<?php echo base_url()?>index.php/inventory_ctr/addPets" class="white-text waves-effect waves-orange btn deep-orange accent-2">
+						<li class=" bold"><a href="<?php echo base_url()?>index.php/Inventory_ctr/addPets" class="white-text waves-effect waves-orange btn deep-orange accent-2">
 							<i class="tiny material-icons left">library_add</i>PET
 						</a></li>	
-						<li class=" bold"><a href="#" class="white-text waves-effect waves-orange btn deep-orange accent-2">
+						<li class=" bold"><a href="<?php echo base_url()?>index.php/Admin_ctr/customerAdd" class="white-text waves-effect waves-orange btn deep-orange accent-2">
 							<i class="tiny material-icons left">library_add</i>CUSTOMER
 						</a></li>
 					</ul>

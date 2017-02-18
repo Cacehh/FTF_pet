@@ -5,9 +5,27 @@ class Sales_model extends CI_Model {
     function __construct() {
         parent::__construct();
 
-    function form_get($data){
+    function getInvoice($data) {
 		// test only function
-		$this->db->insert('invoice', $data);
+		 $query = $this->db->query(SELECT * from sales);
+
+		 if ($query-> num_rows() > 0 ) {
+		 	return $query->result();
+		 } else {
+		 	return NULL;
+
+		 }
+	function getStatements($data) {
+		//test function only
+		$query = $this->db->query(SELECT * from sales);
+		if ($query-> num_rows() > 0 ) {
+			return $query->result();
+		}else {
+			return NULL;
+		}
+
+	}
+
 	}
 }
 ?>
