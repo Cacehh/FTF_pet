@@ -11,7 +11,7 @@ class prodinv_model extends CI_Model {
     function get_prodinv($limit, $start, $st = NULL)
     {
         if ($st == "NIL") $st = "";
-        $sql = "select * from product limit " . $start . ", " . $limit;
+        $sql = "select * from product where ProdName like '%$st%' limit " . $start . ", " . $limit;
         $query = $this->db->query($sql);
         return $query->result();
     }
