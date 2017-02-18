@@ -516,176 +516,42 @@ class Inventory_ctr extends CI_Controller {
 				redirect('/Inventory_ctr/pets');
 		}
 
+        public function prodType()
+        {
 
+            //autoload configuration
+            $config['base_url'] = site_url('Inventory_ctr/prodType');
+            // $config['total_rows'] = $this->db->count_all('product');
+            $config['per_page'] = "10";
+            // $this->db->count_all_results('product');
+            // $this->db->from('product');
+
+            $this->pagination->initialize($config);
+
+            // getting the product list
+            $data['page'] = ($this->uri->segment(3)) ? $this->uri->segment(3) : 0;
+
+            // getting the product list
+            $data['typelist'] = $this->Inventory_model->get_prodtype($config["per_page"], $data['page'], NULL);
+
+            $data['title'] = 'FTNF | Product Type';
+            $this->load->view('snips/a_start', $data);
+            $this->load->view('snips/css_materialize');
+            $this->load->view('snips/css_materialize_icon');
+            $type = $this->session->userdata('acct_type');
+
+            if ($type == '2') {
+                $this->load->view('+pages/admin/a_Inventory_header');
+            } else {
+            
+                $this->load->view('+pages/admin/a_header');
+            }
+
+                $this->load->view('+pages/admin/product_type', $data);
+
+                $this->load->view('snips/js_jquery300');
+                $this->load->view('snips/js_materialize');
+                $this->load->view('snips/z_end');
+        }
     
-
-    // public function invPet() {
-    //     $data['title'] = 'FTNF | ';
-    //     $this->load->view('snips/a_start', $data);
-    //     $this->load->view('snips/css_materialize');
-    //     $this->load->view('snips/css_materialize_icon');
-    //     $this->load->view('+pages/admin/a_Inventory_header');
-
-    //     $this->load->view('+pages/admin/invPet');
-
-    //     $this->load->view('snips/js_jquery300');
-    //     $this->load->view('snips/js_materialize');
-    //     $this->load->view('snips/z_end');
-    // }
-
-  //   public function invProduct() {
-  //       $data['title'] = 'FTNF | ';
-  //       $this->load->view('snips/a_start', $data);
-  //       $this->load->view('snips/css_materialize');
-  //       $this->load->view('snips/css_materialize_icon');
-  //       $this->load->view('+pages/admin/a_Inventory_header');
-
-  //       $this->load->view('+pages/admin/invProduct');
-
-		// $this->load->view('snips/js_jquery300');
-  //       $this->load->view('snips/js_materialize');
-		// $this->load->view('snips/z_end');
-  //   }
-
-    // public function addPet() {
-    //     $data['title'] = 'FTNF | ';
-    //     $this->load->view('snips/a_start', $data);
-    //     $this->load->view('snips/css_materialize');
-    //     $this->load->view('snips/css_materialize_icon');
-    //     $this->load->view('+pages/admin/a_Inventory_header');
-
-    //     $this->load->view('+pages/admin/invAddPet');
-
-    //     $this->load->view('snips/js_jquery300');
-    //     $this->load->view('snips/js_materialize');
-    //     $this->load->view('snips/z_end');
-    // }
-
-    // public function addProduct() {
-    //     $data['title'] = 'FTNF | ';
-    //     $this->load->view('snips/a_start', $data);
-    //     $this->load->view('snips/css_materialize');
-    //     $this->load->view('snips/css_materialize_icon');
-    //     $this->load->view('+pages/admin/a_Inventory_header');
-
-    //     $this->load->view('+pages/admin/invAddProd');
-
-    //     $this->load->view('snips/js_jquery300');
-    //     $this->load->view('snips/js_materialize');
-    //     $this->load->view('snips/z_end');
-    // }
-
-//     public function invEditPet($prodID) {
-//         $data['title'] = 'FTNF | ';
-//         $this->load->view('snips/a_start', $data);
-//         $this->load->view('snips/css_materialize');
-//         $this->load->view('snips/css_materialize_icon');
-//         $this->load->view('+pages/admin/a_Inventory_header');
-
-//         $data2['petinvlist'] = $this->prodinv_model->edit_prodInv($prodID);
-//         $this->load->view('+pages/admin/invEditPet', $data2);
-
-//         $this->load->view('snips/js_jquery300');
-//         $this->load->view('snips/js_materialize');
-//         $this->load->view('snips/z_end');
-//     }
-
-//     public function invEditProd($editData) {
-//         $data['title'] = 'FTNF | ';
-//         $this->load->view('snips/a_start', $data);
-//         $this->load->view('snips/css_materialize');
-//         $this->load->view('snips/css_materialize_icon');
-//         $this->load->view('+pages/admin/a_Inventory_header');
-
-//         $data2['prodinvlist'] = $this->prodinv_model->edit_prodInv($editData);
-//         $this->load->view('+pages/admin/invEditProd', $data2);
-
-//         $this->load->view('snips/js_jquery300');
-//         $this->load->view('snips/js_materialize');
-//         $this->load->view('snips/z_end');
-//     }
-
-//     // function to save edited product information
-//     public function invSaveEditProd()
-//     {
-//       //autoload configuration
-//       $config['base_url'] = site_url('Inventory_ctr/products');
-//       $config['total_rows'] = $this->db->count_all('product');
-//       $config['per_page'] = "10";
-
-//       $this->pagination->initialize($config);
-
-//       // getting the product list
-//       $data['page'] = ($this->uri->segment(3)) ? $this->uri->segment(3) : 0;
-//       $data['prodinvlist'] = $this->prodinv_model->get_prodinv($config["per_page"], $data['page'], NULL);
-
-//       $data['title'] = 'FTNF | ';
-//       $this->load->view('snips/a_start', $data);
-//       $this->load->view('snips/css_materialize');
-//       $this->load->view('snips/css_materialize_icon');
-//       $this->load->view('+pages/admin/a_Inventory_header');
-
-//       $prodID = $_POST['ProdID'];
-//       $prodName = $_POST['ProdName'];
-//       $category = $_POST['Category'];
-//       $amount = $_POST['Amount'];
-//       $quantity = $_POST['Quantity'];
-
-//       $this->prodinv_model->save_editProdInv($prodID, $prodName, $category, $quantity, $amount);
-
-//       $this->load->view('snips/js_jquery300');
-//       $this->load->view('snips/js_materialize');
-//       $this->load->view('snips/z_end');
-
-//       redirect('/Inventory_ctr/products');
-//     }
-
-//     // function to save edited pet information
-//     public function invSaveEditPet()
-//     {
-//       //autoload configuration
-//       $config['base_url'] = site_url('Inventory_ctr/pets');
-//       $config['total_rows'] = $this->db->count_all('product');
-//       $config['per_page'] = "10";
-
-//       $this->pagination->initialize($config);
-
-//       // getting the product list
-//       $data['page'] = ($this->uri->segment(3)) ? $this->uri->segment(3) : 0;
-//       $data['prodinvlist'] = $this->prodinv_model->get_prodinv($config["per_page"], $data['page'], NULL);
-
-//       $data['title'] = 'FTNF | ';
-//       $this->load->view('snips/a_start', $data);
-//       $this->load->view('snips/css_materialize');
-//       $this->load->view('snips/css_materialize_icon');
-//       $this->load->view('+pages/admin/a_Inventory_header');
-
-//       $prodID = $_POST['ProdID'];
-//       $prodName = $_POST['ProdName'];
-//       $category = $_POST['Category'];
-//       $amount = $_POST['Amount'];
-//       $quantity = $_POST['Quantity'];
-
-//       $this->petinv_model->save_editPetInv($prodID, $prodName, $category, $quantity, $amount);
-
-//       $this->load->view('snips/js_jquery300');
-//       $this->load->view('snips/js_materialize');
-//       $this->load->view('snips/z_end');
-
-//       redirect('/Inventory_ctr/pets');
-//     }
-
-//     // function to delete products
-//     public function invDeleteProd($prodID)
-//     {
-//         $this->prodinv_model->delete_prodInv($prodID);
-//         redirect('/Inventory_ctr/products');
-//     }
-
-//     // function to delete pets
-//     public function invDeletePet($prodID)
-//     {
-//         $this->prodinv_model->delete_prodInv($prodID);
-//         redirect('/Inventory_ctr/pets');
-//     }
 }

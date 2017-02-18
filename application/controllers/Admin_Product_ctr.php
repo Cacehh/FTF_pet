@@ -14,7 +14,7 @@ class Admin_Product_ctr extends CI_Controller {
             redirect('Access_ctr');
         }
 
-        $this->load->model(array('prodinv_model', 'petinv_model','AddProduct_model'));
+        $this->load->model(array('prodinv_model', 'petinv_model'));
     }
 
     public function index()

@@ -9,5 +9,23 @@
 		// Inserting in Table(product) of Database(ftnf)
 		$this->db->insert('product', $data);
 	}
+
+	//function for retrieving the products for the POS inventory
+    function get_prodtype($limit, $start, $st = NULL)
+    {
+        if ($st == "NIL") $st = "";
+        $sql = "select DISTINCT Type from product where Type like '%$st%' limit " . $start . ", " . $limit;
+        $query = $this->db->query($sql);
+        return $query->result();
+    }
+
+    //function to get the inventory product count
+    function get_prodtype_count($st = NULL)
+    {
+        if ($st == "NIL") $st = "";
+        $sql = "select DISTINCT Type from product where Type like '%$st%'";
+        $query = $this->db->query($sql);
+        return $query->num_rows();
+    }
 }
 ?>

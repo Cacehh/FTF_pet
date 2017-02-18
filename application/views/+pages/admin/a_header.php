@@ -78,7 +78,7 @@
 								<ul>
 								<li><a href="<?php echo base_url()?>index.php/Inventory_ctr/products">Products</a></li>
 								<li><a href="<?php echo base_url()?>index.php/Inventory_ctr/pets">Pets</a></li>
-								<li><a href="<?php echo base_url()?>index.php/Admin_Product_ctr/type">Product Type</a></li>
+								<li><a href="<?php echo base_url()?>index.php/Inventory_ctr/prodType">Product Type</a></li>
 								<li><a href="<?php echo base_url()?>index.php/Admin_Product_ctr/supplier">Suppliers</a></li>
 								<li><a href="<?php echo base_url()?>index.php/Admin_Product_ctr/brands">Brands</a></li>
 								<li><a href="<?php echo base_url()?>index.php/Admin_Product_ctr/tags">Product Tags</a></li>
