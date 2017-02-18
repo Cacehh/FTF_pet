@@ -1,5 +1,18 @@
+  <br>
   <main>
-  <br><br>
+    <div class="row">
+      <a href="<?php echo base_url()?>index.php/Admin_Product_ctr/addProducts">
+          <h4 class="offset-s1 col s11 black-text">Add Customers</h4>
+      </a>
+    </div>
+    </div>
+
+  <div class="row grey lighten-1">
+    <div class="offset-s1 col s12">
+      <p class="flow-text">Add new customers </p>
+    </div>
+  </div>
+ 
   <div class="container blue-grey lighten-5 z-depth-3">
   <br><br>
 
@@ -15,9 +28,6 @@
     ?>
 
     <div class="row">
-
-    <h4>Add Customer Account</h4>
-
       <div class="input-field col s12">
 
           <!-- First Name -->
@@ -151,10 +161,13 @@
     <?php 
       echo form_submit(array('id' => 'submit', 'value' => 'Submit', 'class'=>'waves-effect waves-light btn')); 
       echo form_close(); 
-    ?><br/>
-
-    <div id="fugo">
-
-    </div>
+    ?>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
   </div>
+
 </main>
+    <br/>
+    <br/>
