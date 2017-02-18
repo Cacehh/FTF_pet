@@ -32,12 +32,6 @@ class Sales_ctr extends CI_Controller {
 	        $this->load->view('snips/js_materialize');
 	        $this->load->view('snips/z_end');
 
-		    $config['base_url'] = site_url('Sales_ctr/invoice');
-		    $config['total_rows'] = $this->db->count_all('invoice');
-		    $config['per_page'] = "10";
-
-		    $this->pagination->initialize($config);
-
 
 		}	
 		public function statements() {
@@ -52,6 +46,8 @@ class Sales_ctr extends CI_Controller {
 	        $this->load->view('snips/js_jquery300');
 	        $this->load->view('snips/js_materialize');
 	        $this->load->view('snips/z_end');
+
+
 
 		}		
 }
