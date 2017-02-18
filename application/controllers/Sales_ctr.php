@@ -26,7 +26,7 @@ class Sales_ctr extends CI_Controller {
 	        $this->load->view('snips/css_materialize_icon');
 	        $this->load->view('+pages/admin/a_header', $data);
 
-	        $this->load->view('+pages/admin/salesledger');
+	        $this->load->view('+pages/admin/sales_ledger');
 
 	        $this->load->view('snips/js_jquery300');
 	        $this->load->view('snips/js_materialize');
@@ -41,7 +41,7 @@ class Sales_ctr extends CI_Controller {
 	        $this->load->view('snips/css_materialize_icon');
 	        $this->load->view('+pages/admin/a_header', $data);
 
-	        $this->load->view('+pages/admin/salesledger');
+	        $this->load->view('+pages/admin/sales_ledger');
 
 	        $this->load->view('snips/js_jquery300');
 	        $this->load->view('snips/js_materialize');
