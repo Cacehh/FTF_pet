@@ -76,6 +76,7 @@
 	                        <td><?php echo $prodinvlist[$i]->ID; ?></td>
 	                        <td><?php echo $prodinvlist[$i]->ProdName; ?></td>
 	                        <td><?php echo $prodinvlist[$i]->Category; ?></td>
+	                        <td><?php echo $prodinvlist[$i]->Type; ?></td>
 	                        <td><?php
 	                        	echo "&#8369;";
 	                        	echo $prodinvlist[$i]->Amount; ?></td>

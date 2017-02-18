@@ -58,9 +58,10 @@
 	                    <th data-field ="productID">Product ID</th>
 	                    <th data-field ="">Product Name</th>
 	                    <th data-field ="">Category</th>
+	                    <th data-field ="">Type</th>
 	                    <th data-field ="">Amount</th>
 	                    <th data-field ="">Quantity</th>
-	                    <th data-field ="">Timestamp</th>
+	                    <!-- <th data-field ="">Timestamp</th> -->
 	                    <th></th>
 	                    </tr>
 	                </thead>
