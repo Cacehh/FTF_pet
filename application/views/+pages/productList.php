@@ -2,8 +2,7 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 ?>
-<!DOCTYPE html>
-<html lang="en">
+
 <head>
 	<title><?php echo $title; ?></title>
 	<meta charset="utf-8">
@@ -24,16 +23,16 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 						
 					echo "<div class=\"card col s3 hoverable\">";
 					echo "<div class=\"card-image waves-effect waves-block waves-light\">";
-					echo "<img class=\"activator\" src=".base_url()."public/media/products/1.jpg>";
+					echo "<img class=\"activator\" src=".base_url()."public/media/products/" .$row ->Image. ".jpg>";
 					echo "</div>";
 					echo "<div class=\"card-content\">";
 					echo "<span class=\"card-title activator grey-text text-darken-4\">";
-					echo "<a href=\"" .base_url(). "index.php/Pages_ctr/productDetails\">" .$row ->name. "</a><i class=\"material-icons right\">more_vert</i></span>";
-					echo "<b><p><a href=\"#\">Add to cart</a><b> | </b> <a href=\"#\">Choices...</a></p></b>";
+					echo "<a href=\"" .base_url(). "index.php/Pages_ctr/productDetails\">" .$row ->ProdName. "</a><i class=\"material-icons right\">more_vert</i></span>";
+					echo "<b><p><a href=\"#\">Add to wishlist</a><b> | </b> <a href=\"#\">Choices...</a></p></b>";
 					echo "</div>";
 					echo "<div class=\"card-reveal\">";
 					echo "<span class=\"card-title grey-text text-darken-4\">More info...<i class=\"material-icons right\">close</i></span>";
-					echo "<p>" .$row ->price. " dollars</p>";
+					echo "<p>" .$row ->Amount. " dollars</p>";
 					echo "</div>";
 					echo "</div>";
 				

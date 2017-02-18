@@ -109,10 +109,18 @@ function calculate() {
 		                        echo $prodlist[$i]->Amount; ?></td>
 	                        <td>
 	                        <?php
+	                    	//echo form_open('POS_ctr/shopcart');
+							//echo form_hidden('ProdID', $ProdID);
+							//echo form_hidden('ProdName', $ProdName);
+							//echo form_hidden('Category', $Category);
+	                   		//echo form_hidden('Quantity', $Quantity);
+							//echo form_hidden('Amount', $Amount);
+
 	                        	if ($acct_type == '1') {
+
 	                        		echo anchor('POS_ctr/index', '<i class="material-icons left">add_shopping_cart</i>', 'waves-effect waves-light btn');
 	                        	} else {
-	                        		echo anchor('POS_ctr/indexA', '<i class="material-icons left">add_shopping_cart</i>', 'waves-effect waves-light btn');
+	                        		echo anchor('POS_ctr/index', '<i class="material-icons left">add_shopping_cart</i>', 'waves-effect waves-light btn');
 	                        	}
 	                         ?>
 	                        </td>
@@ -161,6 +169,7 @@ function calculate() {
 	</tr>
 </table>
 <p><?php echo form_submit('POS_ctr', 'Update your Cart'); ?></p>
+<p><?php echo form_submit('POS_ctr', 'Clear your Cart'); ?></p>
 
 <!-- ================================== -->
 			<div class="card grey darken-1">

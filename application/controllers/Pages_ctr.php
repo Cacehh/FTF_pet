@@ -10,7 +10,7 @@ class Pages_ctr extends CI_Controller {
 		$data['title'] = 'View Products';
 		$data['product'] = $this->Productlist_model->getProduct(); 
         // Heading Statements
-        $this->load->view('snips/a_start');
+        $this->load->view('snips/a_start', $data);
         $this->load->view('snips/css_materialize_icon');
 		$this->load->view('snips/css_materialize_admin');
         $this->load->view('snips/css_defined');
