@@ -73,9 +73,6 @@
 								</ul>
 							</div>
 						</li>
-                        <li class="bold">
-							<a class="white-text collapsible-header" href="<?php echo base_url()?>index.php/Admin_ctr/salesLedger">Sales Ledger</a>
-						</li>            
 						<li class="bold"><a class="white-text collapsible-header  waves-effect waves-grey">Inventory</a>
 							<div class="collapsible-body">
 								<ul>
@@ -85,6 +82,15 @@
 								<li><a href="<?php echo base_url()?>index.php/Admin_Product_ctr/supplier">Suppliers</a></li>
 								<li><a href="<?php echo base_url()?>index.php/Admin_Product_ctr/brands">Brands</a></li>
 								<li><a href="<?php echo base_url()?>index.php/Admin_Product_ctr/tags">Product Tags</a></li>
+
+								</ul>
+							</div>
+						</li>	
+						<li class="bold"><a class="white-text collapsible-header  waves-effect waves-grey">Sales Ledger</a>
+							<div class="collapsible-body">
+								<ul>
+						        <li><a href="<?php echo base_url()?>index.php/Sales_ctr/invoice">Customer Invoice</a></li>
+								<li><a href="<?php echo base_url()?>index.php/Sales_ctr/statements">Statements of Accounts</a></li>
 								</ul>
 							</div>
 						</li>
