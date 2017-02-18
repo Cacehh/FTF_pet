@@ -12,6 +12,8 @@
 			<p class="flow-text">Add new pets</p>
 		</div>
 	</div>
+		</br>
+		</br>
     <div class="container blue-grey lighten-5 z-depth-3">
 	    <br>
         <?php
@@ -41,41 +43,68 @@
 
 			  	<div class="input-field col s6">
 		  			<?php
-                        $proddesc = array(
-                            'id'        => 'proddesc','name' => 'proddesc','maxlength' => '25',
+                        $desc = array(
+                            'id'        => 'desc','name' => 'desc','maxlength' => '25',
                             'pattern'   => '.{2,25}','length' => '25','class' => 'validate',
                         );
-                        echo form_input($proddesc);
+                        echo form_input($desc);
                     ?>  
-               		 <label for="proddesc" data-error="Must be atleast 2 characters" >Pet Description</label>
-                	<?php echo form_error('proddesc'); ?>
+               		 <label for="desc" data-error="Must be atleast 2 characters" >Pet Description</label>
+                	  <?php echo form_error('desc'); ?>
 	            </div>
 			</div>
 
-							 
 			 <div class="row">
-	            <div class="input-field col s6">
-					  <select id="category" name="category">
-					    <option value="Choose" disabled selected>Choose</option>
-					    <option value="Pet">Dog</option>
-					    <option value="Product">Cat</option>
-					    <option value="Grooming">Fish</option>
-					    <option value="Habitat">Rodent</option>
-					  </select>
-					  <label>Category</label>
+
+			 	<div class="input-field col s4" id="category" name="category">
+					<?php
+                       $category = array(
+                            'id' => 'category','name' => 'category','class' => 'validate', 'value'=>'Pet',
+                        );
+                        echo form_input($category);
+                    ?>  
+               		 <label for="category">Category</label>
 				</div>
 
-				<div class="input-field col s6">
-						<?php
-				        $qty = array(
-				          'id'        => 'qty','name' => 'qty','length' => '10', 'class' => 'validate',
-				          );
-				        echo form_input($qty);
-				      ?>  
+			  	<div class="input-field col s4">
+					  <select id="type" name="type">
+					    <option value="Choose" disabled selected>Choose</option>
+					    <option value="Dog">Dog</option>
+					    <option value="Cat">Cat</option>
+					    <option value="Birds">Birds</option>
+					    <option value="Fish">Fish</option>
+					    <option value="Rodent">Rodent</option>
+					    <option value="Reptile">Reptile</option>
+					    <option value="Amphibian">Amphibian</option>
+					  </select>
+					  <label>Type</label>
+				</div>
+
+				<!-- <div class="input-field col s4"> -->
+				<?php
+				    // $brand = array(
+				    //         'id'        => 'brand','name' => 'brand','maxlength' => '25',
+				    //         'pattern'   => '.{2,25}','length' => '25','class' => 'validate',
+				    //     );
+				    //     echo form_input($brand);
+				    ?>  
+						<!--  <label for="brand" data-error="Must be atleast 2 characters" >Brand</label> -->
+					<?php 
+						// echo form_error('brand'); 
+					?>
+				<!-- </div> -->
+
+				<div class="input-field col s4">
+						 <?php
+					        $qty = array(
+					          'id'        => 'qty','name' => 'qty','length' => '10', 'class' => 'validate',
+					          );
+					        echo form_input($qty);
+				      	?>  
 				      <label for="qty" data-error="Must be a valid whole number" >Quantity</label>
 				      <?php echo form_error('qty'); ?>
 				</div>
-			</div>
+			 </div>
 
 			 <div class="row">
 				<div class="input-field col s4">
@@ -99,7 +128,7 @@
 					<label for="markup" data-error="Must be a valid number" >Markup Price</label>
 					<?php echo form_error('markup'); ?>
 				</div>
-			 
+
 				<div class="input-field col s4">
 					<?php
 						$amount = array(
@@ -119,5 +148,10 @@
 		</div>
 	</br>
 	</div>
+	</br>
+	</br>
+	</br>
+	</br>
+	</br>
 	</br>
 </main>

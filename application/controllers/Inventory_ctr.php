@@ -188,27 +188,33 @@ class Inventory_ctr extends CI_Controller {
 
         $this->form_validation->set_error_delimiters('<script> alert("', '")</script>');
 
-        //Validating Product Name Field
+        // //Validating Product Name Field
         $this->form_validation->set_rules('prodname', 'ProdName', 'required|min_length[2]|max_length[25]');
 
-        //FIXX HERE
-        //Validating Mobile no. Field
-        $this->form_validation->set_rules('qty', 'Quantity', 'required|min_length[2]|max_length[10]');
+        // //Validating Product Description Name Field
+        $this->form_validation->set_rules('desc', 'Description', 'required|min_length[2]|max_length[30]');
 
-        //Validating Product Description Name Field
-        $this->form_validation->set_rules('proddesc', 'ProdDesc', 'required|min_length[2]|max_length[30]');
+        // // //Validating Product Type Field
+        // $this->form_validation->set_rules('category', 'Category', 'required|min_length[2]|max_length[20]');
+
+        //  //Validating Product Type Field
+        // $this->form_validation->set_rules('type', 'ProductType', 'required|min_length[2]|max_length[20]');
+
+        //Validating Mobile no. Field
+        $this->form_validation->set_rules('qty', 'Quantity', 'required|min_length[1]|max_length[10]');
 
         // //Validating Supply Price Name Field
-        $this->form_validation->set_rules('supply', 'SupplyPrice', 'required|min_length[2]|max_length[10]');
+        $this->form_validation->set_rules('supply', 'SupplyPrice', 'required|min_length[1]|max_length[10]');
 
         //Validating Markup Price Field
-        $this->form_validation->set_rules('markup', 'MarkupPrice', 'required|min_length[2]|max_length[10]');
+        $this->form_validation->set_rules('markup', 'MUPrice', 'required|min_length[1]|max_length[10]');
 
-        //Validating Product Type Field
-        // $this->form_validation->set_rules('prodtype', 'ProductType', 'required|min_length[2]|max_length[20]');
+         //Validating Markup Price Field
+        $this->form_validation->set_rules('amount', 'Amount', 'required|min_length[1]|max_length[10]');
 
+        // EXCLUDE 
         //Validating First Name Field
-        $this->form_validation->set_rules('generic', 'GenericBrand', 'required|min_length[2]|max_length[25]');
+        // $this->form_validation->set_rules('brand', 'Brand', 'required|min_length[2]|max_length[25]');
 
         if ($this->form_validation->run() == FALSE) {
 
@@ -229,13 +235,14 @@ class Inventory_ctr extends CI_Controller {
             //Setting values for table columns
             $data = array(
                 'ProdName' => $this->input->post('prodname'),
-                'ProdDesc' => $this->input->post('proddesc'),
-                'GenericBrand' => $this->input->post('generic'),
+                'Description' => $this->input->post('desc'),
                 'Category' => $this->input->post('category'),
+                'Type' => $this->input->post('type'),
                 'Quantity' => $this->input->post('qty'),
                 'SupplyPrice' => $this->input->post('supply'),
-                'MarkPrice' => $this->input->post('markup'),
+                'MUPrice' => $this->input->post('markup'),
                 'Amount' => $this->input->post('amount')
+                // 'Brand' => $this->input->post('brand'),
                 // 'Timestamp' => $this->input->post('retail')
                 // 'Image' => $this->input->post('barsub')
             );
@@ -266,27 +273,33 @@ class Inventory_ctr extends CI_Controller {
 
         $this->form_validation->set_error_delimiters('<script> alert("', '")</script>');
 
-        //Validating Product Name Field
+        // //Validating Product Name Field
         $this->form_validation->set_rules('prodname', 'ProdName', 'required|min_length[2]|max_length[25]');
 
-        //FIXX HERE
+        // //Validating Product Description Name Field
+        $this->form_validation->set_rules('desc', 'Description', 'required|min_length[2]|max_length[30]');
+
+        // // //Validating Product Type Field
+        // $this->form_validation->set_rules('category', 'Category', 'required|min_length[2]|max_length[20]');
+
+        //  //Validating Product Type Field
+        // $this->form_validation->set_rules('type', 'ProductType', 'required|min_length[2]|max_length[20]');
+
         //Validating Mobile no. Field
         $this->form_validation->set_rules('qty', 'Quantity', 'required|min_length[2]|max_length[10]');
-
-        //Validating Product Description Name Field
-        $this->form_validation->set_rules('proddesc', 'ProdDesc', 'required|min_length[2]|max_length[30]');
 
         // //Validating Supply Price Name Field
         $this->form_validation->set_rules('supply', 'SupplyPrice', 'required|min_length[2]|max_length[10]');
 
         //Validating Markup Price Field
-        $this->form_validation->set_rules('markup', 'MarkupPrice', 'required|min_length[2]|max_length[10]');
+        $this->form_validation->set_rules('markup', 'MUPrice', 'required|min_length[2]|max_length[10]');
 
-        //Validating Product Type Field
-        // $this->form_validation->set_rules('prodtype', 'ProductType', 'required|min_length[2]|max_length[20]');
+         //Validating Markup Price Field
+        $this->form_validation->set_rules('amount', 'Amount', 'required|min_length[2]|max_length[10]');
 
+        // EXCLUDE 
         //Validating First Name Field
-        $this->form_validation->set_rules('generic', 'GenericBrand', 'required|min_length[2]|max_length[25]');
+        // $this->form_validation->set_rules('brand', 'Brand', 'required|min_length[2]|max_length[25]');
 
         if ($this->form_validation->run() == FALSE) {
 
@@ -307,13 +320,14 @@ class Inventory_ctr extends CI_Controller {
             //Setting values for table columns
             $data = array(
                 'ProdName' => $this->input->post('prodname'),
-                'ProdDesc' => $this->input->post('proddesc'),
-                'GenericBrand' => $this->input->post('generic'),
+                'Description' => $this->input->post('desc'),
                 'Category' => $this->input->post('category'),
+                'Type' => $this->input->post('type'),
                 'Quantity' => $this->input->post('qty'),
                 'SupplyPrice' => $this->input->post('supply'),
-                'MarkPrice' => $this->input->post('markup'),
+                'MUPrice' => $this->input->post('markup'),
                 'Amount' => $this->input->post('amount')
+                // 'Brand' => $this->input->post('brand'),
                 // 'Timestamp' => $this->input->post('retail')
                 // 'Image' => $this->input->post('barsub')
             );
