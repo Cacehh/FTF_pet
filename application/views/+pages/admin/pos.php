@@ -100,7 +100,7 @@ function calculate() {
 	                    <?php for ($i = 0; $i < count($prodlist); ++$i) { ?>
 	                    <tr>
 	                        <td><?php echo ($page+$i+1); ?></td>
-	                        <td><?php echo $prodlist[$i]->ProdID; ?></td>
+	                        <td><?php echo $prodlist[$i]->ID; ?></td>
 	                        <td><?php echo $prodlist[$i]->ProdName; ?></td>
 	                        <td><?php echo $prodlist[$i]->Category; ?></td>
 	                        <td><?php echo $prodlist[$i]->Quantity; ?></td>
