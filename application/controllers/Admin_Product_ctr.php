@@ -170,107 +170,13 @@ class Admin_Product_ctr extends CI_Controller {
         $this->load->view('snips/z_end');
     }
 
-	public function addProducts()
-  {
-
-        //Including validation library
-        $this->load->library('form_validation');
-
-        $this->form_validation->set_error_delimiters('<script> alert("', '")</script>');
-
-        //Validating First Name Field
-        $this->form_validation->set_rules('prodname', 'ProdName', 'required|min_length[2]|max_length[25]');
-        //FIXX HERE
-        //Validating Last Name Name Field
-        // $this->form_validation->set_rules('proddesc', 'ProdDesc', 'required|min_length[2]|max_length[25]');
-
-        // //Validating Middle Name Name Field
-        // $this->form_validation->set_rules('supply', 'SupplyPrice', 'required|min_length[2]|max_length[25]');
-
-        // //Validating Middle Name Name Field
-        // $this->form_validation->set_rules('markup', 'MarkupPrice', 'required|min_length[2]|max_length[25]');
-
-        // //Validating Middle Name Name Field
-        // $this->form_validation->set_rules('retail', 'RetailPrice', 'required|min_length[2]|max_length[25]');
-
-        // //Validating Mobile no. Field
-        // $this->form_validation->set_rules('qty', 'Quantity', 'required|regex_match[/^[0-9]{4}$/]');
-
-        //Validating First Name Field
-        // $this->form_validation->set_rules('prodtype', 'ProductType', 'required|min_length[2]|max_length[20]');
-
-        //Validating First Name Field
-        // $this->form_validation->set_rules('generic', 'GenericBrand', 'required|min_length[2]|max_length[25]');
-
-        if ($this->form_validation->run() == FALSE) {
-
-            $data['title'] = 'FTNF | Add Producttt';
-            $this->load->view('snips/a_start', $data);
-            $this->load->view('snips/css_materialize');
-            $this->load->view('snips/css_materialize_icon');
-            $this->load->view('+pages/admin/a_header', $data);
-           
-            $this->load->view('+pages/admin/add_products');
-            
-            $this->load->view('snips/js_jquery300');
-            $this->load->view('snips/js_materialize');
-            $this->load->view('snips/z_end');
-
-        } else {
-
-            //Setting values for table columns
-            $data = array(
-                'ProdName' => $this->input->post('prodname'),
-                'ProdDesc' => $this->input->post('proddesc'),
-                'GenericBrand' => $this->input->post('generic'),
-                'Category' => $this->input->post('category'),
-                'Quantity' => $this->input->post('qty'),
-                'SupplyPrice' => $this->input->post('supply'),
-                'MarkPrice' => $this->input->post('markup'),
-                'Amount' => $this->input->post('amount')
-                // 'Timestamp' => $this->input->post('retail')
-                // 'Image' => $this->input->post('barsub')
-            );
-            //Transfering data to Model
-            $this->AddProduct_model->form_insert($data);
-            $data['message'] = 'Data Inserted Successfully';
-
-            $data['title'] = 'FTNF | Add Productsssssss';
-
-            $this->load->view('snips/a_start', $data);
-            $this->load->view('snips/css_materialize');
-            $this->load->view('snips/css_materialize_icon');
-            $this->load->view('+pages/admin/a_header', $data);
-            $this->load->view('+pages/admin/add_products');
-            
-            $this->load->view('snips/js_jquery300');
-            $this->load->view('snips/js_materialize');
-            $this->load->view('snips/z_end');
-        }
-	}
-
-    public function addPets()
-    {
-        $data['title'] = 'FTNF | Add Pets';
-        $this->load->view('snips/a_start', $data);
-        $this->load->view('snips/css_materialize');
-        $this->load->view('snips/css_materialize_icon');
-        $this->load->view('+pages/admin/a_header');
-
-        $this->load->view('+pages/admin/add_pet');
-
-        $this->load->view('snips/js_jquery300');
-        $this->load->view('snips/js_materialize');
-        $this->load->view('snips/z_end');
-    }
-
 	public function type()
     {
         $data['title'] = 'FTNF | Product Type';
         $this->load->view('snips/a_start', $data);
         $this->load->view('snips/css_materialize');
         $this->load->view('snips/css_materialize_icon');
-        $this->load->view('+pages/admin/a_header');
+        $this->load->view('+pages/admin/a_header', $data);
 
         $this->load->view('+pages/admin/product_type');
 
