@@ -23,7 +23,7 @@ class POS_ctr extends CI_Controller {
     
     public function index()
     {
-      print_r($this->session->all_userdata());
+      // print_r($this->session->all_userdata());
 
         $data = array(
                 'id'      => 'sku_123ABC',
@@ -415,23 +415,22 @@ class POS_ctr extends CI_Controller {
     } 
 
     //function for discount operation for the POS.
-    public function discount(){
+    public function calculate(){
     			if($this->session->userdata('logged_in'))
 		{	
 				$cart_info = $_POST['cart'] ;
 				foreach( $cart_info as $id => $cart)
 				{
 				$ProdID = $cart['ProdID'];
-				$Amount = $cart['amount'];
-				$SubAmount = $Amount * $cart['qty'];
-
-				$qty = $cart['qty'];
+                $Quantity = $cart['Quantity'];
+				$Amount = $cart['Amount'];
+				$SubAmount = $Amount * $cart['Quantity'];
 		
 				$data = array(
 				'ProdID' => $ProdID,
 				'Price' => $Price,
 				'Amount' => $Amount,
-				'qty' => $qty
+				'Quantity' => $Quantity
 				);
 		
 				$this->cart->update($data);
@@ -450,6 +449,7 @@ class POS_ctr extends CI_Controller {
     		'ProdID'=>$this->input->post('ProdID'),
     		'ProdName'=>$this->input->post('ProdName'),
     		'Category'=>$this->input->post('Category'),
+            'Quantity'=>$this->input->post('Quantity'),
 			'Amount'=>$this->input->post('Amount'),
 );
     		//add item into cart
