@@ -1,104 +1,123 @@
 <br>
-<main>
-		
-<!--Add products tab-->
-	<div class="row">
-		<div class="row">
-			<h4 class="offset-s1 col s11">Pets</h4>
+  <main>
+
+  	<div class="row">
+        <a href="<?php echo base_url()?>index.php/Admin_Product_ctr/addProducts">
+            <h4 class="offset-s1 col s11 black-text">Add Pets</h4>
+        </a>
+    </div>
+
+	<div class="row grey lighten-1">
+		<div class="offset-s1 col s12">
+			<p class="flow-text">Add new pets</p>
 		</div>
-		<div class="row grey lighten-1">
-			<div class="offset-s1 col s12">
-				<p class="flow-text">Add new pets</p>
-			</div>
-		</div>
-					<br>
-					<div class="row">
-						<div class="input-field col s12">
-						    <div class="input-field col s6">
-						    	<h5>Pet Name</h5>
-									<input placeholder="Productname" id="productname" type="text" class="validate">	
-						  	</div>
-
-						  	<div class="input-field col s6">
-						  		<h5>Description</h5>
-								<input placeholder="Description" id="Description" type="text" class="validate">	
-						  	</div>
-						</div>
-
-						<div class="input-field col s12">
-							<div class="input-field col s4">
-								<h5>Supply Price</h4>
-								<input placeholder="SP" id="supplyprice" type="number" class="validate">
-<!--							<b>+</b>-->
-							</div>
-
-							<div class="input-field col s4">
-								<h5>Mark Up</h5>
-								<input placeholder="MU" id="markup" type="number" class="validate">
-<!--							<b>=</b>-->
-							</div>
-
-							<div class="input-field col s4">
-								<h5>Retail Price</h5>
-								<input placeholder="RP" id="retailprice" type="number" class="validate">
-							</div>
-						</div>
-
-						<div class="input-field col s12">
-							<div class="input-field col s6">
-								<h5>Quantity</h5>
-								<input placeholder="Qty" id="Quantity" type="number" class="validate">
-<!--							<b>=</b>-->
-							</div>
-
-							<script>
-							  $(document).ready(function() {
-								$('select').material_select();
-							  });
-							 $('select').material_select('destroy');
-							</script>
-
-							<div class="input-field col s6">
-								<h5>Pet Type</h5>
-								<div class="input-field">
-									<select>
-										<option value="Sample disabled" disabled selected>Pet Type</option>
-										<option value="1">Dog</option>
-										<option value="2">Cat</option>
-										<option value="3">Fish</option>
-									</select>
-									<!-- <label>Product Type</label>		 -->
-								</div>	
-							</div>
-						</div>
-
-						<div class="input-field col s12">
-							<div class="input-field col s8">
-								<h5>Add Image</h5>
-								<div class="file-field input-field">
-									<div class="btn">
-										<span>File</span>
-										<input type="file">
-									</div>
-									<div class="file-path-wrapper">
-										<input class="file-path validate" type="text">
-									</div>
-								</div>
-							</div>
-
-							<div class="col s12">
-								<a class="waves-effect waves-light btn right">Add Pet</a>
-							</div>
-						</div>
-
-					<!-- <div class="row container">
-							<div class="row">
-									<input placeholder="Product Tags" id="producttags" type="text" class="validate">
-									<a class="waves-effect waves-light btn">Add</a>
-							</div>
-						</div>
-					</div> -->
-					<!-- <div class="divider"></div> -->
-
 	</div>
+    <div class="container blue-grey lighten-5 z-depth-3">
+	    <br>
+        <?php
+            $formattributes = array('class' => 'container col s12 flow-text');
+            echo form_open('Inventory_ctr/addPets', $formattributes);
+        ?>
+        <?php  
+            if (isset($message)) {
+                echo $message;
+            }
+        ?>
+
+		<!--Add products tab-->
+		<div class="row">
+			<div class="row">
+			    <div class="input-field col s6">
+                   <?php
+                        $prodname = array(
+                            'id'        => 'prodname','name' => 'prodname','maxlength' => '25',
+                            'pattern'   => '.{2,25}','length' => '25','class' => 'validate',
+                        );
+                        echo form_input($prodname);
+                    ?>  
+                    <label for="prodname" data-error="Must be atleast 2 characters" >Pet Name</label>
+                    <?php echo form_error('prodname'); ?>
+			  	</div>
+
+			  	<div class="input-field col s6">
+		  			<?php
+                        $proddesc = array(
+                            'id'        => 'proddesc','name' => 'proddesc','maxlength' => '25',
+                            'pattern'   => '.{2,25}','length' => '25','class' => 'validate',
+                        );
+                        echo form_input($proddesc);
+                    ?>  
+               		 <label for="proddesc" data-error="Must be atleast 2 characters" >Pet Description</label>
+                	<?php echo form_error('proddesc'); ?>
+	            </div>
+			</div>
+
+							 
+			 <div class="row">
+	            <div class="input-field col s6">
+					  <select id="category" name="category">
+					    <option value="Choose" disabled selected>Choose</option>
+					    <option value="Pet">Dog</option>
+					    <option value="Product">Cat</option>
+					    <option value="Grooming">Fish</option>
+					    <option value="Habitat">Rodent</option>
+					  </select>
+					  <label>Category</label>
+				</div>
+
+				<div class="input-field col s6">
+						<?php
+				        $qty = array(
+				          'id'        => 'qty','name' => 'qty','length' => '10', 'class' => 'validate',
+				          );
+				        echo form_input($qty);
+				      ?>  
+				      <label for="qty" data-error="Must be a valid whole number" >Quantity</label>
+				      <?php echo form_error('qty'); ?>
+				</div>
+			</div>
+
+			 <div class="row">
+				<div class="input-field col s4">
+					<?php
+						$supply = array(
+						'id'        => 'supply','name' => 'supply','length' => '10','class' => 'validate', 'type'=>'number', 'step'=>'0.01',
+						);
+						echo form_input($supply);
+					?>  
+					<label for="qty" data-error="Must be a valid number" >Supply Price</label>
+					<?php echo form_error('supply'); ?>
+				</div>
+
+				<div class="input-field col s4">
+					<?php
+						$markup = array(
+						'id'        => 'markup','name' => 'markup','length' => '11','length' => '6','class' => 'validate', 'type'=>'number','step'=>'0.01'
+						);
+						echo form_input($markup);
+					?>  
+					<label for="markup" data-error="Must be a valid number" >Markup Price</label>
+					<?php echo form_error('markup'); ?>
+				</div>
+			 
+				<div class="input-field col s4">
+					<?php
+						$amount = array(
+						'id'        => 'amount','name' => 'amount','length' => '11','class' => 'validate','type'=>'number','step'=>'0.01',
+						);
+						echo form_input($amount);
+					?>  
+					<label for="markup" data-error="Must be a valid number" >Total Amount</label>
+					<?php echo form_error('amount'); ?>
+				</div>
+			</div>
+
+					<?php 
+						echo form_submit(array('id' => 'submit', 'value' => 'Submit', 'class'=>'waves-effect waves-light btn')); 
+						echo form_close(); 
+					?>
+		</div>
+	</br>
+	</div>
+	</br>
 </main>

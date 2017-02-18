@@ -16,7 +16,7 @@
 	    <br>
         <?php
             $formattributes = array('class' => 'container col s12 flow-text');
-            echo form_open('Admin_Product_ctr/addProducts', $formattributes);
+            echo form_open('Inventory_ctr/addProducts', $formattributes);
         ?>
         <?php  
             if (isset($message)) {
@@ -80,22 +80,20 @@
 				<div class="input-field col s4">
 						 <?php
 				        $qty = array(
-				          'id'        => 'qty','name' => 'qty','maxlength' => '4',
-				          'pattern'   => '.{4,4}','length' => '4','class' => 'validate',
+				          'id'        => 'qty','name' => 'qty','length' => '10', 'class' => 'validate',
 				          );
 				        echo form_input($qty);
 				      ?>  
-				      <label for="qty" data-error="Must be a valid number" >Quantity</label>
+				      <label for="qty" data-error="Must be a valid whole number" >Quantity</label>
 				      <?php echo form_error('qty'); ?>
 				</div>
 			 </div>
 
-			<div class="input-field col s12">
+			 <div class="row">
 				<div class="input-field col s4">
 					<?php
 						$supply = array(
-						'id'        => 'supply','name' => 'supply','maxlength' => '11',
-						'pattern'   => '.{11,11}','length' => '11','class' => 'validate',
+						'id'        => 'supply','name' => 'supply','length' => '10','class' => 'validate', 'type'=>'number', 'step'=>'0.01',
 						);
 						echo form_input($supply);
 					?>  
@@ -106,8 +104,7 @@
 				<div class="input-field col s4">
 					<?php
 						$markup = array(
-						'id'        => 'markup','name' => 'markup','maxlength' => '6',
-						'pattern'   => '.{6,6}','length' => '6','class' => 'validate',
+						'id'        => 'markup','name' => 'markup','length' => '11','length' => '6','class' => 'validate', 'type'=>'number','step'=>'0.01'
 						);
 						echo form_input($markup);
 					?>  
@@ -118,15 +115,15 @@
 				<div class="input-field col s4">
 					<?php
 						$amount = array(
-						'id'        => 'amount','name' => 'amount','maxlength' => '6',
-						'pattern'   => '.{6,6}','length' => '6','class' => 'validate',
+						'id'        => 'amount','name' => 'amount','length' => '11','class' => 'validate','type'=>'number','step'=>'0.01',
 						);
 						echo form_input($amount);
 					?>  
-					<label for="markup" data-error="Must be a valid number" >Amount</label>
+					<label for="markup" data-error="Must be a valid number" >Total Amount</label>
 					<?php echo form_error('amount'); ?>
 				</div>
 			</div>
+
 					<?php 
 						echo form_submit(array('id' => 'submit', 'value' => 'Submit', 'class'=>'waves-effect waves-light btn')); 
 						echo form_close(); 
