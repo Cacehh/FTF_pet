@@ -7,7 +7,7 @@
     </div>
 
 	<div class="row grey lighten-1">
-		<div class="offset-s1 col s12">
+		<div class="offset-s1 col s11">
 			<p class="flow-text">Add new pets</p>
 		</div>
 	</div>
@@ -23,7 +23,7 @@
             }
         ?>
 
-		<!--Add products tab-->
+		<!--Add Pet tab-->
 		<div class="row">
 			<div class="row">
 			    <div class="input-field col s6">
@@ -41,10 +41,10 @@
 			  	<div class="input-field col s6">
 		  			<?php
                         $proddesc = array(
-                            'id'        => 'proddesc','name' => 'proddesc','maxlength' => '25',
-                            'pattern'   => '.{2,25}','length' => '25','class' => 'validate',
+                            'id'        => 'proddesc','name' => 'proddesc','maxlength' => '140',
+                            'pattern'   => '.{5,140}','length' => '140','class' => 'validate materialize-textarea'
                         );
-                        echo form_input($proddesc);
+                        echo form_textarea($proddesc);
                     ?>  
                		 <label for="proddesc" data-error="Must be atleast 2 characters" >Pet Description</label>
                 	<?php echo form_error('proddesc'); ?>
