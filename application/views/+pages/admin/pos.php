@@ -177,7 +177,33 @@ function calculate() {
 					<i class="material-icons prefix">perm_identity</i>
 					<span class="card-title">Dela Cruz, Juan Tamad</span>
 				</div>
-				<div class="card-action">
+				<style type="text/css">
+					#style-2::-webkit-scrollbar-track
+					{
+						-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+						border-radius: 10px;
+						background-color: #F5F5F5;
+					}
+
+					#style-2::-webkit-scrollbar
+					{
+						width: 12px;
+						background-color: #F5F5F5;
+					}
+
+					#style-2::-webkit-scrollbar-thumb
+					{
+						border-radius: 10px;
+						-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+						background-color: #ff7043;
+					}
+					#style-2 {
+						overflow: scroll; 
+						height: 200px; 
+						overflow-x: hidden;
+					}
+				</style>
+				<div class="card-action" id="style-2">
 					<div class="col s1 center">
 						<b>Quantity</b>
 					</div>
