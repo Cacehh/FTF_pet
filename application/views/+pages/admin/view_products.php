@@ -2,58 +2,49 @@
 <main>
 	<div class="row">
 		<div class="row">
-			<h4 class="offset-s1 col s11">Products</h4>
+			<a href="<?php echo base_url()?>index.php/Inventory_ctr/products">
+				<h4 class="offset-s1 col s11 black-text">Products</h4>
+			</a>
 		</div>
-		<div class="row grey lighten-1">
-			<div class="offset-s1 col s11">
+
+		<div class="row grey lighten-1 valign-wrapper">
+			<div class="offset-s1 col s8">
 				<p class="flow-text">View, Edit and Delete Products</p>
+			</div>
+			<div class="col s3">
+				<a href="<?php echo base_url()?>index.php/Inventory_ctr/addProducts" class="waves-effect waves-light btn"><i class="material-icons left">library_add</i>Add Products</a>
 			</div>
 		</div>
 
-	<div class="row container center">
-					<div class="col s12">
+		<div class="row">
+			<div class="col s12">
+				<?php
+	                $attr = array("class" => "form-horizontal", "role" => "form", "id" => "form1", "name" => "form1");
+	                echo form_open("Inventory_ctr/invProdSearch", $attr);
+	            ?>
+            	<div class="row">
+	                <div class="input-field offset-s2 col s6">
+						<i class="material-icons prefix">search</i>
+						<input class="form-control" id="icon_prefixs" name="prodinv_name" type="text" value="<?php echo set_value('prodinv_name'); ?>" />
+						<label for="icon_prefixs">Search for Product Names</label>
+	                </div>
 
-						<script type="text/javascript">
-							// $(document).ready(function() {
-							// 	$('#username').autocomplete( {
-							// 		source: "<?php echo site_url('prodinv_model/search/?'); ?>"
-							// 	});
-							// });
-						</script>
-
-						<?php
-		                    $attr = array("class" => "form-horizontal", "role" => "form", "id" => "form1", "name" => "form1");
-		                    echo form_open("Inventory_ctr/invProdSearch", $attr);
-		                ?>
-
-		                <div class="form-group">
-		                    <div class="col-md-6">
-
-							<i class="material-icons prefix">search</i>
-							<input class="form-control " id="icon_prefix" name="prodinv_name" type="text"
-								value="<?php echo set_value('prodinv_name'); ?>" />
-							<label for="icon_prefix">Search for Product Names</label>
-							<!-- <input id="icon_prefix" type="text" class="validate"> -->
-		                    </div>
-
-		                    <div class="col-md-6">
-		                        <input id="btn_search" name="btn_search" type="submit" class="btn btn-danger" value="Search" />
-		                        <a href="<?php echo base_url(). "index.php/Inventory_ctr/products"; ?>" class="btn btn-primary">Refresh Product List</a>
-		                    </div>
-		                </div>
-
-		                <?php
-		                    echo form_close();
-		                ?>
-					</div>
-				</div>
+	                <div class="col s2">
+	                    <input id="btn_search" name="btn_search" type="submit" class="btn btn-danger" value="Search" />
+	                </div>
+	            </div>
+	            <?php
+	                echo form_close();
+	            ?>
+			</div>
+		</div>
 
 		<div class="divider"></div>
 		<br>
 		<div class="row">
 			<br>
-			<div class="col s12">
-
+			<div class="col s1"></div>
+			<div class="col s10">
 				<table class="bordered centered highlight">
 				<!-- <table class="bordered stripped centered responsive-table"> -->
 	                <thead>
@@ -93,8 +84,8 @@
 	                    <?php } ?>
 	                </tbody>
             	</table>
-
 			</div>
+			<div class="col s1"></div>
 			<br>
 		</div>
 	</div>
