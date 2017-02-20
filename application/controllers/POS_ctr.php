@@ -138,7 +138,7 @@ class POS_ctr extends CI_Controller {
  //    public function products() {
 
  //        //autoload configuration
- //        $config['base_url'] = site_url('POS_ctr/products');
+ //        $config['base_url'] = site_url('POS_ctr/view_products');
  //        $config['total_rows'] = $this->db->count_all('product');
  //        $config['per_page'] = "20";
         

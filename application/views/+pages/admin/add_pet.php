@@ -1,14 +1,17 @@
 <br>
   <main>
   	<div class="row">
-        <a href="<?php echo base_url()?>index.php/Admin_Product_ctr/addProducts">
+        <a href="<?php echo base_url()?>index.php/Inventory_ctr/addPets">
             <h4 class="offset-s1 col s11 black-text">Add Pets</h4>
         </a>
     </div>
 
-	<div class="row grey lighten-1">
-		<div class="offset-s1 col s11">
-			<p class="flow-text">Add new pets</p>
+	<div class="row grey lighten-1 valign-wrapper">
+		<div class="offset-s1 col s8">
+			<p class="flow-text">Add new pets to the inventory</p>
+		</div>
+		<div class="col s3">
+			<a href="<?php echo base_url()?>index.php/Inventory_ctr/pets" class="waves-effect waves-light btn"><i class="material-icons left">folder</i>View Pets</a>
 		</div>
 	</div>
     <div class="container blue-grey lighten-5 z-depth-3">

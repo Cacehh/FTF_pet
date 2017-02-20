@@ -40,7 +40,7 @@ class Inventory_ctr extends CI_Controller {
 	public function products() 
     {
 		//autoload configuration
-		$config['base_url'] = site_url('Inventory_ctr/products');
+		$config['base_url'] = site_url('Inventory_ctr/view_products');
 		$config['total_rows'] = $this->db->count_all('product');
 		$config['per_page'] = "10";
 
@@ -64,7 +64,7 @@ class Inventory_ctr extends CI_Controller {
 		   $this->load->view('+pages/admin/a_header');
 		}
 
-		$this->load->view('+pages/admin/products', $data);
+		$this->load->view('+pages/admin/view_products', $data);
 
 		$this->load->view('snips/js_jquery300');
 		$this->load->view('snips/js_materialize');
@@ -102,7 +102,7 @@ class Inventory_ctr extends CI_Controller {
 		   $this->load->view('+pages/admin/a_header');
 		}
 
-		$this->load->view('+pages/admin/products', $data);
+		$this->load->view('+pages/admin/view_products', $data);
 
 		$this->load->view('snips/js_jquery300');
 		$this->load->view('snips/js_materialize');
@@ -136,7 +136,7 @@ class Inventory_ctr extends CI_Controller {
 		   $this->load->view('+pages/admin/a_header');
 		}
 
-        $this->load->view('+pages/admin/product_pets', $data);
+        $this->load->view('+pages/admin/view_pets', $data);
 
         $this->load->view('snips/js_jquery300');
         $this->load->view('snips/js_materialize');
@@ -174,7 +174,7 @@ class Inventory_ctr extends CI_Controller {
 				 $this->load->view('+pages/admin/a_header');
 			}
 
-        $this->load->view('+pages/admin/product_pets');
+        $this->load->view('+pages/admin/view_pets');
 
         $this->load->view('snips/js_jquery300');
         $this->load->view('snips/js_materialize');
@@ -391,7 +391,7 @@ class Inventory_ctr extends CI_Controller {
     public function saveProd()
     {
         //autoload configuration
-        $config['base_url'] = site_url('Inventory_ctr/products');
+        $config['base_url'] = site_url('Inventory_ctr/view_products');
         $config['total_rows'] = $this->db->count_all('product');
         $config['per_page'] = "10";
 
@@ -409,7 +409,7 @@ class Inventory_ctr extends CI_Controller {
 
         $this->prodinv_model->save_editProdInv($prodID, $prodName, $category, $quantity, $amount);
 
-        redirect('/Inventory_ctr/products');
+        redirect('/Inventory_ctr/view_products');
         //FIXX add confirmation that the change was made
     }
 
@@ -442,7 +442,7 @@ class Inventory_ctr extends CI_Controller {
 	public function invSaveEditProd()
 	{
 		//autoload configuration
-		$config['base_url'] = site_url('Inventory_ctr/products');
+		$config['base_url'] = site_url('Inventory_ctr/view_products');
 		$config['total_rows'] = $this->db->count_all('product');
 		$config['per_page'] = "10";
 
@@ -460,7 +460,7 @@ class Inventory_ctr extends CI_Controller {
 
 		$this->prodinv_model->save_editProdInv($prodID, $prodName, $category, $quantity, $amount);
 
-		redirect('/Inventory_ctr/products');
+		redirect('/Inventory_ctr/view_products');
 	}
 
 	// function to save edited pet information
@@ -502,7 +502,7 @@ class Inventory_ctr extends CI_Controller {
 	public function invDeleteProd($prodID)
 	{
 		$this->prodinv_model->delete_prodInv($prodID);
-		redirect('/Inventory_ctr/products');
+		redirect('/Inventory_ctr/view_products');
 	}
 
 	// function to delete pets
