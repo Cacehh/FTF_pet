@@ -29,7 +29,7 @@
 		<!--Add products tab-->
 		<div class="row">
 			<div class="row">
-			    <div class="input-field col s6">
+			    <div class="input-field col s12">
 	               <?php
 	                    $prodname = array(
 	                        'id'        => 'prodname','name' => 'prodname','maxlength' => '25',
@@ -40,22 +40,9 @@
 	                <label for="prodname" data-error="Must be atleast 2 characters" >Product Name</label>
 	                <?php echo form_error('prodname'); ?>
 			  	</div>
-
-			  	<div class="input-field col s6">
-		  			<?php
-	                    $desc = array(
-	                        'id'        => 'desc','name' 	  => 'desc','maxlength' => '140','type' => 'textarea',
-	                        'pattern'   => '.{6,140}','length' => '140','class' 	=> 'validate materialize-textarea'
-	                    );
-	                    echo form_textarea($desc);
-	                ?>  
-	           		 <label for="desc" data-error="Please enter a valid description" >Product Description</label>
-	            	  <?php echo form_error('desc'); ?>
-	            </div>
 			</div>
-
-			 <div class="row">
-			 	<div class="input-field col s4" id="category" name="category">
+			<div class="row">
+			 	<div class="input-field col s3" id="category" name="category">
 					<?php
 	                   $category = array(
 	                        'id' => 'category','name' => 'category','class' => 'validate', 'value'=>'Product',
@@ -64,8 +51,7 @@
 	                ?>  
 	           		 <label for="category">Category</label>
 				</div>
-
-			  	<div class="input-field col s4">
+			  	<div class="input-field col s5">
 					  <select id="type" name="type">
 					    <option value="Choose" disabled selected>Choose</option>
 					    <option value="Food">Food</option>
@@ -77,7 +63,6 @@
 					  </select>
 					  <label>Type</label>
 				</div>
-
 				<div class="input-field col s4">
 						 <?php
 					        $qty = array(
@@ -88,9 +73,24 @@
 				      <label for="qty" data-error="Must be a valid whole number" >Quantity</label>
 				      <?php echo form_error('qty'); ?>
 				</div>
-			 </div>
+			</div>
 
-			 <div class="row">
+			<div class="row">
+			  	<div class="input-field col s12">
+		  			<?php
+	                    $desc = array(
+	                        'id'        => 'desc','name' 	  => 'desc','maxlength' => '140','type' => 'textarea',
+	                        'pattern'   => '.{6,140}','length' => '140','class' 	=> 'validate materialize-textarea'
+	                    );
+	                    echo form_textarea($desc);
+	                ?>  
+	           		 <label for="desc" data-error="Please enter a valid description" >Product Description</label>
+	            	  <?php echo form_error('desc'); ?>
+	            </div>
+			</div>
+			<div class="divider"></div>
+			<br>
+			 <div class="row white">
 				<div class="input-field col s4">
 					<?php
 						$supply = array(
@@ -125,7 +125,7 @@
 				</div>
 			</div>
 				<?php 
-					echo form_submit(array('id' => 'submit', 'value' => 'Submit', 'class'=>'waves-effect waves-light btn')); 
+					echo form_submit(array('id' => 'submit', 'value' => 'Add Product', 'class'=>'waves-effect waves-light btn')); 
 					echo form_close(); 
 				?>
 		</div>
