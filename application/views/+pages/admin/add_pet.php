@@ -115,7 +115,7 @@
 			</div>
 
 			<?php 
-				echo form_submit(array('id' => 'submit', 'value' => 'Submit', 'class'=>'waves-effect waves-light btn')); 
+				echo form_submit(array('id' => 'submit', 'value' => 'Add Pet', 'class'=>'waves-effect waves-light btn')); 
 				echo form_close(); 
 			?>
 		</div>

@@ -67,7 +67,7 @@
 							<!-- FIXXX HERE -->
 							<div class="collapsible-body" >
 								<ul>
-								<li><a href="<?php echo base_url()?>index.php/POS_ctr/index">Point Of Sales</a></li>
+								<li class=" blue accent-1"><a class="active" href="<?php echo base_url()?>index.php/POS_ctr/index">Point Of Sales</a></li>
 								<li><a href="<?php echo base_url()?>index.php/POS_ctr/history">Sales History</a></li>
 								<li><a href="#">More...</a></li>
 								</ul>

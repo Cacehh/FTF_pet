@@ -314,7 +314,7 @@ class Admin_Product_ctr extends CI_Controller {
     // public function invSaveEditProd()
     // {
     //   //autoload configuration
-    //   $config['base_url'] = site_url('Inventory_ctr/products');
+    //   $config['base_url'] = site_url('Inventory_ctr/view_products');
     //   $config['total_rows'] = $this->db->count_all('product');
     //   $config['per_page'] = "10";
 
@@ -384,7 +384,7 @@ class Admin_Product_ctr extends CI_Controller {
     public function invDeleteProd($prodID)
     {
         $this->prodinv_model->delete_prodInv($prodID);
-        redirect('/Admin_Product_ctr/products');
+        redirect('/Admin_Product_ctr/view_products');
     }
 
     // function to delete pets
