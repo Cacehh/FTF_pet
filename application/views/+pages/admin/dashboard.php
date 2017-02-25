@@ -1,15 +1,5 @@
-
-<?php
-// if (isset($this->session->userdata['logged_in'])) {
-// 	$username = ($this->session->userdata['logged_in']['username']);
-// 	// $email = ($this->session->userdata['logged_in']['email']);
-// } else {
-// 	header("location: login");
-// }
-?>
 <main>
 	<br>
-
 	<div class="row">
 		<div class="row">
 			<h4 class="offset-s1 col s11">Retail Dashboard</h4>
@@ -43,7 +33,7 @@
 				</div>
 			</div>
 		</div>
-		
+
 		<div class="col s3">
 			<div class="card deep-orange accent-1">
 				<div class="card-content ">
@@ -61,7 +51,7 @@
 				</div>
 			</div>
 		</div>
-			
+
 		<div class="col s3">
 			<div class="card deep-orange accent-1">
 				<div class="card-content ">
@@ -79,7 +69,7 @@
 				</div>
 			</div>
 		</div>
-		
+
 		<div class="col s3">
 			<div class="card deep-orange accent-1">
 				<div class="card-content ">
@@ -98,13 +88,18 @@
 			</div>
 		</div>
 	</div>
-	<div class="divider">
-	</div>
-	
+
+	<div class="divider"></div>
+
+	<br>
 	<div class="row">
-		<div class="col s12">
-		<br><br><br><br><br>
-		<br><br><br><br><br>
+		<div class="col s6 m6">
+			<h5>Useful Links</h5>
+			<div class="collection">
+			  <a href="<?php echo base_url() ?>index.php/POS_ctr" class="collection-item">Web Register</a>
+			  <a href="<?php echo base_url() ?>index.php/Inventory_ctr/products" class="collection-item ">View Products</a>
+			  <a href="<?php echo base_url() ?>index.php/Inventory_ctr/pets" class="collection-item">View Pets</a>
+		  </div>
 		</div>
 	</div>
 </main>

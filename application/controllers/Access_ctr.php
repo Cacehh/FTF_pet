@@ -61,11 +61,11 @@ Class Access_ctr extends CI_Controller {
         $this->session->unset_userdata($data);
         $this->session->sess_destroy();
         $this->session->set_flashdata('flash_data','You have successfully logged out');
-    
+
         //Back to login page
         //Still displays after load FIXXX
         // print_r($this->session->all_userdata());
-        
+
         $data['title'] = 'FTNF | Login';
         $this->load->view('snips/a_start', $data);
         $this->load->view('snips/css_materialize');
@@ -76,7 +76,7 @@ Class Access_ctr extends CI_Controller {
         $this->load->view('snips/js_jquery300');
         $this->load->view('snips/js_materialize');
         $this->load->view('snips/z_end');
-    } 
+    }
 }
 
 ?>
