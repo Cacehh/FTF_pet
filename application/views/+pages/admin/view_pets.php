@@ -68,6 +68,7 @@
 	                        <td><?php echo $petinvlist[$i]->ID; ?></td>
 	                        <td><?php echo $petinvlist[$i]->ProdName; ?></td>
 	                        <td><?php echo $petinvlist[$i]->Category; ?></td>
+	                        <td><?php echo $petinvlist[$i]->Type; ?></td>
 	                        <td><?php 
 	                        	echo "&#8369;";
 	                        	echo $petinvlist[$i]->Amount; ?></td>
