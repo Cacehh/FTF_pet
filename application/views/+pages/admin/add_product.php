@@ -88,7 +88,7 @@
 	            	  <?php echo form_error('desc'); ?>
 	            </div>
 			</div>
-			<div class="divider"></div>
+			
 			<br>
 			 <div class="row white">
 				<div class="input-field col s4">
