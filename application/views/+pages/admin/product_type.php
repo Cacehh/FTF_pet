@@ -61,7 +61,7 @@
 			                        <td><?php echo ($page+$i+1); ?></td>
 			                        <td><?php echo $typelist[$i]->Type; ?></td>
 			                        <td><?php 
-			                        	// echo $typelist[$i]->ProdNum; ?>
+			                        	// echo $typenum[$i]->ProdNum; ?>
 			                        </td>
 			                        <td>
 			                        <td>

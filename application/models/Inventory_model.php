@@ -27,5 +27,12 @@
         $query = $this->db->query($sql);
         return $query->num_rows();
     }
+
+    function get_prod_num($st = NULL) {
+    	if ($st == "NIL") $st = "";
+    	$sql = "select sum(quantity) FROM product";
+    	$query = $this->db->query($sql);
+        return $query->result();
+    }
 }
 ?>

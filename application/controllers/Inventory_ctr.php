@@ -582,4 +582,40 @@ class Inventory_ctr extends CI_Controller {
         $this->load->view('snips/js_materialize');
         $this->load->view('snips/z_end');
     }
+
+    public function prodTypeNum() {
+
+        //autoload configuration
+        $config['base_url'] = site_url('Inventory_ctr/prodTypeNum');
+        // $config['total_rows'] = $this->db->count_all('product');
+        $config['per_page'] = "10";
+        // $this->db->count_all_results('product');
+        // $this->db->from('product');
+
+        $this->pagination->initialize($config);
+
+        // getting the product list
+        $data['page'] = ($this->uri->segment(3)) ? $this->uri->segment(3) : 0;
+
+        // getting the product list
+        $data['typenum'] = $this->Inventory_model->get_prod_num($config["per_page"], $data['page'], NULL);
+
+        $data['title'] = 'FTNF | Product Type';
+        $this->load->view('snips/a_start', $data);
+        $this->load->view('snips/css_materialize');
+        $this->load->view('snips/css_materialize_icon');
+        $type = $this->session->userdata('acct_type');
+
+        if ($type == '2') {
+            $this->load->view('+pages/admin/a_Inventory_header');
+        } else {
+            $this->load->view('+pages/admin/a_header');
+        }
+        $this->load->view('+pages/admin/product_type', $data);
+
+        $this->load->view('snips/js_jquery300');
+        $this->load->view('snips/js_materialize');
+        $this->load->view('snips/z_end');
+
+    }
 }
