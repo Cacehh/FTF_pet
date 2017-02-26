@@ -4,50 +4,44 @@
 
 	<div class="row">
 		<div class="row">
-			<h4 class="offset-s1 col s11">Product Type</h4>
+			<a href="<?php echo base_url()?>index.php/Inventory_ctr/prodType">
+				<h4 class="offset-s1 col s11 black-text">Product Types</h4>
+			</a>
 		</div>
-		<div class="row grey lighten-1">
+
+		<div class="row grey lighten-1 valign-wrapper">
 			<div class="offset-s1 col s11">
 				<p class="flow-text">View, edit and add product types</p>
+			</div>
+			<div class="col s3">
+				<a href="<?php echo base_url()?>index.php/Inventory_ctr/prodType" class="waves-effect waves-light btn"><i class="material-icons left">library_add</i>Add Type</a>
 			</div>
 		</div>
 
 		<div class="row">
-			<div class="col S12">
-				<a class="waves-effect waves-light btn right">Add Type</a>
+			<div class="col s12">
+				<?php
+		            $attr = array("class" => "form-horizontal", "role" => "form", "id" => "form1", "name" => "form1");
+		            echo form_open("Inventory_ctr/prodTypeSearch", $attr);
+		        ?>
+            	<div class="row">
+	                <div class="input-field offset-s2 col s6">
+						<i class="material-icons prefix">search</i>
+						<input class="form-control " id="icon_prefix" name="prodType_name" type="text"
+							   value="<?php echo set_value('prodType_name'); ?>" />
+						<label for="icon_prefix">Search for Product Types</label>
+	                </div>
+
+	               <div class="col-md-6">
+			                <input id="btn_search" name="btn_search" type="submit" class="btn btn-danger" value="Search" />
+			       </div>
+	            </div>
+	            <?php
+	                echo form_close();
+	            ?>
 			</div>
 		</div>
 
-		<div class="row container center">
-					<div class="col s12">
-
-						<?php
-		                    $attr = array("class" => "form-horizontal", "role" => "form", "id" => "form1", "name" => "form1");
-		                    echo form_open("Inventory_ctr/prodTypeSearch", $attr);
-		                ?>
-
-		                <div class="form-group">
-		                    <div class="col-md-6">
-								<i class="material-icons prefix">search</i>
-								<input class="form-control " id="icon_prefix" name="prodType_name" type="text"
-									value="<?php echo set_value('prodType_name'); ?>" />
-								<label for="icon_prefix">Search for Product Types</label>
-		                    </div>
-
-		                    <div class="col-md-6">
-		                        <input id="btn_search" name="btn_search" type="submit" class="btn btn-danger" value="Search" />
-		                        <a href="<?php echo base_url(). "index.php/Inventory_ctr/prodType"; ?>" class="btn btn-primary">Refresh Product Type List</a>
-		                    </div>
-		                </div>
-
-		                <?php
-		                    echo form_close();
-		                ?>
-					</div>
-				</div>
-
-		<div class="divider"></div>
-		<br>
 		<div class="row">
 			<br>
 			<div class=" container">

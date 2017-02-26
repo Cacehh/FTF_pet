@@ -547,4 +547,39 @@ class Inventory_ctr extends CI_Controller {
         $this->load->view('snips/js_materialize');
         $this->load->view('snips/z_end');
     }
+
+    public function prodTypeSearch() {
+        // getting the search string
+        $prodTypeSearch = ($this->input->post("prodType_name"))? $this->input->post("prodType_name") : "NIL";
+
+        // limitation of the products being shown
+        $config = array();
+        $config['base_url'] = site_url("Inventory_ctr/prodTypeSearch/$prodTypeSearch");
+        $config['total_rows'] = $this->Inventory_model->get_prodtype_count($prodTypeSearch);
+        $config['per_page'] = "10";
+
+        $this->pagination->initialize($config);
+
+        $data['page'] = ($this->uri->segment(4)) ? $this->uri->segment(4) : 0;
+
+        // retrieval of the product list
+        $data['typelist'] = $this->Inventory_model->get_prodtype($config['per_page'], $data['page'], $prodTypeSearch);
+
+        $data['title'] = 'FTNF | Product Type';
+        $this->load->view('snips/a_start', $data);
+        $this->load->view('snips/css_materialize');
+        $this->load->view('snips/css_materialize_icon');
+        $type = $this->session->userdata('acct_type');
+
+        if ($type == '2') {
+            $this->load->view('+pages/admin/a_Inventory_header');
+        } else {
+            $this->load->view('+pages/admin/a_header');
+        }
+        $this->load->view('+pages/admin/product_type', $data);
+
+        $this->load->view('snips/js_jquery300');
+        $this->load->view('snips/js_materialize');
+        $this->load->view('snips/z_end');
+    }
 }
