@@ -53,7 +53,7 @@
 	           		 <label for="category">Category</label>
 				</div>
 			  	<div class="input-field col s5">
-					  <select id="type" name="type">
+					  <!-- select id="type" name="type">
 					    <option value="Choose" disabled selected>Choose</option>
 					    <option value="Dog">Dog</option>
 					    <option value="Cat">Cat</option>
@@ -63,7 +63,16 @@
 					    <option value="Reptiles">Reptiles</option>
 					    <option value="Amphibians">Amphibians</option>
 					  </select>
-					  <label>Type</label>
+					  <label>Type</label> -->
+
+					  <select id="type" name="type">
+					  	  <option value="Choose" disabled selected>Choose</option>
+						  <?php 
+						 	for ($i = 0; $i < count($pettypelist); ++$i) { ?>
+		                        <option><?php echo $pettypelist[$i]->Type; ?></option>
+		                  <?php } ?>
+	                  </select>
+	                  <label>Type</label>
 				</div>
 				<div class="input-field col s4">
 						 <?php

@@ -8,7 +8,7 @@ class Inventory_ctr extends CI_Controller {
 		parent::__construct();
 		$this->load->database();
 		$this->load->library('pagination');
-		$this->load->model(array('prod_model','prodinv_model', 'petinv_model', 'Inventory_model'));
+		$this->load->model(array('prod_model','prodinv_model', 'petinv_model', 'Inventory_model', 'PetType_model', 'ProdType_model', 'PType_model', 'PrdType_model'));
 
 		if(empty($this->session->userdata('id'))) {
 				$this->session->set_flashdata('flash_data', 'Please login First');
@@ -183,6 +183,19 @@ class Inventory_ctr extends CI_Controller {
 
 	public function addProducts()
 	{
+
+        $config['base_url'] = site_url('Inventory_ctr/addProducts');
+        $config['total_rows'] = $this->db->count_all('prodtype');
+        $config['per_page'] = "50";
+
+        // $this->pagination->initialize($config);
+
+        // getting the product list
+        $data['page'] = ($this->uri->segment(3)) ? $this->uri->segment(3) : 0;
+
+        // getting the product list
+        $data['prodtypelist'] = $this->PrdType_model->get_prodtype($config["per_page"], $data['page'], NULL);
+
         //Including validation library
         $this->load->library('form_validation');
 
@@ -264,6 +277,19 @@ class Inventory_ctr extends CI_Controller {
 
     public function addPets()
     {
+
+        $config['base_url'] = site_url('Inventory_ctr/addPets');
+        $config['total_rows'] = $this->db->count_all('pettype');
+        $config['per_page'] = "50";
+
+        // $this->pagination->initialize($config);
+
+        // getting the product list
+        $data['page'] = ($this->uri->segment(3)) ? $this->uri->segment(3) : 0;
+
+        // getting the product list
+        $data['pettypelist'] = $this->PType_model->get_pettype($config["per_page"], $data['page'], NULL);
+
         //Including validation library
         $this->load->library('form_validation');
 
@@ -616,6 +642,107 @@ class Inventory_ctr extends CI_Controller {
         $this->load->view('snips/js_jquery300');
         $this->load->view('snips/js_materialize');
         $this->load->view('snips/z_end');
+    }
+
+    public function addPetType() {
+
+        //Including validation library
+        $this->load->library('form_validation');
+
+        $this->form_validation->set_error_delimiters('<script> alert("', '")</script>');
+
+        //Validating Product Name Field
+        $this->form_validation->set_rules('pettype', 'PetType', 'required|min_length[2]|max_length[15]');
+
+        //Validating Product Type Field
+        // $this->form_validation->set_rules('category', 'Category', 'required|min_length[2]|max_length[20]');
+
+        if ($this->form_validation->run() == FALSE) {
+            $data['title'] = 'FTNF | Add Pet Type';
+            $this->load->view('snips/a_start', $data);
+            $this->load->view('snips/css_materialize');
+            $this->load->view('snips/css_materialize_icon');
+            $this->load->view('+pages/admin/a_header', $data);
+           
+            $this->load->view('+pages/admin/add_pettype');
+            
+            $this->load->view('snips/js_jquery300');
+            $this->load->view('snips/js_materialize');
+            $this->load->view('snips/z_end');
+
+        } else {
+            //Setting values for table columns
+            $data = array(
+                'Type' => $this->input->post('pettype')
+            );
+
+            //Transfering data to Model
+            $this->PetType_model->form_insert($data);
+            $data['message'] = 'Data Inserted Successfully';
+
+            $data['title'] = 'FTNF | Add Pet Type';
+
+            $this->load->view('snips/a_start', $data);
+            $this->load->view('snips/css_materialize');
+            $this->load->view('snips/css_materialize_icon');
+            $this->load->view('+pages/admin/a_header', $data);
+            $this->load->view('+pages/admin/add_pettype');
+            
+            $this->load->view('snips/js_jquery300');
+            $this->load->view('snips/js_materialize');
+            $this->load->view('snips/z_end');
+        }
+
+    }
+
+    public function addProdType() {
+
+        //Including validation library
+        $this->load->library('form_validation');
+
+        $this->form_validation->set_error_delimiters('<script> alert("', '")</script>');
+
+        //Validating Product Name Field
+        $this->form_validation->set_rules('prodtype', 'ProdType', 'required|min_length[2]|max_length[15]');
+
+        //Validating Product Type Field
+        // $this->form_validation->set_rules('category', 'Category', 'required|min_length[2]|max_length[20]');
+
+        if ($this->form_validation->run() == FALSE) {
+            $data['title'] = 'FTNF | Add Product Type';
+            $this->load->view('snips/a_start', $data);
+            $this->load->view('snips/css_materialize');
+            $this->load->view('snips/css_materialize_icon');
+            $this->load->view('+pages/admin/a_header', $data);
+           
+            $this->load->view('+pages/admin/add_prodtype');
+            
+            $this->load->view('snips/js_jquery300');
+            $this->load->view('snips/js_materialize');
+            $this->load->view('snips/z_end');
+
+        } else {
+            //Setting values for table columns
+            $data = array(
+                'Type' => $this->input->post('prodtype')
+            );
+
+            //Transfering data to Model
+            $this->ProdType_model->form_insert($data);
+            $data['message'] = 'Data Inserted Successfully';
+
+            $data['title'] = 'FTNF | Add Product Type';
+
+            $this->load->view('snips/a_start', $data);
+            $this->load->view('snips/css_materialize');
+            $this->load->view('snips/css_materialize_icon');
+            $this->load->view('+pages/admin/a_header', $data);
+            $this->load->view('+pages/admin/add_prodtype');
+            
+            $this->load->view('snips/js_jquery300');
+            $this->load->view('snips/js_materialize');
+            $this->load->view('snips/z_end');
+        }
 
     }
 }

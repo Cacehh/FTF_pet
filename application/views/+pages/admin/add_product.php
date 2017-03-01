@@ -52,16 +52,26 @@
 	           		 <label for="category">Category</label>
 				</div>
 			  	<div class="input-field col s5">
-					  <select id="type" name="type">
+					  <!-- select id="type" name="type">
 					    <option value="Choose" disabled selected>Choose</option>
-					    <option value="Food">Food</option>
-					    <option value="Clothes">Clothes</option>
-					    <option value="Cages">Cages</option>
-					    <option value="Aquarium">Aquarium</option>
-					    <option value="Toys">Toys</option>
-					    <option value="Hygiene">Hygiene</option>
+					    <option value="Dog">Dog</option>
+					    <option value="Cat">Cat</option>
+					    <option value="Fish">Fish</option>
+					    <option value="Bird">Bird</option>
+					    <option value="Rodent">Rodent</option>
+					    <option value="Reptiles">Reptiles</option>
+					    <option value="Amphibians">Amphibians</option>
 					  </select>
-					  <label>Type</label>
+					  <label>Type</label> -->
+
+					  <select id="type" name="type">
+					  	  <option value="Choose" disabled selected>Choose</option>
+						  <?php 
+						 	for ($i = 0; $i < count($prodtypelist); ++$i) { ?>
+		                        <option><?php echo $prodtypelist[$i]->Type; ?></option>
+		                  <?php } ?>
+	                  </select>
+	                  <label>Type</label>
 				</div>
 				<div class="input-field col s4">
 						 <?php

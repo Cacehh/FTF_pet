@@ -23,16 +23,16 @@
     function get_prodtype_count($st = NULL)
     {
         if ($st == "NIL") $st = "";
-        $sql = "select DISTINCT Type from product where Type like '%$st%'";
+        $sql = "select DISTINCT Type, sum(Quantity) from product where Type like '%$st%'";
         $query = $this->db->query($sql);
         return $query->num_rows();
     }
 
-    function get_prod_num($st = NULL) {
-    	if ($st == "NIL") $st = "";
-    	$sql = "select sum(quantity) FROM product";
-    	$query = $this->db->query($sql);
-        return $query->result();
-    }
+    // function get_prod_num($st = NULL) {
+    // 	if ($st == "NIL") $st = "";
+    // 	$sql = "select sum(quantity) FROM product";
+    // 	$query = $this->db->query($sql);
+    //     return $query->result();
+    // }
 }
 ?>

@@ -13,8 +13,12 @@
 			<div class="offset-s1 col s11">
 				<p class="flow-text">View, edit and add product types</p>
 			</div>
-			<div class="col s3">
-				<a href="<?php echo base_url()?>index.php/Inventory_ctr/prodType" class="waves-effect waves-light btn"><i class="material-icons left">library_add</i>Add Type</a>
+			<div class="col s6">
+				<a href="<?php echo base_url()?>index.php/Inventory_ctr/addPetType" class="waves-effect waves-light btn"><i class="material-icons left">library_add</i>Add Pet Type</a>
+			</div>
+
+			<div class="col s7">
+				<a href="<?php echo base_url()?>index.php/Inventory_ctr/addProdType" class="waves-effect waves-light btn"><i class="material-icons left">library_add</i>Add Product Type</a>
 			</div>
 		</div>
 
@@ -51,7 +55,7 @@
 		                    <tr>
 			                    <th data-field ="#">#</th>
 			                    <th data-field ="type">Product Type</th>
-			                    <th data-field ="prodnum">Number of Products</th>
+			                    <th data-field ="prodtype">Number of Products</th>
 		                    </tr>
 		                </thead>
 
@@ -61,7 +65,7 @@
 			                        <td><?php echo ($page+$i+1); ?></td>
 			                        <td><?php echo $typelist[$i]->Type; ?></td>
 			                        <td><?php 
-			                        	// echo $typenum[$i]->ProdNum; ?>
+			                        	// echo $typelist[$i]->Quantity; ?>
 			                        </td>
 			                        <td>
 			                        <td>
