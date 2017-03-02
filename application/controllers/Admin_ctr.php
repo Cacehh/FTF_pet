@@ -14,7 +14,7 @@ class Admin_ctr extends CI_Controller {
             $this->session->set_flashdata('flash_data', '<b>This is a restricted page. Please login again</b>');
             redirect('Access_ctr');
         }
-        $this->load->model(array('register_model', 'Accounts_model', 'AddCustomer_model'));
+        $this->load->model(array('register_model', 'Accounts_model', 'AddCustomer_model', 'Customer_model'));
     }
 
     public function index()
@@ -239,32 +239,34 @@ class Admin_ctr extends CI_Controller {
         $this->load->view('snips/z_end');
     }
 
-    public function customers()
-    {
-        $data['title'] = 'FTNF | Customer List';
+   
+
+    public function customers() {
+        $config['base_url'] = site_url('Admin_ctr/customers');
+        $config['total_rows'] = $this->db->count_all('customers');
+        $config['per_page'] = "20";
+
+        $this->pagination->initialize($config);
+
+        // getting the product list
+        $data['page'] = ($this->uri->segment(3)) ? $this->uri->segment(3) : 0;
+
+        // getting the product list
+        $data['customerlist'] = $this->Customer_model->get_customer($config["per_page"], $data['page'], NULL);
+
+
+       $data['title'] = 'FTNF | Customers';
         $this->load->view('snips/a_start', $data);
         $this->load->view('snips/css_materialize');
         $this->load->view('snips/css_materialize_icon');
-        $this->load->view('+pages/admin/a_header');
+        $type = $this->session->userdata('acct_type');
+        if ($type == '2') {
+           $this->load->view('+pages/admin/a_Inventory_header');
+        } else {
+           $this->load->view('+pages/admin/a_header');
+        }
 
-        $this->load->view('snips/a_restrict');
-        $this->load->view('+pages/admin/a_customer');
-
-        $this->load->view('snips/js_jquery300');
-        $this->load->view('snips/js_materialize');
-        $this->load->view('snips/z_end');
-    }
-
-    public function customerEdit()
-    {
-        $data['title'] = 'FTNF | Edit Customer';
-        $this->load->view('snips/a_start', $data);
-        $this->load->view('snips/css_materialize');
-        $this->load->view('snips/css_materialize_icon');
-        $this->load->view('+pages/admin/a_header');
-
-        $this->load->view('snips/a_restrict');
-        $this->load->view('+pages/admin/a_customer_edit');
+        $this->load->view('+pages/admin/view_customer', $data);
 
         $this->load->view('snips/js_jquery300');
         $this->load->view('snips/js_materialize');
@@ -347,6 +349,59 @@ class Admin_ctr extends CI_Controller {
             $this->load->view('snips/js_materialize');
             $this->load->view('snips/z_end');
         }
+    }
+
+    public function searchCustomer() {
+        // getting the search string
+        $customerSearch = ($this->input->post("customer_name"))? $this->input->post("customer_name") : "NIL";
+
+        // limitation of the products being shown
+        $config = array();
+        $config['base_url'] = site_url("Admin_ctr/customerSearch/$customerSearch");
+        $config['total_rows'] = $this->Customer_model->get_customer_count($customerSearch);
+        $config['per_page'] = "20";
+
+        $this->pagination->initialize($config);
+
+        $data['page'] = ($this->uri->segment(4)) ? $this->uri->segment(4) : 0;
+
+        // retrieval of the product list
+        $data['customerlist'] = $this->Customer_model->get_customer($config['per_page'], $data['page'], $customerSearch);
+
+        // loading of the view
+         $data['title'] = 'FTNF | Customers';
+        $this->load->view('snips/a_start', $data);
+        $this->load->view('snips/css_materialize');
+        $this->load->view('snips/css_materialize_icon');
+        
+        $type = $this->session->userdata('acct_type');
+            if ($type == '2') {
+                 $this->load->view('+pages/admin/a_Inventory_header');
+            } else {
+                 $this->load->view('+pages/admin/a_header');
+            }
+
+        $this->load->view('+pages/admin/view_customer');
+
+        $this->load->view('snips/js_jquery300');
+        $this->load->view('snips/js_materialize');
+        $this->load->view('snips/z_end');
+    }
+
+     public function customerEdit()
+     {
+        $data['title'] = 'FTNF | Edit Customer';
+        $this->load->view('snips/a_start', $data);
+        $this->load->view('snips/css_materialize');
+        $this->load->view('snips/css_materialize_icon');
+        $this->load->view('+pages/admin/a_header');
+
+        $this->load->view('snips/a_restrict');
+        $this->load->view('+pages/admin/a_customer_edit');
+
+        $this->load->view('snips/js_jquery300');
+        $this->load->view('snips/js_materialize');
+        $this->load->view('snips/z_end');
     }
 
     public function salesLedger()

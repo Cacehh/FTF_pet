@@ -7,9 +7,12 @@
     </div>
     </div>
 
-  <div class="row grey lighten-1">
-    <div class="offset-s1 col s12">
+  <div class="row grey lighten-1 valign-wrapper">
+    <div class="offset-s1 col s8">
       <p class="flow-text">Add new customers </p>
+    </div>
+    <div class="col s3">
+        <a href="<?php echo base_url()?>index.php/Admin_ctr/customers" class="waves-effect waves-light btn">View Customers</a>
     </div>
   </div>
  

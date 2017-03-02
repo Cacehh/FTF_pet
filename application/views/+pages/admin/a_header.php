@@ -80,8 +80,8 @@
 								<li><a href="<?php echo base_url()?>index.php/Inventory_ctr/pets">Pets</a></li>
 								<li><a href="<?php echo base_url()?>index.php/Inventory_ctr/prodType">Product Type</a></li>
 								<li><a href="<?php echo base_url()?>index.php/Admin_Product_ctr/supplier">Suppliers</a></li>
-								<li><a href="<?php echo base_url()?>index.php/Admin_Product_ctr/brands">Brands</a></li>
-								<li><a href="<?php echo base_url()?>index.php/Admin_Product_ctr/tags">Product Tags</a></li>
+								<!-- <li><a href="<?php echo base_url()?>index.php/Admin_Product_ctr/brands">Brands</a></li> -->
+								<!-- <li><a href="<?php echo base_url()?>index.php/Admin_Product_ctr/tags">Product Tags</a></li> -->
 
 								</ul>
 							</div>
@@ -109,7 +109,8 @@
 								<li><a href="http://localhost/_ITProject/_FTF_v2/index.php/Admin_ctr/getOrder">Take Order</a></li>
 								<li><a href="http://localhost/_ITProject/_FTF_v2/index.php/Admin_ctr/customerAdd">Add Customer</a></li>
 								<li><a href="http://localhost/_ITProject/_FTF_v2/index.php/Admin_ctr/customerEdit">Edit Customer</a></li>
-								<li><a href="http://localhost/_ITProject/_FTF_v2/index.php/Admin_ctr/customers">Customers</a></li>
+								<li><a href="<?php echo base_url()?>index.php/Admin_ctr/customers">Customers</a></li>
+								<!-- <li><a href="http://localhost/_ITProject/_FTF_v2/index.php/Admin_ctr/customers">Customers</a></li> -->
 								<li><a href="http://localhost/_ITProject/_FTF_v2/index.php/Admin_ctr/orders">Orders</a></li>
 								<li><a href="#">More...</a></li>
 								</ul>
