@@ -86,22 +86,19 @@
 				<!-- <table class="bordered stripped centered responsive-table"> -->
 	                <thead>
 	                    <tr>
-	                    <!-- <th>#</th> -->
-	                    <th>ID</th>
-	                    <th>Name</th>
-	                    <th>Category</th>
-	                    <th>In-Stock</th>
-	                    <th>Price</th>
-	                    <th>Add</th>
+   	                    <th>ID</th>
+   	                    <th>Name</th>
+   	                    <th>Category</th>
+   	                    <th>In-Stock</th>
+   	                    <th>Price</th>
+   	                    <th>Add</th>
 	                    </tr>
 	                </thead>
-
 	                <tbody>
 	                    <?php for ($i = 0; $i < count($prodlist); ++$i) { ?>
                         <tr>
-	                        <!-- <td><?php echo ($page+$i+1); ?></td> -->
 	                        <td><?php
-                              $id = $prodlist[$i]->ID;
+                              $id = $prodlist[$i]->ProdID;
                               echo $id;
                            ?></td>
 	                        <td><?php
@@ -116,36 +113,28 @@
                               $qty = $prodlist[$i]->Quantity;
                               echo $qty;
                            ?></td>
-	                        <td>
-                              <?php
-	                    <tr>
-	                        <td><?php echo ($page+$i+1); ?></td>
-	                        <td><?php echo $prodlist[$i]->ProdID; ?></td>
-	                        <td><?php echo $prodlist[$i]->ProdName; ?></td>
-	                        <td><?php echo $prodlist[$i]->Category; ?></td>
-	                        <td><?php echo $prodlist[$i]->Quantity; ?></td>
 	                        <td><?php
-		                        echo "&#8369;";
-		                        $price = $prodlist[$i]->Amount;
+                              $price = $prodlist[$i]->Amount;
                               echo $price;
-                              ?>
-                           </td>
-	                        <td>
+                           ?></td>
+                           <td>
                               <?php
-                                 echo form_open('POS_ctr/add');
-                                 echo form_hidden('id', $id);
-                                 echo form_hidden('qty', $qty);
-                                 echo form_hidden('price', $price);
-                                 echo form_hidden('name', $name);
-                                 echo form_hidden('cat', $cat);
-                                 $add = array(
-                                    'class' => 'btn btn-primary form-control',
-                                    'value' => 'Add to Cart',
-                                    'name' => 'action', 'type' => 'submit');
+                              echo form_open('POS_ctr/add');
+                              echo form_hidden('id', $id);
+                              echo form_hidden('qty', $qty);
+                              echo form_hidden('price', $price);
+                              echo form_hidden('name', $name);
+                              echo form_hidden('cat', $cat);
+                              $add = array(
+                                 'class' => 'btn btn-primary form-control',
+                                 'value' => '+',
+                                 'name' => 'action', 'type' => 'submit');
                                  echo form_submit ($add);
                                  echo form_close();
-                              ?>
-	                        </td>
+                                 ?>
+                           </td>
+	                    </tr>
+
                         </tr>
 	                    <?php } ?>
 	                </tbody>
@@ -220,7 +209,7 @@
                   echo form_hidden('cart[' . $item['id'] . '][price]', $item['price']);
                   echo form_hidden('cart[' . $item['id'] . '][qty]', $item['qty']);
                   echo form_hidden('cart[' . $item['id'] . '][rowid]', $item['rowid']);
-                  ?>
+               ?>
                   <?php $grand_total = $grand_total + $item['subtotal']; ?>
 
 					<ul class="collapsible" data-collapsible="accordion">
