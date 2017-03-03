@@ -101,10 +101,10 @@
                               $id = $prodlist[$i]->ProdID;
                               echo $id;
                            ?></td>
-	                        <td><?php
+	                        <td><h5><?php
                               $name = $prodlist[$i]->ProdName;
                               echo $name;
-                           ?></td>
+                           	?></h5></td>
 	                        <td><?php
                               $cat = $prodlist[$i]->Category;
                               echo $cat;
@@ -255,8 +255,9 @@
 				</div>
             <div class="row">
                <div class="col s9">
-                  <input  class ='btn btn-danger' type="submit" value="Update" >
-                  <a class="waves-effect waves-light btn red" type="submit"><i class="material-icons">refresh</i></a>
+                  <button class="btn waves-light waves-effect" type="submit" name="action">
+                  	<i class="material-icons">refresh</i>
+                  </button>
                </div>
                <div class="col s3">
                   <a onClick="clear_cart()" class="waves-effect waves-light btn red"><i class="material-icons">clear</i></a>
@@ -270,10 +271,9 @@
 							<b>Sub-total</b>
 						</div>
 						<div class="right-align col s6">
-							<!-- <b>&#x20B1; 4,600</b> -->
-                     <b>&#x20B1;
-                        <?php echo number_format($grand_total,2);  ?>
-                     </b>
+		                     <b>&#x20B1;
+		                        <?php echo number_format($grand_total,2);  ?>
+		                     </b>
 						</div>
 						<div class="col s6">
 							<b>Discount</b>
@@ -281,11 +281,16 @@
 						<div class="right-align col s6">
 							<b>&#x20B1; 0</b>
 						</div>
-						<div class="col s6">
-							<h5 style="font-size: 40px">TOTAL</h5>
-						</div>
-						<div class="right-align col s6">
-							<h5 style="font-size: 40px">&#x20B1; 4,600</h5>
+						<div class="row grey lighten-4">
+							<div class="col s6">
+								<h5 style="font-size: 35px">TOTAL:</h5>
+							</div>
+							<div class="right-align col s6">
+								<h5 style="font-size: 30px; font-weight: 900;">
+									&#x20B1;
+		                        	<?php echo number_format($grand_total,2);  ?>
+								</h5>
+							</div>
 						</div>
 					</div>
 				</div>
