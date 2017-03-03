@@ -43,7 +43,6 @@
 		<br>
 		<div class="row">
 			<br>
-			<div class="col s1"></div>
 			<div class="col s12">
 				<table class="bordered centered highlight responsive-table">
 				<!-- <table class="bordered stripped centered responsive-table"> -->
@@ -87,7 +86,6 @@
 	                </tbody>
             	</table>
 			</div>
-			<div class="col s1"></div>
 			<br>
 		</div>
 	</div>

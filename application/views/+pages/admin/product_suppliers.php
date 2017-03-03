@@ -3,7 +3,7 @@
 	<div class="row">
 		<div class="row">
 			<a href="<?php echo base_url()?>index.php/Admin_Product_ctr/supplier">
-				<h4 class="offset-s1 col s11 black-text">supplier</h4>
+				<h4 class="offset-s1 col s11 black-text">Supplier</h4>
 			</a>
 		</div>
 
@@ -39,20 +39,19 @@
 			</div>
 		</div>
 		
-		<div class="divider"></div>
 		<br>
 		<div class="row">
 			<br>
 			<div class="col s1"></div>
-			<div class="col s12">
+			<div class="col s10">
 				<table class="bordered centered highlight responsive-table">
 				<!-- <table class="bordered stripped centered responsive-table"> -->
 	                <thead>
 	                    <tr>
 	                    <th data-field ="#">#</th>
-	                    <th data-field ="supName">Supplier Name</th>
-	                    <th data-field ="supName">Supplier Contact</th>
-	                    <th data-field ="supLoc">Supplier Location</th>
+	                    <th data-field ="supName">Name</th>
+	                    <th data-field ="supName">Contact</th>
+	                    <th data-field ="supLoc">Location</th>
 	                    </tr>
 	                </thead>
 

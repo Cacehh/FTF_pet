@@ -12,7 +12,7 @@
       <p class="flow-text">Add new suppliers </p>
     </div>
     <div class="col s3">
-        <a href="<?php echo base_url()?>index.php/Admin_Product_ctr/suppliers" class="waves-effect waves-light btn">View Suppliers</a>
+        <a href="<?php echo base_url()?>index.php/Admin_Product_ctr/supplier" class="waves-effect waves-light btn">View Suppliers</a>
     </div>
   </div>
  
