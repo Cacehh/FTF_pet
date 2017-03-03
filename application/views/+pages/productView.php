@@ -1,22 +1,28 @@
+<?php
+defined('BASEPATH') OR exit('No direct script access allowed');
+
+$sel_prod = $product[0];
+
+?>
 <div class="row">
     <div class="container col s9">
         <div class="row">
             <div class="col s12">
                 <div class="card horizontal">
                     <div class="card-image">
-                            <img class="activator" src="<?php echo base_url()?>public/media/products/1.jpg">
+                            <img class="activator" src="<?php echo base_url()?>public/media/products/<?php echo $sel_prod ->Image;?>.jpg">
                     </div>
                     <div class="card-stacked">
                         <div class="card-content">
-                            <h3>Dog Food 1</h3>
+                            <h3><?php echo $sel_prod ->ProdName?></h3>
                             <p>This dog food is best for puppies aged 1 to 4 months old and is also applicable for 
                             dogs with allergies of any kind.</p>
                             <p>Soft and crunchy on the outside with sulit price and bla of the bla just to make this longer
                             as a sample paragraph.</p>
                             <br>
-                            <h5><b>Regular Price:</b></h5><h6><i> &#8369; 4,999</i></6>
+                            <h5><b>Regular Price:</b></h5><h6><i> &#8369; <?php echo $sel_prod ->Amount?></i></6>
                             <br>
-                            <h5><b>Promo Price:</b></h5><h6><i>&#8369; 999</i></h6>
+                            <h5><b>Promo Price:</b></h5><h6><i>&#8369; <?php echo $sel_prod ->Amount?></i></h6>
                         </div>               
                         <div class="card-action row">
         <!--                    <a href="#">Similar products</a>-->

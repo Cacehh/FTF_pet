@@ -5,8 +5,8 @@
 				parent::__construct(); // Call the Model constructor
 			}
 			
-			function getProduct() {
-				$query = $this->db->query('SELECT * FROM product_test');
+			function getSelectedProd($prodId) {
+				$query = $this->db->query('SELECT * FROM product WHERE ID='.$prodId.'');
 				
 				if($query->num_rows() > 0) {
 					return $query->result();

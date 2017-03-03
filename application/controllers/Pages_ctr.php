@@ -7,8 +7,8 @@ class Pages_ctr extends CI_Controller {
 	{
 		//Model
 		$this->load->model('Productlist_model');
+		$data['product'] = $this->Productlist_model->getProduct(); 		
 		$data['title'] = 'View Products';
-		$data['product'] = $this->Productlist_model->getProduct(); 
         // Heading Statements
         $this->load->view('snips/a_start', $data);
         $this->load->view('snips/css_materialize_icon');
@@ -41,8 +41,13 @@ class Pages_ctr extends CI_Controller {
       
     public function productDetails()
     {
+		//Model
+		$data['prodId']  = $_GET['id'];
+		$this->load->model('Productdetail_model');
+		$data['product'] = $this->Productdetail_model->getSelectedProd($data['prodId']); 
+		$data['title'] = 'Product details';
         // Heading Statements
-        $this->load->view('snips/a_start');
+        $this->load->view('snips/a_start', $data);
         $this->load->view('snips/css_materialize_icon');
 		$this->load->view('snips/css_materialize_admin');
         $this->load->view('snips/css_defined');
@@ -56,7 +61,7 @@ class Pages_ctr extends CI_Controller {
         
 		$this->load->view('snips/a_spacer');
         // Main Contents
-		$this->load->view('+pages/productView');
+		$this->load->view('+pages/productView', $data);
 		$this->load->view('snips/SIMPLE_navi_2');
 
 		// <BR>
