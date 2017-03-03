@@ -22,15 +22,6 @@
                 $attributes = array('name' => 'login');
                 echo form_open('Access_ctr',$attributes); 
                 ?>
-                <!-- <form action="Access_ctr" name="login">   -->
-                    <?php
-                        // echo "<div class='error_msg'>";
-                        // if (isset($error_message)) {
-                        // echo $error_message;
-                        // }
-                        // echo validation_errors();
-                        // echo "</div>";
-                    ?>     
                     <div class="row">
                         <div class="input-field">
                             <i class="large material-icons prefix">account_circle</i>
@@ -54,6 +45,7 @@
                            echo anchor('Admin_ctr/forgotpassword','Forgot Password?');
                         ?>
                 </form>
+				<br>
             </div>
             <div class="col l6 m6 s1">
                 <br>

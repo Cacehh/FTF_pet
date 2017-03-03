@@ -1,3 +1,5 @@
+</head>
+<body OnLoad="document.login.username.focus">
 <br>
 <br>
 <br>
@@ -5,6 +7,12 @@
 <main>
 	<div class="valign-wrapper blue-grey lighten-5 z-depth-3 container">
 		<div class="row">
+            <?php if(isset($_SESSION)) {
+                echo "</br>";
+                echo "<h4 class='message center red-text'>";
+                echo $this->session->flashdata('flash_data');
+                echo "</h4>";
+            } ?>   
             <div class="col s5 loginlogo">
                 <br>
                 <br>
@@ -15,7 +23,10 @@
 				<br>
 				<br>
                 <h5 class="">Login | WebAdmin for <b>Fins, Tails n Feathers</b></h5>
-                <form method="POST" action="<?php echo base_url();?>/index.php/Web_Admin_ctr/dashboard">        
+                <?php 
+                    $attributes = array('name' => 'login');
+                    echo form_open('Web_Access',$attributes); 
+                ?>
                     <div class="row_1">
                         <div class="input-field col s12">
                             <i class="large material-icons prefix">account_circle</i>

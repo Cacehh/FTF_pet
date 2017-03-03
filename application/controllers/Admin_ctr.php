@@ -1,11 +1,8 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
-
 class Admin_ctr extends CI_Controller {
-
     function __construct() {
         parent::__construct();
-
         if(empty($this->session->userdata('id'))) {
             $this->session->set_flashdata('flash_data', 'Please login First');
             redirect('Access_ctr');

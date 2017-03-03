@@ -2,11 +2,21 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Web_Admin_ctr extends CI_Controller {
+    function __construct(){
+        parent::__construct();
+        if(empty($this->session->userdata('id'))) {
+            $this->session->set_flashdata('flash_data', 'Please login First');
+            redirect('Access_ctr');
+        }
+
+        if($this->session->userdata('acct_type') != '3'){
+            $this->session->set_flashdata('flash_data', '<b>This is a restricted page. Please login again</b>');
+            redirect('Access_ctr');
+        }
+    }
 
     public function index()
     {
-        $data['title'] = 'FTNF | Login';
-        $this->load->view('snips/a_start', $data);
         $data['title'] = 'FTNF | Web Admin';
         $this->load->view('snips/a_start' , $data);
         $this->load->view('snips/css_materialize');
