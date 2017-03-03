@@ -65,7 +65,7 @@
 	                    <?php for ($i = 0; $i < count($petinvlist); ++$i) { ?>
 	                    <tr>
 	                        <td><?php echo ($page+$i+1); ?></td>
-	                        <td><?php echo $petinvlist[$i]->ID; ?></td>
+	                        <td><?php echo $petinvlist[$i]->ProdID; ?></td>
 	                        <td><?php echo $petinvlist[$i]->ProdName; ?></td>
 	                        <td><?php echo $petinvlist[$i]->Category; ?></td>
 	                        <td><?php echo $petinvlist[$i]->Type; ?></td>
@@ -78,8 +78,8 @@
 	                        		// echo $petinvlist[$i]->Timestamp; 
 	                        	?></td>
 	                        <td>
-								<a href="<?php echo base_url()?>index.php/Inventory_ctr/editPet/<?php echo $petinvlist[$i]->ID ?>"><i class="material-icons">mode_edit</i></a>
-								<a href="<?php echo base_url()?>index.php/Inventory_ctr/invDeletePet/<?php echo $petinvlist[$i]->ID ?>"><i class="material-icons">delete</i></a>
+								<a href="<?php echo base_url()?>index.php/Inventory_ctr/editPet/<?php echo $petinvlist[$i]->ProdID ?>"><i class="material-icons">mode_edit</i></a>
+								<a href="<?php echo base_url()?>index.php/Inventory_ctr/invDeletePet/<?php echo $petinvlist[$i]->ProdID ?>"><i class="material-icons">delete</i></a>
 							</td>
 	                    </tr>
 	                    <?php } ?>

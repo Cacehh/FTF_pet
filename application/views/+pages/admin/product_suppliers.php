@@ -1,59 +1,80 @@
-
+<br>
 <main>
-	<br>
-
 	<div class="row">
 		<div class="row">
-			<h4 class="offset-s1 col s11">Suppliers</h4>
+			<a href="<?php echo base_url()?>index.php/Admin_Product_ctr/supplier">
+				<h4 class="offset-s1 col s11 black-text">supplier</h4>
+			</a>
 		</div>
-		<div class="row grey lighten-1">
-			<div class="offset-s1 col s11">
-				<p class="flow-text">View, edit and add Suppliers</p>
+
+		<div class="row grey lighten-1 valign-wrapper">
+			<div class="offset-s1 col s8">
+				<p class="flow-text">View, Edit and Delete Suppliers</p>
 			</div>
-		</div>
-		<div class="row">
-			<div class="col S12">
-				<a class="waves-effect waves-light btn right">Add Supplier</a>
+			<div class="col s3">
+				<a href="<?php echo base_url()?>index.php/Admin_Product_ctr/addSupplier" class="waves-effect waves-light btn"><i class="material-icons left">library_add</i>Add Suppliers</a>
 			</div>
 		</div>
 		
 		<div class="row">
 			<div class="col s12">
-				<table class="centered highlight bordered">
-					<thead>
-						<tr>
-							<th data-field="id">Name</th>
-							<th data-field="contactNumber">Contact Number</th>
-							<th data-field="Location">Location</th>
-							<th data-field="NumberOfProducts">Number Of Products</th>
-						</tr>
-					</thead>
+				<?php 
+               	    $attr = array("class" => "form-horizontal", "role" => "form", "id" => "form1", "name" => "form1");
+               	    echo form_open("Admin_Product_ctr/supplierSearch", $attr);
+               	?>
+                <div class="row">
+                    <div class="input-field offset-s2 col s6">
+						<i class="material-icons prefix">search</i>
+                        <input class="form-control" id="icon_prefix" name="supplier_name" type="text" value="<?php echo set_value('supplier_name'); ?>" />
+						<label for="icon_prefix">Search for Supplier</label>
+                    </div>
 
-					<tbody>
-						<tr>
-							<td>Dog Breeding station</td>
-							<td>422-6642</td>
-							<td>#14 Legarda Road, Baguio City</td>
-							<td>23</td>
-							<td><a href="#">View Products</a></td>
-						</tr>			
-						<tr>
-							<td>Mark and Jay Breeders</td>
-							<td>544-4711</td>
-							<td>#7 Kisad Road, Baguio City</td>
-							<td>3</td>
-							<td><a href="#">View Products</a></td>
-						</tr>
-						<tr>
-							<td>Pangasinan Breeders Corp</td>
-							<td>072-3452</td>
-							<td>Block 8, Diego Silang Road, Pangasinan City</td>
-							<td>98</td>
-							<td><a href="#">View Products</a></td>
-						</tr>			
-					</tbody>
-				</table>
+                    <div class="col s2">
+                        <input id="btn_search" name="btn_search" type="submit" class="btn btn-danger" value="Search" />
+                    </div>
+                </div>
+                <?php 
+                    echo form_close(); 
+                ?>
 			</div>
+		</div>
+		
+		<div class="divider"></div>
+		<br>
+		<div class="row">
+			<br>
+			<div class="col s1"></div>
+			<div class="col s12">
+				<table class="bordered centered highlight responsive-table">
+				<!-- <table class="bordered stripped centered responsive-table"> -->
+	                <thead>
+	                    <tr>
+	                    <th data-field ="#">#</th>
+	                    <th data-field ="supName">Supplier Name</th>
+	                    <th data-field ="supName">Supplier Contact</th>
+	                    <th data-field ="supLoc">Supplier Location</th>
+	                    </tr>
+	                </thead>
+
+	                <tbody>
+	                    <?php for ($i = 0; $i < count($supplierlist); ++$i) { ?>
+	                    <tr>
+	                        <td><?php echo ($page+$i+1); ?></td>
+	                        <td><?php echo $supplierlist[$i]->Supplier_Name; ?></td>
+	                        <td><?php echo $supplierlist[$i]->Supplier_Contact; ?></td>
+	                        <td><?php echo $supplierlist[$i]->Supplier_Location; ?></td>
+	                        
+	                        <!-- <td>
+								<a href="<?php echo base_url()?>index.php/Inventory_ctr/editCustomer/<?php echo $customerlist[$i]->ID ?>"><i class="material-icons">mode_edit</i></a>
+								<a href="<?php echo base_url()?>index.php/Inventory_ctr/deleteCustomer/<?php echo $customerlist[$i]->ID ?>"><i class="material-icons">delete</i></a>
+							</td> -->
+	                    </tr>
+	                    <?php } ?>
+	                </tbody>
+            	</table>
+			</div>
+			<div class="col s1"></div>
+			<br>
 		</div>
 	</div>
 </main>

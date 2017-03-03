@@ -118,6 +118,13 @@
                            ?></td>
 	                        <td>
                               <?php
+	                    <tr>
+	                        <td><?php echo ($page+$i+1); ?></td>
+	                        <td><?php echo $prodlist[$i]->ProdID; ?></td>
+	                        <td><?php echo $prodlist[$i]->ProdName; ?></td>
+	                        <td><?php echo $prodlist[$i]->Category; ?></td>
+	                        <td><?php echo $prodlist[$i]->Quantity; ?></td>
+	                        <td><?php
 		                        echo "&#8369;";
 		                        $price = $prodlist[$i]->Amount;
                               echo $price;

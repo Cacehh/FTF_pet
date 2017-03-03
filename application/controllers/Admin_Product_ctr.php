@@ -14,7 +14,7 @@ class Admin_Product_ctr extends CI_Controller {
             redirect('Access_ctr');
         }
 
-        $this->load->model(array('prodinv_model', 'petinv_model'));
+        $this->load->model(array('prodinv_model', 'petinv_model', 'Suppliers_model'));
     }
 
     public function index()
@@ -186,34 +186,137 @@ class Admin_Product_ctr extends CI_Controller {
 	}
 
 	public function supplier()
-    {
-        $data['title'] = 'FTNF | Suppliers';
+  {
+        $config['base_url'] = site_url('Admin_Product_ctr/supplier');
+        $config['total_rows'] = $this->db->count_all('suppliers');
+        $config['per_page'] = "20";
+
+        $this->pagination->initialize($config);
+
+        // getting the product list
+        $data['page'] = ($this->uri->segment(3)) ? $this->uri->segment(3) : 0;
+
+        // getting the product list
+        $data['supplierlist'] = $this->Suppliers_model->get_supplier($config["per_page"], $data['page'], NULL);
+
+
+       $data['title'] = 'FTNF | Suppliers';
         $this->load->view('snips/a_start', $data);
         $this->load->view('snips/css_materialize');
         $this->load->view('snips/css_materialize_icon');
-        $this->load->view('+pages/admin/a_header');
+        $type = $this->session->userdata('acct_type');
+        if ($type == '2') {
+           $this->load->view('+pages/admin/a_Inventory_header');
+        } else {
+           $this->load->view('+pages/admin/a_header');
+        }
 
-        $this->load->view('+pages/admin/product_suppliers');
+        $this->load->view('+pages/admin/product_suppliers', $data);
 
-		$this->load->view('snips/js_jquery300');
+        $this->load->view('snips/js_jquery300');
         $this->load->view('snips/js_materialize');
-		$this->load->view('snips/z_end');
-	}
+        $this->load->view('snips/z_end');
+    }
 
 	public function addSupplier()
-    {
-        $data['title'] = 'FTNF | Add Suppliers';
+  {
+
+        //Including validation library
+        $this->load->library('form_validation');
+
+        $this->form_validation->set_error_delimiters('<div class="error">', '</div>');
+
+        //Validating First Name Field
+        $this->form_validation->set_rules('supname', 'SupplierName', 'required|min_length[2]|max_length[25]');
+
+        //Validating Mobile no. Field
+        $this->form_validation->set_rules('supcontact', 'SupplierContact', 'required|regex_match[/^[0-9]{11}$/]');
+
+        // //Validating Last Name Name Field
+        // $this->form_validation->set_rules('supcontact', 'SupplierContact', 'required|min_length[2]|max_length[]');
+
+        //Validating Middle Name Name Field
+        $this->form_validation->set_rules('suploc', 'SupplierLocation', 'required|min_length[1]|max_length[35]');
+
+        if ($this->form_validation->run() == FALSE) {
+
+            $data['title'] = 'FTNF | Add Supplier';
+            $this->load->view('snips/a_start', $data);
+            $this->load->view('snips/css_materialize');
+            $this->load->view('snips/css_materialize_icon');
+            $this->load->view('+pages/admin/a_header', $data);
+
+            $this->load->view('snips/a_start', $data);
+            $this->load->view('+pages/admin/add_suppliers');
+
+            $this->load->view('snips/js_jquery300');
+            $this->load->view('snips/js_materialize');
+            $this->load->view('snips/z_end');
+
+        } else {
+
+        //Setting values for table columns
+        $data = array(
+            'Supplier_Name' => $this->input->post('supname'),
+            'Supplier_Contact' => $this->input->post('supcontact'),
+            'Supplier_Location' => $this->input->post('suploc')
+        );
+
+            //Transfering data to Model
+            $this->Suppliers_model->form_insert($data);
+            $data['message'] = 'Data Inserted Successfully';
+
+            $data['title'] = 'FTNF | Add Supplier';
+
+            $this->load->view('snips/a_start', $data);
+            $this->load->view('snips/css_materialize');
+            $this->load->view('snips/css_materialize_icon');
+            $this->load->view('+pages/admin/a_header', $data);
+            $this->load->view('snips/a_start', $data);
+            $this->load->view('+pages/admin/add_suppliers');
+
+            $this->load->view('snips/js_jquery300');
+            $this->load->view('snips/js_materialize');
+            $this->load->view('snips/z_end');
+	       }
+  }
+
+  public function supplierSearch() {
+        // getting the search string
+        $supplierSearch = ($this->input->post("supplier_name"))? $this->input->post("supplier_name") : "NIL";
+
+        // limitation of the products being shown
+        $config = array();
+        $config['base_url'] = site_url("Admin_Product_ctr/$supplierSearch");
+        $config['total_rows'] = $this->Suppliers_model->get_supplier_count($supplierSearch);
+        $config['per_page'] = "20";
+
+        $this->pagination->initialize($config);
+
+        $data['page'] = ($this->uri->segment(4)) ? $this->uri->segment(4) : 0;
+
+        // retrieval of the product list
+        $data['supplierlist'] = $this->Suppliers_model->get_supplier($config['per_page'], $data['page'], $supplierSearch);
+
+        // loading of the view
+         $data['title'] = 'FTNF | Suppliers';
         $this->load->view('snips/a_start', $data);
         $this->load->view('snips/css_materialize');
         $this->load->view('snips/css_materialize_icon');
-        $this->load->view('+pages/admin/a_header');
-        //Create and change the page
+        
+        $type = $this->session->userdata('acct_type');
+            if ($type == '2') {
+                 $this->load->view('+pages/admin/a_Inventory_header');
+            } else {
+                 $this->load->view('+pages/admin/a_header');
+            }
+
         $this->load->view('+pages/admin/product_suppliers');
 
-		$this->load->view('snips/js_jquery300');
+        $this->load->view('snips/js_jquery300');
         $this->load->view('snips/js_materialize');
-		$this->load->view('snips/z_end');
-	}
+        $this->load->view('snips/z_end');
+  }
 
 	public function brands()
     {

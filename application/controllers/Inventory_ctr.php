@@ -435,7 +435,7 @@ class Inventory_ctr extends CI_Controller {
 
         $this->prodinv_model->save_editProdInv($prodID, $prodName, $category, $quantity, $amount);
 
-        redirect('/Inventory_ctr/view_products');
+        redirect('/Inventory_ctr/products');
         //FIXX add confirmation that the change was made
     }
 
@@ -486,14 +486,14 @@ class Inventory_ctr extends CI_Controller {
 
 		$this->prodinv_model->save_editProdInv($prodID, $prodName, $category, $quantity, $amount);
 
-		redirect('/Inventory_ctr/view_products');
+		redirect('/Inventory_ctr/products');
 	}
 
 	// function to save edited pet information
 	public function invSaveEditPet()
 	{
 		//autoload configuration
-		$config['base_url'] = site_url('Inventory_ctr/pets');
+		$config['base_url'] = site_url('Inventory_ctr/view_pets');
 		$config['total_rows'] = $this->db->count_all('product');
 		$config['per_page'] = "10";
 
@@ -528,7 +528,7 @@ class Inventory_ctr extends CI_Controller {
 	public function invDeleteProd($prodID)
 	{
 		$this->prodinv_model->delete_prodInv($prodID);
-		redirect('/Inventory_ctr/view_products');
+		redirect('/Inventory_ctr/products');
 	}
 
 	// function to delete pets
