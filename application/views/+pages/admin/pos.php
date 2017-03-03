@@ -1,30 +1,31 @@
 <br>
 <!-- initial test script for computation of total amount plus discount. -->
 <script type="text/javascript">
-function calculate() {
-   var quant=0;
-   var price=0; 
-   var discount=0; 
-   var afterDiscount=0;
-    
-    pack = Number(document.discountCalculator.pack.value);
-    price = Number(document.discountCalculator.price.value);
-    discount = Number(document.discountCalculator.discount.value);
-
-
-    subtotal=(pack*price);
-    disctotal=([pack*price]*discount/100);
- 	afterDiscount=(pack * [price - ( price*discount/100 )]);
-
-   document.discountCalculator.pack.value=pack.toFixed(0);
-   document.discountCalculator.price.value=price.toFixed(2);
-   document.discountCalculator.discount.value=discount.toFixed(2);
-   document.discountCalculator.subtotal.value=subtotal.toFixed(2);
-   document.discountCalculator.disctotal.value=disctotal.toFixed(2);
-   document.discountCalculator.afterDiscount.value=afterDiscount.toFixed(2);
-
-}
+// function calculate() {
+//    var quant=0;
+//    var price=0;
+//    var discount=0;
+//    var afterDiscount=0;
+//
+//     pack = Number(document.discountCalculator.pack.value);
+//     price = Number(document.discountCalculator.price.value);
+//     discount = Number(document.discountCalculator.discount.value);
+//
+//
+//     subtotal=(pack*price);
+//     disctotal=([pack*price]*discount/100);
+//  	afterDiscount=(pack * [price - ( price*discount/100 )]);
+//
+//    document.discountCalculator.pack.value=pack.toFixed(0);
+//    document.discountCalculator.price.value=price.toFixed(2);
+//    document.discountCalculator.discount.value=discount.toFixed(2);
+//    document.discountCalculator.subtotal.value=subtotal.toFixed(2);
+//    document.discountCalculator.disctotal.value=disctotal.toFixed(2);
+//    document.discountCalculator.afterDiscount.value=afterDiscount.toFixed(2);
+//
+// }
 </script>
+
 <body OnLoad="document.form1.prod_name.focus();">
 <main >
 <br>
@@ -42,11 +43,11 @@ function calculate() {
 						// });
 					</script>
 
-					<?php 
-	                    $attr = array("class" => "form-horizontal", "role" => "form", "id" => "form1", "name" => "form1");
-	                    echo form_open("POS_ctr/search", $attr);
-	                ?>
-            
+					<?php
+                  $attr = array("class" => "form-horizontal", "role" => "form", "id" => "form1", "name" => "form1");
+                  echo form_open("POS_ctr/search", $attr);
+               ?>
+
 	                <div class="form-group">
 	                    <div class="col-md-6">
 							<i class="material-icons prefix">search</i>
@@ -61,8 +62,8 @@ function calculate() {
 	                        	if ($acct_type == '1') {
 	                        	/*
 	                        		<a href="
-	                        		<?php 
-	                        			echo base_url(). "index.php/POS_ctr/index"; 
+	                        		<?php
+	                        			echo base_url(). "index.php/POS_ctr/index";
 	                        		?>
 	                        		" class="btn btn-primary">Refresh Product List</a>
 	                        	*/
@@ -74,57 +75,71 @@ function calculate() {
 	                    </div>
 	                </div>
 
-	                <?php 
-	                    echo form_close(); 
+	                <?php
+	                    echo form_close();
 	                ?>
-
 				</div>
 			</div>
 
 			<div class="row">
-				<table class="bordered centered highlight">
+				<table class="bordered centered highlight ">
 				<!-- <table class="bordered stripped centered responsive-table"> -->
 	                <thead>
 	                    <tr>
-	                    <th>#</th>
-	                    <th>Product ID</th>
-	                    <th>Product Name</th>
+	                    <!-- <th>#</th> -->
+	                    <th>ID</th>
+	                    <th>Name</th>
 	                    <th>Category</th>
-	                    <th>Quantity</th>
-	                    <th>Amount</th>
+	                    <th>In-Stock</th>
+	                    <th>Price</th>
 	                    <th>Add</th>
 	                    </tr>
 	                </thead>
 
 	                <tbody>
 	                    <?php for ($i = 0; $i < count($prodlist); ++$i) { ?>
-	                    <tr>
-	                        <td><?php echo ($page+$i+1); ?></td>
-	                        <td><?php echo $prodlist[$i]->ID; ?></td>
-	                        <td><?php echo $prodlist[$i]->ProdName; ?></td>
-	                        <td><?php echo $prodlist[$i]->Category; ?></td>
-	                        <td><?php echo $prodlist[$i]->Quantity; ?></td>
-	                        <td><?php 
-		                        echo "&#8369;";
-		                        echo $prodlist[$i]->Amount; ?></td>
+                        <tr>
+	                        <!-- <td><?php echo ($page+$i+1); ?></td> -->
+	                        <td><?php
+                              $id = $prodlist[$i]->ID;
+                              echo $id;
+                           ?></td>
+	                        <td><?php
+                              $name = $prodlist[$i]->ProdName;
+                              echo $name;
+                           ?></td>
+	                        <td><?php
+                              $cat = $prodlist[$i]->Category;
+                              echo $cat;
+                           ?></td>
+	                        <td><?php
+                              $qty = $prodlist[$i]->Quantity;
+                              echo $qty;
+                           ?></td>
 	                        <td>
-	                        <?php
-	                    	//echo form_open('POS_ctr/shopcart');
-							//echo form_hidden('ProdID', $ProdID);
-							//echo form_hidden('ProdName', $ProdName);
-							//echo form_hidden('Category', $Category);
-	                   		//echo form_hidden('Quantity', $Quantity);
-							//echo form_hidden('Amount', $Amount);
-
-	                        	if ($acct_type == '1') {
-
-	                        		echo anchor('POS_ctr/index', '<i class="material-icons left">add_shopping_cart</i>', 'waves-effect waves-light btn');
-	                        	} else {
-	                        		echo anchor('POS_ctr/index', '<i class="material-icons left">add_shopping_cart</i>', 'waves-effect waves-light btn');
-	                        	}
-	                         ?>
+                              <?php
+		                        echo "&#8369;";
+		                        $price = $prodlist[$i]->Amount;
+                              echo $price;
+                              ?>
+                           </td>
+	                        <td>
+                              <?php
+                                 echo form_open('POS_ctr/add');
+                                 echo form_hidden('id', $id);
+                                 echo form_hidden('qty', $qty);
+                                 echo form_hidden('price', $price);
+                                 echo form_hidden('name', $name);
+                                 echo form_hidden('cat', $cat);
+                                 $add = array(
+                                    'class' => 'btn btn-primary form-control',
+                                    'value' => 'Add to Cart',
+                                    'name' => 'action', 'type' => 'submit');
+                                 echo form_submit ($add);
+                                 echo form_close();
+                              ?>
 	                        </td>
-	                    </tr>
+                        </tr>
 	                    <?php } ?>
 	                </tbody>
             	</table>
@@ -132,50 +147,12 @@ function calculate() {
 		</div>
 
 		<div class="col s5">
-<!-- ================================== -->
-
-<?php echo form_open('POS_ctr'); ?>
-<table cellpadding="6" cellspacing="1" style="width:100%" border="0">
-	<tr>
-	    <th>QTY</th>
-	    <th>Item Description</th>
-	    <th style="text-align:right">Item Price</th>
-	    <th style="text-align:right">Sub-Total</th>
-	</tr>
-	<?php $i = 1; ?>
-	<?php foreach ($this->cart->contents() as $items): ?>
-	        <?php echo form_hidden($i.'[rowid]', $items['rowid']); ?>
-	        <tr>
-	                <td><?php echo form_input(array('name' => $i.'[qty]', 'value' => $items['qty'], 'maxlength' => '3', 'size' => '5')); ?></td>
-	                <td>
-	                    <?php echo $items['name']; ?>
-	                    <?php if ($this->cart->has_options($items['rowid']) == TRUE): ?>
-	                        <p>
-	                            <?php foreach ($this->cart->product_options($items['rowid']) as $option_name => $option_value): ?>
-	                                    <strong><?php echo $option_name; ?>:</strong> <?php echo $option_value; ?><br />
-	                            <?php endforeach; ?>
-	                        </p>
-	                    <?php endif; ?>
-	                </td>
-	                <t d style="text-align:right"><?php echo $this->cart->format_number($items['price']); ?></td>
-	                <td style="text-align:right">$<?php echo $this->cart->format_number($items['subtotal']); ?></td>
-	        </tr>
-	<?php $i++; ?>
-	<?php endforeach; ?>
-	<tr>
-	    <td colspan="2"> </td>
-	    <td class="right"><strong>Total</strong></td>
-	    <td class="right">$<?php echo $this->cart->format_number($this->cart->total()); ?></td>
-	</tr>
-</table>
-<p><?php echo form_submit('POS_ctr', 'Update your Cart'); ?></p>
-<p><?php echo form_submit('POS_ctr', 'Clear your Cart'); ?></p>
-
-<!-- ================================== -->
-			<div class="card grey darken-1">
+			<div class="card grey lighten-2">
 				<div class="card-content white-text">
-					<i class="material-icons prefix">perm_identity</i>
-					<span class="card-title">Dela Cruz, Juan Tamad</span>
+					<i class="material-icons prefix blue-text">perm_identity</i>
+					<span class="card-title">
+                  <b class="blue-text">Dela Cruz, Juan Tamad</b>
+               </span>
 				</div>
 				<style type="text/css">
 					#style-2::-webkit-scrollbar-track
@@ -198,11 +175,22 @@ function calculate() {
 						background-color: #ff7043;
 					}
 					#style-2 {
-						overflow: scroll; 
-						height: 200px; 
+						overflow: scroll;
+                  /*height of the products scrollbar*/
+						height: 300px;
 						overflow-x: hidden;
 					}
 				</style>
+
+            <?php
+               $cart_check = $this->cart->contents();
+               if (empty($cart_check)) {
+                  echo 'Start a new sale! Add an item to the cart!';
+               }
+             ?>
+             <?php
+               if($cart = $this->cart->contents()){
+             ?>
 				<div class="card-action" id="style-2">
 					<div class="col s1 center">
 						<b>Quantity</b>
@@ -214,88 +202,82 @@ function calculate() {
 						<b>Price</b>
 					</div>
 					<br>
+               <?php
+               echo form_open('POS_ctr/update');
+               $grand_total = 0;
+               $i = 1;
+
+               foreach ($cart as $item) {
+                  echo form_hidden('cart[' . $item['id'] . '][id]', $item['id']);
+                  echo form_hidden('cart[' . $item['id'] . '][name]', $item['name']);
+                  echo form_hidden('cart[' . $item['id'] . '][price]', $item['price']);
+                  echo form_hidden('cart[' . $item['id'] . '][qty]', $item['qty']);
+                  echo form_hidden('cart[' . $item['id'] . '][rowid]', $item['rowid']);
+                  ?>
+                  <?php $grand_total = $grand_total + $item['subtotal']; ?>
+
 					<ul class="collapsible" data-collapsible="accordion">
 						<li>
 							<div class="collapsible-header">
 								<div class="row">
-									<div class="col s1 center">
-										4
+									<div class="col s2 center">
+										<?php //echo $item['qty']; ?>
+                              <?php echo form_input('cart[' . $item['id'] . '][qty]', $item['qty'], 'maxlength="3" size="1" Class="center"'); ?>
 									</div>
-									<div class="col s7 center">
-										Goldfish
+									<div class="col s6 center">
+										<?php echo $item['name']; ?>
 									</div>
 									<div class="col s4 right-align">
-										&#x20B1; 100.00
+										&#x20B1; <?php echo number_format($item['price'],2) ?>
 									</div>
 								</div>
 							</div>
 							<div class="collapsible-body white">
 								<div class="row">
-									<div class="input-field col s3">
+									<!-- <div class="input-field col s3">
 										<input id="qty" type="number" class="validate">
-										<label for="qty">QTY</label>		
-									</div>
+										<label for="qty">QTY</label>
+									</div> -->
 									<div class="input-field col s5">
-										<input id="price" type="number" class="validate">
-										<label for="price">Price</label>
+										<input id="price" type="number" class="validate" value="<?php echo number_format($item['price'],2) ?>">
+										<label for="price"><?php echo number_format($item['price'],2) ?></label>
 									</div>
 									<div class="input-field col s4">
 										<input id="discount" type="number" class="validate">
 										<label for="discount">Discount</label>
 									</div>
-									<div class="input-field col s12">
+									<!-- <div class="input-field col s12">
 										<input id="note" type="text" class="validate">
 										<label for="note">Add note...</label>
-									</div>
+									</div> -->
 								<a class="right" href="#">View product information.</a>
 								</div>
 							</div>
 						</li>
-						<li>
-							<div class="collapsible-header ">
-								<div class="row">
-									<div class="col s1 center">
-										1
-									</div>
-									<div class="col s7 center">
-										Poodle
-									</div>
-									<div class="col s4 right-align">
-										&#x20B1; 4500.00
-									</div>
-								</div>
-							</div>
-							<div class="collapsible-body white">
-								<div class="row">
-									<div class="input-field col s2">
-										<input id="qty" type="number" class="validate">
-										<label for="qty">Quantity</label>		
-									</div>
-									<div class="input-field col s5">
-										<input id="price" type="number" class="validate">
-										<label for="price">Price</label>
-									</div>
-									<div class="input-field col s5">
-										<input id="discount" type="number" class="validate">
-										<label for="discount">Discount</label>
-									</div>
-									<div class="input-field col s12">
-										<input id="note" type="text" class="validate">
-										<label for="note">Add note...</label>
-									</div>
-								<a class="right" href="#">View product information.</a>
-								</div>
-							</div>
-						</li>	
 					</ul>
-				</div>	
+               <?php }?>
+				</div>
+            <div class="row">
+               <div class="col s9">
+                  <input  class ='btn btn-danger' type="submit" value="Update" >
+                  <a class="waves-effect waves-light btn red" type="submit"><i class="material-icons">refresh</i></a>
+               </div>
+               <div class="col s3">
+                  <a onClick="clear_cart()" class="waves-effect waves-light btn red"><i class="material-icons">clear</i></a>
+               </div>
+            </div>
+            <?php form_close(); ?>
+
 				<div class="card-action">
 					<div class="row">
 						<div class="col s6">
 							<b>Sub-total</b>
 						</div>
 						<div class="right-align col s6">
-							<b>&#x20B1; 4,600</b>
+							<!-- <b>&#x20B1; 4,600</b> -->
+                     <b>&#x20B1;
+                        <?php echo number_format($grand_total,2);  ?>
+                     </b>
 						</div>
 						<div class="col s6">
 							<b>Discount</b>
@@ -310,7 +292,7 @@ function calculate() {
 							<h5 style="font-size: 40px">&#x20B1; 4,600</h5>
 						</div>
 					</div>
-				</div>		
+				</div>
 				<div class="card-action">
 					<a class="waves-effect waves-light btn-large"><i class="material-icons left">payment</i>Pay</a>
 					<a class="waves-effect waves-light btn-large"><i class="material-icons left">payment</i>Park Order</a>
@@ -323,3 +305,4 @@ function calculate() {
 	<br>
 	<br>
 </main>
+<?php } ?>

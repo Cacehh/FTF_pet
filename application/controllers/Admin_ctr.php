@@ -2,6 +2,7 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Admin_ctr extends CI_Controller {
+
     function __construct() {
         parent::__construct();
 
@@ -19,6 +20,7 @@ class Admin_ctr extends CI_Controller {
 
     public function index()
     {
+
         // print_r($this->session->all_userdata());
         $data['title'] = 'FTNF | Dashboard';
         $this->load->view('snips/a_start', $data);
@@ -92,7 +94,6 @@ class Admin_ctr extends CI_Controller {
         $this->load->view('snips/css_materialize_icon');
         $this->load->view('+pages/admin/a_header');
 
-        $this->load->view('snips/a_restrict');
         $this->load->view('+pages/admin/dashboard');
 
         $this->load->view('snips/js_jquery300');
